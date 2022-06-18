@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "swift-web-page",
+        "repositoryURL": "/Users/aj/Desktop/PersonalProjects/github/swift-web-page",
+        "state": {
+          "branch": null,
+          "revision": "48a5f31dccb5803f8b1d68c6b8be0500793777b2",
+          "version": "0.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
