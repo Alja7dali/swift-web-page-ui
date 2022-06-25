@@ -12,7 +12,7 @@ let package = Package(
     .package(url: "https://github.com/Alja7dali/swift-web-page", from: "0.0.1"),
   ],
   targets: [
-    .executableTarget(
+    .target(
       name: "SwepUI",
       dependencies: [
         .product(name: "Swep", package: "swift-web-page"),
