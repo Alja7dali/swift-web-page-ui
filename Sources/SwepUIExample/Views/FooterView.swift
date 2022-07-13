@@ -7,15 +7,13 @@ struct FooterView: View {
         .href("https://github.com/Alja7dali/swift-web-page-ui")
         .color(textColor)
         .padding(.px(10))
+        // onHoverIn
         .onMouseover { _ in
           textColor = .hex(0xC2331D)
         }
+        // onHoverOut
         .onMouseout { _ in
           textColor = .tomato
-        }
-        .onMousedown { _ in
-          /// <a> href attribute is not clickable when listening to onMouse events
-          JSObject.global.location = "https://github.com/Alja7dali/swift-web-page-ui"
         }
       Plaintext("v0.0.2")
     }

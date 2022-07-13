@@ -11,19 +11,25 @@ struct CustomButton<Label: View>: View {
   }
 
   var body: some View {
-    Div {
-      AnyView(erasing: label())
-    }
-      .cursor(.pointer)
+    makeContent()
       .textShadow(.px(0), .px(0), .px(16), isHovered ? .darkGray : .transparent)
+      // onHoverIn
       .onMouseover { _ in
         isHovered.toggle()
       }
+      // onHoverOut
       .onMouseout { _ in
         isHovered.toggle()
       }
-      .onMousedown { _ in
+      .onClick { _ in
         action()
       }
+  }
+
+  func makeContent() -> some View {
+    return Div {
+      AnyView(erasing: label())
+    }
+    .cursor(.pointer)
   }
 }
