@@ -24,6 +24,8 @@ SwepUI is an experimental project that intend to mimic SwiftUI functionality on 
 
 ## Examples
 
+A live example of `SwepUI` is available at [Github Pages](https://alja7dali.github.io/swift-web-page-ui/)
+
 ```swift
 import SwepUI
 
@@ -144,7 +146,7 @@ carton dev
 carton bundle
 ```
 
-> NOTE: You can also clone this repository and run `carton dev --product SwepUIExample` in its root directory. This will build the demo app that shows almost all of the currently implemented APIs.
+> NOTE: You can also clone this repository and run `carton dev --product SwepUIExample` in its root directory. This will build the demo app that shows almost all of the currently implemented APIs. Or check out the live example based on `SwepUIExample` is available at [Github Pages](https://alja7dali.github.io/swift-web-page-ui/)
 
 ## Note
 
