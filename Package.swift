@@ -7,16 +7,31 @@ let package = Package(
   name: "swift-web-page-ui",
   products: [
     .library(name: "SwepUI", targets: ["SwepUI"]),
+    .executable(name: "SwepUIExample", targets: ["SwepUIExample"])
   ],
   dependencies: [
-    .package(url: "https://github.com/Alja7dali/swift-web-page", from: "0.0.1"),
+    .package(url: "https://github.com/swiftwasm/JavaScriptKit.git", from: "0.15.0"),
+    .package(url: "https://github.com/OpenCombine/OpenCombine.git", from: "0.12.0"),
+    .package(url: "https://github.com/swiftwasm/OpenCombineJS.git", from: "0.2.0"),
   ],
   targets: [
-    .executableTarget(
+    .target(
       name: "SwepUI",
       dependencies: [
-        .product(name: "Swep", package: "swift-web-page"),
+        .product(name: "JavaScriptKit", package: "JavaScriptKit"),
+        .product(name: "JavaScriptEventLoop", package: "JavaScriptKit"),
+        .product(name: "JavaScriptBigIntSupport", package: "JavaScriptKit"),
+        .product(name: "OpenCombine", package: "OpenCombine"),
+        .product(name: "OpenCombineJS", package: "OpenCombineJS"),
       ]
+    ),
+    .executableTarget(
+      name: "SwepUIExample",
+      dependencies: ["SwepUI"]
+    ),
+    .testTarget(
+      name: "SwepUITests",
+      dependencies: ["SwepUI"]
     ),
   ],
   swiftLanguageVersions: [
