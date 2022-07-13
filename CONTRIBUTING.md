@@ -1,6 +1,6 @@
 <h1>Contributing</h1>
 
-Thank you for your interest in Swep! There are multiple ways you can
+Thank you for your interest in SwepUI! There are multiple ways you can
 contribute to this project. We welcome contributions in all areas, with special
 attention to:
 
@@ -35,7 +35,7 @@ tracker will be used to hash that all out.
 ### Style Guides
 
 1. Write in UTF-8 in Swift 5.4
-2. User modular architecture to group similar functions, classes, etc. 
+2. User modular architecture to group similar functions, classes, etc.
 3. Always use 2 spaces for indentation (don't use tabs)
 4. Try to limit line length to 80 characters
 5. Class / Struct names should always be capitalized
@@ -64,10 +64,10 @@ We take performance very much to heart. Performance improvements are always
 welcome! If you identified a bottleneck, please make sure you follow the
 performance fix procedure:
 
-* Prepare a reproducible case that highlights the performance issue, if possible.
+- Prepare a reproducible case that highlights the performance issue, if possible.
   At least, the case should provide a testable timing result.
-* Submit a PR with a fix that provides a measurable performance improvement
-* Think hard about all the use cases! Threading and concurrency are important to
+- Submit a PR with a fix that provides a measurable performance improvement
+- Think hard about all the use cases! Threading and concurrency are important to
   think about when it comes to performance, make sure your fix doesn't come with
   a performance regression in some use cases.
 
@@ -86,7 +86,7 @@ Thanks for caring about performance!
 > - (a) The contribution was created in whole or in part by me and I
 >       have the right to submit it under the open source license
 >       indicated in the file; or
-> 
+>
 > - (b) The contribution is based upon previous work that, to the best
 >       of my knowledge, is covered under an appropriate open source
 >       license and I have the right under that license to submit that
@@ -94,11 +94,11 @@ Thanks for caring about performance!
 >       by me, under the same open source license (unless I am
 >       permitted to submit under a different license), as indicated
 >       in the file; or
-> 
+>
 > - (c) The contribution was provided directly to me by some other
 >       person who certified (a), (b) or (c) and I have not modified
 >       it.
-> 
+>
 > - (d) I understand and agree that this project and the contribution
 >       are public and that a record of the contribution (including all
 >       personal information I submit with it, including my sign-off) is
@@ -107,5 +107,5 @@ Thanks for caring about performance!
 
 *Wording of statement copied from [elinux.org][elinux.org]*
 
-[Issues]: <https://github.com/alja7dali/swift-web-page/issues>
+[Issues]: <https://github.com/alja7dali/swift-web-page-ui/issues>
 [elinux.org]: <http://elinux.org/Developer_Certificate_Of_Origin>

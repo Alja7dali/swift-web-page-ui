@@ -2,12 +2,30 @@
   "object": {
     "pins": [
       {
-        "package": "swift-web-page",
-        "repositoryURL": "https://github.com/Alja7dali/swift-web-page",
+        "package": "JavaScriptKit",
+        "repositoryURL": "https://github.com/swiftwasm/JavaScriptKit.git",
         "state": {
           "branch": null,
-          "revision": "48a5f31dccb5803f8b1d68c6b8be0500793777b2",
-          "version": "0.0.1"
+          "revision": "2d7bc960eed438dce7355710ece43fa004bbb3ac",
+          "version": "0.15.0"
+        }
+      },
+      {
+        "package": "OpenCombine",
+        "repositoryURL": "https://github.com/OpenCombine/OpenCombine.git",
+        "state": {
+          "branch": null,
+          "revision": "9cf67e363738dbab61b47fb5eaed78d3db31e5ee",
+          "version": "0.13.0"
+        }
+      },
+      {
+        "package": "OpenCombineJS",
+        "repositoryURL": "https://github.com/swiftwasm/OpenCombineJS.git",
+        "state": {
+          "branch": null,
+          "revision": "e574e418ba468ff5c2d4c499eb56f108aeb4d2ba",
+          "version": "0.2.0"
         }
       }
     ]
