@@ -13,14 +13,14 @@ struct CustomButton<Label: View>: View {
   var body: some View {
     makeContent()
       .textShadow(.px(0), .px(0), .px(16), isHovered ? .darkGray : .transparent)
-      // onHoverIn
-      .onMouseover { _ in
-        isHovered.toggle()
-      }
-      // onHoverOut
-      .onMouseout { _ in
-        isHovered.toggle()
-      }
+      // // onHoverIn
+      // .onMouseover { _ in
+      //   isHovered.toggle()
+      // }
+      // // onHoverOut
+      // .onMouseout { _ in
+      //   isHovered.toggle()
+      // }
       .onClick { _ in
         action()
       }
