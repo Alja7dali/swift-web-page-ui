@@ -2,7 +2,7 @@
 # 🧾 swift-web-page-ui (SwepUI)
 
 <p align="left">
-  <img src="https://img.shields.io/badge/Swift_Version-5.1-orange.svg?style=flat&logo=Swift" alt="Swift Version: 5.1"/>
+  <img src="https://img.shields.io/badge/Swift_Version-5.5-orange.svg?style=flat&logo=Swift" alt="Swift Version: 5.5"/>
   <a href="https://swift.org/package-manager">
     <img src="https://img.shields.io/badge/SwiftPM-Compatible-darkgreen.svg?style=flat" alt="Swift Package Manager"/>
   </a>
