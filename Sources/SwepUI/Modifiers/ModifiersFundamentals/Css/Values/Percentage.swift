@@ -2,7 +2,7 @@ postfix operator %
 
 public protocol HasValueOfPercentage: CSSValue {}
 
-extension BorderImageSlice: HasValueOfPercentage {}
+extension CssPropBorderImageSlice: HasValueOfPercentage {}
 
 public enum CSSPercentage: HasValueOfPercentage {}
 

@@ -51,7 +51,7 @@ extension Property {
 /// `animation-duration`, `animation-timing-function`, `animation-delay`,
 /// `animation-iteration-count`, `animation-direction`, `animation-fill-mode`
 /// and `animation-play-state`.
-public struct Animation: Property {
+public struct CssPropAnimation: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -59,16 +59,16 @@ public struct Animation: Property {
   }
 }
 
-extension Animation {
+extension CssPropAnimation {
   public init(
-    name: Value<AnimationName> = .default,
-    duration: Value<AnimationDuration> = .default,
-    timingFunction: Value<AnimationTimingFunction> = .default,
-    delay: Value<AnimationDelay> = .default,
-    iterationCount: Value<AnimationIterationCount> = .default,
-    direction: Value<AnimationDirection> = .default,
-    fillMode: Value<AnimationFillMode> = .default,
-    playState: Value<AnimationPlayState> = .default
+    name: Value<CssPropAnimationName> = .default,
+    duration: Value<CssPropAnimationDuration> = .default,
+    timingFunction: Value<CssPropAnimationTimingFunction> = .default,
+    delay: Value<CssPropAnimationDelay> = .default,
+    iterationCount: Value<CssPropAnimationIterationCount> = .default,
+    direction: Value<CssPropAnimationDirection> = .default,
+    fillMode: Value<CssPropAnimationFillMode> = .default,
+    playState: Value<CssPropAnimationPlayState> = .default
   ) {
     self.init([
       name.rawValue,
@@ -89,7 +89,7 @@ extension Animation {
 /// (e.g. a value of 2s, indicates that the animation will begin 2 seconds
 /// after it is applied). The value of this property can be specified in
 /// seconds (s) or milliseconds (ms).
-public struct AnimationDelay: Property {
+public struct CssPropAnimationDelay: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -101,7 +101,7 @@ public struct AnimationDelay: Property {
 /// MARK: -- AnimationDirection
 /// The `animation-direction` CSS property specifies whether the animation
 /// should play in reverse on alternate cycles or not.
-public struct AnimationDirection: Property {
+public struct CssPropAnimationDirection: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -109,7 +109,7 @@ public struct AnimationDirection: Property {
   }
 }
 
-public extension Value where Kind == AnimationDirection {
+public extension Value where Kind == CssPropAnimationDirection {
   static var reverse: Self { return .init("reverse") }
   static var alternate: Self { return .init("alternate") }
   static var alternateReverse: Self { return .init("alternate-reverse") }
@@ -119,7 +119,7 @@ public extension Value where Kind == AnimationDirection {
 /// MARK: -- AnimationDuration
 /// The `animation-duration` CSS property specifies the number of seconds (s)
 /// or milliseconds (ms) an animation should take to complete one cycle.
-public struct AnimationDuration: Property {
+public struct CssPropAnimationDuration: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -131,7 +131,7 @@ public struct AnimationDuration: Property {
 /// MARK: -- AnimationFillMode
 /// The `animation-fill-mode` CSS property specifies how a CSS animation should
 /// apply styles to its target before and after it is executing.
-public struct AnimationFillMode: Property {
+public struct CssPropAnimationFillMode: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -139,7 +139,7 @@ public struct AnimationFillMode: Property {
   }
 }
 
-public extension Value where Kind == AnimationFillMode {
+public extension Value where Kind == CssPropAnimationFillMode {
   static var forwards: Self { return .init("forwards") }
   static var backwards: Self { return .init("backwards") }
   static var both: Self { return .init("both") }
@@ -149,7 +149,7 @@ public extension Value where Kind == AnimationFillMode {
 /// MARK: -- AnimationIterationCount
 /// The `animation-iteration-count` CSS property specifies the number of times
 /// an animation cycle should be played before stopping.
-public struct AnimationIterationCount: Property {
+public struct CssPropAnimationIterationCount: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -161,7 +161,7 @@ public struct AnimationIterationCount: Property {
 /// MARK: -- AnimationName
 /// The `animation-name` CSS property specifies the name of @keyframes defined
 /// animations that should be applied to the selected element.
-public struct AnimationName: Property {
+public struct CssPropAnimationName: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -173,7 +173,7 @@ public struct AnimationName: Property {
 /// MARK: -- AnimationPlayState
 /// The `animation-play-state` property specifies whether an animation is
 /// playing or paused.
-public struct AnimationPlayState: Property {
+public struct CssPropAnimationPlayState: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -181,7 +181,7 @@ public struct AnimationPlayState: Property {
   }
 }
 
-public extension Value where Kind == AnimationPlayState {
+public extension Value where Kind == CssPropAnimationPlayState {
   static var paused: Self { return .init("paused") }
   static var running: Self { return .init("running") }
 }
@@ -190,7 +190,7 @@ public extension Value where Kind == AnimationPlayState {
 /// MARK: -- AnimationTimingFunction
 /// The `animation-timing-function` CSS property specifies how a CSS animation
 /// should progress over the duration of each cycle.
-public struct AnimationTimingFunction: Property {
+public struct CssPropAnimationTimingFunction: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -200,7 +200,7 @@ public struct AnimationTimingFunction: Property {
 
 public enum AnimationTimingFunctionPoint: String { case start, end }
 
-public extension Value where Kind == AnimationTimingFunction {
+public extension Value where Kind == CssPropAnimationTimingFunction {
   static var linear: Self { return .init("linear") }
   static var ease: Self { return .init("ease") }
   static var easeIn: Self { return .init("ease-in") }
@@ -234,7 +234,7 @@ public extension Value where Kind == AnimationTimingFunction {
 /// `background-position`, `background-size`, `background-repeat`,
 /// `background-attachment`, `background-origin`, `background-clip`
 /// and `background-color` in a single declaration.
-public struct Background: Property {
+public struct CssPropBackground: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -242,18 +242,18 @@ public struct Background: Property {
   }
 }
 
-extension Background {
+extension CssPropBackground {
   /// TODO: make `repeat: [BackgroundRepeat]` as NonEmptyArray
   @_disfavoredOverload
   public init(
-    color: Value<BackgroundColor> = .default,
-    image: Value<BackgroundImage> = .default,
-    position: Value<BackgroundPosition> = .default,
-    size: Value<BackgroundSize> = .default,
-    `repeat`: Array<Value<BackgroundRepeat>> = [.default],
-    origin: Value<BackgroundOrigin> = .default,
-    clip: Value<BackgroundClip> = .default,
-    attachment: Value<BackgroundAttachment> = .default
+    color: Value<CssPropBackgroundColor> = .default,
+    image: Value<CssPropBackgroundImage> = .default,
+    position: Value<CssPropBackgroundPosition> = .default,
+    size: Value<CssPropBackgroundSize> = .default,
+    `repeat`: Array<Value<CssPropBackgroundRepeat>> = [.default],
+    origin: Value<CssPropBackgroundOrigin> = .default,
+    clip: Value<CssPropBackgroundClip> = .default,
+    attachment: Value<CssPropBackgroundAttachment> = .default
   ) {
     self.init([
       color.rawValue,
@@ -269,15 +269,15 @@ extension Background {
 
   @_disfavoredOverload
   public init(
-    color: Value<BackgroundColor> = .default,
-    image: Value<BackgroundImage> = .default,
-    position: Value<BackgroundPosition> = .default,
-    size: Value<BackgroundSize> = .default,
-    `repeat`: Value<BackgroundRepeat> = .default,
-    _ moreRepeatings: Value<BackgroundRepeat> ...,
-    origin: Value<BackgroundOrigin> = .default,
-    clip: Value<BackgroundClip> = .default,
-    attachment: Value<BackgroundAttachment> = .default
+    color: Value<CssPropBackgroundColor> = .default,
+    image: Value<CssPropBackgroundImage> = .default,
+    position: Value<CssPropBackgroundPosition> = .default,
+    size: Value<CssPropBackgroundSize> = .default,
+    `repeat`: Value<CssPropBackgroundRepeat> = .default,
+    _ moreRepeatings: Value<CssPropBackgroundRepeat> ...,
+    origin: Value<CssPropBackgroundOrigin> = .default,
+    clip: Value<CssPropBackgroundClip> = .default,
+    attachment: Value<CssPropBackgroundAttachment> = .default
   ) {
     self.init(
       color: color,
@@ -296,7 +296,7 @@ extension Background {
 /// MARK -- BackgroundAttachment
 /// The `background-attachment` CSS property defines whether the background
 /// image scrolls with the document, or remains fixed to the viewing area.
-public struct BackgroundAttachment: Property {
+public struct CssPropBackgroundAttachment: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -304,7 +304,7 @@ public struct BackgroundAttachment: Property {
   }
 }
 
-public extension Value where Kind == BackgroundAttachment {
+public extension Value where Kind == CssPropBackgroundAttachment {
   static var scroll: Self { return .init("scroll") }
   static var fixed: Self { return .init("fixed") }
   static var local: Self { return .init("local") }
@@ -314,7 +314,7 @@ public extension Value where Kind == BackgroundAttachment {
 /// MARK -- BackgroundBlendMode
 /// The `background-blend-mode` property defines the blending mode of each
 /// background layer (color and/or image).
-public struct BackgroundBlendMode: Property {
+public struct CssPropBackgroundBlendMode: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -322,7 +322,7 @@ public struct BackgroundBlendMode: Property {
   }
 }
 
-public extension Value where Kind == BackgroundBlendMode {
+public extension Value where Kind == CssPropBackgroundBlendMode {
   static var multiply: Self { return .init("multiply") }
   static var screen: Self { return .init("screen") }
   static var overlay: Self { return .init("overlay") }
@@ -339,7 +339,7 @@ public extension Value where Kind == BackgroundBlendMode {
 /// The `background-clip` CSS property specifies whether an element's
 /// background, either the color or image, extends underneath it's border
 /// or not.
-public struct BackgroundClip: Property {
+public struct CssPropBackgroundClip: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -347,7 +347,7 @@ public struct BackgroundClip: Property {
   }
 }
 
-public extension Value where Kind == BackgroundClip {
+public extension Value where Kind == CssPropBackgroundClip {
   static var borderBox: Self { return .init("border-box") }
   static var paddingBox: Self { return .init("padding-box") }
   static var contentBox: Self { return .init("content-box") }
@@ -361,7 +361,7 @@ public extension Value where Kind == BackgroundClip {
 ///
 /// The background of an element is the total size of the element, including
 /// padding and border (but not the margin). See the box model.
-public struct BackgroundColor: Property {
+public struct CssPropBackgroundColor: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -374,7 +374,7 @@ public struct BackgroundColor: Property {
 /// The `background-image` CSS property sets the background image for an
 /// element. It is often more convenient to use the shorthand background\
 /// property.
-public struct BackgroundImage: Property {
+public struct CssPropBackgroundImage: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -382,7 +382,7 @@ public struct BackgroundImage: Property {
   }
 }
 
-public extension Value where Kind == BackgroundImage {
+public extension Value where Kind == CssPropBackgroundImage {
   // The URL to the image. To specify more than one image,
   // separate the URLs with a comma
   static func url(_ value: String) -> Self {
@@ -421,7 +421,7 @@ public extension Value where Kind == BackgroundImage {
 /// The `background-origin` CSS property specifies the positioning area of the
 /// background, that is the position of the origin of an image specified using
 /// the `background-image` property.
-public struct BackgroundOrigin: Property {
+public struct CssPropBackgroundOrigin: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -429,7 +429,7 @@ public struct BackgroundOrigin: Property {
   }
 }
 
-public extension Value where Kind == BackgroundOrigin {
+public extension Value where Kind == CssPropBackgroundOrigin {
   static var paddingBox: Self { return .init("padding-box") }
   static var borderBox: Self { return .init("border-box") }
   static var contentBox: Self { return .init("content-box") }
@@ -440,7 +440,7 @@ public extension Value where Kind == BackgroundOrigin {
 /// The `background-position` CSS property sets the initial position
 /// (i.e. origin) of the element's `background-image`. It is often more
 /// convenient to use the shorthand background property.
-public struct BackgroundPosition: Property {
+public struct CssPropBackgroundPosition: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -448,7 +448,7 @@ public struct BackgroundPosition: Property {
   }
 }
 
-extension BackgroundPosition {
+extension CssPropBackgroundPosition {
   /// If you only specify one keyword, the other value will be "center"
   public init(_ x: Value<CSSLength>, _ y: Value<CSSLength> = .auto) {
     self.init("\(x.rawValue) \(y.rawValue)")
@@ -470,7 +470,7 @@ extension BackgroundPosition {
 /// `background-image` is repeated or tiled after it has been sized and
 /// positioned, and how. It is often more convenient to use the shorthand
 /// background property.
-public struct BackgroundRepeat: Property {
+public struct CssPropBackgroundRepeat: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -478,19 +478,19 @@ public struct BackgroundRepeat: Property {
   }
 }
 
-extension BackgroundRepeat {
+extension CssPropBackgroundRepeat {
   @_disfavoredOverload
-  public init(_ value: Value<BackgroundRepeat>, _ moreValues: Value<BackgroundRepeat> ...) {
+  public init(_ value: Value<CssPropBackgroundRepeat>, _ moreValues: Value<CssPropBackgroundRepeat> ...) {
     self.init([value] + moreValues)
   }
 
   /// TODO: make it NonEmptyArray<Value>
-  public init(_ values: Array<Value<BackgroundRepeat>>) {
+  public init(_ values: Array<Value<CssPropBackgroundRepeat>>) {
     self.init(values.map(\.rawValue).joined(separator: " "))
   }
 }
 
-public extension Value where Kind == BackgroundRepeat {
+public extension Value where Kind == CssPropBackgroundRepeat {
   static var `repeat`: Self { return .init("repeat") }
   static var repeatX: Self { return .init("repeat-x") }
   static var repeatY: Self { return .init("repeat-y") }
@@ -503,7 +503,7 @@ public extension Value where Kind == BackgroundRepeat {
 /// MARK -- BackgroundSize
 /// The `background-size` CSS property specifies the size of the background
 /// images.
-public struct BackgroundSize: Property {
+public struct CssPropBackgroundSize: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -511,7 +511,7 @@ public struct BackgroundSize: Property {
   }
 }
 
-extension BackgroundSize {
+extension CssPropBackgroundSize {
   /// Sets the width and height of the background image. The first value sets
   /// the width, the second value sets the height. If only one value is given,
   /// the second is set to "auto"
@@ -520,7 +520,7 @@ extension BackgroundSize {
   }
 }
 
-public extension Value where Kind == BackgroundSize {
+public extension Value where Kind == CssPropBackgroundSize {
   static var cover: Self { return .init("cover") }
   static var contain: Self { return .init("contain") }
 }
@@ -534,7 +534,7 @@ public extension Value where Kind == BackgroundSize {
 /// of an element's border. It is a shorthand property for setting the
 /// individual border properties i.e. z, border-style, and border-color in a
 /// single declaration.
-public struct Border: Property {
+public struct CssPropBorder: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -542,11 +542,11 @@ public struct Border: Property {
   }
 }
 
-extension Border {
+extension CssPropBorder {
   public init(
-    width: Value<BorderWidth> = .medium,
-    style: Value<BorderStyle> = .none,
-    color: Value<BorderColor> = .black
+    width: Value<CssPropBorderWidth> = .medium,
+    style: Value<CssPropBorderStyle> = .none,
+    color: Value<CssPropBorderColor> = .black
   ) {
     self.init([
       width.rawValue,
@@ -562,7 +562,7 @@ extension Border {
 /// bottom border of an element. It is a shorthand property for setting the
 /// individual bottom border properties i.e. `border-bottom-width`,
 /// `border-bottom-style`, and `border-bottom-color` at once.
-public struct BorderBottom: Property {
+public struct CssPropBorderBottom: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -570,11 +570,11 @@ public struct BorderBottom: Property {
   }
 }
 
-extension BorderBottom {
+extension CssPropBorderBottom {
   public init(
-    width: Value<BorderWidth> = .medium,
-    style: Value<BorderStyle> = .none,
-    color: Value<BorderColor> = .black
+    width: Value<CssPropBorderWidth> = .medium,
+    style: Value<CssPropBorderStyle> = .none,
+    color: Value<CssPropBorderColor> = .black
   ) {
     self.init([
       width.rawValue,
@@ -590,7 +590,7 @@ extension BorderBottom {
 /// bottom border individually. However in many cases the shorthand CSS
 /// properties like `border-color` or `border-bottom` are more convenient to
 /// use and preferable.
-public struct BorderBottomColor: Property {
+public struct CssPropBorderBottomColor: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -602,7 +602,7 @@ public struct BorderBottomColor: Property {
 /// MARK: --- BorderBottomLeftRadius
 /// The `border-bottom-left-radius` CSS property sets the rounded shape for the
 /// `bottom-left` corner of an element border box.
-public struct BorderBottomLeftRadius: Property {
+public struct CssPropBorderBottomLeftRadius: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -614,7 +614,7 @@ public struct BorderBottomLeftRadius: Property {
 /// MARK: --- BorderBottomRightRadius
 /// The `border-bottom-right-radius` CSS property sets the rounded shape for
 /// the `bottom-right` corner of an element border box.
-public struct BorderBottomRightRadius: Property {
+public struct CssPropBorderBottomRightRadius: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -628,7 +628,7 @@ public struct BorderBottomRightRadius: Property {
 /// bottom border individually. However in many cases the shorthand CSS
 /// properties like `border-style` or `border-bottom` are more convenient to
 /// use and preferable.
-public struct BorderBottomStyle: Property {
+public struct CssPropBorderBottomStyle: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -642,7 +642,7 @@ public struct BorderBottomStyle: Property {
 /// bottom border individually. However in many cases the shorthand CSS
 /// properties like `border-width` or `border-bottom` are more convenient to
 /// use and preferable.
-public struct BorderBottomWidth: Property {
+public struct CssPropBorderBottomWidth: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -676,7 +676,7 @@ public struct BorderBottomWidth: Property {
 /// The `border-collapse` property selects a table's border model. The value
 /// separate selects the separated border model. The value collapse selects
 /// the collapsing border model.
-public struct BorderCollapse: Property {
+public struct CssPropBorderCollapse: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -684,7 +684,7 @@ public struct BorderCollapse: Property {
   }
 }
 
-public extension Value where Kind == BorderCollapse {
+public extension Value where Kind == CssPropBorderCollapse {
   static var separate: Self { return .init("separate") }
   static var collapse: Self { return .init("collapse") }
 }
@@ -695,7 +695,7 @@ public extension Value where Kind == BorderCollapse {
 /// individual border color properties i.e. `border-top-color`,
 /// `border-right-color`, `border-bottom-color`, and `border-left-color` in a
 /// single declaration.
-public struct BorderColor: Property {
+public struct CssPropBorderColor: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -703,7 +703,7 @@ public struct BorderColor: Property {
   }
 }
 
-extension BorderColor {
+extension CssPropBorderColor {
   public init(_ topBottom: Value<CSSColor>, _ rightLeft: Value<CSSColor>) {
     self.init([
       topBottom.rawValue,
@@ -735,7 +735,7 @@ extension BorderColor {
 /// place of the border styles. This is a shorthand property for setting
 /// `border-image-source`, `border-image-slice`, `border-image-width`,
 /// `border-image-outset` and `border-image-repeat` properties at once.
-public struct BorderImage: Property {
+public struct CssPropBorderImage: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -743,13 +743,13 @@ public struct BorderImage: Property {
   }
 }
 
-extension BorderImage {
+extension CssPropBorderImage {
   public init(
-    source: Value<BorderImageSource> = .default,
-    slice: Value<BorderImageSlice> = .default,
-    width: Value<BorderImageWidth> = .default,
-    outset: Value<BorderImageOutset> = .default,
-    `repeat`: Value<BorderImageRepeat> = .default
+    source: Value<CssPropBorderImageSource> = .default,
+    slice: Value<CssPropBorderImageSlice> = .default,
+    width: Value<CssPropBorderImageWidth> = .default,
+    outset: Value<CssPropBorderImageOutset> = .default,
+    `repeat`: Value<CssPropBorderImageRepeat> = .default
   ) {
     self.init([
       source.rawValue,
@@ -765,7 +765,7 @@ extension BorderImage {
 /// MARK: --- BorderImageOutset
 /// The `border-image-outset` CSS property specifies the amount by which the
 /// border image area extends beyond the border box.
-public struct BorderImageOutset: Property {
+public struct CssPropBorderImageOutset: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -773,7 +773,7 @@ public struct BorderImageOutset: Property {
   }
 }
 
-extension BorderImageOutset {
+extension CssPropBorderImageOutset {
   public init(_ topBottom: Value<Self>, _ rightLeft: Value<Self>) {
     self.init([
       topBottom.rawValue,
@@ -803,7 +803,7 @@ extension BorderImageOutset {
 /// MARK: --- BorderImageRepeat
 /// The `border-image-repeat` property specifies whether the border image should
 /// be repeated, rounded or stretched.
-public struct BorderImageRepeat: Property {
+public struct CssPropBorderImageRepeat: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -811,7 +811,7 @@ public struct BorderImageRepeat: Property {
   }
 }
 
-public extension Value where Kind == BorderImageRepeat {
+public extension Value where Kind == CssPropBorderImageRepeat {
   static var stretch: Self { return .init("stretch") }
   static var `repeat`: Self { return .init("repeat") }
   static var round: Self { return .init("round") }
@@ -827,7 +827,7 @@ public extension Value where Kind == BorderImageRepeat {
 ///
 /// The middle part of the border image is discarded and not used by the border
 /// itself but is used as a background-image if the fill keyword is present.
-public struct BorderImageSlice: Property {
+public struct CssPropBorderImageSlice: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -835,7 +835,7 @@ public struct BorderImageSlice: Property {
   }
 }
 
-extension BorderImageSlice {
+extension CssPropBorderImageSlice {
   public init(_ topBottom: Value<Self>, _ rightLeft: Value<Self>) {
     self.init([
       topBottom.rawValue,
@@ -861,7 +861,7 @@ extension BorderImageSlice {
   }
 }
 
-public extension Value where Kind == BorderImageSlice {
+public extension Value where Kind == CssPropBorderImageSlice {
   static var fill: Self { return .init("fill") }
 }
 
@@ -870,7 +870,7 @@ public extension Value where Kind == BorderImageSlice {
 /// The `border-image-source` CSS property specifies the location of the image
 /// to be used for the border, instead of the border styles given by the
 /// `border-style` propertiey.
-public struct BorderImageSource: Property {
+public struct CssPropBorderImageSource: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -878,7 +878,7 @@ public struct BorderImageSource: Property {
   }
 }
 
-public extension Value where Kind == BorderImageSource {
+public extension Value where Kind == CssPropBorderImageSource {
   // The path to the image to be used as a border
   static func url(_ value: String) -> Self {
     return .init("url(\"\(value)\")")
@@ -888,7 +888,7 @@ public extension Value where Kind == BorderImageSource {
 /// ------------------------------------------------------------------------ ///
 /// MARK: --- BorderImageWidth
 /// The `border-image-width` CSS property specifies the width of the border.
-public struct BorderImageWidth: Property {
+public struct CssPropBorderImageWidth: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -896,7 +896,7 @@ public struct BorderImageWidth: Property {
   }
 }
 
-extension BorderImageWidth {
+extension CssPropBorderImageWidth {
   public init(_ topBottom: Value<CSSLength>, _ rightLeft: Value<CSSLength>) {
     self.init([
       topBottom.rawValue,
@@ -952,7 +952,7 @@ extension BorderImageWidth {
 /// border of an element. It is a shorthand property for setting the individual
 /// left border properties i.e. `border-left-width`, `border-left-style`, and
 /// `border-left-color` in a single declaration.
-public struct BorderLeft: Property {
+public struct CssPropBorderLeft: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -960,11 +960,11 @@ public struct BorderLeft: Property {
   }
 }
 
-extension BorderLeft {
+extension CssPropBorderLeft {
   public init(
-    width: Value<BorderWidth> = .medium,
-    style: Value<BorderStyle> = .none,
-    color: Value<BorderColor> = .black
+    width: Value<CssPropBorderWidth> = .medium,
+    style: Value<CssPropBorderStyle> = .none,
+    color: Value<CssPropBorderColor> = .black
   ) {
     self.init([
       width.rawValue,
@@ -979,7 +979,7 @@ extension BorderLeft {
 /// The `border-left-color` CSS property sets the color of an element's left
 /// border individually. However in many cases the shorthand CSS properties like
 /// `border-color` or `border-left` are more convenient to use and preferable.
-public struct BorderLeftColor: Property {
+public struct CssPropBorderLeftColor: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -993,7 +993,7 @@ public struct BorderLeftColor: Property {
 /// border individually. However in many cases the shorthand CSS properties
 /// like `border-style` or `border-left` are more convenient to use and
 /// preferable.
-public struct BorderLeftStyle: Property {
+public struct CssPropBorderLeftStyle: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1006,7 +1006,7 @@ public struct BorderLeftStyle: Property {
 /// The `border-left-width` CSS property sets the width of an element's left
 /// border individually. However in many cases the shorthand CSS properties like
 /// `border-width` or `border-left` are more convenient to use and preferable.
-public struct BorderLeftWidth: Property {
+public struct CssPropBorderLeftWidth: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1020,7 +1020,7 @@ public struct BorderLeftWidth: Property {
 /// corners of an element. It is a shorthand property for
 /// `border-top-left-radius`, `border-top-right-radius`,
 /// `border-bottom-right-radius`, and `border-bottom-left-radius` property.
-public struct BorderRadius: Property {
+public struct CssPropBorderRadius: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1028,7 +1028,7 @@ public struct BorderRadius: Property {
   }
 }
 
-extension BorderRadius {
+extension CssPropBorderRadius {
   public init(_ topBottom: Value<Self>, _ rightLeft: Value<Self>) {
     self.init([
       topBottom.rawValue,
@@ -1060,7 +1060,7 @@ extension BorderRadius {
 /// right border of an element. It is a shorthand property for setting the
 /// individual right border properties i.e. `border-right-width`,
 /// `border-right-style`, and `border-right-color` at once.
-public struct BorderRight: Property {
+public struct CssPropBorderRight: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1068,11 +1068,11 @@ public struct BorderRight: Property {
   }
 }
 
-extension BorderRight {
+extension CssPropBorderRight {
   public init(
-    width: Value<BorderWidth> = .medium,
-    style: Value<BorderStyle> = .none,
-    color: Value<BorderColor> = .black
+    width: Value<CssPropBorderWidth> = .medium,
+    style: Value<CssPropBorderStyle> = .none,
+    color: Value<CssPropBorderColor> = .black
   ) {
     self.init([
       width.rawValue,
@@ -1088,7 +1088,7 @@ extension BorderRight {
 /// border individually. However in many cases the shorthand CSS properties
 /// like `border-color` or `border-right` are more convenient to use and
 /// preferable.
-public struct BorderRightColor: Property {
+public struct CssPropBorderRightColor: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1102,7 +1102,7 @@ public struct BorderRightColor: Property {
 /// border individually. However in many cases the shorthand CSS properties
 /// like `border-style` or `border-right` are more convenient to use and
 /// preferable.
-public struct BorderRightStyle: Property {
+public struct CssPropBorderRightStyle: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1115,7 +1115,7 @@ public struct BorderRightStyle: Property {
 /// The `border-right-width` CSS property sets the width of an element's right
 /// border individually. However in many cases the shorthand CSS properties like
 /// `border-width` or `border-right` are more convenient to use and preferable.
-public struct BorderRightWidth: Property {
+public struct CssPropBorderRightWidth: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1139,7 +1139,7 @@ public struct BorderRightWidth: Property {
 ///     If two values are specified, the first sets the horizontal spacing and
 ///   - the second sets the vertical spacing.
 ///
-public struct BorderSpacing: Property {
+public struct CssPropBorderSpacing: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1147,7 +1147,7 @@ public struct BorderSpacing: Property {
   }
 }
 
-extension BorderSpacing {
+extension CssPropBorderSpacing {
   public init(_ horizontal: Value<CSSLength>, _ vertical: Value<CSSLength>) {
     self.init("\(horizontal.rawValue) \(vertical.rawValue)")
   }
@@ -1159,7 +1159,7 @@ extension BorderSpacing {
 /// individual border style properties i.e. `border-top-style`,
 /// `border-right-style`, `border-bottom-style`, and `border-left-style`
 /// in a single declaration.
-public struct BorderStyle: Property {
+public struct CssPropBorderStyle: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1167,15 +1167,15 @@ public struct BorderStyle: Property {
   }
 }
 
-extension BorderStyle {
-  public init(_ topBottom: Value<BorderStyle>, _ rightLeft: Value<BorderStyle>) {
+extension CssPropBorderStyle {
+  public init(_ topBottom: Value<CssPropBorderStyle>, _ rightLeft: Value<CssPropBorderStyle>) {
     self.init([
       topBottom.rawValue,
       rightLeft.rawValue
     ].joined(separator: " "))
   }
 
-  public init(_ top: Value<BorderStyle>, _ rightLeft: Value<BorderStyle>, _ bottom: Value<BorderStyle>) {
+  public init(_ top: Value<CssPropBorderStyle>, _ rightLeft: Value<CssPropBorderStyle>, _ bottom: Value<CssPropBorderStyle>) {
     self.init([
       top.rawValue,
       rightLeft.rawValue,
@@ -1183,7 +1183,7 @@ extension BorderStyle {
     ].joined(separator: " "))
   }
 
-  public init(_ top: Value<BorderStyle>, _ right: Value<BorderStyle>, _ bottom: Value<BorderStyle>, _ left: Value<BorderStyle>) {
+  public init(_ top: Value<CssPropBorderStyle>, _ right: Value<CssPropBorderStyle>, _ bottom: Value<CssPropBorderStyle>, _ left: Value<CssPropBorderStyle>) {
     self.init([
       top.rawValue,
       right.rawValue,
@@ -1193,7 +1193,7 @@ extension BorderStyle {
   }
 }
 
-public extension Value where Kind == BorderStyle {
+public extension Value where Kind == CssPropBorderStyle {
   static var none: Self { return .init("none") }
   static var hidden: Self { return .init("hidden") }
   static var dotted: Self { return .init("dotted") }
@@ -1212,7 +1212,7 @@ public extension Value where Kind == BorderStyle {
 /// border of an element. It is a shorthand property for setting the individual
 /// top border properties i.e. `border-top-width`, `border-top-style`, and
 /// `border-top-color` in a single declaration.
-public struct BorderTop: Property {
+public struct CssPropBorderTop: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1220,11 +1220,11 @@ public struct BorderTop: Property {
   }
 }
 
-extension BorderTop {
+extension CssPropBorderTop {
   public init(
-    width: Value<BorderWidth> = .medium,
-    style: Value<BorderStyle> = .none,
-    color: Value<BorderColor> = .black
+    width: Value<CssPropBorderWidth> = .medium,
+    style: Value<CssPropBorderStyle> = .none,
+    color: Value<CssPropBorderColor> = .black
   ) {
     self.init([
       width.rawValue,
@@ -1240,7 +1240,7 @@ extension BorderTop {
 /// border individually. However in many cases the shorthand CSS properties
 /// like `border-color` or `border-top` are more convenient to use and
 /// preferable.
-public struct BorderTopColor: Property {
+public struct CssPropBorderTopColor: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1252,7 +1252,7 @@ public struct BorderTopColor: Property {
 /// MARK: --- BorderTopLeftRadius
 /// The `border-top-left-radius` CSS property sets the rounded shape for the
 /// "top-left" corner of an element border box.
-public struct BorderTopLeftRadius: Property {
+public struct CssPropBorderTopLeftRadius: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1264,7 +1264,7 @@ public struct BorderTopLeftRadius: Property {
 /// MARK: --- BorderTopRightRadius
 /// The `border-top-right-radius` property sets the rounded shape for the
 /// 'top-right' corner of an element border box.
-public struct BorderTopRightRadius: Property {
+public struct CssPropBorderTopRightRadius: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1278,7 +1278,7 @@ public struct BorderTopRightRadius: Property {
 /// border individually. However in many cases the shorthand CSS properties
 /// like `border-style` or `border-top` are more convenient to use and
 /// preferable.
-public struct BorderTopStyle: Property {
+public struct CssPropBorderTopStyle: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1291,7 +1291,7 @@ public struct BorderTopStyle: Property {
 /// The `border-top-width` property sets the width of an element's top border
 /// individually. However in many cases the shorthand CSS properties like
 /// `border-width` or `border-top` are more convenient to use and preferable.
-public struct BorderTopWidth: Property {
+public struct CssPropBorderTopWidth: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1305,7 +1305,7 @@ public struct BorderTopWidth: Property {
 /// individual border width properties i.e. `border-top-width`,
 /// `border-right-width`, `border-bottom-width`, and `border-left-width`
 /// in a single declaration.
-public struct BorderWidth: Property {
+public struct CssPropBorderWidth: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1313,15 +1313,15 @@ public struct BorderWidth: Property {
   }
 }
 
-extension BorderWidth {
-  public init(_ topBottom: Value<BorderWidth>, _ rightLeft: Value<BorderWidth>) {
+extension CssPropBorderWidth {
+  public init(_ topBottom: Value<CssPropBorderWidth>, _ rightLeft: Value<CssPropBorderWidth>) {
     self.init([
       topBottom.rawValue,
       rightLeft.rawValue
     ].joined(separator: " "))
   }
 
-  public init(_ top: Value<BorderWidth>, _ rightLeft: Value<BorderWidth>, _ bottom: Value<BorderWidth>) {
+  public init(_ top: Value<CssPropBorderWidth>, _ rightLeft: Value<CssPropBorderWidth>, _ bottom: Value<CssPropBorderWidth>) {
     self.init([
       top.rawValue,
       rightLeft.rawValue,
@@ -1329,7 +1329,7 @@ extension BorderWidth {
     ].joined(separator: " "))
   }
 
-  public init(_ top: Value<BorderWidth>, _ right: Value<BorderWidth>, _ bottom: Value<BorderWidth>, _ left: Value<BorderWidth>) {
+  public init(_ top: Value<CssPropBorderWidth>, _ right: Value<CssPropBorderWidth>, _ bottom: Value<CssPropBorderWidth>, _ left: Value<CssPropBorderWidth>) {
     self.init([
       top.rawValue,
       right.rawValue,
@@ -1339,7 +1339,7 @@ extension BorderWidth {
   }
 }
 
-public extension Value where Kind == BorderWidth {
+public extension Value where Kind == CssPropBorderWidth {
   static var medium: Self { return .init("medium") }
   static var thin: Self { return .init("thin") }
   static var thick: Self { return .init("thick") }
@@ -1351,7 +1351,7 @@ public extension Value where Kind == BorderWidth {
 
 /// MARK: - Color
 /// The `color` CSS property sets the color for an element's text content.
-public struct Color: Property {
+public struct CssPropColor: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1362,7 +1362,7 @@ public struct Color: Property {
 /// ------------------------------------------------------------------------ ///
 /// MARK: - Opacity
 /// The `opacity` CSS property specifies the transparency of an element.
-public struct Opacity: Property {
+public struct CssPropOpacity: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1378,7 +1378,7 @@ public struct Opacity: Property {
 /// The `height` CSS property specifies the height of the content area of an
 /// element. The content area does not include padding, borders, or margins
 /// — see the CSS box model.
-public struct Height: Property {
+public struct CssPropHeight: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1386,7 +1386,7 @@ public struct Height: Property {
   }
 }
 
-public struct MinHeight: Property {
+public struct CssPropMinHeight: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1394,7 +1394,7 @@ public struct MinHeight: Property {
   }
 }
 
-public struct MaxHeight: Property {
+public struct CssPropMaxHeight: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1407,7 +1407,7 @@ public struct MaxHeight: Property {
 /// The `width` CSS property specifies the width of the content area of an
 /// element. The content area does not include padding, borders, or margins
 /// — see the CSS box model.
-public struct Width: Property {
+public struct CssPropWidth: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1415,7 +1415,7 @@ public struct Width: Property {
   }
 }
 
-public struct MinWidth: Property {
+public struct CssPropMinWidth: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1423,7 +1423,7 @@ public struct MinWidth: Property {
   }
 }
 
-public struct MaxWidth: Property {
+public struct CssPropMaxWidth: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1439,7 +1439,7 @@ public struct MaxWidth: Property {
 /// The `align-content` CSS property aligns the flexible container's items
 /// within the flex container when there is extra space on the cross-axis
 /// (vertically).
-public struct AlignContent: Property {
+public struct CssPropAlignContent: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1447,7 +1447,7 @@ public struct AlignContent: Property {
   }
 }
 
-public extension Value where Kind == AlignContent {
+public extension Value where Kind == CssPropAlignContent {
   static var stretch: Self { return .init("stretch") }
   static var center: Self { return .init("center") }
   static var flexStart: Self { return .init("flex-start") }
@@ -1460,7 +1460,7 @@ public extension Value where Kind == AlignContent {
 /// MARK: - AlignItems
 /// The `align-items` property specifies the default alignment for items within
 /// the flex container.
-public struct AlignItems: Property {
+public struct CssPropAlignItems: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1468,7 +1468,7 @@ public struct AlignItems: Property {
   }
 }
 
-public extension Value where Kind == AlignItems {
+public extension Value where Kind == CssPropAlignItems {
   static var stretch: Self { return .init("stretch") }
   static var center: Self { return .init("center") }
   static var flexStart: Self { return .init("flex-start") }
@@ -1480,7 +1480,7 @@ public extension Value where Kind == AlignItems {
 /// MARK: - AlignSelf
 /// The `align-self` property specifies the default alignment for items within
 /// the flex container.
-public struct AlignSelf: Property {
+public struct CssPropAlignSelf: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1488,7 +1488,7 @@ public struct AlignSelf: Property {
   }
 }
 
-public extension Value where Kind == AlignSelf {
+public extension Value where Kind == CssPropAlignSelf {
   static var stretch: Self { return .init("stretch") }
   static var center: Self { return .init("center") }
   static var flexStart: Self { return .init("flex-start") }
@@ -1501,7 +1501,7 @@ public extension Value where Kind == AlignSelf {
 /// The `flex` CSS property specifies the components of a flexible length.
 /// It is a shorthand property for setting the `flex-grow`, `flex-shrink` and
 /// the `flex-basis` properties at once.
-public struct Flex: Property {
+public struct CssPropFlex: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1509,11 +1509,11 @@ public struct Flex: Property {
   }
 }
 
-extension Flex {
+extension CssPropFlex {
   public init(
-    grow: Value<FlexGrow> = .default,
-    shrink: Value<FlexShrink> = .default,
-    basis: Value<FlexBasis> = .default
+    grow: Value<CssPropFlexGrow> = .default,
+    shrink: Value<CssPropFlexShrink> = .default,
+    basis: Value<CssPropFlexBasis> = .default
   ) {
     self.init([
       grow.rawValue,
@@ -1527,7 +1527,7 @@ extension Flex {
 /// MARK: -- FlexBasis
 /// The `flex-basis` CSS property specifies the initial main size of the flex
 /// item.
-public struct FlexBasis: Property {
+public struct CssPropFlexBasis: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1540,7 +1540,7 @@ public struct FlexBasis: Property {
 /// The `flex-direction` CSS property specifies how flex items are placed in
 /// the flex container, by setting the direction of the flex container's main
 /// axis.
-public struct FlexDirection: Property {
+public struct CssPropFlexDirection: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1548,7 +1548,7 @@ public struct FlexDirection: Property {
   }
 }
 
-public extension Value where Kind == FlexDirection {
+public extension Value where Kind == CssPropFlexDirection {
   static var row: Self { return .init("row") }
   static var rowReverse: Self { return .init("row-reverse") }
   static var column: Self { return .init("column") }
@@ -1559,7 +1559,7 @@ public extension Value where Kind == FlexDirection {
 /// MARK: -- FlexFlow
 /// The `flex-flow` CSS property is a shorthand property for setting the
 /// `flex-direction` and `flex-wrap` individual properties at once.
-public struct FlexFlow: Property {
+public struct CssPropFlexFlow: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1567,10 +1567,10 @@ public struct FlexFlow: Property {
   }
 }
 
-extension FlexFlow {
+extension CssPropFlexFlow {
   public init(
-    direction: Value<FlexDirection> = .default,
-    wrap: Value<FlexWrap> = .default
+    direction: Value<CssPropFlexDirection> = .default,
+    wrap: Value<CssPropFlexWrap> = .default
   ) {
     self.init([
       direction.rawValue,
@@ -1583,7 +1583,7 @@ extension FlexFlow {
 /// MARK: -- FlexGrow
 /// The `flex-grow` CSS property specifies how the flex item will grow
 /// relative to the other items inside the flex container.
-public struct FlexGrow: Property {
+public struct CssPropFlexGrow: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1595,7 +1595,7 @@ public struct FlexGrow: Property {
 /// MARK: -- FlexShrink
 /// The `flex-shrink` CSS property specifies how the flex item will shrink
 /// relative to the other items inside the flex container.
-public struct FlexShrink: Property {
+public struct CssPropFlexShrink: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1608,7 +1608,7 @@ public struct FlexShrink: Property {
 /// The `flex-wrap` CSS property specifies whether the flex items are forced
 /// into a single line or they wrap onto multiple lines or columns based on
 /// the space available in the flex container.
-public struct FlexWrap: Property {
+public struct CssPropFlexWrap: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1616,7 +1616,7 @@ public struct FlexWrap: Property {
   }
 }
 
-public extension Value where Kind == FlexWrap {
+public extension Value where Kind == CssPropFlexWrap {
   static var nowrap: Self { return .init("nowrap") }
   static var wrap: Self { return .init("wrap") }
   static var wrapReverse: Self { return .init("wrap-reverse") }
@@ -1627,7 +1627,7 @@ public extension Value where Kind == FlexWrap {
 /// The `justify-content` CSS property specifies how flex items are aligned
 /// along the main axis of the flex container after any flexible lengths and
 /// auto margins have been resolved.
-public struct JustifyContent: Property {
+public struct CssPropJustifyContent: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1635,7 +1635,7 @@ public struct JustifyContent: Property {
   }
 }
 
-public extension Value where Kind == JustifyContent {
+public extension Value where Kind == CssPropJustifyContent {
   static var center: Self { return .init("center") }
   static var flexStart: Self { return .init("flex-start") }
   static var flexEnd: Self { return .init("flex-end") }
@@ -1649,7 +1649,7 @@ public extension Value where Kind == JustifyContent {
 /// displayed and laid out within a flex container. Elements are laid out by
 /// ascending order of the order value. Elements with the same order value are
 /// laid out in the order they appear in the source code.
-public struct Order: Property {
+public struct CssPropOrder: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1672,7 +1672,7 @@ public struct Order: Property {
 /// 
 /// The `font-size` and `font-family` values are required. If one of the other
 /// values is missing, their default value are used.
-public struct Font: Property {
+public struct CssPropFont: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1680,13 +1680,13 @@ public struct Font: Property {
   }
 }
 
-extension Font {
+extension CssPropFont {
   public init(
-    style: Value<FontStyle> = .default,
-    variant: Value<FontVariant> = .default,
-    weight: Value<FontWeight> = .default,
-    size: Value<FontSize>,
-    family: Value<FontFamily>
+    style: Value<CssPropFontStyle> = .default,
+    variant: Value<CssPropFontVariant> = .default,
+    weight: Value<CssPropFontWeight> = .default,
+    size: Value<CssPropFontSize>,
+    family: Value<CssPropFontFamily>
   ) {
     self.init([
       style.rawValue,
@@ -1698,11 +1698,11 @@ extension Font {
   }
 
   public init(
-    style: Value<FontStyle> = .default,
-    variant: Value<FontVariant> = .default,
-    weight: Value<FontWeight> = .default,
-    lineHeight: Value<LineHeight>,
-    family: Value<FontFamily>
+    style: Value<CssPropFontStyle> = .default,
+    variant: Value<CssPropFontVariant> = .default,
+    weight: Value<CssPropFontWeight> = .default,
+    lineHeight: Value<CssPropLineHeight>,
+    family: Value<CssPropFontFamily>
   ) {
     self.init([
       style.rawValue,
@@ -1714,7 +1714,7 @@ extension Font {
   }
 }
 
-public extension Value where Kind == Font {
+public extension Value where Kind == CssPropFont {
   static var caption: Self { return .init("caption") }
   static var icon: Self { return .init("icon") }
   static var menu: Self { return .init("menu") }
@@ -1740,7 +1740,7 @@ public extension Value where Kind == Font {
 /// Start with the font you want, and always end with a generic family, to let
 /// the browser pick a similar font in the generic family, if no other fonts
 /// are available.
-public struct FontFamily: Property {
+public struct CssPropFontFamily: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1752,7 +1752,7 @@ public struct FontFamily: Property {
 /// MARK: - FontFeatureSettings
 /// The `font-feature-settings` property allows control over advanced
 /// typographic features in OpenType fonts.
-public struct FontFeatureSettings: Property {
+public struct CssPropFontFeatureSettings: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1766,7 +1766,7 @@ public struct FontFeatureSettings: Property {
 /// stored in a font.
 ///
 /// Tip: Kerning defines how letters are spaced.
-public struct FontKerning: Property {
+public struct CssPropFontKerning: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1778,7 +1778,7 @@ public struct FontKerning: Property {
 /// MARK: -- FontSize
 /// The `font-size` CSS property sets the font size for the element's
 /// text content.
-public struct FontSize: Property {
+public struct CssPropFontSize: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1786,7 +1786,7 @@ public struct FontSize: Property {
   }
 }
 
-public extension Value where Kind == FontSize {
+public extension Value where Kind == CssPropFontSize {
   static var medium: Self { return .init("caption") }
   static var xxSmall: Self { return .init("xx-small") }
   static var xSmall: Self { return .init("x-small") }
@@ -1809,7 +1809,7 @@ public extension Value where Kind == FontSize {
 /// font size. The `font-size-adjust` property is a way to preserve the
 /// readability of text in such situation. It does this by adjusting the
 /// `font-size` so that the `x-height` is the same regardless of the font used.
-public struct FontSizeAdjust: Property {
+public struct CssPropFontSizeAdjust: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1821,7 +1821,7 @@ public struct FontSizeAdjust: Property {
 /// MARK: -- FontStretch
 /// The `font-stretch` CSS property selects a normal, condensed, or expanded
 /// face from a font.
-public struct FontStretch: Property {
+public struct CssPropFontStretch: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1829,7 +1829,7 @@ public struct FontStretch: Property {
   }
 }
 
-public extension Value where Kind == FontStretch {
+public extension Value where Kind == CssPropFontStretch {
   static var normal: Self { return .init("normal") }
   static var ultraCondensed: Self { return .init("ultra-condensed") }
   static var extraCondensed: Self { return .init("extra-condensed") }
@@ -1845,7 +1845,7 @@ public extension Value where Kind == FontStretch {
 /// MARK: -- FontStyle
 /// This `font-style` CSS property defines the style of font for the element's
 /// text content.
-public struct FontStyle: Property {
+public struct CssPropFontStyle: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1853,7 +1853,7 @@ public struct FontStyle: Property {
   }
 }
 
-public extension Value where Kind == FontStyle {
+public extension Value where Kind == CssPropFontStyle {
   static var normal: Self { return .init("normal") }
   static var italic: Self { return .init("italic") }
   static var oblique: Self { return .init("oblique") }
@@ -1862,7 +1862,7 @@ public extension Value where Kind == FontStyle {
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- FontVariant
 /// This `font-variant` CSS property sets the variation of the font family.
-public struct FontVariant: Property {
+public struct CssPropFontVariant: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1870,7 +1870,7 @@ public struct FontVariant: Property {
   }
 }
 
-public extension Value where Kind == FontVariant {
+public extension Value where Kind == CssPropFontVariant {
   static var normal: Self { return .init("normal") }
   static var smallCaps: Self { return .init("small-caps") }
 }
@@ -1879,7 +1879,7 @@ public extension Value where Kind == FontVariant {
 /// MARK: -- FontVariantCaps
 /// The `font-variant-caps` property controls the usage of alternate glyphs
 /// for capital letters.
-public struct FontVariantCaps: Property {
+public struct CssPropFontVariantCaps: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1887,7 +1887,7 @@ public struct FontVariantCaps: Property {
   }
 }
 
-public extension Value where Kind == FontVariantCaps {
+public extension Value where Kind == CssPropFontVariantCaps {
   static var unset: Self { return .init("unset") }
   static var normal: Self { return .init("normal") }
   static var smallCaps: Self { return .init("small-caps") }
@@ -1901,7 +1901,7 @@ public extension Value where Kind == FontVariantCaps {
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- FontWeight
 /// The `font-weight` CSS property sets the weight or boldness of the font.
-public struct FontWeight: Property {
+public struct CssPropFontWeight: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1909,7 +1909,7 @@ public struct FontWeight: Property {
   }
 }
 
-public extension Value where Kind == FontWeight {
+public extension Value where Kind == CssPropFontWeight {
   static var normal: Self { return .init("normal") }
   static var bold: Self { return .init("bold") }
   static var bolder: Self { return .init("bolder") }
@@ -1923,7 +1923,7 @@ public extension Value where Kind == FontWeight {
 /// MARK: - Content
 /// The `content` CSS property is used in combination with the `::before` and
 /// `::after` pseudo-elements to generate content in an element.
-public struct Content: Property {
+public struct CssPropContent: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1931,7 +1931,7 @@ public struct Content: Property {
   }
 }
 
-public extension Value where Kind == Content {
+public extension Value where Kind == CssPropContent {
   /// This value sets the content as a counter. See the `counter-reset` and
   /// `counter-increment` property for more information.
   static func counter(_ value: String) -> Self { return .init("counter(\"\(value)\")") }
@@ -1947,7 +1947,7 @@ public extension Value where Kind == Content {
   static func attr(_ value: String) -> Self { return .init("attr(\"\(value)\")") }
 }
 
-public extension Value where Kind == Content {
+public extension Value where Kind == CssPropContent {
   static var openQuote: Self { return .init("open-quote") }
   static var closeQuote: Self { return .init("close-quote") }
   static var noOpenQuote: Self { return .init("no-open-quote") }
@@ -1959,7 +1959,7 @@ public extension Value where Kind == Content {
 /// The `quotes` CSS property specifies the quotation marks for the embedded
 /// quotations. The quotes characters specified for this property are used for
 /// the `open-quote` and `close-quote` values of the content property. 
-public struct Quotes: Property {
+public struct CssPropQuotes: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -1967,7 +1967,7 @@ public struct Quotes: Property {
   }
 }
 
-public extension Value where Kind == Quotes {
+public extension Value where Kind == CssPropQuotes {
   /// This value sets the content as a counter. See the `counter-reset` and
   /// `counter-increment` property for more information.
   static func pairs(_ value: (String, String), _ moreValues: (String, String)...) -> Self {
@@ -1989,7 +1989,7 @@ public extension Value where Kind == Quotes {
 /// The `counter-reset` CSS property is used in combination with the
 /// `counter-increment` property for creating auto-incrementing counters,
 /// and with the content property to display the generated counter values.
-public struct CounterReset: Property {
+public struct CssPropCounterReset: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2001,7 +2001,7 @@ public struct CounterReset: Property {
 /// MARK: - CounterIncrement
 /// The `counter-increment` CSS property increments one or more counter values.
 /// This property is very useful for creating auto-numbering feature.
-public struct CounterIncrement: Property {
+public struct CssPropCounterIncrement: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2018,7 +2018,7 @@ public struct CounterIncrement: Property {
 /// It is a shorthand property for setting the individual list properties i.e.
 /// `list-style-type`, `list-style-position`, and `list-style-image` in a
 /// single declaration.
-public struct ListStyle: Property {
+public struct CssPropListStyle: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2026,11 +2026,11 @@ public struct ListStyle: Property {
   }
 }
 
-extension ListStyle {
+extension CssPropListStyle {
   public init(
-    type: Value<ListStyleType> = .default,
-    position: Value<ListStylePosition> = .default,
-    image: Value<ListStyleImage> = .default
+    type: Value<CssPropListStyleType> = .default,
+    position: Value<CssPropListStylePosition> = .default,
+    image: Value<CssPropListStyleImage> = .default
   ) {
     self.init([
       type.rawValue,
@@ -2044,7 +2044,7 @@ extension ListStyle {
 /// MARK: -- ListStyleType
 /// The `list-style-type` CSS property specifies the type of marker for the
 /// list-items.
-public struct ListStyleType: Property {
+public struct CssPropListStyleType: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2052,7 +2052,7 @@ public struct ListStyleType: Property {
   }
 }
 
-public extension Value where Kind == ListStyleType {
+public extension Value where Kind == CssPropListStyleType {
   /// Unordered-List-Style-Types
   static var circle: Self { return .init("circle") }
   static var disc: Self { return .init("disc") }
@@ -2083,7 +2083,7 @@ public extension Value where Kind == ListStyleType {
 /// MARK: -- ListStylePosition
 /// The `list-style-position` CSS property specifies the position of `list-item`
 /// marker with respect to the list item's principal block box.
-public struct ListStylePosition: Property {
+public struct CssPropListStylePosition: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2091,7 +2091,7 @@ public struct ListStylePosition: Property {
   }
 }
 
-public extension Value where Kind == ListStylePosition {
+public extension Value where Kind == CssPropListStylePosition {
   static var inside: Self { return .init("inside") }
   static var outside: Self { return .init("outside") }
 }
@@ -2100,7 +2100,7 @@ public extension Value where Kind == ListStylePosition {
 /// MARK: -- ListStyleImage
 /// The `list-style-image` CSS property specifies an image to be used as a
 /// list-item marker.
-public struct ListStyleImage: Property {
+public struct CssPropListStyleImage: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2108,7 +2108,7 @@ public struct ListStyleImage: Property {
   }
 }
 
-public extension Value where Kind == ListStyleImage {
+public extension Value where Kind == CssPropListStyleImage {
   static func url(_ value: String) -> Self { return .init("url(\"\(value)\")") }
 }
 
@@ -2120,7 +2120,7 @@ public extension Value where Kind == ListStyleImage {
 /// The `margin` CSS property sets the margin on all four sides of the element.
 /// It is a shorthand property for `margin-top`, `margin-right`,
 /// `margin-bottom`, and `margin-left` property.
-public struct Margin: Property {
+public struct CssPropMargin: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2128,7 +2128,7 @@ public struct Margin: Property {
   }
 }
 
-extension Margin {
+extension CssPropMargin {
   public init(_ topBottom: Value<CSSLength>, _ rightLeft: Value<CSSLength>) {
     self.init([
       topBottom.rawValue,
@@ -2159,7 +2159,7 @@ extension Margin {
 /// The `margin-bottom` CSS property sets the bottom margin of the element.
 /// However in many cases the shorthand property margin is more convenient
 /// to use and preferable.
-public struct MarginBottom: Property {
+public struct CssPropMarginBottom: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2172,7 +2172,7 @@ public struct MarginBottom: Property {
 /// The `margin-left` CSS property sets the left margin of the element.
 /// However in many cases the shorthand property margin is more convenient
 /// to use and preferable.
-public struct MarginLeft: Property {
+public struct CssPropMarginLeft: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2185,7 +2185,7 @@ public struct MarginLeft: Property {
 /// The `margin-right` CSS property sets the right margin of the element.
 /// However in many cases the shorthand property margin is more convenient
 /// to use and preferable.
-public struct MarginRight: Property {
+public struct CssPropMarginRight: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2198,7 +2198,7 @@ public struct MarginRight: Property {
 /// The `margin-top` CSS property sets the top margin of the element.
 /// However in many cases the shorthand property margin is more convenient
 /// to use and preferable.
-public struct MarginTop: Property {
+public struct CssPropMarginTop: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2213,7 +2213,7 @@ public struct MarginTop: Property {
 /// MARK: - ColumnCount
 /// The `column-count` CSS property specifies the number of columns in a
 /// multi-column element.
-public struct ColumnCount: Property {
+public struct CssPropColumnCount: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2228,7 +2228,7 @@ public struct ColumnCount: Property {
 /// multi-column layout are either balanced, which means that contents
 /// in all columns will have the same height or, just take up the room as
 /// much as the content needed, when using the value auto.
-public struct ColumnFill: Property {
+public struct CssPropColumnFill: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2236,7 +2236,7 @@ public struct ColumnFill: Property {
   }
 }
 
-public extension Value where Kind == ColumnFill {
+public extension Value where Kind == CssPropColumnFill {
   static var balance: Self { return .init("inbalanceside") }
 }
 
@@ -2245,7 +2245,7 @@ public extension Value where Kind == ColumnFill {
 /// The `column-gap` CSS property specifies the gap between the columns in a
 /// multi-column element. If there is a column-rule between columns, it will
 /// appear in the middle of the gap.
-public struct ColumnGap: Property {
+public struct CssPropColumnGap: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2259,7 +2259,7 @@ public struct ColumnGap: Property {
 /// be drawn between each column. It is a shorthand property for setting the
 /// individual properties i.e. `column-rule-width`, `column-rule-style` and
 /// column`-rule-color` at once.
-public struct ColumnRule: Property {
+public struct CssPropColumnRule: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2267,11 +2267,11 @@ public struct ColumnRule: Property {
   }
 }
 
-extension ColumnRule {
+extension CssPropColumnRule {
   public init(
-    width: Value<ColumnRuleWidth> = .medium,
-    style: Value<ColumnRuleStyle> = .none,
-    color: Value<ColumnRuleColor> = .black
+    width: Value<CssPropColumnRuleWidth> = .medium,
+    style: Value<CssPropColumnRuleStyle> = .none,
+    color: Value<CssPropColumnRuleColor> = .black
   ) {
     self.init([
       width.rawValue,
@@ -2285,7 +2285,7 @@ extension ColumnRule {
 /// MARK: - ColumnRuleColor
 /// The `column-rule-color` CSS property sets the color of all the rules
 /// drawn between columns in a multi-column layout.
-public struct ColumnRuleColor: Property {
+public struct CssPropColumnRuleColor: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2297,7 +2297,7 @@ public struct ColumnRuleColor: Property {
 /// MARK: - ColumnRuleStyle
 /// The `column-rule-style` CSS property sets the style of the rule drawn
 /// between the columns in a multi-column layout.
-public struct ColumnRuleStyle: Property {
+public struct CssPropColumnRuleStyle: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2305,7 +2305,7 @@ public struct ColumnRuleStyle: Property {
   }
 }
 
-public extension Value where Kind == ColumnRuleStyle {
+public extension Value where Kind == CssPropColumnRuleStyle {
   static var none: Self { return .init("none") }
   static var hidden: Self { return .init("hidden") }
   static var dotted: Self { return .init("dotted") }
@@ -2322,7 +2322,7 @@ public extension Value where Kind == ColumnRuleStyle {
 /// MARK: - ColumnRuleWidth
 /// The `column-rule-width` CSS property sets the width of the rule drawn
 /// between the columns in a multi-column layout.
-public struct ColumnRuleWidth: Property {
+public struct CssPropColumnRuleWidth: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2330,7 +2330,7 @@ public struct ColumnRuleWidth: Property {
   }
 }
 
-public extension Value where Kind == ColumnRuleWidth {
+public extension Value where Kind == CssPropColumnRuleWidth {
   static var medium: Self { return .init("medium") }
   static var thin: Self { return .init("thin") }
   static var thick: Self { return .init("thick") }
@@ -2341,7 +2341,7 @@ public extension Value where Kind == ColumnRuleWidth {
 /// The `column-span` CSS property specifies how many columns an element
 /// spans across in a multi-column layout. Element that spans more than one
 /// column is called a spanning element.
-public struct ColumnSpan: Property {
+public struct CssPropColumnSpan: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2349,7 +2349,7 @@ public struct ColumnSpan: Property {
   }
 }
 
-public extension Value where Kind == ColumnSpan {
+public extension Value where Kind == CssPropColumnSpan {
   static var all: Self { return .init("all") }
 }
 
@@ -2359,7 +2359,7 @@ public extension Value where Kind == ColumnSpan {
 /// columns in a multi-column element. This is not an absolute value; browser
 /// may adjust the width of the column depending on the value of other
 /// properties, especially column-count.
-public struct ColumnWidth: Property {
+public struct CssPropColumnWidth: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2371,7 +2371,7 @@ public struct ColumnWidth: Property {
 /// MARK: - Columns
 /// The `columns` CSS property is a shorthand property for setting both the
 /// `column-width` and the `column-count` properties at the same time.
-public struct Columns: Property {
+public struct CssPropColumns: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2379,10 +2379,10 @@ public struct Columns: Property {
   }
 }
 
-extension Columns {
+extension CssPropColumns {
   public init(
-    width: Value<ColumnWidth> = .default,
-    count: Value<ColumnCount> = .default
+    width: Value<CssPropColumnWidth> = .default,
+    count: Value<CssPropColumnCount> = .default
   ) {
     self.init([
       width.rawValue,
@@ -2400,7 +2400,7 @@ extension Columns {
 /// of an element's outline. It is a shorthand property for setting the
 /// individual outline properties i.e. z, outline-style, and outline-color in a
 /// single declaration.
-public struct Outline: Property {
+public struct CssPropOutline: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2408,11 +2408,11 @@ public struct Outline: Property {
   }
 }
 
-extension Outline {
+extension CssPropOutline {
   public init(
-    width: Value<OutlineWidth> = .medium,
-    style: Value<OutlineStyle> = .none,
-    color: Value<OutlineColor> = .black
+    width: Value<CssPropOutlineWidth> = .medium,
+    style: Value<CssPropOutlineStyle> = .none,
+    color: Value<CssPropOutlineColor> = .black
   ) {
     self.init([
       width.rawValue,
@@ -2427,7 +2427,7 @@ extension Outline {
 /// The `outline-color` CSS property sets the color of the outline of an
 /// element. However, in many cases the shorthand property outline is more
 /// convenient to use and preferable.
-public struct OutlineColor: Property {
+public struct CssPropOutlineColor: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2439,7 +2439,7 @@ public struct OutlineColor: Property {
 /// MARK: --- OutlineOffset
 /// The `outline-offset` CSS property is used to set the space between an
 /// outline and the border edge or simply edge of an element.
-public struct OutlineOffset: Property {
+public struct CssPropOutlineOffset: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2452,7 +2452,7 @@ public struct OutlineOffset: Property {
 /// The `outline-style` CSS property sets the style of the outline of an
 /// element. However, in many cases the shorthand propertiey outline is more
 /// convenient to use and preferable.
-public struct OutlineStyle: Property {
+public struct CssPropOutlineStyle: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2460,7 +2460,7 @@ public struct OutlineStyle: Property {
   }
 }
 
-public extension Value where Kind == OutlineStyle {
+public extension Value where Kind == CssPropOutlineStyle {
   static var none: Self { return .init("none") }
   static var hidden: Self { return .init("hidden") }
   static var dotted: Self { return .init("dotted") }
@@ -2478,7 +2478,7 @@ public extension Value where Kind == OutlineStyle {
 /// The `outline-width` CSS property sets the width of the outline of an
 /// element. However in many cases the shorthand CSS propertiey outline is
 /// more convenient to use and preferable.
-public struct OutlineWidth: Property {
+public struct CssPropOutlineWidth: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2486,7 +2486,7 @@ public struct OutlineWidth: Property {
   }
 }
 
-public extension Value where Kind == OutlineWidth {
+public extension Value where Kind == CssPropOutlineWidth {
   static var medium: Self { return .init("medium") }
   static var thin: Self { return .init("thin") }
   static var thick: Self { return .init("thick") }
@@ -2500,7 +2500,7 @@ public extension Value where Kind == OutlineWidth {
 /// The `padding` CSS property sets the padding on all four sides of the element.
 /// It is a shorthand property for `padding-top`, `padding-right`,
 /// `padding-bottom`, and `padding-left` property.
-public struct Padding: Property {
+public struct CssPropPadding: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2508,7 +2508,7 @@ public struct Padding: Property {
   }
 }
 
-extension Padding {
+extension CssPropPadding {
   public init(_ topBottom: Value<CSSLength>, _ rightLeft: Value<CSSLength>) {
     self.init([
       topBottom.rawValue,
@@ -2539,7 +2539,7 @@ extension Padding {
 /// The `padding-bottom` CSS property sets the bottom padding of the element.
 /// However in many cases the shorthand property padding is more convenient
 /// to use and preferable.
-public struct PaddingBottom: Property {
+public struct CssPropPaddingBottom: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2552,7 +2552,7 @@ public struct PaddingBottom: Property {
 /// The `padding-left` CSS property sets the left padding of the element.
 /// However in many cases the shorthand property padding is more convenient
 /// to use and preferable.
-public struct PaddingLeft: Property {
+public struct CssPropPaddingLeft: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2565,7 +2565,7 @@ public struct PaddingLeft: Property {
 /// The `padding-right` CSS property sets the right padding of the element.
 /// However in many cases the shorthand property padding is more convenient
 /// to use and preferable.
-public struct PaddingRight: Property {
+public struct CssPropPaddingRight: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2578,7 +2578,7 @@ public struct PaddingRight: Property {
 /// The `padding-top` CSS property sets the top padding of the element.
 /// However in many cases the shorthand property padding is more convenient
 /// to use and preferable.
-public struct PaddingTop: Property {
+public struct CssPropPaddingTop: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2594,7 +2594,7 @@ public struct PaddingTop: Property {
 /// The `break-after` CSS3 property insert page breaks after an element
 /// when printing a document. This properties applies to block-level elements
 /// that generate a box. It won't apply on an empty <p> that won't generate a box.
-public struct BreakAfter: Property {
+public struct CssPropBreakAfter: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2602,7 +2602,7 @@ public struct BreakAfter: Property {
   }
 }
 
-public extension Value where Kind == BreakAfter {
+public extension Value where Kind == CssPropBreakAfter {
   static var all: Self { return .init("all") }
   static var always: Self { return .init("always") }
   static var column: Self { return .init("column") }
@@ -2623,7 +2623,7 @@ public extension Value where Kind == BreakAfter {
 /// The `break-before` CSS3 property insert page breaks before an element
 /// when printing a document. This properties applies to block-level elements
 /// that generate a box. It won't apply on an empty <p> that won't generate a box.
-public struct BreakBefore: Property {
+public struct CssPropBreakBefore: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2631,7 +2631,7 @@ public struct BreakBefore: Property {
   }
 }
 
-public extension Value where Kind == BreakBefore {
+public extension Value where Kind == CssPropBreakBefore {
   static var all: Self { return .init("all") }
   static var always: Self { return .init("always") }
   static var column: Self { return .init("column") }
@@ -2652,7 +2652,7 @@ public extension Value where Kind == BreakBefore {
 /// The `break-inside` CSS3 property force or prohibit a printing page break
 /// inside an element. This properties applies to block-level elements that
 /// generate a box. It won't apply on an empty <p> that won't generate a box.
-public struct BreakInside: Property {
+public struct CssPropBreakInside: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2660,7 +2660,7 @@ public struct BreakInside: Property {
   }
 }
 
-public extension Value where Kind == BreakInside {
+public extension Value where Kind == CssPropBreakInside {
   static var avoid: Self { return .init("avoid") }
   static var avoidColumn: Self { return .init("avoid-column") }
   static var avoidPage: Self { return .init("avoid-page") }
@@ -2675,7 +2675,7 @@ public extension Value where Kind == BreakInside {
 /// The `text-align` CSS property sets the horizontal alignment of the inline
 /// content like text and images in its parent block element such as heading
 /// or paragraph.
-public struct TextAlign: Property {
+public struct CssPropTextAlign: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2683,7 +2683,7 @@ public struct TextAlign: Property {
   }
 }
 
-public extension Value where Kind == TextAlign {
+public extension Value where Kind == CssPropTextAlign {
   static var left: Self { return .init("left") }
   static var right: Self { return .init("right") }
   static var center: Self { return .init("center") }
@@ -2695,7 +2695,7 @@ public extension Value where Kind == TextAlign {
 /// The `text-align-last` CSS property specifies how the last line of a block
 /// or a line right before a forced line break is aligned when `text-align`
 /// is justify.
-public struct TextAlignLast: Property {
+public struct CssPropTextAlignLast: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2703,7 +2703,7 @@ public struct TextAlignLast: Property {
   }
 }
 
-public extension Value where Kind == TextAlignLast {
+public extension Value where Kind == CssPropTextAlignLast {
   static var left: Self { return .init("left") }
   static var right: Self { return .init("right") }
   static var center: Self { return .init("center") }
@@ -2716,7 +2716,7 @@ public extension Value where Kind == TextAlignLast {
 /// MARK: - TextDecoration
 /// The `text-decoration` CSS property specifies the decorations to be applied
 /// on the text content of an element such as underline, overline, etc.
-public struct TextDecoration: Property {
+public struct CssPropTextDecoration: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2724,11 +2724,11 @@ public struct TextDecoration: Property {
   }
 }
 
-extension TextDecoration {
+extension CssPropTextDecoration {
   public init(
-    line: Value<TextDecorationLine> = .none,
-    color: Value<TextDecorationColor> = .currentColor,
-    style: Value<TextDecorationStyle> = .solid
+    line: Value<CssPropTextDecorationLine> = .none,
+    color: Value<CssPropTextDecorationColor> = .currentColor,
+    style: Value<CssPropTextDecorationStyle> = .solid
   ) {
     self.init([
       line.rawValue,
@@ -2743,7 +2743,7 @@ extension TextDecoration {
 /// The `text-decoration-color` CSS property specifies the color of the
 /// `text-decoration-line` (underlines, overlines, linethroughs) set on the
 /// element.
-public struct TextDecorationColor: Property {
+public struct CssPropTextDecorationColor: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2756,7 +2756,7 @@ public struct TextDecorationColor: Property {
 /// The `text-decoration-line` CSS property specifies what kind of line
 /// decorations are added to the element. This property can accepts one or
 /// more space separated values.
-public struct TextDecorationLine: Property {
+public struct CssPropTextDecorationLine: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2764,19 +2764,19 @@ public struct TextDecorationLine: Property {
   }
 }
 
-extension TextDecorationLine {
+extension CssPropTextDecorationLine {
   @_disfavoredOverload
-  public init(_ value: Value<TextDecorationLine>, _ moreValues: Value<TextDecorationLine> ...) {
+  public init(_ value: Value<CssPropTextDecorationLine>, _ moreValues: Value<CssPropTextDecorationLine> ...) {
     self.init([value] + moreValues)
   }
 
   /// TODO: make it NonEmptyArray
-  public init(_ values: Array<Value<TextDecorationLine>>) {
+  public init(_ values: Array<Value<CssPropTextDecorationLine>>) {
     self.init(values.map(\.rawValue).joined(separator: " "))
   }
 }
 
-public extension Value where Kind == TextDecorationLine {
+public extension Value where Kind == CssPropTextDecorationLine {
   static var underline: Self { return .init("underline") }
   static var overline: Self { return .init("overline") }
   static var lineThrough: Self { return .init("line-through") }
@@ -2787,7 +2787,7 @@ public extension Value where Kind == TextDecorationLine {
 /// MARK: - TextDecorationStyle
 /// The `text-decoration-style` CSS property defines the style of the lines
 /// specified by the `text-decoration-line` property.
-public struct TextDecorationStyle: Property {
+public struct CssPropTextDecorationStyle: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2795,7 +2795,7 @@ public struct TextDecorationStyle: Property {
   }
 }
 
-public extension Value where Kind == TextDecorationStyle {
+public extension Value where Kind == CssPropTextDecorationStyle {
   static var solid: Self { return .init("solid") }
   static var double: Self { return .init("double") }
   static var dotted: Self { return .init("dotted") }
@@ -2807,7 +2807,7 @@ public extension Value where Kind == TextDecorationStyle {
 /// MARK: - TextIndent
 /// The `text-indent` CSS property specifies the indent in the first line of
 /// text within an element.
-public struct TextIndent: Property {
+public struct CssPropTextIndent: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2819,7 +2819,7 @@ public struct TextIndent: Property {
 /// MARK: - TextJustify
 /// The `text-justify` CSS property specifies the justification method to use
 /// when the `text-align` property is set to 'justify'.
-public struct TextJustify: Property {
+public struct CssPropTextJustify: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2827,7 +2827,7 @@ public struct TextJustify: Property {
   }
 }
 
-public extension Value where Kind == TextJustify {
+public extension Value where Kind == CssPropTextJustify {
   static var interWord: Self { return .init("inter-word") }
   static var interCharacter: Self { return .init("inter-character") }
   static var distribute: Self { return .init("distribute") }
@@ -2838,7 +2838,7 @@ public extension Value where Kind == TextJustify {
 /// The `text-overflow` CSS property determines how the text content will be
 /// displayed, when it overflows the block container element that has overflow
 /// other than visible.
-public struct TextOverflow: Property {
+public struct CssPropTextOverflow: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2846,7 +2846,7 @@ public struct TextOverflow: Property {
   }
 }
 
-public extension Value where Kind == TextOverflow {
+public extension Value where Kind == CssPropTextOverflow {
   static var clip: Self { return .init("clip") }
   static var ellipsis: Self { return .init("ellipsis") }
 }
@@ -2856,7 +2856,7 @@ public extension Value where Kind == TextOverflow {
 /// The `text-shadow` CSS property applies one or more text shadow effects to
 /// the text content of an element. Each text shadow effect must specify a
 /// shadow offset and may optionally specify a blur radius and a shadow color.
-public struct TextShadow: Property {
+public struct CssPropTextShadow: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2864,7 +2864,7 @@ public struct TextShadow: Property {
   }
 }
 
-extension TextShadow {
+extension CssPropTextShadow {
   public init(
     _ hShadow: Value<CSSLength>,
     _ vShadow: Value<CSSLength>,
@@ -2884,7 +2884,7 @@ extension TextShadow {
 /// MARK: - TextTransform
 /// The `text-transform` CSS property transforms the case of an element's text
 /// content.
-public struct TextTransform: Property {
+public struct CssPropTextTransform: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2892,7 +2892,7 @@ public struct TextTransform: Property {
   }
 }
 
-public extension Value where Kind == TextTransform {
+public extension Value where Kind == CssPropTextTransform {
   static var capitalize: Self { return .init("capitalize") }
   static var uppercase: Self { return .init("uppercase") }
   static var lowercase: Self { return .init("lowercase") }
@@ -2902,7 +2902,7 @@ public extension Value where Kind == TextTransform {
 /// MARK: - LineHeight
 /// The `line-height` CSS property sets the height (also called leading) between
 /// lines of text in a block-level element such as a paragraph.
-public struct LineHeight: Property {
+public struct CssPropLineHeight: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2914,7 +2914,7 @@ public struct LineHeight: Property {
 /// MARK: - LetterSpacing
 /// The `letter-spacing` property sets the extra spacing between the letters of
 /// an element's text.
-public struct LetterSpacing: Property {
+public struct CssPropLetterSpacing: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2929,7 +2929,7 @@ public struct LetterSpacing: Property {
 /// MARK: - BackfaceVisibility
 /// The `backface-visibility` CSS property determines whether or not the
 /// "back" side of a transformed element is visible when facing the user.
-public struct BackfaceVisibility: Property {
+public struct CssPropBackfaceVisibility: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2937,7 +2937,7 @@ public struct BackfaceVisibility: Property {
   }
 }
 
-public extension Value where Kind == BackfaceVisibility {
+public extension Value where Kind == CssPropBackfaceVisibility {
   static var visible: Self { return .init("visible") }
   static var hidden: Self { return .init("hidden") }
 }
@@ -2946,7 +2946,7 @@ public extension Value where Kind == BackfaceVisibility {
 /// MARK: - Transform
 /// The `transform` CSS property applies a transformation to an element such
 /// as translate, rotate, scale etc. in 2D or 3D space.
-public struct Transform: Property {
+public struct CssPropTransform: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -2954,7 +2954,7 @@ public struct Transform: Property {
   }
 }
 
-extension Transform {
+extension CssPropTransform {
   public init(_ function: (Value<Self>, Bool), _ moreFunctions: (Value<Self>, Bool) ...) {
     self.init([function] + moreFunctions)
   }
@@ -3001,7 +3001,7 @@ extension Transform {
 // Defines a 2D transformation, using a matrix of six values
 public func matrix(
   _ a: Int, _ b: Int, _ c: Int, _ d: Int, _ e: Int, _ f: Int
-) -> (Value<Transform>, Bool) {
+) -> (Value<CssPropTransform>, Bool) {
   let values = [a,b,c,d,e,f]
     .map(\.description)
     .joined(separator: ",")
@@ -3014,7 +3014,7 @@ public func matrix3d(
   _ e: Int, _ f: Int, _ g: Int, _ h: Int,
   _ i: Int, _ j: Int, _ k: Int, _ l: Int,
   _ m: Int, _ n: Int, _ o: Int, _ p: Int
-) -> (Value<Transform>, Bool) {
+) -> (Value<CssPropTransform>, Bool) {
   let values = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p]
     .map(\.description)
     .joined(separator: ",")
@@ -3024,7 +3024,7 @@ public func matrix3d(
 // Defines a 2D translation
 public func translate(
   _ x: Value<CSSLength>, _ y: Value<CSSLength>
-) -> (Value<Transform>, Bool) {
+) -> (Value<CssPropTransform>, Bool) {
   let values = [x,y].map(\.rawValue).joined(separator: ",")
   return (.init("translate(\(values))"), true)
 }
@@ -3032,95 +3032,95 @@ public func translate(
 // Defines a 3D translation
 public func translate3d(
   _ x: Value<CSSLength>, _ y: Value<CSSLength>, _ z: Value<CSSLength>
-) -> (Value<Transform>, Bool) {
+) -> (Value<CssPropTransform>, Bool) {
   let values = [x,y,z].map(\.rawValue).joined(separator: ",")
   return (.init("translate3d(\(values))"), false)
 }
 
 // Defines a translation, using only the value for the X-axis
-public func translateX(_ x: Value<CSSLength>) -> (Value<Transform>, Bool) {
+public func translateX(_ x: Value<CSSLength>) -> (Value<CssPropTransform>, Bool) {
   return (.init("translateX(\(x.rawValue))"), true)
 }
 
 // Defines a translation, using only the value for the Y-axis
-public func translateY(_ y: Value<CSSLength>) -> (Value<Transform>, Bool) {
+public func translateY(_ y: Value<CSSLength>) -> (Value<CssPropTransform>, Bool) {
   return (.init("translateY(\(y.rawValue))"), true)
 }
 
 // Defines a 3D translation, using only the value for the Z-axis
-public func translateZ(_ z: Value<CSSLength>) -> (Value<Transform>, Bool) {
+public func translateZ(_ z: Value<CSSLength>) -> (Value<CssPropTransform>, Bool) {
   return (.init("translateZ(\(z.rawValue))"), false)
 }
 
 // Defines a 2D scale transformation
-public func scale(_ x: Double, _ y: Double) -> (Value<Transform>, Bool) {
+public func scale(_ x: Double, _ y: Double) -> (Value<CssPropTransform>, Bool) {
   return (.init("scale(\(x),\(y))"), true)
 }
 
 // Defines a 3D scale transformation
-public func scale3d(_ x: Double, _ y: Double, _ z: Double) -> (Value<Transform>, Bool) {
+public func scale3d(_ x: Double, _ y: Double, _ z: Double) -> (Value<CssPropTransform>, Bool) {
   return (.init("scale3d(\(x),\(y),\(z))"), false)
 }
 
 // Defines a scale transformation by giving a value for the X-axis
-public func scaleX(_ x: Double) -> (Value<Transform>, Bool) {
+public func scaleX(_ x: Double) -> (Value<CssPropTransform>, Bool) {
   return (.init("scaleX(\(x))"), true)
 }
 
 // Defines a scale transformation by giving a value for the Y-axis
-public func scaleY(_ y: Double) -> (Value<Transform>, Bool) {
+public func scaleY(_ y: Double) -> (Value<CssPropTransform>, Bool) {
   return (.init("scaleY(\(y))"), true)
 }
 
 // Defines a 3D scale transformation by giving a value for the Z-axis
-public func scaleZ(_ z: Double) -> (Value<Transform>, Bool) {
+public func scaleZ(_ z: Double) -> (Value<CssPropTransform>, Bool) {
   return (.init("scaleZ(\(z))"), false)
 }
 
 // Defines a 2D rotation, the angle is specified in the parameter
-public func rotate(_ angle: Value<CSSAngle>) -> (Value<Transform>, Bool) {
+public func rotate(_ angle: Value<CSSAngle>) -> (Value<CssPropTransform>, Bool) {
   return (.init("rotate(\(angle.rawValue))"), true)
 }
 
 // Defines a 3D rotation
 public func rotate3d(
   _ x: Double, _ y: Double, _ z: Double, _ angle: Value<CSSAngle>
-) -> (Value<Transform>, Bool) {
+) -> (Value<CssPropTransform>, Bool) {
   return (.init("rotate3d(\(x),\(y),\(z),\(angle.rawValue))"), false)
 }
 
 // Defines a 3D rotation along the X-axis
-public func rotateX(_ angle: Value<CSSAngle>) -> (Value<Transform>, Bool) {
+public func rotateX(_ angle: Value<CSSAngle>) -> (Value<CssPropTransform>, Bool) {
   return (.init("rotateX(\(angle.rawValue))"), false)
 }
 
 // Defines a 3D rotation along the Y-axis
-public func rotateY(_ angle: Value<CSSAngle>) -> (Value<Transform>, Bool) {
+public func rotateY(_ angle: Value<CSSAngle>) -> (Value<CssPropTransform>, Bool) {
   return (.init("rotateY(\(angle.rawValue))"), false)
 }
 
 // Defines a 3D rotation along the Z-axis
-public func rotateZ(_ angle: Value<CSSAngle>) -> (Value<Transform>, Bool) {
+public func rotateZ(_ angle: Value<CSSAngle>) -> (Value<CssPropTransform>, Bool) {
   return (.init("rotateZ(\(angle.rawValue))"), false)
 }
 
 // Defines a 2D skew transformation along the X- and the Y-axis
-public func skew(_ a: Value<CSSAngle>, _ b: Value<CSSAngle>) -> (Value<Transform>, Bool) {
+public func skew(_ a: Value<CSSAngle>, _ b: Value<CSSAngle>) -> (Value<CssPropTransform>, Bool) {
   return (.init("skew(\(a.rawValue),\(b.rawValue))"), true)
 }
 
 // Defines a 2D skew transformation along the X-axis
-public func skewX(_ angle: Value<CSSAngle>) -> (Value<Transform>, Bool) {
+public func skewX(_ angle: Value<CSSAngle>) -> (Value<CssPropTransform>, Bool) {
   return (.init("skewX(\(angle.rawValue))"), true)
 }
 
 // Defines a 2D skew transformation along the Y-axis
-public func skewY(_ angle: Value<CSSAngle>) -> (Value<Transform>, Bool) {
+public func skewY(_ angle: Value<CSSAngle>) -> (Value<CssPropTransform>, Bool) {
   return (.init("skewY(\(angle.rawValue))"), true)
 }
 
 // Defines a perspective view for a 3D transformed element
-public func perspective(_ n: Value<CSSLength>) -> (Value<Transform>, Bool) {
+public func perspective(_ n: Value<CSSLength>) -> (Value<CssPropTransform>, Bool) {
   return (.init("perspective(\(n.rawValue))"), false)
 }
 
@@ -3128,7 +3128,7 @@ public func perspective(_ n: Value<CSSLength>) -> (Value<Transform>, Bool) {
 /// MARK: - TransformOrigin
 /// The `transform-origin` CSS property establish the origin of transformation
 /// for an element.
-public struct TransformOrigin: Property {
+public struct CssPropTransformOrigin: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3136,7 +3136,7 @@ public struct TransformOrigin: Property {
   }
 }
 
-extension TransformOrigin {
+extension CssPropTransformOrigin {
   public init(_ x: Value<CSSXAxis>, _ y: Value<CSSYAxis>) {
     let value = "\(x.rawValue) \(y.rawValue)"
     rawValue = value
@@ -3179,7 +3179,7 @@ extension TransformOrigin {
 ///
 /// This property is only applied to child elements that have a transform
 /// property specified.
-public struct TransformStyle: Property {
+public struct CssPropTransformStyle: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3187,7 +3187,7 @@ public struct TransformStyle: Property {
   }
 }
 
-public extension Value where Kind == TransformStyle {
+public extension Value where Kind == CssPropTransformStyle {
   static var flat: Self { return .init("flat") }
   static var preserve3d: Self { return .init("preserve-3d") }
 }
@@ -3197,7 +3197,7 @@ public extension Value where Kind == TransformStyle {
 /// ------------------------------------------------------------------------ ///
 
 /// MARK: - Transition
-public struct Transition: Property {
+public struct CssPropTransition: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3205,12 +3205,12 @@ public struct Transition: Property {
   }
 }
 
-extension Transition {
+extension CssPropTransition {
   public init(
-    property: Value<TransitionProperty> = .default,
-    duration: Value<TransitionDuration> = .default,
-    timingFunction: Value<TransitionTimingFunction> = .default,
-    delay: Value<TransitionDelay> = .default
+    property: Value<CssPropTransitionProperty> = .default,
+    duration: Value<CssPropTransitionDuration> = .default,
+    timingFunction: Value<CssPropTransitionTimingFunction> = .default,
+    delay: Value<CssPropTransitionDelay> = .default
   ) {
     self.init([
       property.rawValue,
@@ -3223,7 +3223,7 @@ extension Transition {
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- TransitionDelay
-public struct TransitionDelay: Property {
+public struct CssPropTransitionDelay: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3233,7 +3233,7 @@ public struct TransitionDelay: Property {
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- TransitionDuration
-public struct TransitionDuration: Property {
+public struct CssPropTransitionDuration: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3243,7 +3243,7 @@ public struct TransitionDuration: Property {
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- TransitionProperty
-public struct TransitionProperty: Property {
+public struct CssPropTransitionProperty: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3251,7 +3251,7 @@ public struct TransitionProperty: Property {
   }
 }
 
-public extension Value where Kind == TransitionProperty {
+public extension Value where Kind == CssPropTransitionProperty {
   static var all: Self { return .init("all") }
 }
 
@@ -3259,7 +3259,7 @@ public extension Value where Kind == TransitionProperty {
 /// MARK: -- TransitionTimingFunction
 /// The `transition-timing-function` CSS property specifies how a CSS transition
 /// should progress over the duration of each cycle.
-public struct TransitionTimingFunction: Property {
+public struct CssPropTransitionTimingFunction: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3269,7 +3269,7 @@ public struct TransitionTimingFunction: Property {
 
 public enum TransitionTimingFunctionPoint: String { case start, end }
 
-public extension Value where Kind == TransitionTimingFunction {
+public extension Value where Kind == CssPropTransitionTimingFunction {
   static var linear: Self { return .init("linear") }
   static var ease: Self { return .init("ease") }
   static var easeIn: Self { return .init("ease-in") }
@@ -3299,7 +3299,7 @@ public extension Value where Kind == TransitionTimingFunction {
 
 /// MARK: - Display
 /// The `display` CSS property specifies the type of box generated by an element.
-public struct Display: Property {
+public struct CssPropDisplay: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3307,7 +3307,7 @@ public struct Display: Property {
   }
 }
 
-extension Display {
+extension CssPropDisplay {
   public init(_ value: Value<Self>) {
     rawValue = value.rawValue
     declarations = {
@@ -3323,7 +3323,7 @@ extension Display {
   }
 }
 
-public extension Value where Kind == Display {
+public extension Value where Kind == CssPropDisplay {
   static var none: Self { return .init("none") }
   static var inline: Self { return .init("inline") }
   static var block: Self { return .init("block") }
@@ -3350,7 +3350,7 @@ public extension Value where Kind == Display {
 /// ------------------------------------------------------------------------ ///
 /// MARK: - Position
 /// The `position` CSS property specifies how an element is positioned.
-public struct Position: Property {
+public struct CssPropPosition: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3358,7 +3358,7 @@ public struct Position: Property {
   }
 }
 
-public extension Value where Kind == Position {
+public extension Value where Kind == CssPropPosition {
   static var `static`: Self { return .init("static") }
   static var relative: Self { return .init("relative") }
   static var absolute: Self { return .init("absolute") }
@@ -3370,7 +3370,7 @@ public extension Value where Kind == Position {
 /// MARK: - Top
 /// The `top` CSS property specifies the location of the top edge of the
 /// positioned element.
-public struct Top: Property {
+public struct CssPropTop: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3382,7 +3382,7 @@ public struct Top: Property {
 /// MARK: - Right
 /// The `right` CSS property specifies the location of the right edge of
 /// the positioned element.
-public struct Right: Property {
+public struct CssPropRight: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3394,7 +3394,7 @@ public struct Right: Property {
 /// MARK: - Bottom
 /// The `bottom` CSS property specifies the location of the bottom edge of
 /// the positioned element.
-public struct Bottom: Property {
+public struct CssPropBottom: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3406,7 +3406,7 @@ public struct Bottom: Property {
 /// MARK: - Left
 /// The `left` CSS property specifies the location of the left edge of
 /// the positioned element.
-public struct Left: Property {
+public struct CssPropLeft: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3418,7 +3418,7 @@ public struct Left: Property {
 /// MARK: - Float
 /// The `float` CSS property specifies whether a box should float to the left,
 /// right, or not at all.
-public struct Float: Property {
+public struct CssPropFloat: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3426,7 +3426,7 @@ public struct Float: Property {
   }
 }
 
-public extension Value where Kind == Float {
+public extension Value where Kind == CssPropFloat {
   static var left: Self { return .init("left") }
   static var right: Self { return .init("right") }
 }
@@ -3435,7 +3435,7 @@ public extension Value where Kind == Float {
 /// MARK: - Clear
 /// The `clear` CSS property specifies whether a box should float to the left,
 /// right, or not at all.
-public struct Clear: Property {
+public struct CssPropClear: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3443,7 +3443,7 @@ public struct Clear: Property {
   }
 }
 
-public extension Value where Kind == Clear {
+public extension Value where Kind == CssPropClear {
   static var left: Self { return .init("left") }
   static var right: Self { return .init("right") }
   static var both: Self { return .init("both") }
@@ -3455,7 +3455,7 @@ public extension Value where Kind == Clear {
 ///
 /// An element with greater stack order is always in front of an element with
 /// a lower stack order.
-public struct ZIndex: Property {
+public struct CssPropZIndex: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3465,7 +3465,7 @@ public struct ZIndex: Property {
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: - Overflow
-public struct Overflow: Property {
+public struct CssPropOverflow: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3473,7 +3473,7 @@ public struct Overflow: Property {
   }
 }
 
-public extension Value where Kind == Overflow {
+public extension Value where Kind == CssPropOverflow {
   static var visible: Self { return .init("visible") }
   static var hidden: Self { return .init("hidden") }
   static var scroll: Self { return .init("scroll") }
@@ -3481,7 +3481,7 @@ public extension Value where Kind == Overflow {
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: - OverflowX
-public struct OverflowX: Property {
+public struct CssPropOverflowX: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3489,7 +3489,7 @@ public struct OverflowX: Property {
   }
 }
 
-public extension Value where Kind == OverflowX {
+public extension Value where Kind == CssPropOverflowX {
   static var visible: Self { return .init("visible") }
   static var hidden: Self { return .init("hidden") }
   static var scroll: Self { return .init("scroll") }
@@ -3497,7 +3497,7 @@ public extension Value where Kind == OverflowX {
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: - OverflowY
-public struct OverflowY: Property {
+public struct CssPropOverflowY: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3505,7 +3505,7 @@ public struct OverflowY: Property {
   }
 }
 
-public extension Value where Kind == OverflowY {
+public extension Value where Kind == CssPropOverflowY {
   static var visible: Self { return .init("visible") }
   static var hidden: Self { return .init("hidden") }
   static var scroll: Self { return .init("scroll") }
@@ -3547,7 +3547,7 @@ public extension Value where Kind == OverflowY {
   clip-path: initial;
   clip-path: unset;
 */
-public struct ClipPath: Property {
+public struct CssPropClipPath: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3561,7 +3561,7 @@ public struct ClipPath: Property {
 ///
 /// Tip: Hidden elements take up space on the page. Use the display property
 /// to both hide and remove an element from the document layout!
-public struct Visibility: Property {
+public struct CssPropVisibility: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3569,7 +3569,7 @@ public struct Visibility: Property {
   }
 }
 
-public extension Value where Kind == Visibility {
+public extension Value where Kind == CssPropVisibility {
   static var visible: Self { return .init("visible") }
   static var hidden: Self { return .init("hidden") }
   static var collapse: Self { return .init("collapse") }
@@ -3577,7 +3577,7 @@ public extension Value where Kind == Visibility {
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: - BoxDecorationBreak
-public struct BoxDecorationBreak: Property {
+public struct CssPropBoxDecorationBreak: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3585,14 +3585,14 @@ public struct BoxDecorationBreak: Property {
   }
 }
 
-public extension Value where Kind == BoxDecorationBreak {
+public extension Value where Kind == CssPropBoxDecorationBreak {
   static var slice: Self { return .init("slice") }
   static var clone: Self { return .init("clone") }
 }
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: - BoxShadow
-public struct BoxShadow: Property {
+public struct CssPropBoxShadow: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3600,7 +3600,7 @@ public struct BoxShadow: Property {
   }
 }
 
-extension BoxShadow {
+extension CssPropBoxShadow {
   public init(
     _ hOffset: Value<CSSLength>,
     _ vOffset: Value<CSSLength>,
@@ -3618,13 +3618,13 @@ extension BoxShadow {
   }
 }
 
-public extension Value where Kind == BoxShadow {
+public extension Value where Kind == CssPropBoxShadow {
   static var inset: Self { return .init("inset") }
 }
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: - BoxSizing
-public struct BoxSizing: Property {
+public struct CssPropBoxSizing: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3632,7 +3632,7 @@ public struct BoxSizing: Property {
   }
 }
 
-public extension Value where Kind == BoxSizing {
+public extension Value where Kind == CssPropBoxSizing {
   static var contentBox: Self { return .init("content-box") }
   static var borderBox: Self { return .init("border-box") }
 }
@@ -3641,7 +3641,7 @@ public extension Value where Kind == BoxSizing {
 /// MARK: - CaretColor
 /// The `caret-color` property specifies the color of the cursor (caret)
 /// in inputs, textareas, or any element that is editable.
-public struct CaretColor: Property {
+public struct CssPropCaretColor: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3653,7 +3653,7 @@ public struct CaretColor: Property {
 /// MARK: - Cursor
 /// The `cursor` property specifies the mouse cursor to be displayed when
 /// pointing over an element.
-public struct Cursor: Property {
+public struct CssPropCursor: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
   public init(_ rawValue: String, _ declarations: @escaping () -> Declarations) {
@@ -3661,8 +3661,8 @@ public struct Cursor: Property {
   }
 }
 
-public extension Value where Kind == Cursor {
-  static func url(_ value: String, backup: Value<Cursor> = .default) -> Self {
+public extension Value where Kind == CssPropCursor {
+  static func url(_ value: String, backup: Value<CssPropCursor> = .default) -> Self {
     return .init("url(\"\(value)\"),\(backup.rawValue)")
   }
 
@@ -3670,19 +3670,19 @@ public extension Value where Kind == Cursor {
   /// Note: Always specify a generic cursor at the end of the list, in case none
   /// of the URL-defined cursors can be used
   @_disfavoredOverload
-  static func url(_ value: String, _ moreValues: String ..., backup: Value<Cursor> = .default) -> Self {
+  static func url(_ value: String, _ moreValues: String ..., backup: Value<CssPropCursor> = .default) -> Self {
     return .url([value] + moreValues, backup: backup)
   }
 
 
   /// TODO: make it NonEmptyArray<String>
-  static func url(_ values: Array<String>, backup: Value<Cursor> = .default) -> Self {
+  static func url(_ values: Array<String>, backup: Value<CssPropCursor> = .default) -> Self {
     let vals = values.map { "url(\"\($0)\")" }.joined(separator: ",")
     return .init("\(vals),\(backup.rawValue)")
   }
 }
 
-public extension Value where Kind == Cursor {
+public extension Value where Kind == CssPropCursor {
   static var alias: Self { return .init("alias") }
   static var allScroll: Self { return .init("all-scroll") }
   static var cell: Self { return .init("cell") }

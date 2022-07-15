@@ -1,19 +1,19 @@
 public protocol HasValueOfNone: CSSValue {}
 
-extension AnimationFillMode: HasValueOfNone {}
+extension CssPropAnimationFillMode: HasValueOfNone {}
 
-extension BackgroundImage: HasValueOfNone {}
+extension CssPropBackgroundImage: HasValueOfNone {}
 
-extension BorderImageSource: HasValueOfNone {}
+extension CssPropBorderImageSource: HasValueOfNone {}
 
-extension Content: HasValueOfNone {}
-extension Quotes: HasValueOfNone {}
-extension CounterReset: HasValueOfNone {}
-extension CounterIncrement: HasValueOfNone {}
+extension CssPropContent: HasValueOfNone {}
+extension CssPropQuotes: HasValueOfNone {}
+extension CssPropCounterReset: HasValueOfNone {}
+extension CssPropCounterIncrement: HasValueOfNone {}
 
-extension ListStyleImage: HasValueOfNone {}
+extension CssPropListStyleImage: HasValueOfNone {}
 
-extension TextDecorationLine: HasValueOfNone {}
+extension CssPropTextDecorationLine: HasValueOfNone {}
 
 public extension Value where Kind: HasValueOfNone {
   static var none: Self { return "none" }

@@ -12,7 +12,7 @@ public protocol HasValueOfNumber: HasValueOfFloatLiteral, HasValueOfInteger {}
 public protocol HasValueOfUnsignedNumber : HasValueOfFloatLiteral, HasValueOfUnsignedInteger {}
 
 
-extension ZIndex: HasValueOfInteger {}
+extension CssPropZIndex: HasValueOfInteger {}
 
 // extension Property where Self: HasValueOfInteger {
 //   public init(_ value: Int) {
@@ -27,14 +27,14 @@ extension ZIndex: HasValueOfInteger {}
 //   }
 // }
 
-extension FlexGrow: HasValueOfUnsignedInteger {}
-extension FlexShrink: HasValueOfUnsignedInteger {}
+extension CssPropFlexGrow: HasValueOfUnsignedInteger {}
+extension CssPropFlexShrink: HasValueOfUnsignedInteger {}
 
-extension Order: HasValueOfUnsignedInteger {}
+extension CssPropOrder: HasValueOfUnsignedInteger {}
 
-extension FontWeight: HasValueOfUnsignedInteger {}
+extension CssPropFontWeight: HasValueOfUnsignedInteger {}
 
-extension ColumnCount: HasValueOfUnsignedInteger {}
+extension CssPropColumnCount: HasValueOfUnsignedInteger {}
 
 // extension Property where Self: HasValueOfUnsignedInteger {
 //   public init(_ value: UInt) {
@@ -62,11 +62,11 @@ extension Value: ExpressibleByIntegerLiteral where Kind: HasValueOfIntegerLitera
 
 
 
-extension AnimationIterationCount: HasValueOfNumber {}
+extension CssPropAnimationIterationCount: HasValueOfNumber {}
 
-extension BorderImageSlice: HasValueOfNumber {}
+extension CssPropBorderImageSlice: HasValueOfNumber {}
 
-extension BorderImageWidth: HasValueOfNumber {}
+extension CssPropBorderImageWidth: HasValueOfNumber {}
 
 // extension Property where Self: HasValueOfNumber {
 //   public init(_ value: Double) {
@@ -82,11 +82,11 @@ extension BorderImageWidth: HasValueOfNumber {}
 //   }
 // }
 
-extension BorderImageOutset: HasValueOfUnsignedNumber {}
+extension CssPropBorderImageOutset: HasValueOfUnsignedNumber {}
 
-extension FontSizeAdjust: HasValueOfUnsignedNumber {}
+extension CssPropFontSizeAdjust: HasValueOfUnsignedNumber {}
 
-extension LineHeight: HasValueOfUnsignedNumber {}
+extension CssPropLineHeight: HasValueOfUnsignedNumber {}
 
 // extension Property where Self: HasValueOfUnsignedNumber {
 //   public init(_ value: Double) {

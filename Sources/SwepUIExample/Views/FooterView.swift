@@ -1,5 +1,5 @@
 struct FooterView: View {
-  @State private var textColor: Value<Color> = .tomato
+  @State private var textColor: Value<CssPropColor> = .tomato
   var body: some View {
     HStack {
       HtmlPlaintext("Built in SwiftWasm using")

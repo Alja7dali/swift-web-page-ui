@@ -1,6 +1,6 @@
 public protocol HasValueOfFraction: CSSValue {}
 
-extension Opacity: HasValueOfFraction {}
+extension CssPropOpacity: HasValueOfFraction {}
 
 extension Property where Self: HasValueOfFraction {
   public init(_ value: Double) {

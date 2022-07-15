@@ -1,548 +1,548 @@
-extension Animation {
+extension CssPropAnimation {
   public static var key: StaticString { return "animation" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz", "o"] }
 }
-extension AnimationDelay {
+extension CssPropAnimationDelay {
   public static var key: StaticString { return "animation-delay" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz", "o"] }
 }
-extension AnimationDirection {
+extension CssPropAnimationDirection {
   public static var key: StaticString { return "animation-direction" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz", "o"] }
 }
-extension AnimationDuration {
+extension CssPropAnimationDuration {
   public static var key: StaticString { return "animation-duration" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz", "o"] }
 }
-extension AnimationFillMode {
+extension CssPropAnimationFillMode {
   public static var key: StaticString { return "animation-fill-mode" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz", "o"] }
 }
-extension AnimationIterationCount {
+extension CssPropAnimationIterationCount {
   public static var key: StaticString { return "animation-iteration-count" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz", "o"] }
 }
-extension AnimationName {
+extension CssPropAnimationName {
   public static var key: StaticString { return "animation-name" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz", "o"] }
 }
-extension AnimationPlayState {
+extension CssPropAnimationPlayState {
   public static var key: StaticString { return "animation-play-state" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz", "o"] }
 }
-extension AnimationTimingFunction {
+extension CssPropAnimationTimingFunction {
   public static var key: StaticString { return "animation-timing-function" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz", "o"] }
 }
 
-extension Background {
+extension CssPropBackground {
   public static var key: StaticString { return "background" }
 }
-extension BackgroundAttachment {
+extension CssPropBackgroundAttachment {
   public static var key: StaticString { return "background-attachment" }
 }
-extension BackgroundBlendMode {
+extension CssPropBackgroundBlendMode {
   public static var key: StaticString { return "background-blend-mode" }
 }
-extension BackgroundClip {
+extension CssPropBackgroundClip {
   public static var key: StaticString { return "background-clip" }
 }
-extension BackgroundColor {
+extension CssPropBackgroundColor {
   public static var key: StaticString { return "background-color" }
 }
-extension BackgroundImage {
+extension CssPropBackgroundImage {
   public static var key: StaticString { return "background-image" }
 }
-extension BackgroundOrigin {
+extension CssPropBackgroundOrigin {
   public static var key: StaticString { return "background-origin" }
 }
-extension BackgroundPosition {
+extension CssPropBackgroundPosition {
   public static var key: StaticString { return "background-position" }
 }
-extension BackgroundRepeat {
+extension CssPropBackgroundRepeat {
   public static var key: StaticString { return "background-repeat" }
 }
-extension BackgroundSize {
+extension CssPropBackgroundSize {
   public static var key: StaticString { return "background-size" }
 }
 
-extension Border {
+extension CssPropBorder {
   public static var key: StaticString { return "border" }
 }
-extension BorderBottom {
+extension CssPropBorderBottom {
   public static var key: StaticString { return "border-bottom" }
 }
-extension BorderBottomColor {
+extension CssPropBorderBottomColor {
   public static var key: StaticString { return "border-bottom-color" }
 }
-extension BorderBottomLeftRadius {
+extension CssPropBorderBottomLeftRadius {
   public static var key: StaticString { return "border-bottom-left-radius" }
 }
-extension BorderBottomRightRadius {
+extension CssPropBorderBottomRightRadius {
   public static var key: StaticString { return "border-bottom-right-radius" }
 }
-extension BorderBottomStyle {
+extension CssPropBorderBottomStyle {
   public static var key: StaticString { return "border-bottom-style" }
 }
-extension BorderBottomWidth {
+extension CssPropBorderBottomWidth {
   public static var key: StaticString { return "border-bottom-width" }
 }
-extension BorderCollapse {
+extension CssPropBorderCollapse {
   public static var key: StaticString { return "border-collapse" }
 }
-extension BorderColor {
+extension CssPropBorderColor {
   public static var key: StaticString { return "border-color" }
 }
-extension BorderImage {
+extension CssPropBorderImage {
   public static var key: StaticString { return "border-image" }
 }
-extension BorderImageOutset {
+extension CssPropBorderImageOutset {
   public static var key: StaticString { return "border-image-outset" }
 }
-extension BorderImageRepeat {
+extension CssPropBorderImageRepeat {
   public static var key: StaticString { return "border-image-repeat" }
 }
-extension BorderImageSlice {
+extension CssPropBorderImageSlice {
   public static var key: StaticString { return "border-image-slice" }
 }
-extension BorderImageSource {
+extension CssPropBorderImageSource {
   public static var key: StaticString { return "border-image-source" }
 }
-extension BorderImageWidth {
+extension CssPropBorderImageWidth {
   public static var key: StaticString { return "border-image-width" }
 }
-extension BorderLeft {
+extension CssPropBorderLeft {
   public static var key: StaticString { return "border-left" }
 }
-extension BorderLeftColor {
+extension CssPropBorderLeftColor {
   public static var key: StaticString { return "border-left-color" }
 }
-extension BorderLeftStyle {
+extension CssPropBorderLeftStyle {
   public static var key: StaticString { return "border-left-style" }
 }
-extension BorderLeftWidth {
+extension CssPropBorderLeftWidth {
   public static var key: StaticString { return "border-left-width" }
 }
-extension BorderRadius {
+extension CssPropBorderRadius {
   public static var key: StaticString { return "border-radius" }
 }
-extension BorderRight {
+extension CssPropBorderRight {
   public static var key: StaticString { return "border-right" }
 }
-extension BorderRightColor {
+extension CssPropBorderRightColor {
   public static var key: StaticString { return "border-right-color" }
 }
-extension BorderRightStyle {
+extension CssPropBorderRightStyle {
   public static var key: StaticString { return "border-right-style" }
 }
-extension BorderRightWidth {
+extension CssPropBorderRightWidth {
   public static var key: StaticString { return "border-right-width" }
 }
-extension BorderSpacing {
+extension CssPropBorderSpacing {
   public static var key: StaticString { return "border-spacing" }
 }
-extension BorderStyle {
+extension CssPropBorderStyle {
   public static var key: StaticString { return "border-style" }
 }
-extension BorderTop {
+extension CssPropBorderTop {
   public static var key: StaticString { return "border-top" }
 }
-extension BorderTopColor {
+extension CssPropBorderTopColor {
   public static var key: StaticString { return "border-top-color" }
 }
-extension BorderTopLeftRadius {
+extension CssPropBorderTopLeftRadius {
   public static var key: StaticString { return "border-top-left-radius" }
 }
-extension BorderTopRightRadius {
+extension CssPropBorderTopRightRadius {
   public static var key: StaticString { return "border-top-right-radius" }
 }
-extension BorderTopStyle {
+extension CssPropBorderTopStyle {
   public static var key: StaticString { return "border-top-style" }
 }
-extension BorderTopWidth {
+extension CssPropBorderTopWidth {
   public static var key: StaticString { return "border-top-width" }
 }
-extension BorderWidth {
+extension CssPropBorderWidth {
   public static var key: StaticString { return "border-width" }
 }
 
-extension Color {
+extension CssPropColor {
   public static var key: StaticString { return "color" }
 }
-extension Opacity {
+extension CssPropOpacity {
   public static var key: StaticString { return "opacity" }
 }
 
-extension Height {
+extension CssPropHeight {
   public static var key: StaticString { return "height" }
 }
-extension MinHeight {
+extension CssPropMinHeight {
   public static var key: StaticString { return "min-height" }
 }
-extension MaxHeight {
+extension CssPropMaxHeight {
   public static var key: StaticString { return "max-height" }
 }
-extension Width {
+extension CssPropWidth {
   public static var key: StaticString { return "width" }
 }
-extension MinWidth {
+extension CssPropMinWidth {
   public static var key: StaticString { return "min-width" }
 }
-extension MaxWidth {
+extension CssPropMaxWidth {
   public static var key: StaticString { return "max-width" }
 }
 
-extension AlignContent {
+extension CssPropAlignContent {
   public static var key: StaticString { return "align-content" }
   public static var browsers: Array<StaticString> { return ["webkit"] }
 }
-extension AlignItems {
+extension CssPropAlignItems {
   public static var key: StaticString { return "align-items" }
   public static var browsers: Array<StaticString> { return ["webkit"] }
 }
-extension AlignSelf {
+extension CssPropAlignSelf {
   public static var key: StaticString { return "align-self" }
   public static var browsers: Array<StaticString> { return ["webkit"] }
 }
-extension Flex {
+extension CssPropFlex {
   public static var key: StaticString { return "flex" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension FlexBasis {
+extension CssPropFlexBasis {
   public static var key: StaticString { return "flex-basis" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension FlexDirection {
+extension CssPropFlexDirection {
   public static var key: StaticString { return "flex-direction" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension FlexFlow {
+extension CssPropFlexFlow {
   public static var key: StaticString { return "flex-flow" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension FlexGrow {
+extension CssPropFlexGrow {
   public static var key: StaticString { return "flex-grow" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension FlexShrink {
+extension CssPropFlexShrink {
   public static var key: StaticString { return "flex-shrink" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension FlexWrap {
+extension CssPropFlexWrap {
   public static var key: StaticString { return "flex-wrap" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension JustifyContent {
+extension CssPropJustifyContent {
   public static var key: StaticString { return "justify-content" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension Order {
+extension CssPropOrder {
   public static var key: StaticString { return "order" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
 
-extension Font {
+extension CssPropFont {
   public static var key: StaticString { return "font" }
 }
-extension FontFamily {
+extension CssPropFontFamily {
   public static var key: StaticString { return "font-family" }
 }
-extension FontFeatureSettings {
+extension CssPropFontFeatureSettings {
   public static var key: StaticString { return "font-feature-settings" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension FontKerning {
+extension CssPropFontKerning {
   public static var key: StaticString { return "font-kerning" }
   public static var browsers: Array<StaticString> { return ["webkit"] }
 }
-extension FontSize {
+extension CssPropFontSize {
   public static var key: StaticString { return "font-size" }
 }
-extension FontSizeAdjust {
+extension CssPropFontSizeAdjust {
   public static var key: StaticString { return "font-size-adjust" }
 }
-extension FontStretch {
+extension CssPropFontStretch {
   public static var key: StaticString { return "font-stretch" }
 }
-extension FontStyle {
+extension CssPropFontStyle {
   public static var key: StaticString { return "font-style" }
 }
-extension FontVariant {
+extension CssPropFontVariant {
   public static var key: StaticString { return "font-variant" }
 }
-extension FontVariantCaps {
+extension CssPropFontVariantCaps {
   public static var key: StaticString { return "font-variant-caps" }
 }
-extension FontWeight {
+extension CssPropFontWeight {
   public static var key: StaticString { return "font-weight" }
 }
 
-extension Content {
+extension CssPropContent {
   public static var key: StaticString { return "content" }
 }
-extension Quotes {
+extension CssPropQuotes {
   public static var key: StaticString { return "quotes" }
 }
-extension CounterReset {
+extension CssPropCounterReset {
   public static var key: StaticString { return "counter-reset" }
 }
-extension CounterIncrement {
+extension CssPropCounterIncrement {
   public static var key: StaticString { return "counter-increment" }
 }
 
-extension ListStyle {
+extension CssPropListStyle {
   public static var key: StaticString { return "list-style" }
 }
-extension ListStyleType {
+extension CssPropListStyleType {
   public static var key: StaticString { return "list-style-type" }
 }
-extension ListStylePosition {
+extension CssPropListStylePosition {
   public static var key: StaticString { return "list-style-position" }
 }
-extension ListStyleImage {
+extension CssPropListStyleImage {
   public static var key: StaticString { return "list-style-image" }
 }
 
-extension Margin {
+extension CssPropMargin {
   public static var key: StaticString { return "margin" }
 }
-extension MarginBottom {
+extension CssPropMarginBottom {
   public static var key: StaticString { return "margin-bottom" }
 }
-extension MarginLeft {
+extension CssPropMarginLeft {
   public static var key: StaticString { return "margin-left" }
 }
-extension MarginRight {
+extension CssPropMarginRight {
   public static var key: StaticString { return "margin-right" }
 }
-extension MarginTop {
+extension CssPropMarginTop {
   public static var key: StaticString { return "margin-top" }
 }
 
-extension ColumnCount {
+extension CssPropColumnCount {
   public static var key: StaticString { return "column-count" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension ColumnFill {
+extension CssPropColumnFill {
   public static var key: StaticString { return "column-fill" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension ColumnGap {
+extension CssPropColumnGap {
   public static var key: StaticString { return "column-gap" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension ColumnRule {
+extension CssPropColumnRule {
   public static var key: StaticString { return "column-rule" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension ColumnRuleColor {
+extension CssPropColumnRuleColor {
   public static var key: StaticString { return "column-rule-color" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension ColumnRuleStyle {
+extension CssPropColumnRuleStyle {
   public static var key: StaticString { return "column-rule-style" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension ColumnRuleWidth {
+extension CssPropColumnRuleWidth {
   public static var key: StaticString { return "column-rule-width" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension ColumnSpan {
+extension CssPropColumnSpan {
   public static var key: StaticString { return "column-span" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension ColumnWidth {
+extension CssPropColumnWidth {
   public static var key: StaticString { return "column-width" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension Columns {
+extension CssPropColumns {
   public static var key: StaticString { return "columns" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
 
-extension Outline {
+extension CssPropOutline {
   public static var key: StaticString { return "outline" }
 }
-extension OutlineColor {
+extension CssPropOutlineColor {
   public static var key: StaticString { return "outline-color" }
 }
-extension OutlineOffset {
+extension CssPropOutlineOffset {
   public static var key: StaticString { return "outline-offset" }
 }
-extension OutlineStyle {
+extension CssPropOutlineStyle {
   public static var key: StaticString { return "outline-style" }
 }
-extension OutlineWidth {
+extension CssPropOutlineWidth {
   public static var key: StaticString { return "outline-width" }
 }
 
-extension Padding {
+extension CssPropPadding {
   public static var key: StaticString { return "padding" }
 }
-extension PaddingBottom {
+extension CssPropPaddingBottom {
   public static var key: StaticString { return "padding-bottom" }
 }
-extension PaddingLeft {
+extension CssPropPaddingLeft {
   public static var key: StaticString { return "padding-left" }
 }
-extension PaddingRight {
+extension CssPropPaddingRight {
   public static var key: StaticString { return "padding-right" }
 }
-extension PaddingTop {
+extension CssPropPaddingTop {
   public static var key: StaticString { return "padding-top" }
 }
 
-extension BreakAfter {
+extension CssPropBreakAfter {
   public static var key: StaticString { return "break-after" }
 }
-extension BreakBefore {
+extension CssPropBreakBefore {
   public static var key: StaticString { return "break-before" }
 }
-extension BreakInside {
+extension CssPropBreakInside {
   public static var key: StaticString { return "break-inside" }
 }
 
-extension TextAlign {
+extension CssPropTextAlign {
   public static var key: StaticString { return "text-align" }
 }
-extension TextAlignLast {
+extension CssPropTextAlignLast {
   public static var key: StaticString { return "text-align-last" }
 }
-extension TextDecoration {
+extension CssPropTextDecoration {
   public static var key: StaticString { return "text-decoration" }
 }
-extension TextDecorationColor {
+extension CssPropTextDecorationColor {
   public static var key: StaticString { return "text-decoration-color" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension TextDecorationLine {
+extension CssPropTextDecorationLine {
   public static var key: StaticString { return "text-decoration-line" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension TextDecorationStyle {
+extension CssPropTextDecorationStyle {
   public static var key: StaticString { return "text-decoration-style" }
   public static var browsers: Array<StaticString> { return ["moz"] }
 }
-extension TextIndent {
+extension CssPropTextIndent {
   public static var key: StaticString { return "text-indent" }
 }
-extension TextJustify {
+extension CssPropTextJustify {
   public static var key: StaticString { return "text-justify" }
 }
-extension TextOverflow {
+extension CssPropTextOverflow {
   public static var key: StaticString { return "text-overflow" }
 }
-extension TextShadow {
+extension CssPropTextShadow {
   public static var key: StaticString { return "text-shadow" }
 }
-extension TextTransform {
+extension CssPropTextTransform {
   public static var key: StaticString { return "text-transform" }
 }
-extension LineHeight {
+extension CssPropLineHeight {
   public static var key: StaticString { return "line-height" }
 }
-extension LetterSpacing {
+extension CssPropLetterSpacing {
   public static var key: StaticString { return "letter-spacing" }
 }
 
-extension BackfaceVisibility {
+extension CssPropBackfaceVisibility {
   public static var key: StaticString { return "backface-visibility" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension Transform {
+extension CssPropTransform {
   public static var key: StaticString { return "transform" }
 }
-extension TransformOrigin {
+extension CssPropTransformOrigin {
   public static var key: StaticString { return "transform-origin" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension TransformStyle {
+extension CssPropTransformStyle {
   public static var key: StaticString { return "transform-style" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
 
-extension Transition {
+extension CssPropTransition {
   public static var key: StaticString { return "transition" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz", "o"] }
 }
-extension TransitionDelay {
+extension CssPropTransitionDelay {
   public static var key: StaticString { return "transition-delay" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz", "o"] }
 }
-extension TransitionDuration {
+extension CssPropTransitionDuration {
   public static var key: StaticString { return "transition-duration" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz", "o"] }
 }
-extension TransitionProperty {
+extension CssPropTransitionProperty {
   public static var key: StaticString { return "transition-property" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz", "o"] }
 }
-extension TransitionTimingFunction {
+extension CssPropTransitionTimingFunction {
   public static var key: StaticString { return "transition-timing-function" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz", "o"] }
 }
 
-extension Display {
+extension CssPropDisplay {
   public static var key: StaticString { return "display" }
 }
-extension Position {
+extension CssPropPosition {
   public static var key: StaticString { return "position" }
 }
-extension Top {
+extension CssPropTop {
   public static var key: StaticString { return "top" }
 }
-extension Right {
+extension CssPropRight {
   public static var key: StaticString { return "right" }
 }
-extension Bottom {
+extension CssPropBottom {
   public static var key: StaticString { return "bottom" }
 }
-extension Left {
+extension CssPropLeft {
   public static var key: StaticString { return "left" }
 }
-extension Float {
+extension CssPropFloat {
   public static var key: StaticString { return "float" }
 }
-extension Clear {
+extension CssPropClear {
   public static var key: StaticString { return "clear" }
 }
-extension ZIndex {
+extension CssPropZIndex {
   public static var key: StaticString { return "z-index" }
 }
-extension Overflow {
+extension CssPropOverflow {
   public static var key: StaticString { return "overflow" }
   public static var browsers: Array<StaticString> { return ["ms"] }
 }
-extension OverflowX {
+extension CssPropOverflowX {
   public static var key: StaticString { return "overflow-x" }
   public static var browsers: Array<StaticString> { return ["ms"] }
 }
-extension OverflowY {
+extension CssPropOverflowY {
   public static var key: StaticString { return "overflow-y" }
   public static var browsers: Array<StaticString> { return ["ms"] }
 }
-extension ClipPath {
+extension CssPropClipPath {
   public static var key: StaticString { return "clip-path" }
   public static var browsers: Array<StaticString> { return ["webkit"] }
 }
-extension Visibility {
+extension CssPropVisibility {
   public static var key: StaticString { return "visibility" }
 }
-extension BoxDecorationBreak {
+extension CssPropBoxDecorationBreak {
   public static var key: StaticString { return "box-decoration-break" }
   public static var browsers: Array<StaticString> { return ["webkit"] }
 }
-extension BoxShadow {
+extension CssPropBoxShadow {
   public static var key: StaticString { return "box-shadow" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension BoxSizing {
+extension CssPropBoxSizing {
   public static var key: StaticString { return "box-sizing" }
   public static var browsers: Array<StaticString> { return ["webkit", "moz"] }
 }
-extension CaretColor {
+extension CssPropCaretColor {
   public static var key: StaticString { return "caret-color" }
 }
-extension Cursor {
+extension CssPropCursor {
   public static var key: StaticString { return "cursor" }
 }

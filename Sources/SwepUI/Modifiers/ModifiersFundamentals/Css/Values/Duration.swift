@@ -1,10 +1,10 @@
 public protocol HasValueOfDuration: CSSValue {}
 
-extension AnimationDelay: HasValueOfDuration {}
-extension AnimationDuration: HasValueOfDuration {}
+extension CssPropAnimationDelay: HasValueOfDuration {}
+extension CssPropAnimationDuration: HasValueOfDuration {}
 
-extension TransitionDelay: HasValueOfDuration {}
-extension TransitionDuration: HasValueOfDuration {}
+extension CssPropTransitionDelay: HasValueOfDuration {}
+extension CssPropTransitionDuration: HasValueOfDuration {}
 
 public enum CSSDuration: HasValueOfDuration {}
 

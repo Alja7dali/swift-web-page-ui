@@ -1,21 +1,21 @@
 public protocol HasValueOfColor: CSSValue {}
 
-extension BackgroundColor: HasValueOfColor {}
+extension CssPropBackgroundColor: HasValueOfColor {}
 
-extension BorderBottomColor: HasValueOfColor {}
-extension BorderColor: HasValueOfColor {}
-extension BorderLeftColor: HasValueOfColor {}
-extension BorderRightColor: HasValueOfColor {}
-extension BorderTopColor: HasValueOfColor {}
+extension CssPropBorderBottomColor: HasValueOfColor {}
+extension CssPropBorderColor: HasValueOfColor {}
+extension CssPropBorderLeftColor: HasValueOfColor {}
+extension CssPropBorderRightColor: HasValueOfColor {}
+extension CssPropBorderTopColor: HasValueOfColor {}
 
-extension Color: HasValueOfColor {}
+extension CssPropColor: HasValueOfColor {}
 
-extension ColumnRuleColor: HasValueOfColor {}
+extension CssPropColumnRuleColor: HasValueOfColor {}
 
-extension OutlineColor: HasValueOfColor {}
+extension CssPropOutlineColor: HasValueOfColor {}
 
-extension TextDecorationColor: HasValueOfColor {}
-extension CaretColor: HasValueOfColor {}
+extension CssPropTextDecorationColor: HasValueOfColor {}
+extension CssPropCaretColor: HasValueOfColor {}
 
 public enum CSSColor: HasValueOfColor {}
 

@@ -1,27 +1,27 @@
 public protocol HasValueOfWidth {}
 
-extension BorderBottomWidth: HasValueOfWidth {}
-extension BorderWidth: HasValueOfWidth {}
-extension BorderLeftWidth: HasValueOfWidth {}
-extension BorderRightWidth: HasValueOfWidth {}
-extension BorderTopWidth: HasValueOfWidth {}
+extension CssPropBorderBottomWidth: HasValueOfWidth {}
+extension CssPropBorderWidth: HasValueOfWidth {}
+extension CssPropBorderLeftWidth: HasValueOfWidth {}
+extension CssPropBorderRightWidth: HasValueOfWidth {}
+extension CssPropBorderTopWidth: HasValueOfWidth {}
 
 extension Value where Kind: HasValueOfWidth {
-  public init(_ value: Value<BorderWidth>) {
+  public init(_ value: Value<CssPropBorderWidth>) {
     self.init(value.rawValue)
   }
 }
 
 public protocol HasValueOfStyle {}
 
-extension BorderBottomStyle: HasValueOfStyle {}
-extension BorderStyle: HasValueOfStyle {}
-extension BorderLeftStyle: HasValueOfStyle {}
-extension BorderRightStyle: HasValueOfStyle {}
-extension BorderTopStyle: HasValueOfStyle {}
+extension CssPropBorderBottomStyle: HasValueOfStyle {}
+extension CssPropBorderStyle: HasValueOfStyle {}
+extension CssPropBorderLeftStyle: HasValueOfStyle {}
+extension CssPropBorderRightStyle: HasValueOfStyle {}
+extension CssPropBorderTopStyle: HasValueOfStyle {}
 
 extension Value where Kind: HasValueOfStyle {
-  public init(_ value: Value<BorderStyle>) {
+  public init(_ value: Value<CssPropBorderStyle>) {
     self.init(value.rawValue)
   }
 }

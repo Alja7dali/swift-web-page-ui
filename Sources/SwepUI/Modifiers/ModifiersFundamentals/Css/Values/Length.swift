@@ -1,26 +1,26 @@
 public protocol HasValueOfLength: HasValueOfInherit, HasValueOfAuto, HasValueOfPercentage {}
 
-extension BorderImageWidth: HasValueOfLength {}
+extension CssPropBorderImageWidth: HasValueOfLength {}
 
-extension Margin: HasValueOfLength {}
-extension MarginBottom: HasValueOfLength {}
-extension MarginLeft: HasValueOfLength {}
-extension MarginRight: HasValueOfLength {}
-extension MarginTop: HasValueOfLength {}
+extension CssPropMargin: HasValueOfLength {}
+extension CssPropMarginBottom: HasValueOfLength {}
+extension CssPropMarginLeft: HasValueOfLength {}
+extension CssPropMarginRight: HasValueOfLength {}
+extension CssPropMarginTop: HasValueOfLength {}
 
-extension Padding: HasValueOfLength {}
-extension PaddingBottom: HasValueOfLength {}
-extension PaddingLeft: HasValueOfLength {}
-extension PaddingRight: HasValueOfLength {}
-extension PaddingTop: HasValueOfLength {}
+extension CssPropPadding: HasValueOfLength {}
+extension CssPropPaddingBottom: HasValueOfLength {}
+extension CssPropPaddingLeft: HasValueOfLength {}
+extension CssPropPaddingRight: HasValueOfLength {}
+extension CssPropPaddingTop: HasValueOfLength {}
 
-extension TextIndent: HasValueOfLength {}
-extension LetterSpacing: HasValueOfLength {}
+extension CssPropTextIndent: HasValueOfLength {}
+extension CssPropLetterSpacing: HasValueOfLength {}
 
-extension Top: HasValueOfLength {}
-extension Right: HasValueOfLength {}
-extension Bottom: HasValueOfLength {}
-extension Left: HasValueOfLength {}
+extension CssPropTop: HasValueOfLength {}
+extension CssPropRight: HasValueOfLength {}
+extension CssPropBottom: HasValueOfLength {}
+extension CssPropLeft: HasValueOfLength {}
 
 public enum CSSLength: HasValueOfLength {}
 
@@ -77,38 +77,38 @@ public extension Value where Kind: HasValueOfLength {
 
 public protocol HasValueOfUnsignedLength: HasValueOfInherit, HasValueOfAuto, HasValueOfUnsignedPercentage {}
 
-extension BorderBottomLeftRadius: HasValueOfUnsignedLength {}
-extension BorderBottomRightRadius: HasValueOfUnsignedLength {}
-extension BorderBottomWidth: HasValueOfUnsignedLength {}
-extension BorderImageOutset: HasValueOfUnsignedLength {}
-extension BorderLeftWidth: HasValueOfUnsignedLength {}
-extension BorderRadius: HasValueOfUnsignedLength {}
-extension BorderRightWidth: HasValueOfUnsignedLength {}
-extension BorderSpacing: HasValueOfUnsignedLength {}
-extension BorderTopLeftRadius: HasValueOfUnsignedLength {}
-extension BorderTopRightRadius: HasValueOfUnsignedLength {}
-extension BorderTopWidth: HasValueOfUnsignedLength {}
-extension BorderWidth: HasValueOfUnsignedLength {}
+extension CssPropBorderBottomLeftRadius: HasValueOfUnsignedLength {}
+extension CssPropBorderBottomRightRadius: HasValueOfUnsignedLength {}
+extension CssPropBorderBottomWidth: HasValueOfUnsignedLength {}
+extension CssPropBorderImageOutset: HasValueOfUnsignedLength {}
+extension CssPropBorderLeftWidth: HasValueOfUnsignedLength {}
+extension CssPropBorderRadius: HasValueOfUnsignedLength {}
+extension CssPropBorderRightWidth: HasValueOfUnsignedLength {}
+extension CssPropBorderSpacing: HasValueOfUnsignedLength {}
+extension CssPropBorderTopLeftRadius: HasValueOfUnsignedLength {}
+extension CssPropBorderTopRightRadius: HasValueOfUnsignedLength {}
+extension CssPropBorderTopWidth: HasValueOfUnsignedLength {}
+extension CssPropBorderWidth: HasValueOfUnsignedLength {}
 
-extension Height: HasValueOfUnsignedLength {}
-extension MinHeight: HasValueOfUnsignedLength {}
-extension MaxHeight: HasValueOfUnsignedLength {}
-extension Width: HasValueOfUnsignedLength {}
-extension MinWidth: HasValueOfUnsignedLength {}
-extension MaxWidth: HasValueOfUnsignedLength {}
+extension CssPropHeight: HasValueOfUnsignedLength {}
+extension CssPropMinHeight: HasValueOfUnsignedLength {}
+extension CssPropMaxHeight: HasValueOfUnsignedLength {}
+extension CssPropWidth: HasValueOfUnsignedLength {}
+extension CssPropMinWidth: HasValueOfUnsignedLength {}
+extension CssPropMaxWidth: HasValueOfUnsignedLength {}
 
-extension FlexBasis: HasValueOfUnsignedLength {}
+extension CssPropFlexBasis: HasValueOfUnsignedLength {}
 
-extension FontSize: HasValueOfUnsignedLength {}
+extension CssPropFontSize: HasValueOfUnsignedLength {}
 
-extension ColumnGap: HasValueOfUnsignedLength {}
-extension ColumnRuleWidth: HasValueOfUnsignedLength {}
-extension ColumnWidth: HasValueOfUnsignedLength {}
+extension CssPropColumnGap: HasValueOfUnsignedLength {}
+extension CssPropColumnRuleWidth: HasValueOfUnsignedLength {}
+extension CssPropColumnWidth: HasValueOfUnsignedLength {}
 
-extension OutlineOffset: HasValueOfUnsignedLength {}
-extension OutlineWidth: HasValueOfUnsignedLength {}
+extension CssPropOutlineOffset: HasValueOfUnsignedLength {}
+extension CssPropOutlineWidth: HasValueOfUnsignedLength {}
 
-extension LineHeight: HasValueOfUnsignedLength {}
+extension CssPropLineHeight: HasValueOfUnsignedLength {}
 
 public enum CSSUnsignedLength: HasValueOfUnsignedLength {}
 

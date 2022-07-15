@@ -1,17 +1,17 @@
 public protocol HasValueOfNormal: CSSValue {}
 
-extension AnimationDirection: HasValueOfNormal {}
+extension CssPropAnimationDirection: HasValueOfNormal {}
 
-extension BackgroundBlendMode: HasValueOfNormal {}
+extension CssPropBackgroundBlendMode: HasValueOfNormal {}
 
-extension FontKerning: HasValueOfNormal {}
+extension CssPropFontKerning: HasValueOfNormal {}
 
-extension Content: HasValueOfNormal {}
+extension CssPropContent: HasValueOfNormal {}
 
-extension ColumnCount: HasValueOfNormal {}
+extension CssPropColumnCount: HasValueOfNormal {}
 
-extension LineHeight: HasValueOfNormal {}
-extension LetterSpacing: HasValueOfNormal {}
+extension CssPropLineHeight: HasValueOfNormal {}
+extension CssPropLetterSpacing: HasValueOfNormal {}
 
 public extension Value where Kind: HasValueOfNormal {
   static var normal: Self { return "normal" }
