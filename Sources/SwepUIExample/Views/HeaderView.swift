@@ -9,9 +9,9 @@ struct HeaderView: View {
         },
         label: {
           if isDarkMode {
-            Div { B("🌙") }
+            HtmlDiv { HtmlB("🌙") }
           } else {
-            Div { B("🌞") }
+            HtmlDiv { HtmlB("🌞") }
           }
         }
       )

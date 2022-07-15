@@ -4,13 +4,13 @@
 /// labeled by its contents, or a placeholder for where a link might
 /// otherwise have been placed, if it had been relevant, consisting of just
 /// the element's contents.
-public struct A<Content: View>: View {
+public struct HtmlA<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -30,13 +30,13 @@ public struct A<Content: View>: View {
 /// MARK: <abbr>
 /// The `<abbr>` element represents an abbreviation or acronym, optionally
 /// with its expansion.
-public struct Abbr<Content: View>: View {
+public struct HtmlAbbr<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -58,13 +58,13 @@ public struct Abbr<Content: View>: View {
 /// people or organization. It should include physical and/or digital
 /// location/contact information and a means of identifying a person(s) or
 /// organization the information pertains to.
-public struct Address<Content: View>: View {
+public struct HtmlAddress<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -85,7 +85,7 @@ public struct Address<Content: View>: View {
 /// The `<area>` element represents either a hyperlink with some text and
 /// a corresponding area on an image
 /// map, or a dead area on an image map.
-public struct Area: View {
+public struct HtmlArea: View {
   public typealias Body = Never
 
   public init() {}
@@ -101,13 +101,13 @@ public struct Area: View {
 /// composition in a document, page, application, or site. This could be
 /// a magazine, newspaper, technical or scholarly article, an essay or
 /// report, a blog or other social media post.
-public struct Article<Content: View>: View {
+public struct HtmlArticle<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -130,13 +130,13 @@ public struct Article<Content: View>: View {
 /// sectioning content, and which could be considered separate from that
 /// content. Such sections are often represented as sidebars in printed
 /// typography.
-public struct Aside<Content: View>: View {
+public struct HtmlAside<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -155,7 +155,7 @@ public struct Aside<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <audio>
 /// An `<audio>` element represents a sound or audio stream.
-public struct Audio<Content: View>: View {
+public struct HtmlAudio<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -187,13 +187,13 @@ public struct Audio<Content: View>: View {
 /// and with no implication of an alternate voice or mood, such as key words
 /// in a document abstract, product names in a review, actionable words in
 /// interactive text-driven software, or an article lede.
-public struct B<Content: View>: View {
+public struct HtmlB<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -215,7 +215,7 @@ public struct B<Content: View>: View {
 /// purposes of parsing URLs, and the name of the default browsing context for
 /// the purposes of following hyperlinks. The element does not represent any
 /// content beyond this information.
-public struct Base: View {
+public struct HtmlBase: View {
   public typealias Body = Never
 
   public init() {}
@@ -229,13 +229,13 @@ public struct Base: View {
 /// MARK: <bdi>
 /// The `<bdi>` element represents a span of text that is to be isolated from
 /// its surroundings for the purposes of bidirectional text formatting.
-public struct Bdi<Content: View>: View {
+public struct HtmlBdi<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -256,13 +256,13 @@ public struct Bdi<Content: View>: View {
 /// The `<bdo>` element represents explicit text directionality formatting
 /// control for its children. It allows authors to override the Unicode
 /// bidirectional algorithm by explicitly specifying a direction override.
-public struct Bdo<Content: View>: View {
+public struct HtmlBdo<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -284,13 +284,13 @@ public struct Bdo<Content: View>: View {
 /// source, optionally with a citation which must be within a `<footer>` or
 /// `<cite>` element, and optionally with in-line changes such as annotations
 /// and abbreviations.
-public struct Blockquote<Content: View>: View {
+public struct HtmlBlockquote<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -309,13 +309,13 @@ public struct Blockquote<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <body>
 /// The `<body>` element represents the content of the document.
-public struct Body<Content: View>: View {
+public struct HtmlBody<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -334,7 +334,7 @@ public struct Body<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <br>
 /// The `<br>` element represents a line break.
-public struct Br: View {
+public struct HtmlBr: View {
   public typealias Body = Never
 
   public init() {}
@@ -348,13 +348,13 @@ public struct Br: View {
 /// MARK: <button>
 /// The `<button>` element represents a control allowing a user to trigger
 /// actions, when enabled. It is labeled by its content.
-public struct Button<Content: View>: View {
+public struct HtmlButton<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -378,13 +378,13 @@ public struct Button<Content: View>: View {
 /// TODO: provide a swiftui-way to draw stuff over js-script
 ///       https://www.w3schools.com/html/html5_canvas.asp
 ///       https://github.com/mkj-is/PathBuilder
-public struct Canvas<Content: View>: View {
+public struct HtmlCanvas<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -404,13 +404,13 @@ public struct Canvas<Content: View>: View {
 /// MARK: <caption>
 /// The `<caption>` element represents the title of the table that is its
 /// parent, if it has a parent and that is a table element.
-public struct Caption<Content: View>: View {
+public struct HtmlCaption<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -432,13 +432,13 @@ public struct Caption<Content: View>: View {
 /// include the title of the work or the name of the author (person, people
 /// or organization) or an URL reference, or a reference in abbreviated form
 /// as per the conventions used for the addition of citation metadata.
-public struct Cite<Content: View>: View {
+public struct HtmlCite<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -459,13 +459,13 @@ public struct Cite<Content: View>: View {
 /// The `<code>` element represents a fragment of computer code. This could
 /// be an XML element name, a file name, a computer program, or any other
 /// string that a computer would recognize.
-public struct Code<Content: View>: View {
+public struct HtmlCode<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -487,7 +487,7 @@ public struct Code<Content: View>: View {
 /// that itself has a parent that is a `<table>` element, then the `<col>`
 /// element represents one or more columns in the column group represented
 /// by that `<colgroup>`.
-public struct Col: View {
+public struct HtmlCol: View {
   public typealias Body = Never
 
   public init() {}
@@ -502,7 +502,7 @@ public struct Col: View {
 /// The `<colgroup>` element represents a group of one or more columns in the
 /// `table` that is its parent, if it has a parent and that is a `<table>`
 /// element.
-public struct Colgroup<Content: View>: View {
+public struct HtmlColgroup<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -531,13 +531,13 @@ public struct Colgroup<Content: View>: View {
 /// MARK: <dd>
 /// The `<dd>` element represents a description, part of a term-description
 /// group in a description list (`<dl>` element).
-public struct Dd<Content: View>: View {
+public struct HtmlDd<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -556,13 +556,13 @@ public struct Dd<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <del>
 /// The `<del>` element represents a removal from the document.
-public struct Del<Content: View>: View {
+public struct HtmlDel<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -582,7 +582,7 @@ public struct Del<Content: View>: View {
 /// MARK: <details>
 /// The `<details>` element represents a disclosure widget from which the
 /// user can obtain additional information or controls.
-public struct Details<Content: View>: View {
+public struct HtmlDetails<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -615,13 +615,13 @@ public struct Details<Content: View>: View {
 /// term-description group, `<p>`, `<li>` or `<section>` element that is
 /// the nearest ancestor of the `<dfn>` element must also contain the
 /// definition(s) for the term given by the `<dfn>` element.
-public struct Dfn<Content: View>: View {
+public struct HtmlDfn<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -642,13 +642,13 @@ public struct Dfn<Content: View>: View {
 /// The `<div>` element has no special meaning at all. It represents
 /// its children. It can be used with the `class`, `lang`, and `title`
 /// attributes to mark up semantics common to a group of consecutive elements.
-public struct Div<Content: View>: View {
+public struct HtmlDiv<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -674,7 +674,7 @@ public struct Div<Content: View>: View {
 /// element child), ignoring any nodes other than `<dt>` and `<dd>`
 /// element children, and `<dt>` and `<dd>` elements that are children
 /// of `<div>` element children within a single `<dl>` element.
-public struct Dl<Content: View>: View {
+public struct HtmlDl<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -703,13 +703,13 @@ public struct Dl<Content: View>: View {
 /// MARK: <dt>
 /// The `<dt>` element represents a term, part of a term-description group
 /// in a description list (`<dl>` element).
-public struct Dt<Content: View>: View {
+public struct HtmlDt<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -728,13 +728,13 @@ public struct Dt<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <em>
 /// The `<em>` element represents stress emphasis of its contents.
-public struct Em<Content: View>: View {
+public struct HtmlEm<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -754,7 +754,7 @@ public struct Em<Content: View>: View {
 /// MARK: <embed>
 /// The `<embed>` element provides an integration point for an external
 /// (typically non-HTML) application or interactive content.
-public struct Embed: View {
+public struct HtmlEmbed: View {
   public typealias Body = Never
 
   public init() {}
@@ -768,7 +768,7 @@ public struct Embed: View {
 /// MARK: <fieldset>
 /// The `<fieldset>` element represents a set of form controls optionally
 /// grouped under a common name.
-public struct Fieldset<Content: View>: View {
+public struct HtmlFieldset<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -800,13 +800,13 @@ public struct Fieldset<Content: View>: View {
 /// The `<figcaption>` element represents a caption or legend for the rest of
 /// the contents of the `<figcaption>` element's parent `<figure>` element, if
 /// any.
-public struct Figcaption<Content: View>: View {
+public struct HtmlFigcaption<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -827,7 +827,7 @@ public struct Figcaption<Content: View>: View {
 /// The `<figure>` element represents some flow content, optionally with
 /// a caption, that is self-contained (like a complete sentence) and is
 /// typically referenced as a single unit from the main flow of the document.
-public struct Figure<Content: View>: View {
+public struct HtmlFigure<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -860,13 +860,13 @@ public struct Figure<Content: View>: View {
 /// `<main>` element or sectioning content or sectioning root element.
 /// A footer typically contains information about its section, such as
 /// who wrote it, links to related documents, copyright data, and the like.
-public struct Footer<Content: View>: View {
+public struct HtmlFooter<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -887,13 +887,13 @@ public struct Footer<Content: View>: View {
 /// The `<form>` element represents a collection of form-associated
 /// elements, some of which can represent editable values that can be
 /// submitted to a server for processing.
-public struct Form<Content: View>: View {
+public struct HtmlForm<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -913,13 +913,13 @@ public struct Form<Content: View>: View {
 /// MARK: <h1>
 /// These elements represent headings for their sections. The `<h1>`
 /// element has the highest rank.
-public struct H1<Content: View>: View {
+public struct HtmlH1<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -939,13 +939,13 @@ public struct H1<Content: View>: View {
 /// MARK: <h2>
 /// These elements represent headings for their sections. The `<h2>`
 /// element has the second-highest rank.
-public struct H2<Content: View>: View {
+public struct HtmlH2<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -965,13 +965,13 @@ public struct H2<Content: View>: View {
 /// MARK: <h3>
 /// These elements represent headings for their sections. The `<h3>`
 /// element has the third-highest rank.
-public struct H3<Content: View>: View {
+public struct HtmlH3<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -991,13 +991,13 @@ public struct H3<Content: View>: View {
 /// MARK: <h4>
 /// These elements represent headings for their sections. The `<h4>`
 /// element has the forth-highest rank.
-public struct H4<Content: View>: View {
+public struct HtmlH4<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1017,13 +1017,13 @@ public struct H4<Content: View>: View {
 /// MARK: <h5>
 /// These elements represent headings for their sections. The `<h5>`
 /// element has the fifth-highest rank.
-public struct H5<Content: View>: View {
+public struct HtmlH5<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1043,13 +1043,13 @@ public struct H5<Content: View>: View {
 /// MARK: <h6>
 /// These elements represent headings for their sections. The `<h6>`
 /// element has the lowest rank.
-public struct H6<Content: View>: View {
+public struct HtmlH6<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1068,7 +1068,7 @@ public struct H6<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <head>
 /// The `<head> element represents a collection of metadata for the `Document`.
-public struct Head<Content: View>: View {
+public struct HtmlHead<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -1099,13 +1099,13 @@ public struct Head<Content: View>: View {
 /// ancestor `<main>` element or sectioning content or sectioning root
 /// element. A `<header>` typically contains a group of introductory or
 /// navigational aids.
-public struct Header<Content: View>: View {
+public struct HtmlHeader<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1126,7 +1126,7 @@ public struct Header<Content: View>: View {
 /// The `<hr>` element represents a paragraph-level thematic break, e.g.,
 /// a scene change in a story, or a transition to another topic within a
 /// section of a reference book.
-public struct Hr: View {
+public struct HtmlHr: View {
   public typealias Body = Never
 
   public init() {}
@@ -1140,7 +1140,7 @@ public struct Hr: View {
 // /// ------------------------------------------------------------------------ ///
 // /// MARK: <html>
 // /// The `<html>` element represents the root of an HTML document.
-// public struct Html<Content: HtmlNode>: Tag {
+// public struct HtmlHtml<Content: HtmlNode>: Tag {
 //   public static var tag: StaticString { return "html" }
 //   public let attributes: Array<Attribute>
 //   public let content: Content
@@ -1164,13 +1164,13 @@ public struct Hr: View {
 /// a different quality of text, such as a taxonomic designation, a technical
 /// term, an idiomatic phrase from another language, transliteration, a thought,
 /// or a ship name in Western texts.
-public struct I<Content: View>: View {
+public struct HtmlI<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1189,13 +1189,13 @@ public struct I<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <iframe>
 /// The `<iframe>` element represents a nested browsing context.
-public struct Iframe<Content: View>: View {
+public struct HtmlIframe<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1214,7 +1214,7 @@ public struct Iframe<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <img>
 /// An `<img>` element represents an image and its fallback content.
-public struct Img: View {
+public struct HtmlImg: View {
   public typealias Body = Never
 
   private let attributes: Array<Attribute>
@@ -1236,7 +1236,7 @@ public struct Img: View {
 /// MARK: <input>
 /// The `<input>` element represents a typed data field, usually with a
 /// form control to allow the user to edit the data.
-public struct Input: View {
+public struct HtmlInput: View {
   public typealias Body = Never
 
   private let attributes: Array<Attribute>
@@ -1253,13 +1253,13 @@ public struct Input: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <ins>
 /// The `<ins>` element represents an addition to the document.
-public struct Ins<Content: View>: View {
+public struct HtmlIns<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1280,13 +1280,13 @@ public struct Ins<Content: View>: View {
 /// The `<kbd>` element represents user input (typically keyboard input,
 /// although it may also be used to represent other input, such as voice
 /// commands).
-public struct Kbd<Content: View>: View {
+public struct HtmlKbd<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1309,13 +1309,13 @@ public struct Kbd<Content: View>: View {
 /// as the `<label>` element's **labeled control**, either using the
 /// `for` attribute, or by putting the form control inside the `<label>`
 /// element itself.
-public struct Label<Content: View>: View {
+public struct HtmlLabel<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1335,13 +1335,13 @@ public struct Label<Content: View>: View {
 /// MARK: <legend>
 /// The `<legend>` element represents a caption for the rest of the contents
 /// of the `<legend>` element's parent `<fieldset>` element, if any.
-public struct Legend<Content: View>: View {
+public struct HtmlLegend<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1363,13 +1363,13 @@ public struct Legend<Content: View>: View {
 /// `<ol>`, or `<ul>`, then the element is an item of the parent element's list,
 /// as defined for those elements. Otherwise, the list item has no defined
 /// list-related relationship to any other `<li>` element.
-public struct Li<Content: View>: View {
+public struct HtmlLi<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1389,7 +1389,7 @@ public struct Li<Content: View>: View {
 /// MARK: <link>
 /// The `<link>` element allows authors to link their document to other
 /// resources.
-public struct Link: View {
+public struct HtmlLink: View {
   public typealias Body = Never
 
   public init() {}
@@ -1403,13 +1403,13 @@ public struct Link: View {
 /// MARK: <main>
 /// The `<main>` element represents the main content of the `<body>` of
 /// a document or application.
-public struct Main<Content: View>: View {
+public struct HtmlMain<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1430,7 +1430,7 @@ public struct Main<Content: View>: View {
 /// The `<map>` element, in conjunction with an `<img>` element and any
 /// `<area>` element descendants, defines an image map. The element represents
 /// its children.
-public struct Map<Content: View>: View {
+public struct HtmlMap<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -1469,13 +1469,13 @@ public struct Map<Content: View>: View {
 /// previously unexpected scrutiny. When used in the main prose of a document,
 /// it indicates a part of the document that has been highlighted due to its
 /// likely relevance to the user's current activity.
-public struct Mark<Content: View>: View {
+public struct HtmlMark<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1494,7 +1494,7 @@ public struct Mark<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <meta>
 /// The `<meta>` element represents a meta-types.
-public struct Meta: View {
+public struct HtmlMeta: View {
   public typealias Body = Never
 
   private let attributes: Array<Attribute>
@@ -1540,7 +1540,7 @@ public struct Meta: View {
     attributes = [("property", property), ("content", content)]
   }
 
-  public init(viewport prop: Meta.Viewport, _ props: Meta.Viewport...) {
+  public init(viewport prop: HtmlMeta.Viewport, _ props: HtmlMeta.Viewport...) {
     attributes = [("name", "viewport"), ("content", ([prop] + props).map { $0.rawValue }.joined(separator: ","))]
   }
 
@@ -1617,7 +1617,7 @@ public struct Meta: View {
 /// range, or a fractional value; for example disk usage, the relevance of
 /// a query result, or the fraction of a voting population to have selected
 /// a particular candidate.
-public struct Meter<Content: View>: View {
+public struct HtmlMeter<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -1642,13 +1642,13 @@ public struct Meter<Content: View>: View {
 /// MARK: <nav>
 /// The `<nav>` element represents a section of a page that links to other
 /// pages or to parts within the page: a section with navigation links.
-public struct Nav<Content: View>: View {
+public struct HtmlNav<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1668,13 +1668,13 @@ public struct Nav<Content: View>: View {
 /// MARK: <noscript>
 /// The `<noscript>` element allows authors to tell users that their browser
 /// doesn't support dynamic script and data blocks.
-public struct Noscript<Content: View>: View {
+public struct HtmlNoscript<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1697,7 +1697,7 @@ public struct Noscript<Content: View>: View {
 /// image, as a nested browsing context, or as an external resource to be
 /// processed by a plugin.
 /// TODO: Required attribute "data" or "type"
-public struct Object<Content: View>: View {
+public struct HtmlObject<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -1727,7 +1727,7 @@ public struct Object<Content: View>: View {
 /// The `<ol>` element represents a list of items, where the items have
 /// been intentionally ordered, such that changing the order would change
 /// the meaning of the document.
-public struct Ol<Content: View>: View {
+public struct HtmlOl<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -1756,7 +1756,7 @@ public struct Ol<Content: View>: View {
 /// MARK: <optgroup>
 /// The `<optgroup>` element represents a group of `<option>` elements
 /// with a common label.
-public struct Optgroup<Content: View>: View {
+public struct HtmlOptgroup<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -1785,8 +1785,8 @@ public struct Optgroup<Content: View>: View {
 /// MARK: <option>
 /// The `<option>` element represents an option in a `<select>` element or as
 /// part of a list of suggestions in a datalist element.
-public struct Option: View {
-  public typealias Body = Plaintext
+public struct HtmlOption: View {
+  public typealias Body = HtmlPlaintext
 
   private let makeContent: () -> Body
 
@@ -1808,13 +1808,13 @@ public struct Option: View {
 /// The `<output>` element represents the result of a calculation performed
 /// by the application, or the result
 /// of a user action.
-public struct Output<Content: View>: View {
+public struct HtmlOutput<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1833,13 +1833,13 @@ public struct Output<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <p>
 /// The `<p>` element represents a paragraph.
-public struct P<Content: View>: View {
+public struct HtmlP<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1859,7 +1859,7 @@ public struct P<Content: View>: View {
 /// MARK: <param>
 /// The `<param>` element defines parameters for plugins invoked by object
 /// elements. It does not represent anything on its own.
-public struct Param: View {
+public struct HtmlParam: View {
   public typealias Body = Never
 
   private let attributes: Array<Attribute>
@@ -1876,7 +1876,7 @@ public struct Param: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <picture>
 /// The `<picture>` element represents a picture.
-public struct Picture<Content: View>: View {
+public struct HtmlPicture<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -1905,13 +1905,13 @@ public struct Picture<Content: View>: View {
 /// MARK: <pre>
 /// The `<pre>` element represents a block of preformatted text, in which
 /// structure is represented by typographic conventions rather than by elements.
-public struct Pre<Content: View>: View {
+public struct HtmlPre<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1930,7 +1930,7 @@ public struct Pre<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <progress>
 /// The `<progress>` element represents the completion progress of a task.
-public struct Progress<Content: View>: View {
+public struct HtmlProgress<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -1955,13 +1955,13 @@ public struct Progress<Content: View>: View {
 /// MARK: <q>
 /// The `<q>` element represents some phrasing content quoted from another
 /// source.
-public struct Q<Content: View>: View {
+public struct HtmlQ<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -1981,13 +1981,13 @@ public struct Q<Content: View>: View {
 /// MARK: <s>
 /// The `<s>` element represents contents that are no longer accurate
 /// or no longer relevant.
-public struct S<Content: View>: View {
+public struct HtmlS<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -2007,13 +2007,13 @@ public struct S<Content: View>: View {
 /// MARK: <samp>
 /// The `samp` element represents sample or quoted output from another
 /// program or computing system.
-public struct Samp<Content: View>: View {
+public struct HtmlSamp<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -2034,8 +2034,8 @@ public struct Samp<Content: View>: View {
 /// The `<script>` element allows authors to include dynamic script and
 /// data blocks in their documents. The element does not represent content
 /// for the user.
-public struct Script: View {
-  public typealias Body = Rawtext
+public struct HtmlScript: View {
+  public typealias Body = HtmlRawtext
 
   private let makeContent: () -> Body
 
@@ -2058,13 +2058,13 @@ public struct Script: View {
 /// application. A section, in this context, is a thematic grouping of
 /// content. Each `<section>` should be identified, typically by including
 /// a heading (`<h1>`-`<h6>` element) as a child of the section element.
-public struct Section<Content: View>: View {
+public struct HtmlSection<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -2084,7 +2084,7 @@ public struct Section<Content: View>: View {
 /// MARK: <select>
 /// The `<select>` element represents a control for selecting amongst a
 /// set of options.
-public struct Select<Content: View>: View {
+public struct HtmlSelect<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -2112,13 +2112,13 @@ public struct Select<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <small>
 /// The `<small>` element represents side comments such as small print.
-public struct Small<Content: View>: View {
+public struct HtmlSmall<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -2139,7 +2139,7 @@ public struct Small<Content: View>: View {
 /// MARK: <source>
 /// The `<source>` element is used to specify multiple media resources for
 /// media elements, such as `<video>`, `<audio>`, and `<picture>`.
-public struct Source<Parent>: View {
+public struct HtmlSource<Parent>: View {
   public typealias Body = Never
 
   public init() {}
@@ -2149,22 +2149,22 @@ public struct Source<Parent>: View {
   }
 }
 
-public typealias AudioSource = Source<Audio<EmptyView>>
-public typealias VideoSource = Source<Video<EmptyView>>
-public typealias PictureSource = Source<Picture<EmptyView>>
+public typealias HtmlAudioSource = HtmlSource<HtmlAudio<EmptyView>>
+public typealias HtmlVideoSource = HtmlSource<HtmlVideo<EmptyView>>
+public typealias HtmlPictureSource = HtmlSource<HtmlPicture<EmptyView>>
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: <span>
 /// The `<span>` element doesn't mean anything on its own, but can be
 /// useful when used together with the global attributes, e.g., `class`,
 /// `lang`, or `dir`. It represents its children.
-public struct Span<Content: View>: View {
+public struct HtmlSpan<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -2184,13 +2184,13 @@ public struct Span<Content: View>: View {
 /// MARK: <strong>
 /// The `<strong>` element represents strong importance, seriousness, or
 /// urgency for its contents.
-public struct Strong<Content: View>: View {
+public struct HtmlStrong<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -2210,8 +2210,8 @@ public struct Strong<Content: View>: View {
 /// MARK: <style>
 /// The `<style>` element allows authors to embed style information in
 /// their documents.
-public struct Style: View {
-  public typealias Body = Rawtext
+public struct HtmlStyle: View {
+  public typealias Body = HtmlRawtext
 
   private let makeContent: () -> Body
 
@@ -2231,13 +2231,13 @@ public struct Style: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <sub>
 /// The `<sub>` element represents a subscript.
-public struct Sub<Content: View>: View {
+public struct HtmlSub<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -2258,13 +2258,13 @@ public struct Sub<Content: View>: View {
 /// The first `<summary>` child element of a `<details>` element represents
 /// a summary, caption, or legend for the rest of the contents of the parent
 /// `<details>` element, if any.
-public struct Summary<Content: View>: View {
+public struct HtmlSummary<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -2283,13 +2283,13 @@ public struct Summary<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <sup>
 /// The `<sup>` element represents a superscript.
-public struct Sup<Content: View>: View {
+public struct HtmlSup<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -2308,8 +2308,8 @@ public struct Sup<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <svg>
 /// The `<svg>` element represents scalable vector graphics.
-public struct Svg: View {
-  public typealias Body = Rawtext
+public struct HtmlSvg: View {
+  public typealias Body = HtmlRawtext
 
   private let makeContent: () -> Body
 
@@ -2331,7 +2331,7 @@ public struct Svg: View {
 /// MARK: <table>
 /// The `<table>` element represents data with more than one dimension,
 /// in the form of a table.
-public struct Table<Content: View>: View {
+public struct HtmlTable<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -2440,7 +2440,7 @@ public struct Table<Content: View>: View {
 /// The `<tbody>` element represents a block of rows that consist of a body
 /// of data for the parent `<table>` element, if the `<tbody>` element has
 /// a parent and it is a `<table>`.
-public struct Tbody<Content: View>: View {
+public struct HtmlTbody<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -2480,13 +2480,13 @@ public struct Tbody<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <td>
 /// The `<td>` element represents a data cell in a table.
-public struct Td<Content: View>: View {
+public struct HtmlTd<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -2505,13 +2505,13 @@ public struct Td<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <template>
 /// The `<template>` element represents a template.
-public struct Template<Content: View>: View {
+public struct HtmlTemplate<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -2532,8 +2532,8 @@ public struct Template<Content: View>: View {
 /// The `<textarea>` element represents a multiline plain text edit control
 /// for the element's raw value. The contents of the control represent the
 /// control's default value.
-public struct Textarea: View {
-  public typealias Body = Rawtext
+public struct HtmlTextarea: View {
+  public typealias Body = HtmlRawtext
 
   private let makeContent: () -> Body
 
@@ -2556,7 +2556,7 @@ public struct Textarea: View {
 /// The `<tfoot>` element represents the block of rows that consist of the
 /// column summaries (footers) for the parent `<table>` element, if the
 /// `<tfoot>` element has a parent and it is a `<table>`.
-public struct Tfoot<Content: View>: View {
+public struct HtmlTfoot<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -2584,13 +2584,13 @@ public struct Tfoot<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <th>
 /// The `<th>` element represents a header cell in a table.
-public struct Th<Content: View>: View {
+public struct HtmlTh<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -2611,7 +2611,7 @@ public struct Th<Content: View>: View {
 /// The `<thead>` element represents the block of rows that consist of the
 /// column labels (headers) for the parent `<table>` element, if the `<thead>`
 /// element has a parent and it is a `<table>`.
-public struct Thead<Content: View>: View {
+public struct HtmlThead<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -2642,13 +2642,13 @@ public struct Thead<Content: View>: View {
 /// form of those contents in the datetime attribute. The kind of content is
 /// limited to various kinds of dates, times, time-zone offsets, and durations,
 /// as described below.
-public struct Time<Content: View>: View {
+public struct HtmlTime<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -2672,8 +2672,8 @@ public struct Time<Content: View>: View {
 /// search results. The document's title is often different from its first
 /// heading, since the first heading does not have to stand alone when taken
 /// out of context.
-public struct Title: View {
-  public typealias Body = Plaintext
+public struct HtmlTitle: View {
+  public typealias Body = HtmlPlaintext
 
   private let makeContent: () -> Body
 
@@ -2704,7 +2704,7 @@ public struct Title: View {
 //     attributes = []; content = c()
 //   }
 // }
-public struct Tr<Content: View>: View {
+public struct HtmlTr<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -2744,7 +2744,7 @@ public struct Tr<Content: View>: View {
 /// MARK: <track>
 /// The `<track>` element allows authors to specify explicit external text
 /// resources for media elements. It does not represent anything on its own.
-public struct Track: View {
+public struct HtmlTrack: View {
   public typealias Body = Never
 
   private let attributes: Array<Attribute>
@@ -2764,13 +2764,13 @@ public struct Track: View {
 /// explicitly rendered, non-textual annotation, such as labeling the text
 /// as being a proper name in Chinese text (a Chinese proper name mark),
 /// or labeling the text as being misspelt.
-public struct U<Content: View>: View {
+public struct HtmlU<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -2791,7 +2791,7 @@ public struct U<Content: View>: View {
 /// The `<ul>` element represents a list of items, where the order of the
 /// items is not important — that is, where changing the order would not
 /// materially change the meaning of the document.
-public struct Ul<Content: View>: View {
+public struct HtmlUl<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -2823,13 +2823,13 @@ public struct Ul<Content: View>: View {
 /// identifier representing a constant, a symbol identifying a physical
 /// quantity, a function parameter, or just be a term used as a placeholder
 /// in prose.
-public struct Var<Content: View>: View {
+public struct HtmlVar<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
 
-  public init(_ text: String = "") where Content == Plaintext {
-    makeContent = { Plaintext(text) }
+  public init(_ text: String = "") where Content == HtmlPlaintext {
+    makeContent = { HtmlPlaintext(text) }
   }
 
   public init(@ViewBuilder content: @escaping () -> Content) where Content: ChildOfAny {
@@ -2849,7 +2849,7 @@ public struct Var<Content: View>: View {
 /// MARK: <video>
 /// A `<video>` element is used for playing videos or movies, and audio
 /// files with captions.
-public struct Video<Content: View>: View {
+public struct HtmlVideo<Content: View>: View {
   public typealias Body = Content
 
   private let makeContent: () -> Content
@@ -2877,7 +2877,7 @@ public struct Video<Content: View>: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <plaintext>
 /// The `<plaintext>` element represents an escapable-text.
-public struct Plaintext: View {
+public struct HtmlPlaintext: View {
   public typealias Body = Never
 
   private let text: String
@@ -2894,7 +2894,7 @@ public struct Plaintext: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <rawtext>
 /// The `<rawtext>` element represents an inescapable-text.
-public struct Rawtext: View {
+public struct HtmlRawtext: View {
   public typealias Body = Never
 
   private let text: String
@@ -2911,7 +2911,7 @@ public struct Rawtext: View {
 /// ------------------------------------------------------------------------ ///
 /// MARK: <comment>
 /// The `<comment>` element represents a comment-text.
-public struct Comment: View {
+public struct HtmlComment: View {
   public typealias Body = Never
 
   private let text: String

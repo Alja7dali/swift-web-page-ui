@@ -655,8 +655,8 @@ extension View {
 /// MARK: List
 
 public protocol ContainsLi {}
-extension Ol: ContainsLi {}
-extension Ul: ContainsLi {}
+extension HtmlOl: ContainsLi {}
+extension HtmlUl: ContainsLi {}
 
 extension View where Self: ContainsLi {
   public func cssListStyle(_ value: Value<ListStyle>) -> some View {

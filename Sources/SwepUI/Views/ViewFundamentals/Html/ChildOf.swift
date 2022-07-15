@@ -1,13 +1,13 @@
 public protocol IsAudio {}
-extension Audio: IsAudio {}
+extension HtmlAudio: IsAudio {}
 
 public protocol ChildOfAudio {}
-extension Source: ChildOfAudio where Parent: IsAudio {}
-extension Track: ChildOfAudio {}
-extension Script: ChildOfAudio {}
-extension Noscript: ChildOfAudio {}
-extension Template: ChildOfAudio {}
-extension Comment: ChildOfAudio {}
+extension HtmlSource: ChildOfAudio where Parent: IsAudio {}
+extension HtmlTrack: ChildOfAudio {}
+extension HtmlScript: ChildOfAudio {}
+extension HtmlNoscript: ChildOfAudio {}
+extension HtmlTemplate: ChildOfAudio {}
+extension HtmlComment: ChildOfAudio {}
 
 extension Array: ChildOfAudio where Element: ChildOfAudio {}
 extension Either: ChildOfAudio where Left: ChildOfAudio, Right: ChildOfAudio {}
@@ -18,7 +18,7 @@ extension Optional: ChildOfAudio where Wrapped: ChildOfAudio {}
 /// ---------------------- ///
 
 public protocol VariationOfCaption {}
-extension Caption: VariationOfCaption {}
+extension HtmlCaption: VariationOfCaption {}
 
 extension Either: VariationOfCaption where Left: VariationOfCaption, Right: VariationOfCaption {}
 extension EmptyView: VariationOfCaption {}
@@ -28,11 +28,11 @@ extension Optional: VariationOfCaption where Wrapped: VariationOfCaption {}
 /// ---------------------- ///
 
 public protocol ChildOfColgroup {}
-extension Col: ChildOfColgroup {}
-extension Script: ChildOfColgroup {}
-extension Noscript: ChildOfColgroup {}
-extension Template: ChildOfColgroup {}
-extension Comment: ChildOfColgroup {}
+extension HtmlCol: ChildOfColgroup {}
+extension HtmlScript: ChildOfColgroup {}
+extension HtmlNoscript: ChildOfColgroup {}
+extension HtmlTemplate: ChildOfColgroup {}
+extension HtmlComment: ChildOfColgroup {}
 
 extension Array: ChildOfColgroup where Element: ChildOfColgroup {}
 extension Either: ChildOfColgroup where Left: ChildOfColgroup, Right: ChildOfColgroup {}
@@ -43,7 +43,7 @@ extension Optional: ChildOfColgroup where Wrapped: ChildOfColgroup {}
 /// ---------------------- ///
 
 public protocol VariationOfColgroup {}
-extension Colgroup: VariationOfColgroup {}
+extension HtmlColgroup: VariationOfColgroup {}
 
 extension Either: VariationOfColgroup where Left: VariationOfColgroup, Right: VariationOfColgroup {}
 extension EmptyView: VariationOfColgroup {}
@@ -54,9 +54,9 @@ extension Optional: VariationOfColgroup where Wrapped: VariationOfColgroup {}
 
 public protocol ChildOfDetails {}
 
-extension Plaintext: ChildOfDetails {}
-extension Rawtext:  ChildOfDetails {}
-extension Comment: ChildOfDetails {}
+extension HtmlPlaintext: ChildOfDetails {}
+extension HtmlRawtext:  ChildOfDetails {}
+extension HtmlComment: ChildOfDetails {}
 
 extension Array: ChildOfDetails where Element: ChildOfDetails {}
 extension Either: ChildOfDetails where Left: ChildOfDetails, Right: ChildOfDetails {}
@@ -64,83 +64,83 @@ extension EmptyView: ChildOfDetails {}
 extension AnyView: ChildOfDetails {}
 extension Optional: ChildOfDetails where Wrapped: ChildOfDetails {}
 
-extension A: ChildOfDetails {}
-extension Abbr: ChildOfDetails {}
-extension Address: ChildOfDetails {}
-extension Article: ChildOfDetails {}
-extension Aside: ChildOfDetails {}
-extension Audio: ChildOfDetails {}
-extension B: ChildOfDetails {}
-extension Bdi: ChildOfDetails {}
-extension Bdo: ChildOfDetails {}
-extension Blockquote: ChildOfDetails {}
-extension Br: ChildOfDetails {}
-extension Button: ChildOfDetails {}
-extension Canvas: ChildOfDetails {}
-extension Cite: ChildOfDetails {}
-extension Code: ChildOfDetails {}
-extension Del: ChildOfDetails {}
-extension Details: ChildOfDetails {}
-extension Dfn: ChildOfDetails {}
-extension Div: ChildOfDetails {}
-extension Dl: ChildOfDetails {}
-extension Em: ChildOfDetails {}
-extension Fieldset: ChildOfDetails {}
-extension Figure: ChildOfDetails {}
-extension Footer: ChildOfDetails {}
-extension Form: ChildOfDetails {}
-extension H1: ChildOfDetails {}
-extension H2: ChildOfDetails {}
-extension H3: ChildOfDetails {}
-extension H4: ChildOfDetails {}
-extension H5: ChildOfDetails {}
-extension H6: ChildOfDetails {}
-extension Header: ChildOfDetails {}
-extension Hr: ChildOfDetails {}
-extension I: ChildOfDetails {}
-extension Iframe: ChildOfDetails {}
-extension Img: ChildOfDetails {}
-extension Input: ChildOfDetails {}
-extension Ins: ChildOfDetails {}
-extension Kbd: ChildOfDetails {}
-extension Label: ChildOfDetails {}
-extension Main: ChildOfDetails {}
-extension Map: ChildOfDetails {}
-extension Mark: ChildOfDetails {}
-extension Meter: ChildOfDetails {}
-extension Nav: ChildOfDetails {}
-extension Noscript: ChildOfDetails {}
-extension Object: ChildOfDetails {}
-extension Ol: ChildOfDetails {}
-extension Optgroup: ChildOfDetails {}
-extension Output: ChildOfDetails {}
-extension P: ChildOfDetails {}
-extension Picture: ChildOfDetails {}
-extension Pre: ChildOfDetails {}
-extension Progress: ChildOfDetails {}
-extension Q: ChildOfDetails {}
-extension S: ChildOfDetails {}
-extension Samp: ChildOfDetails {}
-extension Script: ChildOfDetails {}
-extension Section: ChildOfDetails {}
-extension Select: ChildOfDetails {}
-extension Small: ChildOfDetails {}
-extension Span: ChildOfDetails {}
-extension Strong: ChildOfDetails {}
-extension Sub: ChildOfDetails {}
-extension Sup: ChildOfDetails {}
-extension Svg: ChildOfDetails {}
-extension Table: ChildOfDetails {}
-extension Template: ChildOfDetails {}
-extension Textarea: ChildOfDetails {}
-extension Time: ChildOfDetails {}
-extension U: ChildOfDetails {}
-extension Ul: ChildOfDetails {}
-extension Var: ChildOfDetails {}
-extension Video: ChildOfDetails {}
+extension HtmlA: ChildOfDetails {}
+extension HtmlAbbr: ChildOfDetails {}
+extension HtmlAddress: ChildOfDetails {}
+extension HtmlArticle: ChildOfDetails {}
+extension HtmlAside: ChildOfDetails {}
+extension HtmlAudio: ChildOfDetails {}
+extension HtmlB: ChildOfDetails {}
+extension HtmlBdi: ChildOfDetails {}
+extension HtmlBdo: ChildOfDetails {}
+extension HtmlBlockquote: ChildOfDetails {}
+extension HtmlBr: ChildOfDetails {}
+extension HtmlButton: ChildOfDetails {}
+extension HtmlCanvas: ChildOfDetails {}
+extension HtmlCite: ChildOfDetails {}
+extension HtmlCode: ChildOfDetails {}
+extension HtmlDel: ChildOfDetails {}
+extension HtmlDetails: ChildOfDetails {}
+extension HtmlDfn: ChildOfDetails {}
+extension HtmlDiv: ChildOfDetails {}
+extension HtmlDl: ChildOfDetails {}
+extension HtmlEm: ChildOfDetails {}
+extension HtmlFieldset: ChildOfDetails {}
+extension HtmlFigure: ChildOfDetails {}
+extension HtmlFooter: ChildOfDetails {}
+extension HtmlForm: ChildOfDetails {}
+extension HtmlH1: ChildOfDetails {}
+extension HtmlH2: ChildOfDetails {}
+extension HtmlH3: ChildOfDetails {}
+extension HtmlH4: ChildOfDetails {}
+extension HtmlH5: ChildOfDetails {}
+extension HtmlH6: ChildOfDetails {}
+extension HtmlHeader: ChildOfDetails {}
+extension HtmlHr: ChildOfDetails {}
+extension HtmlI: ChildOfDetails {}
+extension HtmlIframe: ChildOfDetails {}
+extension HtmlImg: ChildOfDetails {}
+extension HtmlInput: ChildOfDetails {}
+extension HtmlIns: ChildOfDetails {}
+extension HtmlKbd: ChildOfDetails {}
+extension HtmlLabel: ChildOfDetails {}
+extension HtmlMain: ChildOfDetails {}
+extension HtmlMap: ChildOfDetails {}
+extension HtmlMark: ChildOfDetails {}
+extension HtmlMeter: ChildOfDetails {}
+extension HtmlNav: ChildOfDetails {}
+extension HtmlNoscript: ChildOfDetails {}
+extension HtmlObject: ChildOfDetails {}
+extension HtmlOl: ChildOfDetails {}
+extension HtmlOptgroup: ChildOfDetails {}
+extension HtmlOutput: ChildOfDetails {}
+extension HtmlP: ChildOfDetails {}
+extension HtmlPicture: ChildOfDetails {}
+extension HtmlPre: ChildOfDetails {}
+extension HtmlProgress: ChildOfDetails {}
+extension HtmlQ: ChildOfDetails {}
+extension HtmlS: ChildOfDetails {}
+extension HtmlSamp: ChildOfDetails {}
+extension HtmlScript: ChildOfDetails {}
+extension HtmlSection: ChildOfDetails {}
+extension HtmlSelect: ChildOfDetails {}
+extension HtmlSmall: ChildOfDetails {}
+extension HtmlSpan: ChildOfDetails {}
+extension HtmlStrong: ChildOfDetails {}
+extension HtmlSub: ChildOfDetails {}
+extension HtmlSup: ChildOfDetails {}
+extension HtmlSvg: ChildOfDetails {}
+extension HtmlTable: ChildOfDetails {}
+extension HtmlTemplate: ChildOfDetails {}
+extension HtmlTextarea: ChildOfDetails {}
+extension HtmlTime: ChildOfDetails {}
+extension HtmlU: ChildOfDetails {}
+extension HtmlUl: ChildOfDetails {}
+extension HtmlVar: ChildOfDetails {}
+extension HtmlVideo: ChildOfDetails {}
 
 public protocol VariationOfSummary {}
-extension Summary: VariationOfSummary {}
+extension HtmlSummary: VariationOfSummary {}
 
 extension Either: VariationOfSummary where Left: VariationOfSummary, Right: VariationOfSummary {}
 extension EmptyView: VariationOfSummary {}
@@ -151,12 +151,12 @@ extension Optional: VariationOfSummary where Wrapped: VariationOfSummary {}
 
 /// FIXME: Dl must contains (signle Dt followed by multiple Dd) repeatedly..
 public protocol ChildOfDl {}
-extension Dd: ChildOfDl {}
-extension Dt: ChildOfDl {}
-extension Script: ChildOfDl {}
-extension Noscript: ChildOfDl {}
-extension Template: ChildOfDl {}
-extension Comment: ChildOfDl {}
+extension HtmlDd: ChildOfDl {}
+extension HtmlDt: ChildOfDl {}
+extension HtmlScript: ChildOfDl {}
+extension HtmlNoscript: ChildOfDl {}
+extension HtmlTemplate: ChildOfDl {}
+extension HtmlComment: ChildOfDl {}
 
 extension Array: ChildOfDl where Element: ChildOfDl {}
 extension Either: ChildOfDl where Left: ChildOfDl, Right: ChildOfDl {}
@@ -168,9 +168,9 @@ extension Optional: ChildOfDl where Wrapped: ChildOfDl {}
 
 public protocol ChildOfFieldset {}
 
-extension Plaintext: ChildOfFieldset {}
-extension Rawtext:  ChildOfFieldset {}
-extension Comment: ChildOfFieldset {}
+extension HtmlPlaintext: ChildOfFieldset {}
+extension HtmlRawtext:  ChildOfFieldset {}
+extension HtmlComment: ChildOfFieldset {}
 
 extension Array: ChildOfFieldset where Element: ChildOfFieldset {}
 extension Either: ChildOfFieldset where Left: ChildOfFieldset, Right: ChildOfFieldset {}
@@ -178,83 +178,83 @@ extension EmptyView: ChildOfFieldset {}
 extension AnyView: ChildOfFieldset {}
 extension Optional: ChildOfFieldset where Wrapped: ChildOfFieldset {}
 
-extension A: ChildOfFieldset {}
-extension Abbr: ChildOfFieldset {}
-extension Address: ChildOfFieldset {}
-extension Article: ChildOfFieldset {}
-extension Aside: ChildOfFieldset {}
-extension Audio: ChildOfFieldset {}
-extension B: ChildOfFieldset {}
-extension Bdi: ChildOfFieldset {}
-extension Bdo: ChildOfFieldset {}
-extension Blockquote: ChildOfFieldset {}
-extension Br: ChildOfFieldset {}
-extension Button: ChildOfFieldset {}
-extension Canvas: ChildOfFieldset {}
-extension Cite: ChildOfFieldset {}
-extension Code: ChildOfFieldset {}
-extension Del: ChildOfFieldset {}
-extension Details: ChildOfFieldset {}
-extension Dfn: ChildOfFieldset {}
-extension Div: ChildOfFieldset {}
-extension Dl: ChildOfFieldset {}
-extension Em: ChildOfFieldset {}
-extension Fieldset: ChildOfFieldset {}
-extension Figure: ChildOfFieldset {}
-extension Footer: ChildOfFieldset {}
-extension Form: ChildOfFieldset {}
-extension H1: ChildOfFieldset {}
-extension H2: ChildOfFieldset {}
-extension H3: ChildOfFieldset {}
-extension H4: ChildOfFieldset {}
-extension H5: ChildOfFieldset {}
-extension H6: ChildOfFieldset {}
-extension Header: ChildOfFieldset {}
-extension Hr: ChildOfFieldset {}
-extension I: ChildOfFieldset {}
-extension Iframe: ChildOfFieldset {}
-extension Img: ChildOfFieldset {}
-extension Input: ChildOfFieldset {}
-extension Ins: ChildOfFieldset {}
-extension Kbd: ChildOfFieldset {}
-extension Label: ChildOfFieldset {}
-extension Main: ChildOfFieldset {}
-extension Map: ChildOfFieldset {}
-extension Mark: ChildOfFieldset {}
-extension Meter: ChildOfFieldset {}
-extension Nav: ChildOfFieldset {}
-extension Noscript: ChildOfFieldset {}
-extension Object: ChildOfFieldset {}
-extension Ol: ChildOfFieldset {}
-extension Optgroup: ChildOfFieldset {}
-extension Output: ChildOfFieldset {}
-extension P: ChildOfFieldset {}
-extension Picture: ChildOfFieldset {}
-extension Pre: ChildOfFieldset {}
-extension Progress: ChildOfFieldset {}
-extension Q: ChildOfFieldset {}
-extension S: ChildOfFieldset {}
-extension Samp: ChildOfFieldset {}
-extension Script: ChildOfFieldset {}
-extension Section: ChildOfFieldset {}
-extension Select: ChildOfFieldset {}
-extension Small: ChildOfFieldset {}
-extension Span: ChildOfFieldset {}
-extension Strong: ChildOfFieldset {}
-extension Sub: ChildOfFieldset {}
-extension Sup: ChildOfFieldset {}
-extension Svg: ChildOfFieldset {}
-extension Table: ChildOfFieldset {}
-extension Template: ChildOfFieldset {}
-extension Textarea: ChildOfFieldset {}
-extension Time: ChildOfFieldset {}
-extension U: ChildOfFieldset {}
-extension Ul: ChildOfFieldset {}
-extension Var: ChildOfFieldset {}
-extension Video: ChildOfFieldset {}
+extension HtmlA: ChildOfFieldset {}
+extension HtmlAbbr: ChildOfFieldset {}
+extension HtmlAddress: ChildOfFieldset {}
+extension HtmlArticle: ChildOfFieldset {}
+extension HtmlAside: ChildOfFieldset {}
+extension HtmlAudio: ChildOfFieldset {}
+extension HtmlB: ChildOfFieldset {}
+extension HtmlBdi: ChildOfFieldset {}
+extension HtmlBdo: ChildOfFieldset {}
+extension HtmlBlockquote: ChildOfFieldset {}
+extension HtmlBr: ChildOfFieldset {}
+extension HtmlButton: ChildOfFieldset {}
+extension HtmlCanvas: ChildOfFieldset {}
+extension HtmlCite: ChildOfFieldset {}
+extension HtmlCode: ChildOfFieldset {}
+extension HtmlDel: ChildOfFieldset {}
+extension HtmlDetails: ChildOfFieldset {}
+extension HtmlDfn: ChildOfFieldset {}
+extension HtmlDiv: ChildOfFieldset {}
+extension HtmlDl: ChildOfFieldset {}
+extension HtmlEm: ChildOfFieldset {}
+extension HtmlFieldset: ChildOfFieldset {}
+extension HtmlFigure: ChildOfFieldset {}
+extension HtmlFooter: ChildOfFieldset {}
+extension HtmlForm: ChildOfFieldset {}
+extension HtmlH1: ChildOfFieldset {}
+extension HtmlH2: ChildOfFieldset {}
+extension HtmlH3: ChildOfFieldset {}
+extension HtmlH4: ChildOfFieldset {}
+extension HtmlH5: ChildOfFieldset {}
+extension HtmlH6: ChildOfFieldset {}
+extension HtmlHeader: ChildOfFieldset {}
+extension HtmlHr: ChildOfFieldset {}
+extension HtmlI: ChildOfFieldset {}
+extension HtmlIframe: ChildOfFieldset {}
+extension HtmlImg: ChildOfFieldset {}
+extension HtmlInput: ChildOfFieldset {}
+extension HtmlIns: ChildOfFieldset {}
+extension HtmlKbd: ChildOfFieldset {}
+extension HtmlLabel: ChildOfFieldset {}
+extension HtmlMain: ChildOfFieldset {}
+extension HtmlMap: ChildOfFieldset {}
+extension HtmlMark: ChildOfFieldset {}
+extension HtmlMeter: ChildOfFieldset {}
+extension HtmlNav: ChildOfFieldset {}
+extension HtmlNoscript: ChildOfFieldset {}
+extension HtmlObject: ChildOfFieldset {}
+extension HtmlOl: ChildOfFieldset {}
+extension HtmlOptgroup: ChildOfFieldset {}
+extension HtmlOutput: ChildOfFieldset {}
+extension HtmlP: ChildOfFieldset {}
+extension HtmlPicture: ChildOfFieldset {}
+extension HtmlPre: ChildOfFieldset {}
+extension HtmlProgress: ChildOfFieldset {}
+extension HtmlQ: ChildOfFieldset {}
+extension HtmlS: ChildOfFieldset {}
+extension HtmlSamp: ChildOfFieldset {}
+extension HtmlScript: ChildOfFieldset {}
+extension HtmlSection: ChildOfFieldset {}
+extension HtmlSelect: ChildOfFieldset {}
+extension HtmlSmall: ChildOfFieldset {}
+extension HtmlSpan: ChildOfFieldset {}
+extension HtmlStrong: ChildOfFieldset {}
+extension HtmlSub: ChildOfFieldset {}
+extension HtmlSup: ChildOfFieldset {}
+extension HtmlSvg: ChildOfFieldset {}
+extension HtmlTable: ChildOfFieldset {}
+extension HtmlTemplate: ChildOfFieldset {}
+extension HtmlTextarea: ChildOfFieldset {}
+extension HtmlTime: ChildOfFieldset {}
+extension HtmlU: ChildOfFieldset {}
+extension HtmlUl: ChildOfFieldset {}
+extension HtmlVar: ChildOfFieldset {}
+extension HtmlVideo: ChildOfFieldset {}
 
 public protocol VariationOfLegend {}
-extension Legend: VariationOfLegend {}
+extension HtmlLegend: VariationOfLegend {}
 
 extension Either: VariationOfLegend where Left: VariationOfLegend, Right: VariationOfLegend {}
 extension EmptyView: VariationOfLegend {}
@@ -265,9 +265,9 @@ extension Optional: VariationOfLegend where Wrapped: VariationOfLegend {}
 
 public protocol ChildOfFigure {}
 
-extension Plaintext: ChildOfFigure {}
-extension Rawtext:  ChildOfFigure {}
-extension Comment: ChildOfFigure {}
+extension HtmlPlaintext: ChildOfFigure {}
+extension HtmlRawtext:  ChildOfFigure {}
+extension HtmlComment: ChildOfFigure {}
 
 extension Array: ChildOfFigure where Element: ChildOfFigure {}
 extension Either: ChildOfFigure where Left: ChildOfFigure, Right: ChildOfFigure {}
@@ -275,83 +275,83 @@ extension EmptyView: ChildOfFigure {}
 extension AnyView: ChildOfFigure {}
 extension Optional: ChildOfFigure where Wrapped: ChildOfFigure {}
 
-extension A: ChildOfFigure {}
-extension Abbr: ChildOfFigure {}
-extension Address: ChildOfFigure {}
-extension Article: ChildOfFigure {}
-extension Aside: ChildOfFigure {}
-extension Audio: ChildOfFigure {}
-extension B: ChildOfFigure {}
-extension Bdi: ChildOfFigure {}
-extension Bdo: ChildOfFigure {}
-extension Blockquote: ChildOfFigure {}
-extension Br: ChildOfFigure {}
-extension Button: ChildOfFigure {}
-extension Canvas: ChildOfFigure {}
-extension Cite: ChildOfFigure {}
-extension Code: ChildOfFigure {}
-extension Del: ChildOfFigure {}
-extension Details: ChildOfFigure {}
-extension Dfn: ChildOfFigure {}
-extension Div: ChildOfFigure {}
-extension Dl: ChildOfFigure {}
-extension Em: ChildOfFigure {}
-extension Fieldset: ChildOfFigure {}
-extension Figure: ChildOfFigure {}
-extension Footer: ChildOfFigure {}
-extension Form: ChildOfFigure {}
-extension H1: ChildOfFigure {}
-extension H2: ChildOfFigure {}
-extension H3: ChildOfFigure {}
-extension H4: ChildOfFigure {}
-extension H5: ChildOfFigure {}
-extension H6: ChildOfFigure {}
-extension Header: ChildOfFigure {}
-extension Hr: ChildOfFigure {}
-extension I: ChildOfFigure {}
-extension Iframe: ChildOfFigure {}
-extension Img: ChildOfFigure {}
-extension Input: ChildOfFigure {}
-extension Ins: ChildOfFigure {}
-extension Kbd: ChildOfFigure {}
-extension Label: ChildOfFigure {}
-extension Main: ChildOfFigure {}
-extension Map: ChildOfFigure {}
-extension Mark: ChildOfFigure {}
-extension Meter: ChildOfFigure {}
-extension Nav: ChildOfFigure {}
-extension Noscript: ChildOfFigure {}
-extension Object: ChildOfFigure {}
-extension Ol: ChildOfFigure {}
-extension Optgroup: ChildOfFigure {}
-extension Output: ChildOfFigure {}
-extension P: ChildOfFigure {}
-extension Picture: ChildOfFigure {}
-extension Pre: ChildOfFigure {}
-extension Progress: ChildOfFigure {}
-extension Q: ChildOfFigure {}
-extension S: ChildOfFigure {}
-extension Samp: ChildOfFigure {}
-extension Script: ChildOfFigure {}
-extension Section: ChildOfFigure {}
-extension Select: ChildOfFigure {}
-extension Small: ChildOfFigure {}
-extension Span: ChildOfFigure {}
-extension Strong: ChildOfFigure {}
-extension Sub: ChildOfFigure {}
-extension Sup: ChildOfFigure {}
-extension Svg: ChildOfFigure {}
-extension Table: ChildOfFigure {}
-extension Template: ChildOfFigure {}
-extension Textarea: ChildOfFigure {}
-extension Time: ChildOfFigure {}
-extension U: ChildOfFigure {}
-extension Ul: ChildOfFigure {}
-extension Var: ChildOfFigure {}
-extension Video: ChildOfFigure {}
+extension HtmlA: ChildOfFigure {}
+extension HtmlAbbr: ChildOfFigure {}
+extension HtmlAddress: ChildOfFigure {}
+extension HtmlArticle: ChildOfFigure {}
+extension HtmlAside: ChildOfFigure {}
+extension HtmlAudio: ChildOfFigure {}
+extension HtmlB: ChildOfFigure {}
+extension HtmlBdi: ChildOfFigure {}
+extension HtmlBdo: ChildOfFigure {}
+extension HtmlBlockquote: ChildOfFigure {}
+extension HtmlBr: ChildOfFigure {}
+extension HtmlButton: ChildOfFigure {}
+extension HtmlCanvas: ChildOfFigure {}
+extension HtmlCite: ChildOfFigure {}
+extension HtmlCode: ChildOfFigure {}
+extension HtmlDel: ChildOfFigure {}
+extension HtmlDetails: ChildOfFigure {}
+extension HtmlDfn: ChildOfFigure {}
+extension HtmlDiv: ChildOfFigure {}
+extension HtmlDl: ChildOfFigure {}
+extension HtmlEm: ChildOfFigure {}
+extension HtmlFieldset: ChildOfFigure {}
+extension HtmlFigure: ChildOfFigure {}
+extension HtmlFooter: ChildOfFigure {}
+extension HtmlForm: ChildOfFigure {}
+extension HtmlH1: ChildOfFigure {}
+extension HtmlH2: ChildOfFigure {}
+extension HtmlH3: ChildOfFigure {}
+extension HtmlH4: ChildOfFigure {}
+extension HtmlH5: ChildOfFigure {}
+extension HtmlH6: ChildOfFigure {}
+extension HtmlHeader: ChildOfFigure {}
+extension HtmlHr: ChildOfFigure {}
+extension HtmlI: ChildOfFigure {}
+extension HtmlIframe: ChildOfFigure {}
+extension HtmlImg: ChildOfFigure {}
+extension HtmlInput: ChildOfFigure {}
+extension HtmlIns: ChildOfFigure {}
+extension HtmlKbd: ChildOfFigure {}
+extension HtmlLabel: ChildOfFigure {}
+extension HtmlMain: ChildOfFigure {}
+extension HtmlMap: ChildOfFigure {}
+extension HtmlMark: ChildOfFigure {}
+extension HtmlMeter: ChildOfFigure {}
+extension HtmlNav: ChildOfFigure {}
+extension HtmlNoscript: ChildOfFigure {}
+extension HtmlObject: ChildOfFigure {}
+extension HtmlOl: ChildOfFigure {}
+extension HtmlOptgroup: ChildOfFigure {}
+extension HtmlOutput: ChildOfFigure {}
+extension HtmlP: ChildOfFigure {}
+extension HtmlPicture: ChildOfFigure {}
+extension HtmlPre: ChildOfFigure {}
+extension HtmlProgress: ChildOfFigure {}
+extension HtmlQ: ChildOfFigure {}
+extension HtmlS: ChildOfFigure {}
+extension HtmlSamp: ChildOfFigure {}
+extension HtmlScript: ChildOfFigure {}
+extension HtmlSection: ChildOfFigure {}
+extension HtmlSelect: ChildOfFigure {}
+extension HtmlSmall: ChildOfFigure {}
+extension HtmlSpan: ChildOfFigure {}
+extension HtmlStrong: ChildOfFigure {}
+extension HtmlSub: ChildOfFigure {}
+extension HtmlSup: ChildOfFigure {}
+extension HtmlSvg: ChildOfFigure {}
+extension HtmlTable: ChildOfFigure {}
+extension HtmlTemplate: ChildOfFigure {}
+extension HtmlTextarea: ChildOfFigure {}
+extension HtmlTime: ChildOfFigure {}
+extension HtmlU: ChildOfFigure {}
+extension HtmlUl: ChildOfFigure {}
+extension HtmlVar: ChildOfFigure {}
+extension HtmlVideo: ChildOfFigure {}
 
 public protocol VariationOfFigcaption {}
-extension Figcaption: VariationOfFigcaption {}
+extension HtmlFigcaption: VariationOfFigcaption {}
 
 extension Either: VariationOfFigcaption where Left: VariationOfFigcaption, Right: VariationOfFigcaption {}
 extension EmptyView: VariationOfFigcaption {}
@@ -361,12 +361,12 @@ extension Optional: VariationOfFigcaption where Wrapped: VariationOfFigcaption {
 /// ---------------------- ///
 
 public protocol ChildOfHead {}
-extension Base: ChildOfHead {}
-extension Link: ChildOfHead {}
-extension Meta: ChildOfHead {}
-extension Style: ChildOfHead {}
-extension Title: ChildOfHead {}
-extension Comment: ChildOfHead {}
+extension HtmlBase: ChildOfHead {}
+extension HtmlLink: ChildOfHead {}
+extension HtmlMeta: ChildOfHead {}
+extension HtmlStyle: ChildOfHead {}
+extension HtmlTitle: ChildOfHead {}
+extension HtmlComment: ChildOfHead {}
 
 extension Array: ChildOfHead where Element: ChildOfHead {}
 extension Either: ChildOfHead where Left: ChildOfHead, Right: ChildOfHead {}
@@ -379,23 +379,23 @@ extension Optional: ChildOfHead where Wrapped: ChildOfHead {}
 /// FIXME: remove me
 /// Special case of ChlidOfProtocol
 /// Check out the `//public protocol ChildOfHtml {}
-//extension Head: ChildOfHtml {}
-//extension Body: ChildOfHtml {}
+//extension HtmlHead: ChildOfHtml {}
+//extension HtmlBody: ChildOfHtml {}
 
 public protocol VariationOfHead {}
-extension Head: VariationOfHead {}
+extension HtmlHead: VariationOfHead {}
 
 public protocol VariationOfBody {}
-extension Body: VariationOfBody {}
+extension HtmlBody: VariationOfBody {}
 
 /// ---------------------- ///
 
 public protocol ChildOfMap {}
-extension Area: ChildOfMap {}
-extension Script: ChildOfMap {}
-extension Noscript: ChildOfMap {}
-extension Template: ChildOfMap {}
-extension Comment: ChildOfMap {}
+extension HtmlArea: ChildOfMap {}
+extension HtmlScript: ChildOfMap {}
+extension HtmlNoscript: ChildOfMap {}
+extension HtmlTemplate: ChildOfMap {}
+extension HtmlComment: ChildOfMap {}
 
 extension Array: ChildOfMap where Element: ChildOfMap {}
 extension Either: ChildOfMap where Left: ChildOfMap, Right: ChildOfMap {}
@@ -406,11 +406,11 @@ extension Optional: ChildOfMap where Wrapped: ChildOfMap {}
 /// ---------------------- ///
 
 public protocol ChildOfObject {}
-extension Param: ChildOfObject {}
-extension Script: ChildOfObject {}
-extension Noscript: ChildOfObject {}
-extension Template: ChildOfObject {}
-extension Comment: ChildOfObject {}
+extension HtmlParam: ChildOfObject {}
+extension HtmlScript: ChildOfObject {}
+extension HtmlNoscript: ChildOfObject {}
+extension HtmlTemplate: ChildOfObject {}
+extension HtmlComment: ChildOfObject {}
 
 extension Array: ChildOfObject where Element: ChildOfObject {}
 extension Either: ChildOfObject where Left: ChildOfObject, Right: ChildOfObject {}
@@ -421,11 +421,11 @@ extension Optional: ChildOfObject where Wrapped: ChildOfObject {}
 /// ---------------------- ///
 
 public protocol ChildOfOl {}
-extension Li: ChildOfOl {}
-extension Script: ChildOfOl {}
-extension Noscript: ChildOfOl {}
-extension Template: ChildOfOl {}
-extension Comment: ChildOfOl {}
+extension HtmlLi: ChildOfOl {}
+extension HtmlScript: ChildOfOl {}
+extension HtmlNoscript: ChildOfOl {}
+extension HtmlTemplate: ChildOfOl {}
+extension HtmlComment: ChildOfOl {}
 
 extension Array: ChildOfOl where Element: ChildOfOl {}
 extension Either: ChildOfOl where Left: ChildOfOl, Right: ChildOfOl {}
@@ -436,11 +436,11 @@ extension Optional: ChildOfOl where Wrapped: ChildOfOl {}
 /// ---------------------- ///
 
 public protocol ChildOfOptgroup {}
-extension Option: ChildOfOptgroup {}
-extension Script: ChildOfOptgroup {}
-extension Noscript: ChildOfOptgroup {}
-extension Template: ChildOfOptgroup {}
-extension Comment: ChildOfOptgroup {}
+extension HtmlOption: ChildOfOptgroup {}
+extension HtmlScript: ChildOfOptgroup {}
+extension HtmlNoscript: ChildOfOptgroup {}
+extension HtmlTemplate: ChildOfOptgroup {}
+extension HtmlComment: ChildOfOptgroup {}
 
 extension Array: ChildOfOptgroup where Element: ChildOfOptgroup {}
 extension Either: ChildOfOptgroup where Left: ChildOfOptgroup, Right: ChildOfOptgroup {}
@@ -451,11 +451,11 @@ extension Optional: ChildOfOptgroup where Wrapped: ChildOfOptgroup {}
 /// ---------------------- ///
 
 public protocol ChildOfPicture {}
-extension Source: ChildOfPicture where Parent == IsPicture {}
-extension Script: ChildOfPicture {}
-extension Noscript: ChildOfPicture {}
-extension Template: ChildOfPicture {}
-extension Comment: ChildOfPicture {}
+extension HtmlSource: ChildOfPicture where Parent == IsPicture {}
+extension HtmlScript: ChildOfPicture {}
+extension HtmlNoscript: ChildOfPicture {}
+extension HtmlTemplate: ChildOfPicture {}
+extension HtmlComment: ChildOfPicture {}
 
 extension Array: ChildOfPicture where Element: ChildOfPicture {}
 extension Either: ChildOfPicture where Left: ChildOfPicture, Right: ChildOfPicture {}
@@ -466,11 +466,11 @@ extension Optional: ChildOfPicture where Wrapped: ChildOfPicture {}
 /// ---------------------- ///
 
 public protocol ChildOfSelect {}
-extension Option: ChildOfSelect {}
-extension Script: ChildOfSelect {}
-extension Noscript: ChildOfSelect {}
-extension Template: ChildOfSelect {}
-extension Comment: ChildOfSelect {}
+extension HtmlOption: ChildOfSelect {}
+extension HtmlScript: ChildOfSelect {}
+extension HtmlNoscript: ChildOfSelect {}
+extension HtmlTemplate: ChildOfSelect {}
+extension HtmlComment: ChildOfSelect {}
 
 extension Array: ChildOfSelect where Element: ChildOfSelect {}
 extension Either: ChildOfSelect where Left: ChildOfSelect, Right: ChildOfSelect {}
@@ -481,11 +481,11 @@ extension Optional: ChildOfSelect where Wrapped: ChildOfSelect {}
 /// ---------------------- ///
 
 public protocol ChildOfTbody {}
-extension Tr: ChildOfTbody where Content: VariationOfTd {}
-extension Script: ChildOfTbody {}
-extension Noscript: ChildOfTbody {}
-extension Template: ChildOfTbody {}
-extension Comment: ChildOfTbody {}
+extension HtmlTr: ChildOfTbody where Content: VariationOfTd {}
+extension HtmlScript: ChildOfTbody {}
+extension HtmlNoscript: ChildOfTbody {}
+extension HtmlTemplate: ChildOfTbody {}
+extension HtmlComment: ChildOfTbody {}
 
 extension Array: ChildOfTbody where Element: ChildOfTbody {}
 extension Either: ChildOfTbody where Left: ChildOfTbody, Right: ChildOfTbody {}
@@ -496,7 +496,7 @@ extension Optional: ChildOfTbody where Wrapped: ChildOfTbody {}
 /// ---------------------- ///
 
 public protocol VariationOfTbody {}
-extension Tbody: VariationOfTbody {}
+extension HtmlTbody: VariationOfTbody {}
 
 extension Array: VariationOfTbody where Element: VariationOfTbody {}
 extension Either: VariationOfTbody where Left: VariationOfTbody, Right: VariationOfTbody {}
@@ -507,11 +507,11 @@ extension Optional: VariationOfTbody where Wrapped: VariationOfTbody {}
 /// ---------------------- ///
 
 public protocol ChildOfTfoot {}
-extension Tr: ChildOfTfoot where Content: VariationOfTd {}
-extension Script: ChildOfTfoot {}
-extension Noscript: ChildOfTfoot {}
-extension Template: ChildOfTfoot {}
-extension Comment: ChildOfTfoot {}
+extension HtmlTr: ChildOfTfoot where Content: VariationOfTd {}
+extension HtmlScript: ChildOfTfoot {}
+extension HtmlNoscript: ChildOfTfoot {}
+extension HtmlTemplate: ChildOfTfoot {}
+extension HtmlComment: ChildOfTfoot {}
 
 extension Either: ChildOfTfoot where Left: ChildOfTfoot, Right: ChildOfTfoot {}
 extension EmptyView: ChildOfTfoot {}
@@ -521,7 +521,7 @@ extension Optional: ChildOfTfoot where Wrapped: ChildOfTfoot {}
 /// ---------------------- ///
 
 public protocol VariationOfTfoot {}
-extension Tfoot: VariationOfTfoot {}
+extension HtmlTfoot: VariationOfTfoot {}
 
 extension Either: VariationOfTfoot where Left: VariationOfTfoot, Right: VariationOfTfoot {}
 extension EmptyView: VariationOfTfoot {}
@@ -531,11 +531,11 @@ extension Optional: VariationOfTfoot where Wrapped: VariationOfTfoot {}
 /// ---------------------- ///
 
 public protocol ChildOfThead {}
-extension Tr: ChildOfThead where Content: VariationOfTh {}
-extension Script: ChildOfThead {}
-extension Noscript: ChildOfThead {}
-extension Template: ChildOfThead {}
-extension Comment: ChildOfThead {}
+extension HtmlTr: ChildOfThead where Content: VariationOfTh {}
+extension HtmlScript: ChildOfThead {}
+extension HtmlNoscript: ChildOfThead {}
+extension HtmlTemplate: ChildOfThead {}
+extension HtmlComment: ChildOfThead {}
 
 extension Either: ChildOfThead where Left: ChildOfThead, Right: ChildOfThead {}
 extension EmptyView: ChildOfThead {}
@@ -545,7 +545,7 @@ extension Optional: ChildOfThead where Wrapped: ChildOfThead {}
 /// ---------------------- ///
 
 public protocol VariationOfThead {}
-extension Thead: VariationOfThead {}
+extension HtmlThead: VariationOfThead {}
 
 extension Either: VariationOfThead where Left: VariationOfThead, Right: VariationOfThead {}
 extension EmptyView: VariationOfThead {}
@@ -555,10 +555,10 @@ extension Optional: VariationOfThead where Wrapped: VariationOfThead {}
 /// ---------------------- ///
 
 public protocol ChildOfTr {}
-extension Script: ChildOfTr {}
-extension Noscript: ChildOfTr {}
-extension Template: ChildOfTr {}
-extension Comment: ChildOfTr {}
+extension HtmlScript: ChildOfTr {}
+extension HtmlNoscript: ChildOfTr {}
+extension HtmlTemplate: ChildOfTr {}
+extension HtmlComment: ChildOfTr {}
 
 extension Array: ChildOfTr where Element: ChildOfTr {}
 extension Either: ChildOfTr where Left: ChildOfTr, Right: ChildOfTr {}
@@ -569,7 +569,7 @@ extension Optional: ChildOfTr where Wrapped: ChildOfTr {}
 /// ---------------------- ///
 
 public protocol VariationOfTh: ChildOfTr {}
-extension Th: VariationOfTh {}
+extension HtmlTh: VariationOfTh {}
 
 extension Array: VariationOfTh where Element: VariationOfTh {}
 extension Either: VariationOfTh where Left: VariationOfTh, Right: VariationOfTh {}
@@ -580,7 +580,7 @@ extension Optional: VariationOfTh where Wrapped: VariationOfTh {}
 /// ---------------------- ///
 
 public protocol VariationOfTd: ChildOfTr {}
-extension Td: VariationOfTd {}
+extension HtmlTd: VariationOfTd {}
 
 extension Array: VariationOfTd where Element: VariationOfTd {}
 extension Either: VariationOfTd where Left: VariationOfTd, Right: VariationOfTd {}
@@ -591,11 +591,11 @@ extension Optional: VariationOfTd where Wrapped: VariationOfTd {}
 /// ---------------------- ///
 
 public protocol ChildOfUl {}
-extension Li: ChildOfUl {}
-extension Script: ChildOfUl {}
-extension Noscript: ChildOfUl {}
-extension Template: ChildOfUl {}
-extension Comment: ChildOfUl {}
+extension HtmlLi: ChildOfUl {}
+extension HtmlScript: ChildOfUl {}
+extension HtmlNoscript: ChildOfUl {}
+extension HtmlTemplate: ChildOfUl {}
+extension HtmlComment: ChildOfUl {}
 
 extension Array: ChildOfUl where Element: ChildOfUl {}
 extension Either: ChildOfUl where Left: ChildOfUl, Right: ChildOfUl {}
@@ -606,15 +606,15 @@ extension Optional: ChildOfUl where Wrapped: ChildOfUl {}
 /// ---------------------- ///
 
 public protocol IsVideo {}
-extension Video: IsVideo {}
+extension HtmlVideo: IsVideo {}
 
 public protocol ChildOfVideo {}
-extension Source: ChildOfVideo where Parent: IsVideo {}
-extension Track: ChildOfVideo {}
-extension Script: ChildOfVideo {}
-extension Noscript: ChildOfVideo {}
-extension Template: ChildOfVideo {}
-extension Comment: ChildOfVideo {}
+extension HtmlSource: ChildOfVideo where Parent: IsVideo {}
+extension HtmlTrack: ChildOfVideo {}
+extension HtmlScript: ChildOfVideo {}
+extension HtmlNoscript: ChildOfVideo {}
+extension HtmlTemplate: ChildOfVideo {}
+extension HtmlComment: ChildOfVideo {}
 
 extension Array: ChildOfVideo where Element: ChildOfVideo {}
 extension Either: ChildOfVideo where Left: ChildOfVideo, Right: ChildOfVideo {}

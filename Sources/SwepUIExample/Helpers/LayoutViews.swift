@@ -6,7 +6,7 @@ struct VStack<Content: View>: View {
   }
 
   var body: some View {
-    Div {
+    HtmlDiv {
       AnyView(erasing: makeContent())
     }
     .cssDisplay(.flex)
@@ -25,7 +25,7 @@ struct HStack<Content: View>: View {
   }
 
   var body: some View {
-    Div {
+    HtmlDiv {
       AnyView(erasing: makeContent())
     }
     .cssDisplay(.flex)
@@ -38,14 +38,14 @@ struct HStack<Content: View>: View {
 
 struct Spacer: View {
   var body: some View {
-    Div("")
+    HtmlDiv()
       .cssFlexGrow(1)
   }
 }
 
 struct Divider: View {
   var body: some View {
-    Hr()
+    HtmlHr()
       .cssWidth(100%)
   }
 }

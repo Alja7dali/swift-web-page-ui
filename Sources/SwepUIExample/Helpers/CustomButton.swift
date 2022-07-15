@@ -27,7 +27,7 @@ struct CustomButton<Label: View>: View {
   }
 
   func makeContent() -> some View {
-    return Div {
+    return HtmlDiv {
       AnyView(erasing: label())
     }
     .cssCursor(.pointer)

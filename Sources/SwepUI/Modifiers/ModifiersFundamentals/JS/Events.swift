@@ -169,7 +169,7 @@ extension View {
 
 }
 
-extension Body {
+extension HtmlBody {
   /// Execute JavaScript when a page has started printing.
   ///
   /// - Parameter javascript: JavaScript to execute.
@@ -253,7 +253,7 @@ extension Body {
   }
 }
 
-extension Details {
+extension HtmlDetails {
   /// Execute JavaScript when a `<details>` element is opened or closed.
   ///
   /// - Parameter javascript: JavaScript to execute.
@@ -262,7 +262,7 @@ extension Details {
   }
 }
 
-extension Form {
+extension HtmlForm {
   /// Execute JavaScript when a form is reset.
   ///
   /// - Parameter javascript: JavaScript to execute.
@@ -278,7 +278,7 @@ extension Form {
   }
 }
 
-extension Input {
+extension HtmlInput {
   /// Execute JavaScript when an input field is invalid.
   ///
   /// - Parameter javascript: JavaScript to execute.
@@ -296,11 +296,11 @@ extension Input {
 
 public protocol HasOnabort {}
 
-extension Audio: HasOnabort {}
-extension Embed: HasOnabort {}
-extension Img: HasOnabort {}
-extension Object: HasOnabort {}
-extension Video: HasOnabort {}
+extension HtmlAudio: HasOnabort {}
+extension HtmlEmbed: HasOnabort {}
+extension HtmlImg: HasOnabort {}
+extension HtmlObject: HasOnabort {}
+extension HtmlVideo: HasOnabort {}
 
 extension View where Self: HasOnabort {
   /// Execute JavaScript if loading of a resource is aborted.
@@ -311,7 +311,7 @@ extension View where Self: HasOnabort {
   }
 }
 
-extension Track {
+extension HtmlTrack {
   /// Execute JavaScript when the cue changes in a `<track>` element.
   ///
   /// - Parameter javascript: JavaScript to execute.
@@ -322,10 +322,10 @@ extension Track {
 
 public protocol HasOncanplay {}
 
-extension Audio: HasOncanplay {}
-extension Embed: HasOncanplay {}
-extension Object: HasOncanplay {}
-extension Video: HasOncanplay {}
+extension HtmlAudio: HasOncanplay {}
+extension HtmlEmbed: HasOncanplay {}
+extension HtmlObject: HasOncanplay {}
+extension HtmlVideo: HasOncanplay {}
 
 extension View where Self: HasOncanplay {
   /// Execute JavaScript when a resource is ready to start playing.
@@ -338,8 +338,8 @@ extension View where Self: HasOncanplay {
 
 public protocol HasOncanplaythrough {}
 
-extension Audio: HasOncanplaythrough {}
-extension Video: HasOncanplaythrough {}
+extension HtmlAudio: HasOncanplaythrough {}
+extension HtmlVideo: HasOncanplaythrough {}
 
 extension View where Self: HasOncanplaythrough {
   /// Execute JavaScript when a resource can be played all the way through, without stopping.
@@ -352,9 +352,9 @@ extension View where Self: HasOncanplaythrough {
 
 public protocol HasOnchange {}
 
-extension Input: HasOnchange {}
-extension Select: HasOnchange {}
-extension Textarea: HasOnchange {}
+extension HtmlInput: HasOnchange {}
+extension HtmlSelect: HasOnchange {}
+extension HtmlTextarea: HasOnchange {}
 
 extension View where Self: HasOnchange {
   /// Execute JavaScript when a user changes the value of a form control.
@@ -367,8 +367,8 @@ extension View where Self: HasOnchange {
 
 public protocol HasOndurationchange {}
 
-extension Audio: HasOndurationchange {}
-extension Video: HasOndurationchange {}
+extension HtmlAudio: HasOndurationchange {}
+extension HtmlVideo: HasOndurationchange {}
 
 extension View where Self: HasOndurationchange {
   /// Execute JavaScript when the media is ready to start playing.
@@ -381,8 +381,8 @@ extension View where Self: HasOndurationchange {
 
 public protocol HasOnemptied {}
 
-extension Audio: HasOnemptied {}
-extension Video: HasOnemptied {}
+extension HtmlAudio: HasOnemptied {}
+extension HtmlVideo: HasOnemptied {}
 
 extension View where Self: HasOnemptied {
   public func jsEmptied(preform action: @escaping EventListenerAction) -> some View {
@@ -392,8 +392,8 @@ extension View where Self: HasOnemptied {
 
 public protocol HasOnended {}
 
-extension Audio: HasOnended {}
-extension Video: HasOnended {}
+extension HtmlAudio: HasOnended {}
+extension HtmlVideo: HasOnended {}
 
 extension View where Self: HasOnended {
   /// Execute JavaScript when the media has stopped playing.
@@ -406,13 +406,13 @@ extension View where Self: HasOnended {
 
 public protocol HasOnerror {}
 
-extension Audio: HasOnerror {}
-extension Img: HasOnerror {}
-extension Input: HasOnerror {} // TODO: type="image"
-extension Object: HasOnerror {}
-extension Link: HasOnerror {}
-extension Script: HasOnerror {}
-extension Video: HasOnerror {}
+extension HtmlAudio: HasOnerror {}
+extension HtmlImg: HasOnerror {}
+extension HtmlInput: HasOnerror {} // TODO: type="image"
+extension HtmlObject: HasOnerror {}
+extension HtmlLink: HasOnerror {}
+extension HtmlScript: HasOnerror {}
+extension HtmlVideo: HasOnerror {}
 
 extension View where Self: HasOnerror {
   public func jsError(preform action: @escaping EventListenerAction) -> some View {
@@ -422,8 +422,8 @@ extension View where Self: HasOnerror {
 
 public protocol HasOninput {}
 
-extension Input: HasOninput {}
-extension Textarea: HasOninput {}
+extension HtmlInput: HasOninput {}
+extension HtmlTextarea: HasOninput {}
 
 extension View where Self: HasOninput {
   /// Execute JavaScript when a user writes something in a text field.
@@ -436,13 +436,13 @@ extension View where Self: HasOninput {
 
 public protocol HasOnload {}
 
-extension Body: HasOnload {}
-extension Iframe: HasOnload {}
-extension Img: HasOnload {}
-extension Input: HasOnload {} // TODO: type="image"
-extension Link: HasOnload {}
-extension Script: HasOnload {}
-extension Style: HasOnload {}
+extension HtmlBody: HasOnload {}
+extension HtmlIframe: HasOnload {}
+extension HtmlImg: HasOnload {}
+extension HtmlInput: HasOnload {} // TODO: type="image"
+extension HtmlLink: HasOnload {}
+extension HtmlScript: HasOnload {}
+extension HtmlStyle: HasOnload {}
 
 extension View where Self: HasOnload {
   /// Execute JavaScript immediately after a page has been loaded.
@@ -455,8 +455,8 @@ extension View where Self: HasOnload {
 
 public protocol HasOnloadeddata {}
 
-extension Audio: HasOnloadeddata {}
-extension Video: HasOnloadeddata {}
+extension HtmlAudio: HasOnloadeddata {}
+extension HtmlVideo: HasOnloadeddata {}
 
 extension View where Self: HasOnloadeddata {
   public func jsLoadeddata(preform action: @escaping EventListenerAction) -> some View {
@@ -466,8 +466,8 @@ extension View where Self: HasOnloadeddata {
 
 public protocol HasOnloadedmetadata {}
 
-extension Audio: HasOnloadedmetadata {}
-extension Video: HasOnloadedmetadata {}
+extension HtmlAudio: HasOnloadedmetadata {}
+extension HtmlVideo: HasOnloadedmetadata {}
 
 extension View where Self: HasOnloadedmetadata {
   public func jsLoadedmetadata(preform action: @escaping EventListenerAction) -> some View {
@@ -477,8 +477,8 @@ extension View where Self: HasOnloadedmetadata {
 
 public protocol HasOnloadstart {}
 
-extension Audio: HasOnloadstart {}
-extension Video: HasOnloadstart {}
+extension HtmlAudio: HasOnloadstart {}
+extension HtmlVideo: HasOnloadstart {}
 
 extension View where Self: HasOnloadstart {
   public func jsLoadstart(preform action: @escaping EventListenerAction) -> some View {
@@ -488,8 +488,8 @@ extension View where Self: HasOnloadstart {
 
 public protocol HasOnpause {}
 
-extension Audio: HasOnpause {}
-extension Video: HasOnpause {}
+extension HtmlAudio: HasOnpause {}
+extension HtmlVideo: HasOnpause {}
 
 extension View where Self: HasOnpause {
   /// Execute JavaScript when media has been paused.
@@ -502,8 +502,8 @@ extension View where Self: HasOnpause {
 
 public protocol HasOnplay {}
 
-extension Audio: HasOnplay {}
-extension Video: HasOnplay {}
+extension HtmlAudio: HasOnplay {}
+extension HtmlVideo: HasOnplay {}
 
 extension View where Self: HasOnplay {
   /// Execute JavaScript when media has been played.
@@ -516,8 +516,8 @@ extension View where Self: HasOnplay {
 
 public protocol HasOnplaying {}
 
-extension Audio: HasOnplaying {}
-extension Video: HasOnplaying {}
+extension HtmlAudio: HasOnplaying {}
+extension HtmlVideo: HasOnplaying {}
 
 extension View where Self: HasOnplaying {
   /// Execute JavaScript when media is ready to start after having been paused.
@@ -530,8 +530,8 @@ extension View where Self: HasOnplaying {
 
 public protocol HasOnprogress {}
 
-extension Audio: HasOnprogress {}
-extension Video: HasOnprogress {}
+extension HtmlAudio: HasOnprogress {}
+extension HtmlVideo: HasOnprogress {}
 
 extension View where Self: HasOnprogress {
   /// Execute JavaScript when media is downloading.
@@ -544,8 +544,8 @@ extension View where Self: HasOnprogress {
 
 public protocol HasOnratechange {}
 
-extension Audio: HasOnratechange {}
-extension Video: HasOnratechange {}
+extension HtmlAudio: HasOnratechange {}
+extension HtmlVideo: HasOnratechange {}
 
 extension View where Self: HasOnratechange {
   /// Execute JavaScript when the playing speed of media is changed.
@@ -558,8 +558,8 @@ extension View where Self: HasOnratechange {
 
 public protocol HasOnseeked {}
 
-extension Audio: HasOnseeked {}
-extension Video: HasOnseeked {}
+extension HtmlAudio: HasOnseeked {}
+extension HtmlVideo: HasOnseeked {}
 
 extension View where Self: HasOnseeked {
   /// Execute JavaScript when the user is finished moving/skipping to a new position in media.
@@ -572,8 +572,8 @@ extension View where Self: HasOnseeked {
 
 public protocol HasOnseeking {}
 
-extension Audio: HasOnseeking {}
-extension Video: HasOnseeking {}
+extension HtmlAudio: HasOnseeking {}
+extension HtmlVideo: HasOnseeking {}
 
 extension View where Self: HasOnseeking {
   /// Execute JavaScript when the user starts moving/skipping to a new position in the media.
@@ -586,8 +586,8 @@ extension View where Self: HasOnseeking {
 
 public protocol HasOnselect {}
 
-extension Input: HasOnselect {}
-extension Textarea: HasOnselect {}
+extension HtmlInput: HasOnselect {}
+extension HtmlTextarea: HasOnselect {}
 
 extension View where Self: HasOnselect {
   /// Execute JavaScript when some text has been selected.
@@ -600,8 +600,8 @@ extension View where Self: HasOnselect {
 
 public protocol HasOnstalled {}
 
-extension Audio: HasOnstalled {}
-extension Video: HasOnstalled {}
+extension HtmlAudio: HasOnstalled {}
+extension HtmlVideo: HasOnstalled {}
 
 extension View where Self: HasOnstalled {
   /// Execute JavaScript when the browser is trying to get media data, but data is not available.
@@ -614,8 +614,8 @@ extension View where Self: HasOnstalled {
 
 public protocol HasOnsuspend {}
 
-extension Audio: HasOnsuspend {}
-extension Video: HasOnsuspend {}
+extension HtmlAudio: HasOnsuspend {}
+extension HtmlVideo: HasOnsuspend {}
 
 extension View where Self: HasOnsuspend {
   /// Execute JavaScript when the browser is intentionally not getting media data.
@@ -628,8 +628,8 @@ extension View where Self: HasOnsuspend {
 
 public protocol HasOntimeupdate {}
 
-extension Audio: HasOntimeupdate {}
-extension Video: HasOntimeupdate {}
+extension HtmlAudio: HasOntimeupdate {}
+extension HtmlVideo: HasOntimeupdate {}
 
 extension View where Self: HasOntimeupdate {
   /// Execute JavaScript when the current playback position has changed.
@@ -642,8 +642,8 @@ extension View where Self: HasOntimeupdate {
 
 public protocol HasOnvolumechange {}
 
-extension Audio: HasOnvolumechange {}
-extension Video: HasOnvolumechange {}
+extension HtmlAudio: HasOnvolumechange {}
+extension HtmlVideo: HasOnvolumechange {}
 
 extension View where Self: HasOnvolumechange {
   /// Execute JavaScript when the volume of a video has been changed.
@@ -656,8 +656,8 @@ extension View where Self: HasOnvolumechange {
 
 public protocol HasOnwaiting {}
 
-extension Audio: HasOnwaiting {}
-extension Video: HasOnwaiting {}
+extension HtmlAudio: HasOnwaiting {}
+extension HtmlVideo: HasOnwaiting {}
 
 extension View where Self: HasOnwaiting {
   /// Execute JavaScript when the media stops because it needs to buffer the next frame.

@@ -369,7 +369,7 @@ extension View {
   }
 }
 
-extension A {
+extension HtmlA {
   /// Email address of a hyperlink.
   ///
   /// - Parameters:
@@ -428,7 +428,7 @@ public enum AreaShape: String {
   case rect = ""
 }
 
-extension Area {
+extension HtmlArea {
   /// The kind of shape to be created in an image map.
   ///
   /// - Parameter value: The kind of shape to be created in an image map.
@@ -449,7 +449,7 @@ public enum ButtonType: String {
   case submit
 }
 
-extension Button {
+extension HtmlButton {
   /// Type of button.
   ///
   /// - Parameter value: Type of button.
@@ -458,7 +458,7 @@ extension Button {
   }
 }
 
-extension Details {
+extension HtmlDetails {
   /// Whether the details are visible.
   ///
   /// - Parameter value: Whether the details are visible.
@@ -492,7 +492,7 @@ public struct Enctype: RawRepresentable {
   public static let textPlain = Enctype(rawValue: "text/plain")
 }
 
-extension Form {
+extension HtmlForm {
   /// URL to use for form submission.
   ///
   /// - Parameter value: URL to use for form submission.
@@ -547,7 +547,7 @@ public enum IframeSandbox: String {
   case allowTopNavigation = "allow-top-navigation"
 }
 
-extension Iframe {
+extension HtmlIframe {
   /// Enables a set of extra restrictions on any content hosted by the `<iframe>`.
   ///
   /// - Parameter value: Sandbox options.
@@ -600,7 +600,7 @@ public enum InputType: String {
   case week
 }
 
-extension Input {
+extension HtmlInput {
   /// Whether the command or control is checked.
   ///
   /// - Parameter value: Whether the command or control is checked.
@@ -627,7 +627,7 @@ extension Input {
   }
 }
 
-extension Meta {
+extension HtmlMeta {
   /// Value of the `<meta>` element.
   ///
   /// - Parameter value: Value of the element.
@@ -653,7 +653,7 @@ public enum ListType: String {
   case upperRoman = "I"
 }
 
-extension Ol {
+extension HtmlOl {
   /// Number the list backwards.
   ///
   /// - Parameter value: Number the list backwards.
@@ -676,7 +676,7 @@ extension Ol {
   }
 }
 
-extension Option {
+extension HtmlOption {
   /// Whether the option is selected by default.
   ///
   /// - Parameter value: Whether the option is selected by default.
@@ -685,7 +685,7 @@ extension Option {
   }
 }
 
-extension Script {
+extension HtmlScript {
   /// Execute script in parallel.
   ///
   /// - Parameter value: Execute script in parallel.
@@ -711,13 +711,13 @@ extension Script {
 
 public protocol CanHaveMediaQueryList {}
 
-extension Audio: CanHaveMediaQueryList {}
-extension Video: CanHaveMediaQueryList {}
-extension Picture: CanHaveMediaQueryList {}
+extension HtmlAudio: CanHaveMediaQueryList {}
+extension HtmlVideo: CanHaveMediaQueryList {}
+extension HtmlPicture: CanHaveMediaQueryList {}
 
 public protocol HasMediaQueryList {}
 
-extension Source: HasMediaQueryList where Parent: CanHaveMediaQueryList {}
+extension HtmlSource: HasMediaQueryList where Parent: CanHaveMediaQueryList {}
 
 extension View where Self: HasMediaQueryList {
   /// Applicable media.
@@ -729,9 +729,9 @@ extension View where Self: HasMediaQueryList {
 }
 
 public protocol IsPicture {}
-extension Picture: IsPicture {}
+extension HtmlPicture: IsPicture {}
 
-extension Source where Parent: IsPicture {
+extension HtmlSource where Parent: IsPicture {
   /// Images to use in different situations (e.g., high-resolution displays,
   /// small monitors, etc).
   ///
@@ -755,7 +755,7 @@ public enum TextareaWrap: String {
   case soft
 }
 
-extension Textarea {
+extension HtmlTextarea {
   /// Maximum number of characters per line.
   ///
   /// - Parameter value: Maximum number of characters per line.
@@ -805,7 +805,7 @@ public enum ThScope: String {
   case rowgroup
 }
 
-extension Th {
+extension HtmlTh {
   /// Alternative label to use for the header cell when referencing the cell in
   /// other contexts.
   ///
@@ -854,7 +854,7 @@ public enum TrackKind: String {
   case subtitles
 }
 
-extension Track {
+extension HtmlTrack {
   public func `default`(_ value: Bool) -> some View {
     return htmlAttribute(key: "default", value: value ? "" : nil)
   }
@@ -881,7 +881,7 @@ extension Track {
   }
 }
 
-extension Video {
+extension HtmlVideo {
   public func htmlPoster(_ value: String) -> some View {
     return htmlAttribute(key: "poster", value: value)
   }
@@ -891,9 +891,9 @@ extension Video {
 /// and `<input>` elements.
 public protocol HasAlt {}
 
-extension Area: HasAlt {}
-extension Img: HasAlt {}
-extension Input: HasAlt {}
+extension HtmlArea: HasAlt {}
+extension HtmlImg: HasAlt {}
+extension HtmlInput: HasAlt {}
 
 extension View where Self: HasAlt {
   /// Replacement text for use when images are not available. For `<area>`,
@@ -909,10 +909,10 @@ extension View where Self: HasAlt {
 /// `<input>`, `<select>`, and `<textarea>` elements.
 public protocol HasAutofocus {}
 
-extension Button: HasAutofocus {}
-extension Input: HasAutofocus {}
-extension Select: HasAutofocus {}
-extension Textarea: HasAutofocus {}
+extension HtmlButton: HasAutofocus {}
+extension HtmlInput: HasAutofocus {}
+extension HtmlSelect: HasAutofocus {}
+extension HtmlTextarea: HasAutofocus {}
 
 extension View where Self: HasAutofocus {
   /// The `autofocus` content attribute allows the author to indicate that a
@@ -931,8 +931,8 @@ extension View where Self: HasAutofocus {
 /// and `<video>` elements.
 public protocol HasAutoplay {}
 
-extension Audio: HasAutoplay {}
-extension Video: HasAutoplay {}
+extension HtmlAudio: HasAutoplay {}
+extension HtmlVideo: HasAutoplay {}
 
 extension View where Self: HasAutoplay {
   /// Hint that the media resource can be started automatically when the page
@@ -949,8 +949,8 @@ extension View where Self: HasAutoplay {
 /// and `<script>` elements.
 public protocol HasCharset {}
 
-extension Meta: HasCharset {}
-extension Script: HasCharset {}
+extension HtmlMeta: HasCharset {}
+extension HtmlScript: HasCharset {}
 
 extension View where Self: HasCharset {
   /// Character encoding declaration.
@@ -965,10 +965,10 @@ extension View where Self: HasCharset {
 /// `<del>`, `<ins>`, and `<q>` elements.
 public protocol HasCite {}
 
-extension Blockquote: HasCite {}
-extension Del: HasCite {}
-extension Ins: HasCite {}
-extension Q: HasCite {}
+extension HtmlBlockquote: HasCite {}
+extension HtmlDel: HasCite {}
+extension HtmlIns: HasCite {}
+extension HtmlQ: HasCite {}
 
 extension View where Self: HasCite {
   /// Link to the source of the quotation.
@@ -984,8 +984,8 @@ extension View where Self: HasCite {
 /// `<th>` elements.
 public protocol HasColspan {}
 
-extension Td: HasColspan {}
-extension Th: HasColspan {}
+extension HtmlTd: HasColspan {}
+extension HtmlTh: HasColspan {}
 
 extension View where Self: HasColspan {
   /// Number of columns that the cell is to span.
@@ -1000,8 +1000,8 @@ extension View where Self: HasColspan {
 /// and `<video>` elements.
 public protocol HasControls {}
 
-extension Audio: HasControls {}
-extension Video: HasControls {}
+extension HtmlAudio: HasControls {}
+extension HtmlVideo: HasControls {}
 
 extension View where Self: HasControls {
   /// If present, it indicates that the author has not provided a scripted
@@ -1018,8 +1018,8 @@ extension View where Self: HasControls {
 /// and `<script>` elements.
 public protocol HasCrossorigin {}
 
-extension Img: HasCrossorigin {}
-extension Script: HasCrossorigin {}
+extension HtmlImg: HasCrossorigin {}
+extension HtmlScript: HasCrossorigin {}
 
 public enum Crossorigin: String {
   /// Requests for the element will have their mode set to "`cors`" and
@@ -1063,9 +1063,9 @@ extension View where Self: HasCrossorigin {
 /// `<ins>`, and `<time>` elements.
 public protocol HasDatetime {}
 
-extension Del: HasDatetime {}
-extension Ins: HasDatetime {}
-extension Time: HasDatetime {}
+extension HtmlDel: HasDatetime {}
+extension HtmlIns: HasDatetime {}
+extension HtmlTime: HasDatetime {}
 
 #if os(WASI)
 import class JavaScriptKit.JSDate
@@ -1100,13 +1100,13 @@ extension View where Self: HasDatetime {
 /// `<textarea>` elements.
 public protocol HasDisabled {}
 
-extension Button: HasDisabled {}
-extension Fieldset: HasDisabled {}
-extension Input: HasDisabled {}
-extension Optgroup: HasDisabled {}
-extension Option: HasDisabled {}
-extension Select: HasDisabled {}
-extension Textarea: HasDisabled {}
+extension HtmlButton: HasDisabled {}
+extension HtmlFieldset: HasDisabled {}
+extension HtmlInput: HasDisabled {}
+extension HtmlOptgroup: HasDisabled {}
+extension HtmlOption: HasDisabled {}
+extension HtmlSelect: HasDisabled {}
+extension HtmlTextarea: HasDisabled {}
 
 extension View where Self: HasDisabled {
   /// Whether the form control is disabled.
@@ -1121,8 +1121,8 @@ extension View where Self: HasDisabled {
 /// `<output>` elements.
 public protocol HasFor {}
 
-extension Label: HasFor {}
-extension Output: HasFor {}
+extension HtmlLabel: HasFor {}
+extension HtmlOutput: HasFor {}
 
 extension View where Self: HasFor {
   /// Associate the label or output with form control.
@@ -1138,15 +1138,15 @@ extension View where Self: HasFor {
 /// `<select>`, and `<textarea>` elements.
 public protocol HasForm {}
 
-extension Button: HasForm {}
-extension Fieldset: HasForm {}
-extension Input: HasForm {}
-extension Label: HasForm {}
-extension Meter: HasForm {}
-extension Object: HasForm {}
-extension Output: HasForm {}
-extension Select: HasForm {}
-extension Textarea: HasForm {}
+extension HtmlButton: HasForm {}
+extension HtmlFieldset: HasForm {}
+extension HtmlInput: HasForm {}
+extension HtmlLabel: HasForm {}
+extension HtmlMeter: HasForm {}
+extension HtmlObject: HasForm {}
+extension HtmlOutput: HasForm {}
+extension HtmlSelect: HasForm {}
+extension HtmlTextarea: HasForm {}
 
 extension View where Self: HasForm {
   /// Associates the control with a `<form>` element.
@@ -1161,8 +1161,8 @@ extension View where Self: HasForm {
 /// `<th>` elements.
 public protocol HasHeaders {}
 
-extension Td: HasHeaders {}
-extension Th: HasHeaders {}
+extension HtmlTd: HasHeaders {}
+extension HtmlTh: HasHeaders {}
 
 extension View where Self: HasHeaders {
   /// The header cells for this cell.
@@ -1178,14 +1178,14 @@ extension View where Self: HasHeaders {
 /// `<video>` elements.
 public protocol HasHeight {}
 
-extension Canvas: HasHeight {}
-extension Embed: HasHeight {}
-extension Iframe: HasHeight {}
-extension Img: HasHeight {}
-extension Input: HasHeight {}
-extension Object: HasHeight {}
-extension Svg: HasHeight {}
-extension Video: HasHeight {}
+extension HtmlCanvas: HasHeight {}
+extension HtmlEmbed: HasHeight {}
+extension HtmlIframe: HasHeight {}
+extension HtmlImg: HasHeight {}
+extension HtmlInput: HasHeight {}
+extension HtmlObject: HasHeight {}
+extension HtmlSvg: HasHeight {}
+extension HtmlVideo: HasHeight {}
 
 extension View where Self: HasHeight {
   /// Vertical dimension.
@@ -1200,10 +1200,10 @@ extension View where Self: HasHeight {
 /// `<base>`, and `<link>` elements.
 public protocol HasHref {}
 
-extension A: HasHref {}
-extension Area: HasHref {}
-extension Base: HasHref {}
-extension Link: HasHref {}
+extension HtmlA: HasHref {}
+extension HtmlArea: HasHref {}
+extension HtmlBase: HasHref {}
+extension HtmlLink: HasHref {}
 
 extension View where Self: HasHref {
   /// Address of a hyperlink.
@@ -1218,8 +1218,8 @@ extension View where Self: HasHref {
 /// `<video>` elements.
 public protocol HasLoop {}
 
-extension Audio: HasLoop {}
-extension Video: HasLoop {}
+extension HtmlAudio: HasLoop {}
+extension HtmlVideo: HasLoop {}
 
 extension View where Self: HasLoop {
   public func htmlLoop(_ value: Bool) -> some View {
@@ -1231,9 +1231,9 @@ extension View where Self: HasLoop {
 /// `<meter>`, and `<progress>` elements.
 public protocol HasMax {}
 
-extension Input: HasMax {}
-extension Meter: HasMax {}
-extension Progress: HasMax {}
+extension HtmlInput: HasMax {}
+extension HtmlMeter: HasMax {}
+extension HtmlProgress: HasMax {}
 
 extension View where Self: HasMax {
   /// Maximum value.
@@ -1256,8 +1256,8 @@ extension View where Self: HasMax {
 /// and `<textarea>` elements.
 public protocol HasMaxlength {}
 
-extension Input: HasMaxlength {}
-extension Textarea: HasMaxlength {}
+extension HtmlInput: HasMaxlength {}
+extension HtmlTextarea: HasMaxlength {}
 
 extension View where Self: HasMaxlength {
   /// Maximum length of value.
@@ -1272,9 +1272,9 @@ extension View where Self: HasMaxlength {
 /// `<meter>`, and `<progress>` elements.
 public protocol HasMin {}
 
-extension Input: HasMin {}
-extension Meter: HasMin {}
-extension Progress: HasMin {}
+extension HtmlInput: HasMin {}
+extension HtmlMeter: HasMin {}
+extension HtmlProgress: HasMin {}
 
 extension View where Self: HasMin {
   /// Minimum value.
@@ -1297,8 +1297,8 @@ extension View where Self: HasMin {
 /// and `<textarea>` elements.
 public protocol HasMinlength {}
 
-extension Input: HasMinlength {}
-extension Textarea: HasMinlength {}
+extension HtmlInput: HasMinlength {}
+extension HtmlTextarea: HasMinlength {}
 
 extension View where Self: HasMinlength {
   /// Minimum length of value.
@@ -1313,8 +1313,8 @@ extension View where Self: HasMinlength {
 /// and `<select>` elements.
 public protocol HasMultiple {}
 
-extension Input: HasMultiple {}
-extension Select: HasMultiple {}
+extension HtmlInput: HasMultiple {}
+extension HtmlSelect: HasMultiple {}
 
 extension View where Self: HasMultiple {
   /// Whether to allow multiple values.
@@ -1329,8 +1329,8 @@ extension View where Self: HasMultiple {
 /// and `<video>` elements.
 public protocol HasMuted {}
 
-extension Audio: HasMuted {}
-extension Video: HasMuted {}
+extension HtmlAudio: HasMuted {}
+extension HtmlVideo: HasMuted {}
 
 extension View where Self: HasMuted {
   /// Whether to mute the media resource by default.
@@ -1343,16 +1343,16 @@ extension View where Self: HasMuted {
 
 public protocol HasName {}
 
-extension Button: HasName {}
-extension Fieldset: HasName {}
-extension Form: HasName {}
-extension Iframe: HasName {}
-extension Input: HasName {}
-extension Map: HasName {}
-extension Object: HasName {}
-extension Output: HasName {}
-extension Select: HasName {}
-extension Textarea: HasName {}
+extension HtmlButton: HasName {}
+extension HtmlFieldset: HasName {}
+extension HtmlForm: HasName {}
+extension HtmlIframe: HasName {}
+extension HtmlInput: HasName {}
+extension HtmlMap: HasName {}
+extension HtmlObject: HasName {}
+extension HtmlOutput: HasName {}
+extension HtmlSelect: HasName {}
+extension HtmlTextarea: HasName {}
 
 extension View where Self: HasName {
   /// Name of form control to use for form submission and in the form.elements API.
@@ -1367,8 +1367,8 @@ extension View where Self: HasName {
 /// and `<textarea>` elements.
 public protocol HasPlaceholder {}
 
-extension Input: HasPlaceholder {}
-extension Textarea: HasPlaceholder {}
+extension HtmlInput: HasPlaceholder {}
+extension HtmlTextarea: HasPlaceholder {}
 
 extension View where Self: HasPlaceholder {
   /// User-visible label to be placed within the form control.
@@ -1384,8 +1384,8 @@ extension View where Self: HasPlaceholder {
 /// `<video>` elements.
 public protocol HasPreload {}
 
-extension Audio: HasPreload {}
-extension Video: HasPreload {}
+extension HtmlAudio: HasPreload {}
+extension HtmlVideo: HasPreload {}
 
 public enum Preload: String {
   /// Hints to the user agent that the user agent can put the user's needs
@@ -1428,8 +1428,8 @@ extension View where Self: HasPreload {
 /// and `<textarea>` elements.
 public protocol HasReadonly {}
 
-extension Input: HasReadonly {}
-extension Textarea: HasReadonly {}
+extension HtmlInput: HasReadonly {}
+extension HtmlTextarea: HasReadonly {}
 
 extension View where Self: HasReadonly {
   /// Whether to allow the value to be edited by the user.
@@ -1444,9 +1444,9 @@ extension View where Self: HasReadonly {
 /// and `<link>` elements.
 public protocol HasRel {}
 
-extension A: HasRel {}
-extension Area: HasRel {}
-extension Link: HasRel {}
+extension HtmlA: HasRel {}
+extension HtmlArea: HasRel {}
+extension HtmlLink: HasRel {}
 
 public struct Rel: RawRepresentable {
   public let rawValue: String
@@ -1479,9 +1479,9 @@ extension View where Self: HasRel {
 /// `<select>` and `<textarea>` elements.
 public protocol HasRequired {}
 
-extension Input: HasRequired {}
-extension Select: HasRequired {}
-extension Textarea: HasRequired {}
+extension HtmlInput: HasRequired {}
+extension HtmlSelect: HasRequired {}
+extension HtmlTextarea: HasRequired {}
 
 extension View where Self: HasRequired {
   /// Whether the control is required for form submission.
@@ -1496,8 +1496,8 @@ extension View where Self: HasRequired {
 /// `<th>` elements.
 public protocol HasRowspan {}
 
-extension Td: HasRowspan {}
-extension Th: HasRowspan {}
+extension HtmlTd: HasRowspan {}
+extension HtmlTh: HasRowspan {}
 
 extension View where Self: HasRowspan {
   /// /// Number of rows that the cell is to span.
@@ -1512,8 +1512,8 @@ extension View where Self: HasRowspan {
 /// `<colgroup>` elements.
 public protocol HasSpan {}
 
-extension Col: HasSpan {}
-extension Colgroup: HasSpan {}
+extension HtmlCol: HasSpan {}
+extension HtmlColgroup: HasSpan {}
 
 extension View where Self: HasSpan {
   public func htmlSpan(_ value: Int) -> some View {
@@ -1526,15 +1526,15 @@ extension View where Self: HasSpan {
 /// `<track>`, and `<video>` elements.
 public protocol HasSrc {}
 
-extension Audio: HasSrc {}
-extension Embed: HasSrc {}
-extension Iframe: HasSrc {}
-extension Img: HasSrc {}
-extension Input: HasSrc {}
-extension Script: HasSrc {}
-extension Source: HasSrc {}
-extension Track: HasSrc {}
-extension Video: HasSrc {}
+extension HtmlAudio: HasSrc {}
+extension HtmlEmbed: HasSrc {}
+extension HtmlIframe: HasSrc {}
+extension HtmlImg: HasSrc {}
+extension HtmlInput: HasSrc {}
+extension HtmlScript: HasSrc {}
+extension HtmlSource: HasSrc {}
+extension HtmlTrack: HasSrc {}
+extension HtmlVideo: HasSrc {}
 
 extension View where Self: HasSrc {
   /// Address of the resource.
@@ -1549,8 +1549,8 @@ extension View where Self: HasSrc {
 /// `<source>` elements.
 public protocol HasSrcset {}
 
-extension Img: HasSrcset {}
-extension Source: HasSrcset {}
+extension HtmlImg: HasSrcset {}
+extension HtmlSource: HasSrcset {}
 
 public enum Size: CustomStringConvertible {
   case w(Int)
@@ -1581,10 +1581,10 @@ extension View where Self: HasSrcset {
 /// <area>`, `<base>`, and `<form>` elements.
 public protocol HasTarget {}
 
-extension A: HasTarget {}
-extension Area: HasTarget {}
-extension Base: HasTarget {}
-extension Form: HasTarget {}
+extension HtmlA: HasTarget {}
+extension HtmlArea: HasTarget {}
+extension HtmlBase: HasTarget {}
+extension HtmlForm: HasTarget {}
 
 /// Default browsing context for hyperlink navigation and form submission.
 public struct Target: RawRepresentable {
@@ -1614,13 +1614,13 @@ extension View where Self: HasTarget {
 /// `<link>`, `<object>`, `<script>`, `<source>`, and `<style>` elements.
 public protocol HasMediaType {}
 
-extension A: HasMediaType {}
-extension Embed: HasMediaType {}
-extension Link: HasMediaType {}
-extension Object: HasMediaType {}
-extension Script: HasMediaType {}
-extension Source: HasMediaType {}
-extension Style: HasMediaType {}
+extension HtmlA: HasMediaType {}
+extension HtmlEmbed: HasMediaType {}
+extension HtmlLink: HasMediaType {}
+extension HtmlObject: HasMediaType {}
+extension HtmlScript: HasMediaType {}
+extension HtmlSource: HasMediaType {}
+extension HtmlStyle: HasMediaType {}
 
 extension View where Self: HasMediaType {
   /// Hint for the type of the referenced resource.
@@ -1635,9 +1635,9 @@ extension View where Self: HasMediaType {
 /// `<input>`, `<meter>`, and `<progress>` elements.
 public protocol HasDoubleValue {}
 
-extension Input: HasDoubleValue {}
-extension Meter: HasDoubleValue {}
-extension Progress: HasDoubleValue {}
+extension HtmlInput: HasDoubleValue {}
+extension HtmlMeter: HasDoubleValue {}
+extension HtmlProgress: HasDoubleValue {}
 
 extension View where Self: HasDoubleValue {
   public func htmlValue(_ value: Double) -> some View {
@@ -1649,8 +1649,8 @@ extension View where Self: HasDoubleValue {
 /// `<input>` and `<li>` elements.
 public protocol HasIntValue {}
 
-extension Input: HasIntValue {}
-extension Li: HasIntValue {}
+extension HtmlInput: HasIntValue {}
+extension HtmlLi: HasIntValue {}
 
 extension View where Self: HasIntValue {
   /// The form control's value. (Or, for `<li>` elements, the ordinal value
@@ -1666,9 +1666,9 @@ extension View where Self: HasIntValue {
 /// `<button>`, `<input>`, and `<option>` elements.
 public protocol HasStringValue {}
 
-extension Button: HasStringValue {}
-extension Input: HasStringValue {}
-extension Option: HasStringValue {}
+extension HtmlButton: HasStringValue {}
+extension HtmlInput: HasStringValue {}
+extension HtmlOption: HasStringValue {}
 
 extension View where Self: HasStringValue {
   /// The form control's value.
@@ -1684,14 +1684,14 @@ extension View where Self: HasStringValue {
 /// elements.
 public protocol HasWidth {}
 
-extension Canvas: HasWidth {}
-extension Embed: HasWidth {}
-extension Iframe: HasWidth {}
-extension Img: HasWidth {}
-extension Input: HasWidth {}
-extension Object: HasWidth {}
-extension Svg: HasWidth {}
-extension Video: HasWidth {}
+extension HtmlCanvas: HasWidth {}
+extension HtmlEmbed: HasWidth {}
+extension HtmlIframe: HasWidth {}
+extension HtmlImg: HasWidth {}
+extension HtmlInput: HasWidth {}
+extension HtmlObject: HasWidth {}
+extension HtmlSvg: HasWidth {}
+extension HtmlVideo: HasWidth {}
 
 extension View where Self: HasWidth {
   /// Horizontal dimension.
@@ -2440,7 +2440,7 @@ extension View {
 
 }
 
-extension Body {
+extension HtmlBody {
   /// Execute JavaScript when a page has started printing.
   ///
   /// - Parameter javascript: JavaScript to execute.
@@ -2606,7 +2606,7 @@ extension Body {
   }
 }
 
-extension Details {
+extension HtmlDetails {
   /// Execute JavaScript when a `<details>` element is opened or closed.
   ///
   /// - Parameter javascript: JavaScript to execute.
@@ -2622,7 +2622,7 @@ extension Details {
   }
 }
 
-extension Form {
+extension HtmlForm {
   /// Execute JavaScript when a form is reset.
   ///
   /// - Parameter javascript: JavaScript to execute.
@@ -2652,7 +2652,7 @@ extension Form {
   }
 }
 
-extension Input {
+extension HtmlInput {
   /// Execute JavaScript when an input field is invalid.
   ///
   /// - Parameter javascript: JavaScript to execute.
@@ -2684,11 +2684,11 @@ extension Input {
 
 // public protocol HasOnabort {}
 
-// extension Audio: HasOnabort {}
-// extension Embed: HasOnabort {}
-// extension Img: HasOnabort {}
-// extension Object: HasOnabort {}
-// extension Video: HasOnabort {}
+// extension HtmlAudio: HasOnabort {}
+// extension HtmlEmbed: HasOnabort {}
+// extension HtmlImg: HasOnabort {}
+// extension HtmlObject: HasOnabort {}
+// extension HtmlVideo: HasOnabort {}
 
 extension View where Self: HasOnabort {
   /// Execute JavaScript if loading of a resource is aborted.
@@ -2706,7 +2706,7 @@ extension View where Self: HasOnabort {
   }
 }
 
-extension Track {
+extension HtmlTrack {
   /// Execute JavaScript when the cue changes in a `<track>` element.
   ///
   /// - Parameter javascript: JavaScript to execute.
@@ -2724,10 +2724,10 @@ extension Track {
 
 // public protocol HasOncanplay {}
 
-// extension Audio: HasOncanplay {}
-// extension Embed: HasOncanplay {}
-// extension Object: HasOncanplay {}
-// extension Video: HasOncanplay {}
+// extension HtmlAudio: HasOncanplay {}
+// extension HtmlEmbed: HasOncanplay {}
+// extension HtmlObject: HasOncanplay {}
+// extension HtmlVideo: HasOncanplay {}
 
 extension View where Self: HasOncanplay {
   /// Execute JavaScript when a resource is ready to start playing.
@@ -2747,8 +2747,8 @@ extension View where Self: HasOncanplay {
 
 // public protocol HasOncanplaythrough {}
 
-// extension Audio: HasOncanplaythrough {}
-// extension Video: HasOncanplaythrough {}
+// extension HtmlAudio: HasOncanplaythrough {}
+// extension HtmlVideo: HasOncanplaythrough {}
 
 extension View where Self: HasOncanplaythrough {
   /// Execute JavaScript when a resource can be played all the way through, without stopping.
@@ -2768,9 +2768,9 @@ extension View where Self: HasOncanplaythrough {
 
 // public protocol HasOnchange {}
 
-// extension Input: HasOnchange {}
-// extension Select: HasOnchange {}
-// extension Textarea: HasOnchange {}
+// extension HtmlInput: HasOnchange {}
+// extension HtmlSelect: HasOnchange {}
+// extension HtmlTextarea: HasOnchange {}
 
 extension View where Self: HasOnchange {
   /// Execute JavaScript when a user changes the value of a form control.
@@ -2790,8 +2790,8 @@ extension View where Self: HasOnchange {
 
 // public protocol HasOndurationchange {}
 
-// extension Audio: HasOndurationchange {}
-// extension Video: HasOndurationchange {}
+// extension HtmlAudio: HasOndurationchange {}
+// extension HtmlVideo: HasOndurationchange {}
 
 extension View where Self: HasOndurationchange {
   /// Execute JavaScript when the media is ready to start playing.
@@ -2811,8 +2811,8 @@ extension View where Self: HasOndurationchange {
 
 // public protocol HasOnemptied {}
 
-// extension Audio: HasOnemptied {}
-// extension Video: HasOnemptied {}
+// extension HtmlAudio: HasOnemptied {}
+// extension HtmlVideo: HasOnemptied {}
 
 extension View where Self: HasOnemptied {
   public func htmlOnemptied(safe javascript: StaticString) -> some View {
@@ -2826,8 +2826,8 @@ extension View where Self: HasOnemptied {
 
 // public protocol HasOnended {}
 
-// extension Audio: HasOnended {}
-// extension Video: HasOnended {}
+// extension HtmlAudio: HasOnended {}
+// extension HtmlVideo: HasOnended {}
 
 extension View where Self: HasOnended {
   /// Execute JavaScript when the media has stopped playing.
@@ -2847,13 +2847,13 @@ extension View where Self: HasOnended {
 
 // public protocol HasOnerror {}
 
-// extension Audio: HasOnerror {}
-// extension Img: HasOnerror {}
-// extension Input: HasOnerror {} // TODO: type="image"
-// extension Object: HasOnerror {}
-// extension Link: HasOnerror {}
-// extension Script: HasOnerror {}
-// extension Video: HasOnerror {}
+// extension HtmlAudio: HasOnerror {}
+// extension HtmlImg: HasOnerror {}
+// extension HtmlInput: HasOnerror {} // TODO: type="image"
+// extension HtmlObject: HasOnerror {}
+// extension HtmlLink: HasOnerror {}
+// extension HtmlScript: HasOnerror {}
+// extension HtmlVideo: HasOnerror {}
 
 extension View where Self: HasOnerror {
   public func htmlOnerror(safe javascript: StaticString) -> some View {
@@ -2867,8 +2867,8 @@ extension View where Self: HasOnerror {
 
 // public protocol HasOninput {}
 
-// extension Input: HasOninput {}
-// extension Textarea: HasOninput {}
+// extension HtmlInput: HasOninput {}
+// extension HtmlTextarea: HasOninput {}
 
 extension View where Self: HasOninput {
   /// Execute JavaScript when a user writes something in a text field.
@@ -2888,13 +2888,13 @@ extension View where Self: HasOninput {
 
 // public protocol HasOnload {}
 
-// extension Body: HasOnload {}
-// extension Iframe: HasOnload {}
-// extension Img: HasOnload {}
-// extension Input: HasOnload {} // TODO: type="image"
-// extension Link: HasOnload {}
-// extension Script: HasOnload {}
-// extension Style: HasOnload {}
+// extension HtmlBody: HasOnload {}
+// extension HtmlIframe: HasOnload {}
+// extension HtmlImg: HasOnload {}
+// extension HtmlInput: HasOnload {} // TODO: type="image"
+// extension HtmlLink: HasOnload {}
+// extension HtmlScript: HasOnload {}
+// extension HtmlStyle: HasOnload {}
 
 extension View where Self: HasOnload {
   /// Execute JavaScript immediately after a page has been loaded.
@@ -2914,8 +2914,8 @@ extension View where Self: HasOnload {
 
 // public protocol HasOnloadeddata {}
 
-// extension Audio: HasOnloadeddata {}
-// extension Video: HasOnloadeddata {}
+// extension HtmlAudio: HasOnloadeddata {}
+// extension HtmlVideo: HasOnloadeddata {}
 
 extension View where Self: HasOnloadeddata {
   public func htmlOnloadeddata(safe javascript: StaticString) -> some View {
@@ -2929,8 +2929,8 @@ extension View where Self: HasOnloadeddata {
 
 // public protocol HasOnloadedmetadata {}
 
-// extension Audio: HasOnloadedmetadata {}
-// extension Video: HasOnloadedmetadata {}
+// extension HtmlAudio: HasOnloadedmetadata {}
+// extension HtmlVideo: HasOnloadedmetadata {}
 
 extension View where Self: HasOnloadedmetadata {
   public func htmlOnloadedmetadata(safe javascript: StaticString) -> some View {
@@ -2944,8 +2944,8 @@ extension View where Self: HasOnloadedmetadata {
 
 // public protocol HasOnloadstart {}
 
-// extension Audio: HasOnloadstart {}
-// extension Video: HasOnloadstart {}
+// extension HtmlAudio: HasOnloadstart {}
+// extension HtmlVideo: HasOnloadstart {}
 
 extension View where Self: HasOnloadstart {
   public func htmlOnloadstart(safe javascript: StaticString) -> some View {
@@ -2959,8 +2959,8 @@ extension View where Self: HasOnloadstart {
 
 // public protocol HasOnpause {}
 
-// extension Audio: HasOnpause {}
-// extension Video: HasOnpause {}
+// extension HtmlAudio: HasOnpause {}
+// extension HtmlVideo: HasOnpause {}
 
 extension View where Self: HasOnpause {
   /// Execute JavaScript when media has been paused.
@@ -2980,8 +2980,8 @@ extension View where Self: HasOnpause {
 
 // public protocol HasOnplay {}
 
-// extension Audio: HasOnplay {}
-// extension Video: HasOnplay {}
+// extension HtmlAudio: HasOnplay {}
+// extension HtmlVideo: HasOnplay {}
 
 extension View where Self: HasOnplay {
   /// Execute JavaScript when media has been played.
@@ -3001,8 +3001,8 @@ extension View where Self: HasOnplay {
 
 // public protocol HasOnplaying {}
 
-// extension Audio: HasOnplaying {}
-// extension Video: HasOnplaying {}
+// extension HtmlAudio: HasOnplaying {}
+// extension HtmlVideo: HasOnplaying {}
 
 extension View where Self: HasOnplaying {
   /// Execute JavaScript when media is ready to start after having been paused.
@@ -3022,8 +3022,8 @@ extension View where Self: HasOnplaying {
 
 // public protocol HasOnprogress {}
 
-// extension Audio: HasOnprogress {}
-// extension Video: HasOnprogress {}
+// extension HtmlAudio: HasOnprogress {}
+// extension HtmlVideo: HasOnprogress {}
 
 extension View where Self: HasOnprogress {
   /// Execute JavaScript when media is downloading.
@@ -3043,8 +3043,8 @@ extension View where Self: HasOnprogress {
 
 // public protocol HasOnratechange {}
 
-// extension Audio: HasOnratechange {}
-// extension Video: HasOnratechange {}
+// extension HtmlAudio: HasOnratechange {}
+// extension HtmlVideo: HasOnratechange {}
 
 extension View where Self: HasOnratechange {
   /// Execute JavaScript when the playing speed of media is changed.
@@ -3064,8 +3064,8 @@ extension View where Self: HasOnratechange {
 
 // public protocol HasOnseeked {}
 
-// extension Audio: HasOnseeked {}
-// extension Video: HasOnseeked {}
+// extension HtmlAudio: HasOnseeked {}
+// extension HtmlVideo: HasOnseeked {}
 
 extension View where Self: HasOnseeked {
   /// Execute JavaScript when the user is finished moving/skipping to a new position in media.
@@ -3085,8 +3085,8 @@ extension View where Self: HasOnseeked {
 
 // public protocol HasOnseeking {}
 
-// extension Audio: HasOnseeking {}
-// extension Video: HasOnseeking {}
+// extension HtmlAudio: HasOnseeking {}
+// extension HtmlVideo: HasOnseeking {}
 
 extension View where Self: HasOnseeking {
   /// Execute JavaScript when the user starts moving/skipping to a new position in the media.
@@ -3106,8 +3106,8 @@ extension View where Self: HasOnseeking {
 
 // public protocol HasOnselect {}
 
-// extension Input: HasOnselect {}
-// extension Textarea: HasOnselect {}
+// extension HtmlInput: HasOnselect {}
+// extension HtmlTextarea: HasOnselect {}
 
 extension View where Self: HasOnselect {
   /// Execute JavaScript when some text has been selected.
@@ -3127,8 +3127,8 @@ extension View where Self: HasOnselect {
 
 // public protocol HasOnstalled {}
 
-// extension Audio: HasOnstalled {}
-// extension Video: HasOnstalled {}
+// extension HtmlAudio: HasOnstalled {}
+// extension HtmlVideo: HasOnstalled {}
 
 extension View where Self: HasOnstalled {
   /// Execute JavaScript when the browser is trying to get media data, but data is not available.
@@ -3148,8 +3148,8 @@ extension View where Self: HasOnstalled {
 
 // public protocol HasOnsuspend {}
 
-// extension Audio: HasOnsuspend {}
-// extension Video: HasOnsuspend {}
+// extension HtmlAudio: HasOnsuspend {}
+// extension HtmlVideo: HasOnsuspend {}
 
 extension View where Self: HasOnsuspend {
   /// Execute JavaScript when the browser is intentionally not getting media data.
@@ -3169,8 +3169,8 @@ extension View where Self: HasOnsuspend {
 
 // public protocol HasOntimeupdate {}
 
-// extension Audio: HasOntimeupdate {}
-// extension Video: HasOntimeupdate {}
+// extension HtmlAudio: HasOntimeupdate {}
+// extension HtmlVideo: HasOntimeupdate {}
 
 extension View where Self: HasOntimeupdate {
   /// Execute JavaScript when the current playback position has changed.
@@ -3190,8 +3190,8 @@ extension View where Self: HasOntimeupdate {
 
 // public protocol HasOnvolumechange {}
 
-// extension Audio: HasOnvolumechange {}
-// extension Video: HasOnvolumechange {}
+// extension HtmlAudio: HasOnvolumechange {}
+// extension HtmlVideo: HasOnvolumechange {}
 
 extension View where Self: HasOnvolumechange {
   /// Execute JavaScript when the volume of a video has been changed.
@@ -3211,8 +3211,8 @@ extension View where Self: HasOnvolumechange {
 
 // public protocol HasOnwaiting {}
 
-// extension Audio: HasOnwaiting {}
-// extension Video: HasOnwaiting {}
+// extension HtmlAudio: HasOnwaiting {}
+// extension HtmlVideo: HasOnwaiting {}
 
 extension View where Self: HasOnwaiting {
   /// Execute JavaScript when the media stops because it needs to buffer the next frame.
@@ -3284,7 +3284,7 @@ extension View {
   }
 }
 
-extension Table {
+extension HtmlTable {
   public func htmlCellpadding(_ value: Int) -> some View {
     return htmlAttribute(key: "cellpadding", value: String(value))
   }

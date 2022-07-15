@@ -8,13 +8,13 @@ struct RootView: View {
       HeaderView(isDarkMode: $darkMode)
       Spacer()
       if errorMessage.isEmpty == false {
-        Div(errorMessage)
+        HtmlDiv(errorMessage)
           .cssColor(.tomato)
           .cssFontSize(.px(20))
           .cssLineHeight(.px(20))
           .cssMinHeight(.px(20))
       } else {
-        Div()
+        HtmlDiv()
           .cssFontSize(.px(20))
           .cssLineHeight(.px(20))
           .cssMinHeight(.px(20))
@@ -32,7 +32,7 @@ struct RootView: View {
             }
           },
           label: {
-            Div { B("+") }
+            HtmlDiv { HtmlB("+") }
               .cssColor(darkMode ? .hex(0x19F7D2) : .hex(0x1AAB92))
           }
         )
@@ -47,7 +47,7 @@ struct RootView: View {
             }
           },
           label: {
-            Div { B("-") }
+            HtmlDiv { HtmlB("-") }
               .cssColor(darkMode ? .hex(0xC2331D) : .hex(0xAB2328))
           }
         )
