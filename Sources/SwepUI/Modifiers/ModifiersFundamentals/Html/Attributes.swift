@@ -26,7 +26,7 @@ extension View {
   }
 }
 
-public enum Contenteditable: String, ExpressibleByBooleanLiteral {
+public enum HtmlAttrContenteditable: String, ExpressibleByBooleanLiteral {
   case `true` = ""
   case `false`
   case inherit
@@ -40,7 +40,7 @@ extension View {
   /// Make a document region editable.
   ///
   /// - Parameter value: Should a document region be editable.
-  public func htmlContenteditable(_ value: Contenteditable) -> some View {
+  public func htmlContenteditable(_ value: HtmlAttrContenteditable) -> some View {
     return htmlAttribute(key: "contenteditable", value: value == .inherit ? nil : value.rawValue)
   }
 
@@ -54,19 +54,19 @@ extension View {
   }
 }
 
-public enum Direction: String {
+public enum HtmlAttrDirection: String {
   case ltr
   case rtl
   case auto
 }
 
 extension View {
-  public func htmlDir(_ value: Direction) -> some View {
+  public func htmlDir(_ value: HtmlAttrDirection) -> some View {
     return htmlAttribute(key: "dir", value: value.rawValue)
   }
 }
 
-public enum Draggable: String, ExpressibleByBooleanLiteral {
+public enum HtmlAttrDraggable: String, ExpressibleByBooleanLiteral {
   /// The element is draggable.
   case `true`
 
@@ -85,7 +85,7 @@ extension View {
   /// Whether or not an element is draggable.
   ///
   /// - Parameter value: Whether or not an element is draggable.
-  public func htmlDraggable(_ value: Draggable) -> some View {
+  public func htmlDraggable(_ value: HtmlAttrDraggable) -> some View {
     return htmlAttribute(key: "draggable", value: value == .auto ? nil : value.rawValue)
   }
 
@@ -106,7 +106,7 @@ extension View {
   }
 }
 
-public enum Language: String {
+public enum HtmlAttrLanguage: String {
   case aa
   case ab
   case ae
@@ -304,7 +304,7 @@ extension View {
   /// - Parameter value: A valid BCP 47 language tag, or the empty string.
   ///                    Setting the attribute to the empty string indicates
   ///                    that the primary language is unknown.
-  public func htmlLang(_ value: Language) -> some View {
+  public func htmlLang(_ value: HtmlAttrLanguage) -> some View {
     return htmlAttribute(key: "lang", value: value.rawValue)
   }
 
@@ -348,7 +348,7 @@ extension View {
   }
 }
 
-public enum Translate: String, ExpressibleByBooleanLiteral {
+public enum HtmlAttrTranslate: String, ExpressibleByBooleanLiteral {
   case yes
   case no
 
@@ -364,7 +364,7 @@ extension View {
   /// - Parameter value: Whether or not an element's attribute values and the
   ///                    values of its text node children are to be translated
   ///                    when the page is localized.
-  public func htmlTranslate(_ value: Translate) -> some View {
+  public func htmlTranslate(_ value: HtmlAttrTranslate) -> some View {
     return htmlAttribute(key: "translate", value: value.rawValue)
   }
 }
@@ -421,7 +421,7 @@ extension HtmlA {
 }
 
 /// The kind of shape to be created in an image map.
-public enum AreaShape: String {
+public enum HtmlAttrAreaShape: String {
   case circle
   //  case `default`
   case poly
@@ -432,13 +432,13 @@ extension HtmlArea {
   /// The kind of shape to be created in an image map.
   ///
   /// - Parameter value: The kind of shape to be created in an image map.
-  public func htmlShape(_ value: AreaShape) -> some View {
+  public func htmlShape(_ value: HtmlAttrAreaShape) -> some View {
     return htmlAttribute(key: "shape", value: value == .rect ? nil : value.rawValue)
   }
 }
 
 /// Type of button.
-public enum ButtonType: String {
+public enum HtmlAttrButtonType: String {
   /// Does nothing.
   case button
 
@@ -453,7 +453,7 @@ extension HtmlButton {
   /// Type of button.
   ///
   /// - Parameter value: Type of button.
-  public func htmlType(_ value: ButtonType) -> some View {
+  public func htmlType(_ value: HtmlAttrButtonType) -> some View {
     return htmlAttribute(key: "type", value: value.rawValue)
   }
 }
@@ -468,7 +468,7 @@ extension HtmlDetails {
 }
 
 /// HTTP method to use for form submission.
-public enum FormMethod: String {
+public enum HtmlAttrFormMethod: String {
   /// Submitting the form is intended to close the dialog box in which the
   /// form finds itself, if any, and otherwise not submit.
   case dialog = "dialog"
@@ -480,16 +480,16 @@ public enum FormMethod: String {
   case post = "post"
 }
 
-public struct Enctype: RawRepresentable {
+public struct HtmlAttrEnctype: RawRepresentable {
   public let rawValue: String
 
   public init(rawValue: String) {
     self.rawValue = rawValue
   }
 
-  public static let applicationXWwwFormUrlencoded = Enctype(rawValue: "application/x-www-form-urlencoded")
-  public static let multipartFormData = Enctype(rawValue: "multipart/form-data")
-  public static let textPlain = Enctype(rawValue: "text/plain")
+  public static let applicationXWwwFormUrlencoded = HtmlAttrEnctype(rawValue: "application/x-www-form-urlencoded")
+  public static let multipartFormData = HtmlAttrEnctype(rawValue: "multipart/form-data")
+  public static let textPlain = HtmlAttrEnctype(rawValue: "text/plain")
 }
 
 extension HtmlForm {
@@ -503,14 +503,14 @@ extension HtmlForm {
   /// The type of form encoding.
   ///
   /// - Parameter value: Enctype to use for form encoding.
-  public func htmlEnctype(_ value: Enctype) -> some View {
+  public func htmlEnctype(_ value: HtmlAttrEnctype) -> some View {
     return htmlAttribute(key: "enctype", value: value.rawValue)
   }
 
   /// HTTP method to use for form submission.
   ///
   /// - Parameter value: HTTP method to use for form submission.
-  public func htmlMethod(_ value: FormMethod) -> some View {
+  public func htmlMethod(_ value: HtmlAttrFormMethod) -> some View {
     let rawValue = value.rawValue
     return htmlAttribute(key: "method", value: rawValue.isEmpty ? nil : rawValue)
   }
@@ -523,7 +523,7 @@ extension HtmlForm {
   }
 }
 
-public enum IframeSandbox: String {
+public enum HtmlAttrIframeSandbox: String {
   /// Re-enable forms.
   case allowForms = "allow-forms"
 
@@ -551,7 +551,7 @@ extension HtmlIframe {
   /// Enables a set of extra restrictions on any content hosted by the `<iframe>`.
   ///
   /// - Parameter value: Sandbox options.
-  public func htmlSandbox(_ value: [IframeSandbox]) -> some View {
+  public func htmlSandbox(_ value: [HtmlAttrIframeSandbox]) -> some View {
     return htmlAttribute(key: "sandbox", value: value.map { $0.rawValue }.joined(separator: " "))
   }
 
@@ -575,7 +575,7 @@ extension HtmlIframe {
 #endif
 }
 
-public enum InputType: String {
+public enum HtmlAttrInputType: String {
   case button
   case checkbox
   case color
@@ -622,7 +622,7 @@ extension HtmlInput {
     return htmlAttribute(key: "step", value: String(value))
   }
 
-  public func htmlType(_ value: InputType) -> some View {
+  public func htmlType(_ value: HtmlAttrInputType) -> some View {
     return htmlAttribute(key: "type", value: value.rawValue)
   }
 }
@@ -636,7 +636,7 @@ extension HtmlMeta {
   }
 }
 
-public enum ListType: String {
+public enum HtmlAttrListType: String {
   /// Decimal numbers: `1.`, `2.`, `3.`...`3999.`, `4000.`, `4001.`
   case decimal = "1"
 
@@ -671,7 +671,7 @@ extension HtmlOl {
   /// Kind of list marker.
   ///
   /// - Parameter value: Kind of list marker.
-  public func htmlType(_ value: ListType) -> some View {
+  public func htmlType(_ value: HtmlAttrListType) -> some View {
     return htmlAttribute(key: "type", value: value.rawValue)
   }
 }
@@ -742,7 +742,7 @@ extension HtmlSource where Parent: IsPicture {
   }
 }
 
-public enum TextareaWrap: String {
+public enum HtmlAttrTextareaWrap: String {
   /// Indicates that the text in the `<textarea>` is to have newlines added by
   /// the user agent so that the text is wrapped when it is submitted.
   ///
@@ -774,13 +774,13 @@ extension HtmlTextarea {
   ///
   /// - Parameter value: How the value of the form control is to be wrapped for
   ///                    form submission.
-  public func htmlWrap(_ value: TextareaWrap) -> some View {
+  public func htmlWrap(_ value: HtmlAttrTextareaWrap) -> some View {
     return htmlAttribute(key: "wrap", value: value.rawValue)
   }
 }
 
 /// Specifies which cells the header cell applies to.
-public enum ThScope: String {
+public enum HtmlAttrThScope: String {
   /// The **auto** state makes the header cell apply to a set of cells selected
   /// based on context.
   case auto = ""
@@ -818,13 +818,13 @@ extension HtmlTh {
   /// Specifies which cells the header cell applies to.
   ///
   /// - Parameter value: Specifies which cells the header cell applies to.
-  public func htmlScope(_ value: ThScope) -> some View {
+  public func htmlScope(_ value: HtmlAttrThScope) -> some View {
     return htmlAttribute(key: "scope", value: value.rawValue)
   }
 }
 
 /// Kinds of text tracks for `<track>` elements.
-public enum TrackKind: String {
+public enum HtmlAttrTrackKind: String {
   /// Transcription or translation of the dialog, sound effects, relevant
   /// musical cues, and other relevant audio information, suitable for when
   /// sound is unavailable or not clearly audible (e.g., because it is muted,
@@ -862,7 +862,7 @@ extension HtmlTrack {
   /// The type of text track.
   ///
   /// - Parameter value: The type of text track.
-  public func htmlKind(_ value: TrackKind) -> some View {
+  public func htmlKind(_ value: HtmlAttrTrackKind) -> some View {
     return htmlAttribute(key: "kind", value: value.rawValue)
   }
 
@@ -876,7 +876,7 @@ extension HtmlTrack {
   /// Language of the text track.
   ///
   /// - Parameter value: Language of the text track.
-  public func htmlSrclang(_ value: Language) -> some View {
+  public func htmlSrclang(_ value: HtmlAttrLanguage) -> some View {
     return htmlAttribute(key: "srclang", value: value.rawValue)
   }
 }
@@ -1021,7 +1021,7 @@ public protocol HasCrossorigin {}
 extension HtmlImg: HasCrossorigin {}
 extension HtmlScript: HasCrossorigin {}
 
-public enum Crossorigin: String {
+public enum HtmlAttrCrossorigin: String {
   /// Requests for the element will have their mode set to "`cors`" and
   /// their credentials mode set to "`same-origin`".
   case anonymous = ""
@@ -1035,7 +1035,7 @@ extension View where Self: HasCrossorigin {
   /// How the element handles crossorigin requests.
   ///
   /// - Parameter value: How the element handles crossorigin requests.
-  public func htmlCrossorigin(_ value: Crossorigin) -> some View {
+  public func htmlCrossorigin(_ value: HtmlAttrCrossorigin) -> some View {
     return htmlAttribute(key: "crossorigin", value: value.rawValue)
   }
 }
@@ -1387,7 +1387,7 @@ public protocol HasPreload {}
 extension HtmlAudio: HasPreload {}
 extension HtmlVideo: HasPreload {}
 
-public enum Preload: String {
+public enum HtmlAttrPreload: String {
   /// Hints to the user agent that the user agent can put the user's needs
   /// first without risk to the server, up to and including optimistically
   /// downloading the entire resource.
@@ -1419,7 +1419,7 @@ extension View where Self: HasPreload {
   ///
   /// - Parameter value: Hints how much buffering the media resource will likely
   ///                    need.
-  public func htmlPreload(_ value: Preload) -> some View {
+  public func htmlPreload(_ value: HtmlAttrPreload) -> some View {
     return htmlAttribute(key: "preload", value: value.rawValue)
   }
 }
@@ -1448,29 +1448,29 @@ extension HtmlA: HasRel {}
 extension HtmlArea: HasRel {}
 extension HtmlLink: HasRel {}
 
-public struct Rel: RawRepresentable {
+public struct HtmlAttrRel: RawRepresentable {
   public let rawValue: String
 
   public init(rawValue: String) {
     self.rawValue = rawValue
   }
 
-  public static var alternate: Rel { return Rel(rawValue: "alternate") }
-  public static var author: Rel { return Rel(rawValue: "author") }
-  public static var bookmark: Rel { return Rel(rawValue: "bookmark") }
-  public static var help: Rel { return Rel(rawValue: "help") }
-  public static var icon: Rel { return Rel(rawValue: "icon") }
-  public static var license: Rel { return Rel(rawValue: "license") }
-  public static var next: Rel { return Rel(rawValue: "next") }
-  public static var nofollow: Rel { return Rel(rawValue: "nofollow") }
-  public static var prev: Rel { return Rel(rawValue: "prev") }
-  public static var search: Rel { return Rel(rawValue: "search") }
-  public static var stylesheet: Rel { return Rel(rawValue: "stylesheet") }
-  public static var tag: Rel { return Rel(rawValue: "tag") }
+  public static var alternate: HtmlAttrRel { return HtmlAttrRel(rawValue: "alternate") }
+  public static var author: HtmlAttrRel { return HtmlAttrRel(rawValue: "author") }
+  public static var bookmark: HtmlAttrRel { return HtmlAttrRel(rawValue: "bookmark") }
+  public static var help: HtmlAttrRel { return HtmlAttrRel(rawValue: "help") }
+  public static var icon: HtmlAttrRel { return HtmlAttrRel(rawValue: "icon") }
+  public static var license: HtmlAttrRel { return HtmlAttrRel(rawValue: "license") }
+  public static var next: HtmlAttrRel { return HtmlAttrRel(rawValue: "next") }
+  public static var nofollow: HtmlAttrRel { return HtmlAttrRel(rawValue: "nofollow") }
+  public static var prev: HtmlAttrRel { return HtmlAttrRel(rawValue: "prev") }
+  public static var search: HtmlAttrRel { return HtmlAttrRel(rawValue: "search") }
+  public static var stylesheet: HtmlAttrRel { return HtmlAttrRel(rawValue: "stylesheet") }
+  public static var tag: HtmlAttrRel { return HtmlAttrRel(rawValue: "tag") }
 }
 
 extension View where Self: HasRel {
-  public func htmlRel(_ value: Rel) -> some View {
+  public func htmlRel(_ value: HtmlAttrRel) -> some View {
     return htmlAttribute(key: "rel", value: value.rawValue)
   }
 }
@@ -1552,7 +1552,7 @@ public protocol HasSrcset {}
 extension HtmlImg: HasSrcset {}
 extension HtmlSource: HasSrcset {}
 
-public enum Size: CustomStringConvertible {
+public enum HtmlAttrSize: CustomStringConvertible {
   case w(Int)
   case x(Int)
 
@@ -1572,7 +1572,7 @@ extension View where Self: HasSrcset {
   ///
   /// - Parameter value: Images to use in different situations (e.g.,
   ///                    high-resolution displays, small monitors, etc).
-  public func htmlSrcset(_ value: [String: Size]) -> some View {
+  public func htmlSrcset(_ value: [String: HtmlAttrSize]) -> some View {
     return htmlAttribute(key: "srcset", value: value.map { url, size in url + " " + size.description }.joined(separator: ", "))
   }
 }
@@ -1587,17 +1587,17 @@ extension HtmlBase: HasTarget {}
 extension HtmlForm: HasTarget {}
 
 /// Default browsing context for hyperlink navigation and form submission.
-public struct Target: RawRepresentable {
+public struct HtmlAttrTarget: RawRepresentable {
   public let rawValue: String
 
   public init(rawValue: String) {
     self.rawValue = rawValue
   }
 
-  public static var blank: Target { return Target(rawValue: "_blank") }
-  public static var `self`: Target { return Target(rawValue: "") }
-  public static var parent: Target { return Target(rawValue: "_parent") }
-  public static var top: Target { return Target(rawValue: "_top") }
+  public static var blank: HtmlAttrTarget { return HtmlAttrTarget(rawValue: "_blank") }
+  public static var `self`: HtmlAttrTarget { return HtmlAttrTarget(rawValue: "") }
+  public static var parent: HtmlAttrTarget { return HtmlAttrTarget(rawValue: "_parent") }
+  public static var top: HtmlAttrTarget { return HtmlAttrTarget(rawValue: "_top") }
 }
 
 extension View where Self: HasTarget {
@@ -1605,7 +1605,7 @@ extension View where Self: HasTarget {
   ///
   /// - Parameter value: Default browsing context for hyperlink navigation
   ///                    and form submission.
-  public func htmlTarget(_ value: Target) -> some View {
+  public func htmlTarget(_ value: HtmlAttrTarget) -> some View {
     return htmlAttribute(key: "target", value: value == .self ? nil : value.rawValue)
   }
 }
@@ -1704,7 +1704,7 @@ extension View where Self: HasWidth {
 
 // MARK: - Aria Attributes
 
-public enum AriaBoolean: String, ExpressibleByBooleanLiteral {
+public enum HtmlAttrAriaBoolean: String, ExpressibleByBooleanLiteral {
   case `false`
   case `true`
   case undefined
@@ -1714,7 +1714,7 @@ public enum AriaBoolean: String, ExpressibleByBooleanLiteral {
   }
 }
 
-public enum AriaToggled: String, ExpressibleByBooleanLiteral {
+public enum HtmlAttrAriaToggled: String, ExpressibleByBooleanLiteral {
   case `false`
   case `true`
   case mixed
@@ -1725,86 +1725,86 @@ public enum AriaToggled: String, ExpressibleByBooleanLiteral {
   }
 }
 
-public struct Role: RawRepresentable {
+public struct HtmlAttrRole: RawRepresentable {
   public let rawValue: String
 
   public init(rawValue: String) {
     self.rawValue = rawValue
   }
 
-  public static var alert: Role { return Role(rawValue: "alert") }
-  public static var alertdialog: Role { return Role(rawValue: "alertdialog") }
-  public static var application: Role { return Role(rawValue: "application") }
-  public static var article: Role { return Role(rawValue: "article") }
-  public static var banner: Role { return Role(rawValue: "banner") }
-  public static var button: Role { return Role(rawValue: "button") }
-  public static var cell: Role { return Role(rawValue: "cell") }
-  public static var checkbox: Role { return Role(rawValue: "checkbox") }
-  public static var columnheader: Role { return Role(rawValue: "columnheader") }
-  public static var combobox: Role { return Role(rawValue: "combobox") }
-  public static var complementary: Role { return Role(rawValue: "complementary") }
-  public static var contentinfo: Role { return Role(rawValue: "contentinfo") }
-  public static var definition: Role { return Role(rawValue: "definition") }
-  public static var dialog: Role { return Role(rawValue: "dialog") }
-  public static var directory: Role { return Role(rawValue: "directory") }
-  public static var document: Role { return Role(rawValue: "document") }
-  public static var feed: Role { return Role(rawValue: "feed") }
-  public static var figure: Role { return Role(rawValue: "figure") }
-  public static var form: Role { return Role(rawValue: "form") }
-  public static var grid: Role { return Role(rawValue: "grid") }
-  public static var gridcell: Role { return Role(rawValue: "gridcell") }
-  public static var group: Role { return Role(rawValue: "group") }
-  public static var heading: Role { return Role(rawValue: "heading") }
-  public static var img: Role { return Role(rawValue: "img") }
-  public static var link: Role { return Role(rawValue: "link") }
-  public static var list: Role { return Role(rawValue: "list") }
-  public static var listbox: Role { return Role(rawValue: "listbox") }
-  public static var listitem: Role { return Role(rawValue: "listitem") }
-  public static var log: Role { return Role(rawValue: "log") }
-  public static var main: Role { return Role(rawValue: "main") }
-  public static var marquee: Role { return Role(rawValue: "marquee") }
-  public static var math: Role { return Role(rawValue: "math") }
-  public static var menu: Role { return Role(rawValue: "menu") }
-  public static var menubar: Role { return Role(rawValue: "menubar") }
-  public static var menuitem: Role { return Role(rawValue: "menuitem") }
-  public static var menuitemcheckbox: Role { return Role(rawValue: "menuitemcheckbox") }
-  public static var menuitemradio: Role { return Role(rawValue: "menuitemradio") }
-  public static var navigation: Role { return Role(rawValue: "navigation") }
-  public static var none: Role { return Role(rawValue: "none") }
-  public static var note: Role { return Role(rawValue: "note") }
-  public static var option: Role { return Role(rawValue: "option") }
-  public static var presentation: Role { return Role(rawValue: "presentation") }
-  public static var progressbar: Role { return Role(rawValue: "progressbar") }
-  public static var radio: Role { return Role(rawValue: "radio") }
-  public static var radiogroup: Role { return Role(rawValue: "radiogroup") }
-  public static var region: Role { return Role(rawValue: "region") }
-  public static var row: Role { return Role(rawValue: "row") }
-  public static var rowgroup: Role { return Role(rawValue: "rowgroup") }
-  public static var rowheader: Role { return Role(rawValue: "rowheader") }
-  public static var scrollbar: Role { return Role(rawValue: "scrollbar") }
-  public static var search: Role { return Role(rawValue: "search") }
-  public static var searchbox: Role { return Role(rawValue: "searchbox") }
-  public static var separator: Role { return Role(rawValue: "separator") }
-  public static var slider: Role { return Role(rawValue: "slider") }
-  public static var spinbutton: Role { return Role(rawValue: "spinbutton") }
-  public static var status: Role { return Role(rawValue: "status") }
-  public static var `switch`: Role { return Role(rawValue: "switch") }
-  public static var tab: Role { return Role(rawValue: "tab") }
-  public static var table: Role { return Role(rawValue: "table") }
-  public static var tablist: Role { return Role(rawValue: "tablist") }
-  public static var tabpanel: Role { return Role(rawValue: "tabpanel") }
-  public static var term: Role { return Role(rawValue: "term") }
-  public static var textbox: Role { return Role(rawValue: "textbox") }
-  public static var timer: Role { return Role(rawValue: "timer") }
-  public static var toolbar: Role { return Role(rawValue: "toolbar") }
-  public static var tooltip: Role { return Role(rawValue: "tooltip") }
-  public static var tree: Role { return Role(rawValue: "tree") }
-  public static var treegrid: Role { return Role(rawValue: "treegrid") }
-  public static var treeitem: Role { return Role(rawValue: "treeitem") }
+  public static var alert: HtmlAttrRole { return HtmlAttrRole(rawValue: "alert") }
+  public static var alertdialog: HtmlAttrRole { return HtmlAttrRole(rawValue: "alertdialog") }
+  public static var application: HtmlAttrRole { return HtmlAttrRole(rawValue: "application") }
+  public static var article: HtmlAttrRole { return HtmlAttrRole(rawValue: "article") }
+  public static var banner: HtmlAttrRole { return HtmlAttrRole(rawValue: "banner") }
+  public static var button: HtmlAttrRole { return HtmlAttrRole(rawValue: "button") }
+  public static var cell: HtmlAttrRole { return HtmlAttrRole(rawValue: "cell") }
+  public static var checkbox: HtmlAttrRole { return HtmlAttrRole(rawValue: "checkbox") }
+  public static var columnheader: HtmlAttrRole { return HtmlAttrRole(rawValue: "columnheader") }
+  public static var combobox: HtmlAttrRole { return HtmlAttrRole(rawValue: "combobox") }
+  public static var complementary: HtmlAttrRole { return HtmlAttrRole(rawValue: "complementary") }
+  public static var contentinfo: HtmlAttrRole { return HtmlAttrRole(rawValue: "contentinfo") }
+  public static var definition: HtmlAttrRole { return HtmlAttrRole(rawValue: "definition") }
+  public static var dialog: HtmlAttrRole { return HtmlAttrRole(rawValue: "dialog") }
+  public static var directory: HtmlAttrRole { return HtmlAttrRole(rawValue: "directory") }
+  public static var document: HtmlAttrRole { return HtmlAttrRole(rawValue: "document") }
+  public static var feed: HtmlAttrRole { return HtmlAttrRole(rawValue: "feed") }
+  public static var figure: HtmlAttrRole { return HtmlAttrRole(rawValue: "figure") }
+  public static var form: HtmlAttrRole { return HtmlAttrRole(rawValue: "form") }
+  public static var grid: HtmlAttrRole { return HtmlAttrRole(rawValue: "grid") }
+  public static var gridcell: HtmlAttrRole { return HtmlAttrRole(rawValue: "gridcell") }
+  public static var group: HtmlAttrRole { return HtmlAttrRole(rawValue: "group") }
+  public static var heading: HtmlAttrRole { return HtmlAttrRole(rawValue: "heading") }
+  public static var img: HtmlAttrRole { return HtmlAttrRole(rawValue: "img") }
+  public static var link: HtmlAttrRole { return HtmlAttrRole(rawValue: "link") }
+  public static var list: HtmlAttrRole { return HtmlAttrRole(rawValue: "list") }
+  public static var listbox: HtmlAttrRole { return HtmlAttrRole(rawValue: "listbox") }
+  public static var listitem: HtmlAttrRole { return HtmlAttrRole(rawValue: "listitem") }
+  public static var log: HtmlAttrRole { return HtmlAttrRole(rawValue: "log") }
+  public static var main: HtmlAttrRole { return HtmlAttrRole(rawValue: "main") }
+  public static var marquee: HtmlAttrRole { return HtmlAttrRole(rawValue: "marquee") }
+  public static var math: HtmlAttrRole { return HtmlAttrRole(rawValue: "math") }
+  public static var menu: HtmlAttrRole { return HtmlAttrRole(rawValue: "menu") }
+  public static var menubar: HtmlAttrRole { return HtmlAttrRole(rawValue: "menubar") }
+  public static var menuitem: HtmlAttrRole { return HtmlAttrRole(rawValue: "menuitem") }
+  public static var menuitemcheckbox: HtmlAttrRole { return HtmlAttrRole(rawValue: "menuitemcheckbox") }
+  public static var menuitemradio: HtmlAttrRole { return HtmlAttrRole(rawValue: "menuitemradio") }
+  public static var navigation: HtmlAttrRole { return HtmlAttrRole(rawValue: "navigation") }
+  public static var none: HtmlAttrRole { return HtmlAttrRole(rawValue: "none") }
+  public static var note: HtmlAttrRole { return HtmlAttrRole(rawValue: "note") }
+  public static var option: HtmlAttrRole { return HtmlAttrRole(rawValue: "option") }
+  public static var presentation: HtmlAttrRole { return HtmlAttrRole(rawValue: "presentation") }
+  public static var progressbar: HtmlAttrRole { return HtmlAttrRole(rawValue: "progressbar") }
+  public static var radio: HtmlAttrRole { return HtmlAttrRole(rawValue: "radio") }
+  public static var radiogroup: HtmlAttrRole { return HtmlAttrRole(rawValue: "radiogroup") }
+  public static var region: HtmlAttrRole { return HtmlAttrRole(rawValue: "region") }
+  public static var row: HtmlAttrRole { return HtmlAttrRole(rawValue: "row") }
+  public static var rowgroup: HtmlAttrRole { return HtmlAttrRole(rawValue: "rowgroup") }
+  public static var rowheader: HtmlAttrRole { return HtmlAttrRole(rawValue: "rowheader") }
+  public static var scrollbar: HtmlAttrRole { return HtmlAttrRole(rawValue: "scrollbar") }
+  public static var search: HtmlAttrRole { return HtmlAttrRole(rawValue: "search") }
+  public static var searchbox: HtmlAttrRole { return HtmlAttrRole(rawValue: "searchbox") }
+  public static var separator: HtmlAttrRole { return HtmlAttrRole(rawValue: "separator") }
+  public static var slider: HtmlAttrRole { return HtmlAttrRole(rawValue: "slider") }
+  public static var spinbutton: HtmlAttrRole { return HtmlAttrRole(rawValue: "spinbutton") }
+  public static var status: HtmlAttrRole { return HtmlAttrRole(rawValue: "status") }
+  public static var `switch`: HtmlAttrRole { return HtmlAttrRole(rawValue: "switch") }
+  public static var tab: HtmlAttrRole { return HtmlAttrRole(rawValue: "tab") }
+  public static var table: HtmlAttrRole { return HtmlAttrRole(rawValue: "table") }
+  public static var tablist: HtmlAttrRole { return HtmlAttrRole(rawValue: "tablist") }
+  public static var tabpanel: HtmlAttrRole { return HtmlAttrRole(rawValue: "tabpanel") }
+  public static var term: HtmlAttrRole { return HtmlAttrRole(rawValue: "term") }
+  public static var textbox: HtmlAttrRole { return HtmlAttrRole(rawValue: "textbox") }
+  public static var timer: HtmlAttrRole { return HtmlAttrRole(rawValue: "timer") }
+  public static var toolbar: HtmlAttrRole { return HtmlAttrRole(rawValue: "toolbar") }
+  public static var tooltip: HtmlAttrRole { return HtmlAttrRole(rawValue: "tooltip") }
+  public static var tree: HtmlAttrRole { return HtmlAttrRole(rawValue: "tree") }
+  public static var treegrid: HtmlAttrRole { return HtmlAttrRole(rawValue: "treegrid") }
+  public static var treeitem: HtmlAttrRole { return HtmlAttrRole(rawValue: "treeitem") }
 }
 
 extension View {
-  public func htmlRole(_ value: Role) -> some View {
+  public func htmlRole(_ value: HtmlAttrRole) -> some View {
     return htmlAttribute(key: "role", value: value.rawValue)
   }
 
@@ -1817,7 +1817,7 @@ extension View {
   }
 }
 
-public enum AriaAutocomplete: String {
+public enum HtmlAttrAriaAutocomplete: String {
   case both
   case inline
   case list
@@ -1825,7 +1825,7 @@ public enum AriaAutocomplete: String {
 }
 
 extension View {
-  public func htmlAriaAutocomplete(_ value: AriaAutocomplete) -> some View {
+  public func htmlAriaAutocomplete(_ value: HtmlAttrAriaAutocomplete) -> some View {
     return htmlAttribute(key: "aria-autocomplete", value: value.rawValue)
   }
 
@@ -1833,7 +1833,7 @@ extension View {
     return htmlAttribute(key: "aria-busy", value: String(value))
   }
 
-  public func htmlAriaChecked(_ value: AriaToggled) -> some View {
+  public func htmlAriaChecked(_ value: HtmlAttrAriaToggled) -> some View {
     return htmlAttribute(key: "aria-checked", value: value.rawValue)
   }
 
@@ -1854,7 +1854,7 @@ extension View {
   }
 }
 
-public enum AriaCurrent: String, ExpressibleByBooleanLiteral {
+public enum HtmlAttrAriaCurrent: String, ExpressibleByBooleanLiteral {
   case date
   case `false`
   case location
@@ -1869,7 +1869,7 @@ public enum AriaCurrent: String, ExpressibleByBooleanLiteral {
 }
 
 extension View {
-  public func htmlAriaCurrent(_ value: AriaCurrent) -> some View {
+  public func htmlAriaCurrent(_ value: HtmlAttrAriaCurrent) -> some View {
     return htmlAttribute(key: "aria-current", value: value.rawValue)
   }
 
@@ -1886,7 +1886,7 @@ extension View {
   }
 }
 
-public enum AriaDropeffect: String {
+public enum HtmlAttrAriaDropeffect: String {
   case copy
   case execute
   case link
@@ -1896,7 +1896,7 @@ public enum AriaDropeffect: String {
 }
 
 extension View {
-  public func htmlAriaDropeffect(_ value: AriaDropeffect) -> some View {
+  public func htmlAriaDropeffect(_ value: HtmlAttrAriaDropeffect) -> some View {
     return htmlAttribute(key: "aria-dropeffect", value: value.rawValue)
   }
 
@@ -1904,7 +1904,7 @@ extension View {
     return htmlAttribute(key: "aria-errormessage", value: value)
   }
 
-  public func htmlAriaExpanded(_ value: AriaBoolean) -> some View {
+  public func htmlAriaExpanded(_ value: HtmlAttrAriaBoolean) -> some View {
     return htmlAttribute(key: "aria-expanded", value: value.rawValue)
   }
 
@@ -1912,12 +1912,12 @@ extension View {
     return htmlAttribute(key: "aria-flowto", value: value)
   }
 
-  public func htmlAriaGrabbed(_ value: AriaBoolean) -> some View {
+  public func htmlAriaGrabbed(_ value: HtmlAttrAriaBoolean) -> some View {
     return htmlAttribute(key: "aria-grabbed", value: value.rawValue)
   }
 }
 
-public enum AriaHaspopup: String, ExpressibleByBooleanLiteral {
+public enum HtmlAttrAriaHaspopup: String, ExpressibleByBooleanLiteral {
   case dialog
   case `false`
   case grid
@@ -1931,16 +1931,16 @@ public enum AriaHaspopup: String, ExpressibleByBooleanLiteral {
 }
 
 extension View {
-  public func htmlAriaHaspopup(_ value: AriaHaspopup) -> some View {
+  public func htmlAriaHaspopup(_ value: HtmlAttrAriaHaspopup) -> some View {
     return htmlAttribute(key: "aria-haspopup", value: value.rawValue)
   }
 
-  public func htmlAriaHidden(_ value: AriaBoolean) -> some View {
+  public func htmlAriaHidden(_ value: HtmlAttrAriaBoolean) -> some View {
     return htmlAttribute(key: "aria-hidden", value: value.rawValue)
   }
 }
 
-public enum AriaInvalid: String, ExpressibleByBooleanLiteral {
+public enum HtmlAttrAriaInvalid: String, ExpressibleByBooleanLiteral {
   case `false`
   case grammar
   case spelling
@@ -1952,7 +1952,7 @@ public enum AriaInvalid: String, ExpressibleByBooleanLiteral {
 }
 
 extension View {
-  public func htmlAriaInvalid(_ value: AriaInvalid) -> some View {
+  public func htmlAriaInvalid(_ value: HtmlAttrAriaInvalid) -> some View {
     return htmlAttribute(key: "aria-invalid", value: value.rawValue)
   }
 
@@ -1973,14 +1973,14 @@ extension View {
   }
 }
 
-public enum AriaLive: String {
+public enum HtmlAttrAriaLive: String {
   case assertive
   case off
   case polite
 }
 
 extension View {
-  public func htmlAriaLive(_ value: AriaLive) -> some View {
+  public func htmlAriaLive(_ value: HtmlAttrAriaLive) -> some View {
     return htmlAttribute(key: "aria-live", value: value.rawValue)
   }
 
@@ -1997,14 +1997,14 @@ extension View {
   }
 }
 
-public enum AriaOrientation: String {
+public enum HtmlAttrAriaOrientation: String {
   case horizontal
   case undefined
   case vertical
 }
 
 extension View {
-  public func htmlAriaOrientation(_ value: AriaOrientation) -> some View {
+  public func htmlAriaOrientation(_ value: HtmlAttrAriaOrientation) -> some View {
     return htmlAttribute(key: "aria-orientation", value: value.rawValue)
   }
 
@@ -2020,7 +2020,7 @@ extension View {
     return htmlAttribute(key: "aria-posinset", value: String(value))
   }
 
-  public func htmlAriaPressed(_ value: AriaToggled) -> some View {
+  public func htmlAriaPressed(_ value: HtmlAttrAriaToggled) -> some View {
     return htmlAttribute(key: "aria-pressed", value: value.rawValue)
   }
 
@@ -2029,7 +2029,7 @@ extension View {
   }
 }
 
-public enum AriaRelevant: String {
+public enum HtmlAttrAriaRelevant: String {
   case additions
   case all
   case removals
@@ -2037,7 +2037,7 @@ public enum AriaRelevant: String {
 }
 
 extension View {
-  public func htmlAriaRelevant(_ value: Array<AriaRelevant>) -> some View {
+  public func htmlAriaRelevant(_ value: Array<HtmlAttrAriaRelevant>) -> some View {
     return htmlAttribute(key: "aria-relevant", value: value.map { $0.rawValue }.joined(separator: " "))
   }
 
@@ -2061,7 +2061,7 @@ extension View {
     return htmlAttribute(key: "aria-rowspan", value: String(value))
   }
 
-  public func htmlAriaSelected(_ value: AriaBoolean) -> some View {
+  public func htmlAriaSelected(_ value: HtmlAttrAriaBoolean) -> some View {
     return htmlAttribute(key: "aria-selected", value: value.rawValue)
   }
 
@@ -2070,7 +2070,7 @@ extension View {
   }
 }
 
-public enum AriaSort: String {
+public enum HtmlAttrAriaSort: String {
   case ascending
   case descending
   case none
@@ -2078,7 +2078,7 @@ public enum AriaSort: String {
 }
 
 extension View {
-  public func htmlAriaSort(_ value: AriaSort) -> some View {
+  public func htmlAriaSort(_ value: HtmlAttrAriaSort) -> some View {
     return htmlAttribute(key: "aria-sort", value: value.rawValue)
   }
 
@@ -3232,7 +3232,7 @@ extension View where Self: HasOnwaiting {
 
 // MARK: - Html4 Attributes
 
-public enum Html4Size {
+public enum HtmlAttrHtml4Size {
   case px(Int)
   case pct(Int)
 
@@ -3246,7 +3246,7 @@ public enum Html4Size {
   }
 }
 
-public enum Alignment: String {
+public enum HtmlAttrAlignment: String {
   case left
   case right
   case center
@@ -3254,7 +3254,7 @@ public enum Alignment: String {
 }
 
 extension View {
-  public func htmlAlign(_ value: Alignment) -> some View {
+  public func htmlAlign(_ value: HtmlAttrAlignment) -> some View {
     return htmlAttribute(key: "align", value: value.rawValue)
   }
 
@@ -3262,12 +3262,12 @@ extension View {
     return htmlAttribute(key: "border", value: String(value))
   }
 
-  public func htmlHeight(_ value: Html4Size) -> some View {
+  public func htmlHeight(_ value: HtmlAttrHtml4Size) -> some View {
     return htmlAttribute(key: "height", value: value.rawValue)
   }
 }
 
-public enum VerticalAlignment: String {
+public enum HtmlAttrVerticalAlignment: String {
   case top
   case middle
   case bottom
@@ -3275,11 +3275,11 @@ public enum VerticalAlignment: String {
 }
 
 extension View {
-  public func htmlValign(_ value: VerticalAlignment) -> some View {
+  public func htmlValign(_ value: HtmlAttrVerticalAlignment) -> some View {
     return htmlAttribute(key: "valign", value: value.rawValue)
   }
 
-  public func htmlWidth(_ value: Html4Size) -> some View {
+  public func htmlWidth(_ value: HtmlAttrHtml4Size) -> some View {
     return htmlAttribute(key: "width", value: value.rawValue)
   }
 }

@@ -1241,7 +1241,7 @@ public struct HtmlInput: View {
 
   private let attributes: Array<Attribute>
 
-  public init(type value: InputType) {
+  public init(type value: HtmlAttrInputType) {
     attributes = [("type", value.rawValue)]
   }
 
