@@ -315,8 +315,8 @@ public struct BackgroundAttachment: Property {
 
 public extension Value where Kind == BackgroundAttachment {
   static var scroll: Self { return .init("scroll") }
-  static var fixed: Self { return .init("scroll") }
-  static var local: Self { return .init("scroll") }
+  static var fixed: Self { return .init("fixed") }
+  static var local: Self { return .init("local") }
 }
 
 /// ------------------------------------------------------------------------ ///
