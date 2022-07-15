@@ -106,8 +106,6 @@ public struct AnimationDelay: Property {
   }
 }
 
-extension AnimationDelay {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- AnimationDirection
 /// The `animation-direction` CSS property specifies whether the animation
@@ -119,8 +117,6 @@ public struct AnimationDirection: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension AnimationDirection {}
 
 public extension Value where Kind == AnimationDirection {
   static var reverse: Self { return .init("reverse") }
@@ -140,8 +136,6 @@ public struct AnimationDuration: Property {
   }
 }
 
-extension AnimationDuration {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- AnimationFillMode
 /// The `animation-fill-mode` CSS property specifies how a CSS animation should
@@ -153,8 +147,6 @@ public struct AnimationFillMode: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension AnimationFillMode {}
 
 public extension Value where Kind == AnimationFillMode {
   static var forwards: Self { return .init("forwards") }
@@ -174,8 +166,6 @@ public struct AnimationIterationCount: Property {
   }
 }
 
-extension AnimationIterationCount {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- AnimationName
 /// The `animation-name` CSS property specifies the name of @keyframes defined
@@ -188,8 +178,6 @@ public struct AnimationName: Property {
   }
 }
 
-extension AnimationName {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- AnimationPlayState
 /// The `animation-play-state` property specifies whether an animation is
@@ -201,8 +189,6 @@ public struct AnimationPlayState: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension AnimationPlayState {}
 
 public extension Value where Kind == AnimationPlayState {
   static var paused: Self { return .init("paused") }
@@ -220,8 +206,6 @@ public struct AnimationTimingFunction: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension AnimationTimingFunction {}
 
 public enum AnimationTimingFunctionPoint: String { case start, end }
 
@@ -329,8 +313,6 @@ public struct BackgroundAttachment: Property {
   }
 }
 
-extension BackgroundAttachment {}
-
 public extension Value where Kind == BackgroundAttachment {
   static var scroll: Self { return .init("scroll") }
   static var fixed: Self { return .init("scroll") }
@@ -348,8 +330,6 @@ public struct BackgroundBlendMode: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension BackgroundBlendMode {}
 
 public extension Value where Kind == BackgroundBlendMode {
   static var multiply: Self { return .init("multiply") }
@@ -376,8 +356,6 @@ public struct BackgroundClip: Property {
   }
 }
 
-extension BackgroundClip {}
-
 public extension Value where Kind == BackgroundClip {
   static var borderBox: Self { return .init("border-box") }
   static var paddingBox: Self { return .init("padding-box") }
@@ -399,8 +377,6 @@ public struct BackgroundColor: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension BackgroundColor {}
 
 /// ------------------------------------------------------------------------ ///
 /// MARK -- BackgroundImage
@@ -461,8 +437,6 @@ public struct BackgroundOrigin: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension BackgroundOrigin {}
 
 public extension Value where Kind == BackgroundOrigin {
   static var paddingBox: Self { return .init("padding-box") }
@@ -633,8 +607,6 @@ public struct BorderBottomColor: Property {
   }
 }
 
-extension BorderBottomColor {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: --- BorderBottomLeftRadius
 /// The `border-bottom-left-radius` CSS property sets the rounded shape for the
@@ -647,8 +619,6 @@ public struct BorderBottomLeftRadius: Property {
   }
 }
 
-extension BorderBottomLeftRadius {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: --- BorderBottomRightRadius
 /// The `border-bottom-right-radius` CSS property sets the rounded shape for
@@ -660,8 +630,6 @@ public struct BorderBottomRightRadius: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension BorderBottomRightRadius {}
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: --- BorderBottomStyle
@@ -677,8 +645,6 @@ public struct BorderBottomStyle: Property {
   }
 }
 
-extension BorderBottomStyle {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: --- BorderBottomWidth
 /// The `border-bottom-width` CSS property sets the width of an element's
@@ -692,8 +658,6 @@ public struct BorderBottomWidth: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension BorderBottomWidth {}
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- BorderCollapse
@@ -728,8 +692,6 @@ public struct BorderCollapse: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension BorderCollapse {}
 
 public extension Value where Kind == BorderCollapse {
   static var separate: Self { return .init("separate") }
@@ -857,8 +819,6 @@ public struct BorderImageRepeat: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension BorderImageRepeat {}
 
 public extension Value where Kind == BorderImageRepeat {
   static var stretch: Self { return .init("stretch") }
@@ -1036,8 +996,6 @@ public struct BorderLeftColor: Property {
   }
 }
 
-extension BorderLeftColor {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: --- BorderLeftStyle
 /// The `border-left-style` CSS property sets the style of an element's left
@@ -1052,8 +1010,6 @@ public struct BorderLeftStyle: Property {
   }
 }
 
-extension BorderLeftStyle {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: --- BorderLeftWidth
 /// The `border-left-width` CSS property sets the width of an element's left
@@ -1066,8 +1022,6 @@ public struct BorderLeftWidth: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension BorderLeftWidth {}
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- BorderRadius
@@ -1151,8 +1105,6 @@ public struct BorderRightColor: Property {
   }
 }
 
-extension BorderRightColor {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: --- BorderRightStyle
 /// The `border-right-style` CSS property sets the style of an element's right
@@ -1167,8 +1119,6 @@ public struct BorderRightStyle: Property {
   }
 }
 
-extension BorderRightStyle {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: --- BorderRightWidth
 /// The `border-right-width` CSS property sets the width of an element's right
@@ -1181,8 +1131,6 @@ public struct BorderRightWidth: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension BorderRightWidth {}
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- BorderSpacing
@@ -1309,8 +1257,6 @@ public struct BorderTopColor: Property {
   }
 }
 
-extension BorderTopColor {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: --- BorderTopLeftRadius
 /// The `border-top-left-radius` CSS property sets the rounded shape for the
@@ -1323,8 +1269,6 @@ public struct BorderTopLeftRadius: Property {
   }
 }
 
-extension BorderTopLeftRadius {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: --- BorderTopRightRadius
 /// The `border-top-right-radius` property sets the rounded shape for the
@@ -1336,8 +1280,6 @@ public struct BorderTopRightRadius: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension BorderTopRightRadius {}
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: --- BorderTopStyle
@@ -1353,8 +1295,6 @@ public struct BorderTopStyle: Property {
   }
 }
 
-extension BorderTopStyle {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: --- BorderTopWidth
 /// The `border-top-width` property sets the width of an element's top border
@@ -1367,8 +1307,6 @@ public struct BorderTopWidth: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension BorderTopWidth {}
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- BorderWidth
@@ -1430,8 +1368,6 @@ public struct Color: Property {
   }
 }
 
-extension Color {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: - Opacity
 /// The `opacity` CSS property specifies the transparency of an element.
@@ -1442,8 +1378,6 @@ public struct Opacity: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension Opacity {}
 
 /// ------------------------------------------------------------------------ ///
 ///                               Dimension                                  ///
@@ -1461,8 +1395,6 @@ public struct Height: Property {
   }
 }
 
-extension Height {}
-
 public struct MinHeight: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
@@ -1471,8 +1403,6 @@ public struct MinHeight: Property {
   }
 }
 
-extension MinHeight {}
-
 public struct MaxHeight: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
@@ -1480,8 +1410,6 @@ public struct MaxHeight: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension MaxHeight {}
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- Width
@@ -1496,8 +1424,6 @@ public struct Width: Property {
   }
 }
 
-extension Width {}
-
 public struct MinWidth: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
@@ -1506,8 +1432,6 @@ public struct MinWidth: Property {
   }
 }
 
-extension MinWidth {}
-
 public struct MaxWidth: Property {
   public let rawValue: String
   public let declarations: () -> Declarations
@@ -1515,8 +1439,6 @@ public struct MaxWidth: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension MaxWidth {}
 
 /// ------------------------------------------------------------------------ ///
 ///                              FlexibleBox                                 ///
@@ -1533,8 +1455,6 @@ public struct AlignContent: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension AlignContent {}
 
 public extension Value where Kind == AlignContent {
   static var stretch: Self { return .init("stretch") }
@@ -1557,8 +1477,6 @@ public struct AlignItems: Property {
   }
 }
 
-extension AlignItems {}
-
 public extension Value where Kind == AlignItems {
   static var stretch: Self { return .init("stretch") }
   static var center: Self { return .init("center") }
@@ -1578,8 +1496,6 @@ public struct AlignSelf: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension AlignSelf {}
 
 public extension Value where Kind == AlignSelf {
   static var stretch: Self { return .init("stretch") }
@@ -1628,8 +1544,6 @@ public struct FlexBasis: Property {
   }
 }
 
-extension FlexBasis {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- FlexDirection
 /// The `flex-direction` CSS property specifies how flex items are placed in
@@ -1642,8 +1556,6 @@ public struct FlexDirection: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension FlexDirection {}
 
 public extension Value where Kind == FlexDirection {
   static var row: Self { return .init("row") }
@@ -1688,8 +1600,6 @@ public struct FlexGrow: Property {
   }
 }
 
-extension FlexGrow {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- FlexShrink
 /// The `flex-shrink` CSS property specifies how the flex item will shrink
@@ -1701,8 +1611,6 @@ public struct FlexShrink: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension FlexShrink {}
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- FlexWrap
@@ -1716,8 +1624,6 @@ public struct FlexWrap: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension FlexWrap {}
 
 public extension Value where Kind == FlexWrap {
   static var nowrap: Self { return .init("nowrap") }
@@ -1737,8 +1643,6 @@ public struct JustifyContent: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension JustifyContent {}
 
 public extension Value where Kind == JustifyContent {
   static var center: Self { return .init("center") }
@@ -1761,8 +1665,6 @@ public struct Order: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension Order {}
 
 /// ------------------------------------------------------------------------ ///
 ///                                   Font                                   ///
@@ -1855,8 +1757,6 @@ public struct FontFamily: Property {
   }
 }
 
-extension FontFamily {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: - FontFeatureSettings
 /// The `font-feature-settings` property allows control over advanced
@@ -1868,8 +1768,6 @@ public struct FontFeatureSettings: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension FontFeatureSettings {}
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- FontKerning
@@ -1885,8 +1783,6 @@ public struct FontKerning: Property {
   }
 }
 
-extension FontKerning {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- FontSize
 /// The `font-size` CSS property sets the font size for the element's
@@ -1898,8 +1794,6 @@ public struct FontSize: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension FontSize {}
 
 public extension Value where Kind == FontSize {
   static var medium: Self { return .init("caption") }
@@ -1932,8 +1826,6 @@ public struct FontSizeAdjust: Property {
   }
 }
 
-extension FontSizeAdjust {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- FontStretch
 /// The `font-stretch` CSS property selects a normal, condensed, or expanded
@@ -1945,8 +1837,6 @@ public struct FontStretch: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension FontStretch {}
 
 public extension Value where Kind == FontStretch {
   static var normal: Self { return .init("normal") }
@@ -1972,8 +1862,6 @@ public struct FontStyle: Property {
   }
 }
 
-extension FontStyle {}
-
 public extension Value where Kind == FontStyle {
   static var normal: Self { return .init("normal") }
   static var italic: Self { return .init("italic") }
@@ -1991,8 +1879,6 @@ public struct FontVariant: Property {
   }
 }
 
-extension FontVariant {}
-
 public extension Value where Kind == FontVariant {
   static var normal: Self { return .init("normal") }
   static var smallCaps: Self { return .init("small-caps") }
@@ -2009,8 +1895,6 @@ public struct FontVariantCaps: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension FontVariantCaps {}
 
 public extension Value where Kind == FontVariantCaps {
   static var unset: Self { return .init("unset") }
@@ -2033,8 +1917,6 @@ public struct FontWeight: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension FontWeight {}
 
 public extension Value where Kind == FontWeight {
   static var normal: Self { return .init("normal") }
@@ -2124,8 +2006,6 @@ public struct CounterReset: Property {
   }
 }
 
-extension CounterReset {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: - CounterIncrement
 /// The `counter-increment` CSS property increments one or more counter values.
@@ -2137,8 +2017,6 @@ public struct CounterIncrement: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension CounterIncrement {}
 
 /// ------------------------------------------------------------------------ ///
 ///                                  List                                    ///
@@ -2183,8 +2061,6 @@ public struct ListStyleType: Property {
   }
 }
 
-extension ListStyleType {}
-
 public extension Value where Kind == ListStyleType {
   /// Unordered-List-Style-Types
   static var circle: Self { return .init("circle") }
@@ -2223,8 +2099,6 @@ public struct ListStylePosition: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension ListStylePosition {}
 
 public extension Value where Kind == ListStylePosition {
   static var inside: Self { return .init("inside") }
@@ -2302,8 +2176,6 @@ public struct MarginBottom: Property {
   }
 }
 
-extension MarginBottom {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- MarginLeft
 /// The `margin-left` CSS property sets the left margin of the element.
@@ -2316,8 +2188,6 @@ public struct MarginLeft: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension MarginLeft {}
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- MarginRight
@@ -2332,8 +2202,6 @@ public struct MarginRight: Property {
   }
 }
 
-extension MarginRight {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- MarginTop
 /// The `margin-top` CSS property sets the top margin of the element.
@@ -2346,8 +2214,6 @@ public struct MarginTop: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension MarginTop {}
 
 /// ------------------------------------------------------------------------ ///
 ///                                  MultiColumn                             ///
@@ -2364,8 +2230,6 @@ public struct ColumnCount: Property {
   }
 }
 
-extension ColumnCount {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: - ColumnFill
 /// The `column-fill` CSS property specifies how the column lengths in a
@@ -2380,8 +2244,6 @@ public struct ColumnFill: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension ColumnFill {}
 
 public extension Value where Kind == ColumnFill {
   static var balance: Self { return .init("inbalanceside") }
@@ -2399,8 +2261,6 @@ public struct ColumnGap: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension ColumnGap {}
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: - ColumnRule
@@ -2442,8 +2302,6 @@ public struct ColumnRuleColor: Property {
   }
 }
 
-extension ColumnRuleColor {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: - ColumnRuleStyle
 /// The `column-rule-style` CSS property sets the style of the rule drawn
@@ -2455,8 +2313,6 @@ public struct ColumnRuleStyle: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension ColumnRuleStyle {}
 
 public extension Value where Kind == ColumnRuleStyle {
   static var none: Self { return .init("none") }
@@ -2483,8 +2339,6 @@ public struct ColumnRuleWidth: Property {
   }
 }
 
-extension ColumnRuleWidth {}
-
 public extension Value where Kind == ColumnRuleWidth {
   static var medium: Self { return .init("medium") }
   static var thin: Self { return .init("thin") }
@@ -2504,8 +2358,6 @@ public struct ColumnSpan: Property {
   }
 }
 
-extension ColumnSpan {}
-
 public extension Value where Kind == ColumnSpan {
   static var all: Self { return .init("all") }
 }
@@ -2523,8 +2375,6 @@ public struct ColumnWidth: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension ColumnWidth {}
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: - Columns
@@ -2594,8 +2444,6 @@ public struct OutlineColor: Property {
   }
 }
 
-extension OutlineColor {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: --- OutlineOffset
 /// The `outline-offset` CSS property is used to set the space between an
@@ -2607,8 +2455,6 @@ public struct OutlineOffset: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension OutlineOffset {}
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- OutlineStyle
@@ -2622,8 +2468,6 @@ public struct OutlineStyle: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension OutlineStyle {}
 
 public extension Value where Kind == OutlineStyle {
   static var none: Self { return .init("none") }
@@ -2650,8 +2494,6 @@ public struct OutlineWidth: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension OutlineWidth {}
 
 public extension Value where Kind == OutlineWidth {
   static var medium: Self { return .init("medium") }
@@ -2714,8 +2556,6 @@ public struct PaddingBottom: Property {
   }
 }
 
-extension PaddingBottom {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- PaddingLeft
 /// The `padding-left` CSS property sets the left padding of the element.
@@ -2728,8 +2568,6 @@ public struct PaddingLeft: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension PaddingLeft {}
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- PaddingRight
@@ -2744,8 +2582,6 @@ public struct PaddingRight: Property {
   }
 }
 
-extension PaddingRight {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- PaddingTop
 /// The `padding-top` CSS property sets the top padding of the element.
@@ -2758,8 +2594,6 @@ public struct PaddingTop: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension PaddingTop {}
 
 /// ------------------------------------------------------------------------ ///
 ///                                   Print                                  ///
@@ -2776,8 +2610,6 @@ public struct BreakAfter: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension BreakAfter {}
 
 public extension Value where Kind == BreakAfter {
   static var all: Self { return .init("all") }
@@ -2808,8 +2640,6 @@ public struct BreakBefore: Property {
   }
 }
 
-extension BreakBefore {}
-
 public extension Value where Kind == BreakBefore {
   static var all: Self { return .init("all") }
   static var always: Self { return .init("always") }
@@ -2839,8 +2669,6 @@ public struct BreakInside: Property {
   }
 }
 
-extension BreakInside {}
-
 public extension Value where Kind == BreakInside {
   static var avoid: Self { return .init("avoid") }
   static var avoidColumn: Self { return .init("avoid-column") }
@@ -2864,8 +2692,6 @@ public struct TextAlign: Property {
   }
 }
 
-extension TextAlign {}
-
 public extension Value where Kind == TextAlign {
   static var left: Self { return .init("left") }
   static var right: Self { return .init("right") }
@@ -2885,8 +2711,6 @@ public struct TextAlignLast: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension TextAlignLast {}
 
 public extension Value where Kind == TextAlignLast {
   static var left: Self { return .init("left") }
@@ -2936,8 +2760,6 @@ public struct TextDecorationColor: Property {
   }
 }
 
-extension TextDecorationColor {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: - TextDecorationLine
 /// The `text-decoration-line` CSS property specifies what kind of line
@@ -2982,8 +2804,6 @@ public struct TextDecorationStyle: Property {
   }
 }
 
-extension TextDecorationStyle {}
-
 public extension Value where Kind == TextDecorationStyle {
   static var solid: Self { return .init("solid") }
   static var double: Self { return .init("double") }
@@ -3004,8 +2824,6 @@ public struct TextIndent: Property {
   }
 }
 
-extension TextIndent {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: - TextJustify
 /// The `text-justify` CSS property specifies the justification method to use
@@ -3017,8 +2835,6 @@ public struct TextJustify: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension TextJustify {}
 
 public extension Value where Kind == TextJustify {
   static var interWord: Self { return .init("inter-word") }
@@ -3038,8 +2854,6 @@ public struct TextOverflow: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension TextOverflow {}
 
 public extension Value where Kind == TextOverflow {
   static var clip: Self { return .init("clip") }
@@ -3087,8 +2901,6 @@ public struct TextTransform: Property {
   }
 }
 
-extension TextTransform {}
-
 public extension Value where Kind == TextTransform {
   static var capitalize: Self { return .init("capitalize") }
   static var uppercase: Self { return .init("uppercase") }
@@ -3107,8 +2919,6 @@ public struct LineHeight: Property {
   }
 }
 
-extension LineHeight {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: - LetterSpacing
 /// The `letter-spacing` property sets the extra spacing between the letters of
@@ -3120,8 +2930,6 @@ public struct LetterSpacing: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension LetterSpacing {}
 
 /// ------------------------------------------------------------------------ ///
 ///                                 Transform                                ///
@@ -3137,8 +2945,6 @@ public struct BackfaceVisibility: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension BackfaceVisibility {}
 
 public extension Value where Kind == BackfaceVisibility {
   static var visible: Self { return .init("visible") }
@@ -3390,8 +3196,6 @@ public struct TransformStyle: Property {
   }
 }
 
-extension TransformStyle {}
-
 public extension Value where Kind == TransformStyle {
   static var flat: Self { return .init("flat") }
   static var preserve3d: Self { return .init("preserve-3d") }
@@ -3436,8 +3240,6 @@ public struct TransitionDelay: Property {
   }
 }
 
-extension TransitionDelay {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- TransitionDuration
 public struct TransitionDuration: Property {
@@ -3448,8 +3250,6 @@ public struct TransitionDuration: Property {
   }
 }
 
-extension TransitionDuration {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: -- TransitionProperty
 public struct TransitionProperty: Property {
@@ -3459,8 +3259,6 @@ public struct TransitionProperty: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension TransitionProperty {}
 
 public extension Value where Kind == TransitionProperty {
   static var all: Self { return .init("all") }
@@ -3477,8 +3275,6 @@ public struct TransitionTimingFunction: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension TransitionTimingFunction {}
 
 public enum TransitionTimingFunctionPoint: String { case start, end }
 
@@ -3571,8 +3367,6 @@ public struct Position: Property {
   }
 }
 
-extension Position {}
-
 public extension Value where Kind == Position {
   static var `static`: Self { return .init("static") }
   static var relative: Self { return .init("relative") }
@@ -3593,8 +3387,6 @@ public struct Top: Property {
   }
 }
 
-extension Top {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: - Right
 /// The `right` CSS property specifies the location of the right edge of
@@ -3606,8 +3398,6 @@ public struct Right: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension Right {}
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: - Bottom
@@ -3621,8 +3411,6 @@ public struct Bottom: Property {
   }
 }
 
-extension Bottom {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: - Left
 /// The `left` CSS property specifies the location of the left edge of
@@ -3635,8 +3423,6 @@ public struct Left: Property {
   }
 }
 
-extension Left {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: - Float
 /// The `float` CSS property specifies whether a box should float to the left,
@@ -3648,8 +3434,6 @@ public struct Float: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension Float {}
 
 public extension Value where Kind == Float {
   static var left: Self { return .init("left") }
@@ -3667,8 +3451,6 @@ public struct Clear: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension Clear {}
 
 public extension Value where Kind == Clear {
   static var left: Self { return .init("left") }
@@ -3690,8 +3472,6 @@ public struct ZIndex: Property {
   }
 }
 
-extension ZIndex {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: - Overflow
 public struct Overflow: Property {
@@ -3701,8 +3481,6 @@ public struct Overflow: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension Overflow {}
 
 public extension Value where Kind == Overflow {
   static var visible: Self { return .init("visible") }
@@ -3720,8 +3498,6 @@ public struct OverflowX: Property {
   }
 }
 
-extension OverflowX {}
-
 public extension Value where Kind == OverflowX {
   static var visible: Self { return .init("visible") }
   static var hidden: Self { return .init("hidden") }
@@ -3737,8 +3513,6 @@ public struct OverflowY: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension OverflowY {}
 
 public extension Value where Kind == OverflowY {
   static var visible: Self { return .init("visible") }
@@ -3790,8 +3564,6 @@ public struct ClipPath: Property {
   }
 }
 
-extension ClipPath {}
-
 /// ------------------------------------------------------------------------ ///
 /// MARK: - Visibility
 /// The `visibility` property specifies whether or not an element is visible.
@@ -3805,8 +3577,6 @@ public struct Visibility: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension Visibility {}
 
 public extension Value where Kind == Visibility {
   static var visible: Self { return .init("visible") }
@@ -3823,8 +3593,6 @@ public struct BoxDecorationBreak: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension BoxDecorationBreak {}
 
 public extension Value where Kind == BoxDecorationBreak {
   static var slice: Self { return .init("slice") }
@@ -3873,8 +3641,6 @@ public struct BoxSizing: Property {
   }
 }
 
-extension BoxSizing {}
-
 public extension Value where Kind == BoxSizing {
   static var contentBox: Self { return .init("content-box") }
   static var borderBox: Self { return .init("border-box") }
@@ -3891,8 +3657,6 @@ public struct CaretColor: Property {
     self.rawValue = rawValue; self.declarations = declarations
   }
 }
-
-extension CaretColor {}
 
 /// ------------------------------------------------------------------------ ///
 /// MARK: - Cursor
