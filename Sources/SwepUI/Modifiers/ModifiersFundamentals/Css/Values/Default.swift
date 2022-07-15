@@ -173,7 +173,7 @@ extension BoxSizing: HasValueOfDefault {}
 extension CaretColor: HasValueOfDefault {}
 extension Cursor: HasValueOfDefault {}
 
-public extension Value where Kind: CssPropertyKey & HasValueOfDefault {
+public extension Value where Kind: Property & HasValueOfDefault {
   static var `default`: Self {
     switch String(describing: Kind.key) {
     case "animation": return "none 0s ease 0s 1 normal none running"

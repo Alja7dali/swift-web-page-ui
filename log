@@ -1,0 +1,1349 @@
+warning: unable to restore checkouts state: unable to restore state from /Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/.build/repositories/checkouts-state.json; missingKey("status")
+[1/7] Compiling SwepUI Fraction.swift
+[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Value.swift:18:24: [0m[0;1;31merror: [0m[1mtype 'Self' does not conform to protocol 'CSSValue'
+[0m  public init(_ value: Value<Self>) {
+[0;1;32m                       ^
+[0m[2/7] Compiling SwepUI String.swift
+[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Value.swift:18:24: [0m[0;1;31merror: [0m[1mtype 'Self' does not conform to protocol 'CSSValue'
+[0m  public init(_ value: Value<Self>) {
+[0;1;32m                       ^
+[0m[3/7] Compiling SwepUI Width+Style.swift
+[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Value.swift:18:24: [0m[0;1;31merror: [0m[1mtype 'Self' does not conform to protocol 'CSSValue'
+[0m  public init(_ value: Value<Self>) {
+[0;1;32m                       ^
+[0m[4/7] Compiling SwepUI Value.swift
+[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Value.swift:18:24: [0m[0;1;31merror: [0m[1mtype 'Self' does not conform to protocol 'CSSValue'
+[0m  public init(_ value: Value<Self>) {
+[0;1;32m                       ^
+[0m[5/7] Compiling SwepUI StyleModifiers.swift
+[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Value.swift:18:24: [0m[0;1;31merror: [0m[1mtype 'Self' does not conform to protocol 'CSSValue'
+[0m  public init(_ value: Value<Self>) {
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:29:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Animation(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:57:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(AnimationDelay(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:61:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(AnimationDirection(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:65:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(AnimationDuration(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:69:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(AnimationFillMode(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:73:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(AnimationIterationCount(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:77:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(AnimationName(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:81:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(AnimationPlayState(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:85:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(AnimationTimingFunction(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:89:49: [0m[0;1;31merror: [0m[1mtype 'String' has no member 'steps'
+[0m    return appendStyle(AnimationTimingFunction(.steps(count, at: point)))
+[0;1;32m                                               ~^~~~~
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:93:49: [0m[0;1;31merror: [0m[1mtype 'String' has no member 'cubicBezier'
+[0m    return appendStyle(AnimationTimingFunction(.cubicBezier(X1, Y1, X2, Y2)))
+[0;1;32m                                               ~^~~~~~~~~~~
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:101:35: [0m[0;1;31merror: [0m[1mcannot convert value of type 'Value<Background>' to expected argument type 'Value<BackgroundRepeat>'
+[0m    return appendStyle(Background(value))
+[0;1;32m                                  ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Value.swift:3:21: [0m[0;1;30mnote: [0m[1marguments to generic parameter 'Kind' ('Background' and 'BackgroundRepeat') are expected to be equal
+[0mpublic struct Value<Kind: CSSValue> {
+[0;1;32m                    ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:130:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BackgroundAttachment(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:134:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BackgroundBlendMode(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:138:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BackgroundClip(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:142:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BackgroundColor(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:146:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BackgroundImage(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:150:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BackgroundOrigin(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:154:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BackgroundPosition(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Properties.swift:453:10: [0m[0;1;30mnote: [0m[1mfound candidate with type 'Value<BackgroundPosition>'
+[0m  public init(_ x: Value<CSSLength>, _ y: Value<CSSLength> = .auto) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Properties.swift:462:10: [0m[0;1;30mnote: [0m[1mfound candidate with type 'Value<BackgroundPosition>'
+[0m  public init(_ horizontal: Value<CSSSide>, _ vertical: Value<CSSSide> = .center) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:173:39: [0m[0;1;31merror: [0m[1mcannot convert value of type 'Value<BackgroundSize>' to expected argument type 'Value<CSSLength>'
+[0m    return appendStyle(BackgroundSize(value))
+[0;1;32m                                      ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Value.swift:3:21: [0m[0;1;30mnote: [0m[1marguments to generic parameter 'Kind' ('BackgroundSize' and 'CSSLength') are expected to be equal
+[0mpublic struct Value<Kind: CSSValue> {
+[0;1;32m                    ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:185:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Border(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:205:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BorderBottomColor(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:209:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BorderBottomLeftRadius(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:213:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BorderBottomRightRadius(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:217:42: [0m[0;1;31merror: [0m[1mcannot convert value of type 'Value<BorderBottomStyle>' to expected argument type 'Value<BorderStyle>'
+[0m    return appendStyle(BorderBottomStyle(value))
+[0;1;32m                                         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Value.swift:3:21: [0m[0;1;30mnote: [0m[1marguments to generic parameter 'Kind' ('BorderBottomStyle' and 'BorderStyle') are expected to be equal
+[0mpublic struct Value<Kind: CSSValue> {
+[0;1;32m                    ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:221:42: [0m[0;1;31merror: [0m[1mcannot convert value of type 'Value<BorderBottomWidth>' to expected argument type 'Value<BorderWidth>'
+[0m    return appendStyle(BorderBottomWidth(value))
+[0;1;32m                                         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Value.swift:3:21: [0m[0;1;30mnote: [0m[1marguments to generic parameter 'Kind' ('BorderBottomWidth' and 'BorderWidth') are expected to be equal
+[0mpublic struct Value<Kind: CSSValue> {
+[0;1;32m                    ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:225:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BorderCollapse(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:229:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BorderColor(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:263:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BorderImageOutset(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:279:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BorderImageRepeat(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:283:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BorderImageSlice(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:299:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BorderImageSource(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:303:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BorderImageWidth(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:327:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BorderLeftColor(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:331:40: [0m[0;1;31merror: [0m[1mcannot convert value of type 'Value<BorderLeftStyle>' to expected argument type 'Value<BorderStyle>'
+[0m    return appendStyle(BorderLeftStyle(value))
+[0;1;32m                                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Value.swift:3:21: [0m[0;1;30mnote: [0m[1marguments to generic parameter 'Kind' ('BorderLeftStyle' and 'BorderStyle') are expected to be equal
+[0mpublic struct Value<Kind: CSSValue> {
+[0;1;32m                    ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:335:40: [0m[0;1;31merror: [0m[1mcannot convert value of type 'Value<BorderLeftWidth>' to expected argument type 'Value<BorderWidth>'
+[0m    return appendStyle(BorderLeftWidth(value))
+[0;1;32m                                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Value.swift:3:21: [0m[0;1;30mnote: [0m[1marguments to generic parameter 'Kind' ('BorderLeftWidth' and 'BorderWidth') are expected to be equal
+[0mpublic struct Value<Kind: CSSValue> {
+[0;1;32m                    ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:339:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BorderRadius(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:363:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BorderRightColor(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:367:41: [0m[0;1;31merror: [0m[1mcannot convert value of type 'Value<BorderRightStyle>' to expected argument type 'Value<BorderStyle>'
+[0m    return appendStyle(BorderRightStyle(value))
+[0;1;32m                                        ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Value.swift:3:21: [0m[0;1;30mnote: [0m[1marguments to generic parameter 'Kind' ('BorderRightStyle' and 'BorderStyle') are expected to be equal
+[0mpublic struct Value<Kind: CSSValue> {
+[0;1;32m                    ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:371:41: [0m[0;1;31merror: [0m[1mcannot convert value of type 'Value<BorderRightWidth>' to expected argument type 'Value<BorderWidth>'
+[0m    return appendStyle(BorderRightWidth(value))
+[0;1;32m                                        ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Value.swift:3:21: [0m[0;1;30mnote: [0m[1marguments to generic parameter 'Kind' ('BorderRightWidth' and 'BorderWidth') are expected to be equal
+[0mpublic struct Value<Kind: CSSValue> {
+[0;1;32m                    ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:375:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BorderSpacing(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:407:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BorderTopColor(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:411:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BorderTopLeftRadius(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:415:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BorderTopRightRadius(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:419:39: [0m[0;1;31merror: [0m[1mcannot convert value of type 'Value<BorderTopStyle>' to expected argument type 'Value<BorderStyle>'
+[0m    return appendStyle(BorderTopStyle(value))
+[0;1;32m                                      ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Value.swift:3:21: [0m[0;1;30mnote: [0m[1marguments to generic parameter 'Kind' ('BorderTopStyle' and 'BorderStyle') are expected to be equal
+[0mpublic struct Value<Kind: CSSValue> {
+[0;1;32m                    ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:423:39: [0m[0;1;31merror: [0m[1mcannot convert value of type 'Value<BorderTopWidth>' to expected argument type 'Value<BorderWidth>'
+[0m    return appendStyle(BorderTopWidth(value))
+[0;1;32m                                      ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Value.swift:3:21: [0m[0;1;30mnote: [0m[1marguments to generic parameter 'Kind' ('BorderTopWidth' and 'BorderWidth') are expected to be equal
+[0mpublic struct Value<Kind: CSSValue> {
+[0;1;32m                    ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:447:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Color(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:451:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Opacity(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Fraction.swift:6:10: [0m[0;1;30mnote: [0m[1mcandidate expects value of type 'Double' for parameter #1
+[0m  public init(_ value: Double) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:459:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Height(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:463:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(MinHeight(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:467:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(MaxHeight(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:471:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Width(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:475:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(MinWidth(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:479:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(MaxWidth(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:487:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(AlignContent(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:491:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(AlignItems(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:495:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(AlignSelf(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:499:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Flex(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:511:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(FlexBasis(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:515:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(FlexDirection(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:519:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(FlexFlow(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:530:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(FlexGrow(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:534:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(FlexShrink(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:538:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(FlexWrap(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:542:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(JustifyContent(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:546:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Order(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:554:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Font(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:594:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(FontFamily(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:602:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(FontKerning(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:606:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(FontSize(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:610:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(FontSizeAdjust(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:614:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(FontStretch(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:618:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(FontStyle(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:622:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(FontVariant(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:626:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(FontVariantCaps(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:630:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(FontWeight(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:638:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Content(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:642:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Quotes(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:646:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(CounterReset(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:650:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(CounterIncrement(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:663:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(ListStyle(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:675:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(ListStyleType(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:679:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(ListStylePosition(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:683:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(ListStyleImage(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:691:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Margin(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:707:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(MarginBottom(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:711:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(MarginLeft(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:715:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(MarginRight(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:719:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(MarginTop(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:727:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(ColumnCount(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:731:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(ColumnFill(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:735:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(ColumnGap(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:739:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(ColumnRule(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:751:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(ColumnRuleColor(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:755:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(ColumnRuleStyle(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:759:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(ColumnRuleWidth(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:763:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(ColumnSpan(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:767:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(ColumnWidth(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:771:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Columns(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:786:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Outline(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:798:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(OutlineColor(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:802:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(OutlineOffset(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:806:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(OutlineStyle(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:810:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(OutlineWidth(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:818:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Padding(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:834:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(PaddingBottom(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:838:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(PaddingLeft(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:842:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(PaddingRight(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:846:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(PaddingTop(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:854:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BreakAfter(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:858:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BreakBefore(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:862:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BreakInside(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:870:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(TextAlign(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:874:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(TextAlignLast(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:878:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(TextDecoration(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:890:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(TextDecorationColor(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:901:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(TextDecorationStyle(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:905:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(TextIndent(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:909:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(TextJustify(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:913:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(TextOverflow(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:917:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(TextShadow(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:930:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(TextTransform(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:934:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(LineHeight(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:938:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(LetterSpacing(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:946:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BackfaceVisibility(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:950:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(TransformOrigin(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:962:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(TransformStyle(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:966:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Transform(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Properties.swift:2958:10: [0m[0;1;30mnote: [0m[1mcandidate expects value of type '(Value<Transform>, Bool)' for parameter #1
+[0m  public init(_ function: (Value<Self>, Bool), _ moreFunctions: (Value<Self>, Bool) ...) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Properties.swift:2962:10: [0m[0;1;30mnote: [0m[1mcandidate expects value of type 'Array<(Value<Transform>, Bool)>' for parameter #1
+[0m  public init(_ functions: Array<(Value<Self>, Bool)>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:982:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Transition(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1002:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(TransitionDelay(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1006:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(TransitionDuration(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1010:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(TransitionProperty(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1014:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(TransitionTimingFunction(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1018:50: [0m[0;1;31merror: [0m[1mtype 'String' has no member 'steps'
+[0m    return appendStyle(TransitionTimingFunction(.steps(count, at: point)))
+[0;1;32m                                                ~^~~~~
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1022:50: [0m[0;1;31merror: [0m[1mtype 'String' has no member 'cubicBezier'
+[0m    return appendStyle(TransitionTimingFunction(.cubicBezier(X1, Y1, X2, Y2)))
+[0;1;32m                                                ~^~~~~~~~~~~
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1034:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Position(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1038:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Top(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1042:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Right(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1046:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Bottom(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1050:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Left(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1054:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Float(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1058:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Clear(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1062:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(ZIndex(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1066:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Overflow(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1070:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(OverflowX(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1074:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(OverflowY(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1082:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Visibility(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1086:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BoxDecorationBreak(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1090:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BoxShadow(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1104:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(BoxSizing(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1108:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(CaretColor(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/StyleModifiers.swift:1112:24: [0m[0;1;31merror: [0m[1mno exact matches in call to initializer 
+[0m    return appendStyle(Cursor(value))
+[0;1;32m                       ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:10:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderWidth>) {
+[0;1;32m         ^
+[0m[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Width+Style.swift:24:10: [0m[0;1;30mnote: [0m[1mfound this candidate
+[0m  public init(_ value: Value<BorderStyle>) {
+[0;1;32m         ^
+[0m[6/7] Compiling SwepUI Properties.swift
+[1m/Users/aj/Desktop/PersonalProjects/github/swift-web-page-ui/Sources/SwepUI/Modifiers/ModifiersFundamentals/CSS/Values/Value.swift:18:24: [0m[0;1;31merror: [0m[1mtype 'Self' does not conform to protocol 'CSSValue'
+[0m  public init(_ value: Value<Self>) {
+[0;1;32m                       ^
+[0m

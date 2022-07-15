@@ -6,22 +6,17 @@ public struct AnyProperty {
 public typealias Declaration = (String, String)
 public typealias Declarations = Array<Declaration>
 
-public protocol CssPropertyKey: CSSValue {
+public protocol Property: CSSValue, ExpressibleByStringLiteral {
   static var key: StaticString { get }
   static var browsers: Array<StaticString> { get }
-}
-
-extension CssPropertyKey {
-  public static var browsers: Array<StaticString> { return [] }
-}
-
-public protocol Property: CssPropertyKey, ExpressibleByStringLiteral {
   var rawValue: String { get }
   var declarations: () -> Declarations { get }
   init(_ rawValue: String, _ declarations: @escaping () -> Declarations)
 }
 
 extension Property {
+  public static var browsers: Array<StaticString> { return [] }
+
   @_disfavoredOverload
   public init(stringLiteral value: String) {
     self.init(
@@ -33,18 +28,14 @@ extension Property {
       )
     )
   }
-}
 
-extension Property {
   public func render<Target: TextOutputStream>(into target: inout Target) {
     var propertiesItr = declarations().makeIterator()
     while let (key, value) = propertiesItr.next() {
       target.write("\(key):\(value);")
     }
   }
-}
 
-extension Property {
   func toArrayOfAnyProperty() -> Array<AnyProperty> {
     return declarations().map { (key, value) in
       return AnyProperty(key: key, value: value)
