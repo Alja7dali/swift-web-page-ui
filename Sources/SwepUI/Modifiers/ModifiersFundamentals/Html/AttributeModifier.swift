@@ -1,4 +1,4 @@
-public struct AttributeModifier<Content: View>: View, ViewModifier {
+public struct HtmlAttributeModifier<Content: View>: View, ViewModifier {
   public typealias Body = Never
 
   private let attribute: Attribute
@@ -17,7 +17,7 @@ public struct AttributeModifier<Content: View>: View, ViewModifier {
 }
 
 extension View {
-  public func attribute(key: String, value: Optional<String>) -> some View {
-    return self.modifier(AttributeModifier<Self>(key: key, value: value))
+  public func htmlAttribute(key: String, value: Optional<String>) -> some View {
+    return self.modifier(HtmlAttributeModifier<Self>(key: key, value: value))
   }
 }

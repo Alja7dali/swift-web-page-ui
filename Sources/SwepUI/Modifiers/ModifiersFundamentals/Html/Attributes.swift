@@ -13,7 +13,7 @@ extension View {
   ///                    keyboard shortcut that activates or focuses the
   ///                    element.
   public func htmlAccesskey(_ value: Character) -> some View {
-    return attribute(key: "accesskey", value: String(value))
+    return htmlAttribute(key: "accesskey", value: String(value))
   }
 
   /// When specified on HTML elements, the `class` attribute must have a value
@@ -22,7 +22,7 @@ extension View {
   ///
   /// - Parameter value: A set of space-separated tokens.
   public func htmlClass(_ value: String) -> some View {
-    return attribute(key: "class", value: value)
+    return htmlAttribute(key: "class", value: value)
   }
 }
 
@@ -41,7 +41,7 @@ extension View {
   ///
   /// - Parameter value: Should a document region be editable.
   public func htmlContenteditable(_ value: Contenteditable) -> some View {
-    return attribute(key: "contenteditable", value: value == .inherit ? nil : value.rawValue)
+    return htmlAttribute(key: "contenteditable", value: value == .inherit ? nil : value.rawValue)
   }
 
   /// Adds a `data`-prefixed attribute to the element.
@@ -50,7 +50,7 @@ extension View {
   ///   - name: The attribute suffix.
   ///   - value: The value.
   public func htmlData(_ name: StaticString, _ value: String) -> some View {
-    return attribute(key: "data-\(name)", value: value)
+    return htmlAttribute(key: "data-\(name)", value: value)
   }
 }
 
@@ -62,7 +62,7 @@ public enum Direction: String {
 
 extension View {
   public func htmlDir(_ value: Direction) -> some View {
-    return attribute(key: "dir", value: value.rawValue)
+    return htmlAttribute(key: "dir", value: value.rawValue)
   }
 }
 
@@ -86,14 +86,14 @@ extension View {
   ///
   /// - Parameter value: Whether or not an element is draggable.
   public func htmlDraggable(_ value: Draggable) -> some View {
-    return attribute(key: "draggable", value: value == .auto ? nil : value.rawValue)
+    return htmlAttribute(key: "draggable", value: value == .auto ? nil : value.rawValue)
   }
 
   /// Hide the element.
   ///
   /// - Parameter value: Hide the element.
   public func htmlHidden(_ value: Bool) -> some View {
-    return attribute(key: "hidden", value: value ? "" : nil)
+    return htmlAttribute(key: "hidden", value: value ? "" : nil)
   }
 
   /// When specified on HTML elements, the `id` attribute value must be unique
@@ -102,7 +102,7 @@ extension View {
   ///
   /// - Parameter value: A unique identifier.
   public func htmlId(_ value: String) -> some View {
-    return attribute(key: "id", value: value)
+    return htmlAttribute(key: "id", value: value)
   }
 }
 
@@ -305,11 +305,11 @@ extension View {
   ///                    Setting the attribute to the empty string indicates
   ///                    that the primary language is unknown.
   public func htmlLang(_ value: Language) -> some View {
-    return attribute(key: "lang", value: value.rawValue)
+    return htmlAttribute(key: "lang", value: value.rawValue)
   }
 
   public func htmlSpellcheck(_ value: Bool) -> some View {
-    return attribute(key: "spellcheck", value: String(value))
+    return htmlAttribute(key: "spellcheck", value: String(value))
   }
 
   /// This is a style attribute as defined by the _CSS Style Attributes_
@@ -325,7 +325,7 @@ extension View {
   ///
   /// - Parameter value: A CSS style.
   public func htmlStyle(unsafe value: String) -> some View {
-    return attribute(key: "style", value: String(describing: value))
+    return htmlAttribute(key: "style", value: String(describing: value))
   }
 
   /// The `tabindex` content attribute allows authors to indicate that an
@@ -336,7 +336,7 @@ extension View {
   /// - Parameter value: The sequential focus navigation order the element
   ///                    appears.
   public func htmlTabindex(_ value: Int) -> some View {
-    return attribute(key: "tabindex", value: String(value))
+    return htmlAttribute(key: "tabindex", value: String(value))
   }
 
   /// The `title` attribute represents advisory information for the element,
@@ -344,7 +344,7 @@ extension View {
   ///
   /// - Parameter value: Advisory information.
   public func htmlTitle(_ value: String) -> some View {
-    return attribute(key: "title", value: value)
+    return htmlAttribute(key: "title", value: value)
   }
 }
 
@@ -365,7 +365,7 @@ extension View {
   ///                    values of its text node children are to be translated
   ///                    when the page is localized.
   public func htmlTranslate(_ value: Translate) -> some View {
-    return attribute(key: "translate", value: value.rawValue)
+    return htmlAttribute(key: "translate", value: value.rawValue)
   }
 }
 
@@ -433,7 +433,7 @@ extension Area {
   ///
   /// - Parameter value: The kind of shape to be created in an image map.
   public func htmlShape(_ value: AreaShape) -> some View {
-    return attribute(key: "shape", value: value == .rect ? nil : value.rawValue)
+    return htmlAttribute(key: "shape", value: value == .rect ? nil : value.rawValue)
   }
 }
 
@@ -454,7 +454,7 @@ extension Button {
   ///
   /// - Parameter value: Type of button.
   public func htmlType(_ value: ButtonType) -> some View {
-    return attribute(key: "type", value: value.rawValue)
+    return htmlAttribute(key: "type", value: value.rawValue)
   }
 }
 
@@ -463,7 +463,7 @@ extension Details {
   ///
   /// - Parameter value: Whether the details are visible.
   public func htmlOpen(_ value: Bool) -> some View {
-    return attribute(key: "open", value: value ? "" : nil)
+    return htmlAttribute(key: "open", value: value ? "" : nil)
   }
 }
 
@@ -497,14 +497,14 @@ extension Form {
   ///
   /// - Parameter value: URL to use for form submission.
   public func htmlAction(_ value: String) -> some View {
-    return attribute(key: "action", value: value)
+    return htmlAttribute(key: "action", value: value)
   }
 
   /// The type of form encoding.
   ///
   /// - Parameter value: Enctype to use for form encoding.
   public func htmlEnctype(_ value: Enctype) -> some View {
-    return attribute(key: "enctype", value: value.rawValue)
+    return htmlAttribute(key: "enctype", value: value.rawValue)
   }
 
   /// HTTP method to use for form submission.
@@ -512,14 +512,14 @@ extension Form {
   /// - Parameter value: HTTP method to use for form submission.
   public func htmlMethod(_ value: FormMethod) -> some View {
     let rawValue = value.rawValue
-    return attribute(key: "method", value: rawValue.isEmpty ? nil : rawValue)
+    return htmlAttribute(key: "method", value: rawValue.isEmpty ? nil : rawValue)
   }
 
   /// Bypass form control validation for form submission.
   ///
   /// - Parameter value: Bypass form control validation for form submission.
   public func htmlNovalidate(_ value: Bool) -> some View {
-    return attribute(key: "novalidate", value: value ? "" : nil)
+    return htmlAttribute(key: "novalidate", value: value ? "" : nil)
   }
 }
 
@@ -552,14 +552,14 @@ extension Iframe {
   ///
   /// - Parameter value: Sandbox options.
   public func htmlSandbox(_ value: [IframeSandbox]) -> some View {
-    return attribute(key: "sandbox", value: value.map { $0.rawValue }.joined(separator: " "))
+    return htmlAttribute(key: "sandbox", value: value.map { $0.rawValue }.joined(separator: " "))
   }
 
   /// Enables a set of extra restrictions on any content hosted by the `<iframe>`.
   ///
   /// - Parameter value: Whether or not to sandbox the `<iframe>`.
   public func htmlSandbox(_ value: Bool) -> some View {
-    return attribute(key: "sandbox", value: value ? "" : nil)
+    return htmlAttribute(key: "sandbox", value: value ? "" : nil)
   }
 
 #if canImport(Swep)
@@ -570,7 +570,7 @@ extension Iframe {
     mode: RenderMode = .default,
     _ value: N
   ) -> some View {
-    return attribute(key: "srcdoc", value: value.render(mode))
+    return htmlAttribute(key: "srcdoc", value: value.render(mode))
   }
 #endif
 }
@@ -605,25 +605,25 @@ extension Input {
   ///
   /// - Parameter value: Whether the command or control is checked.
   public func htmlChecked(_ value: Bool) -> some View {
-    return attribute(key: "checked", value: value ? "" : nil)
+    return htmlAttribute(key: "checked", value: value ? "" : nil)
   }
 
   /// Pattern to be matched by the form control's value.
   ///
   /// - Parameter value: Pattern to be matched by the form control's value.
   public func htmlPattern(_ value: String) -> some View {
-    return attribute(key: "pattern", value: value)
+    return htmlAttribute(key: "pattern", value: value)
   }
 
   /// Granularity to be matched by the form control's value.
   ///
   /// - Parameter value: Granularity to be matched by the form control's value.
   public func htmlStep(_ value: Int) -> some View {
-    return attribute(key: "step", value: String(value))
+    return htmlAttribute(key: "step", value: String(value))
   }
 
   public func htmlType(_ value: InputType) -> some View {
-    return attribute(key: "type", value: value.rawValue)
+    return htmlAttribute(key: "type", value: value.rawValue)
   }
 }
 
@@ -632,7 +632,7 @@ extension Meta {
   ///
   /// - Parameter value: Value of the element.
   public func htmlContent(_ value: String) -> some View {
-    return attribute(key: "content", value: value)
+    return htmlAttribute(key: "content", value: value)
   }
 }
 
@@ -658,21 +658,21 @@ extension Ol {
   ///
   /// - Parameter value: Number the list backwards.
   public func htmlReversed(_ value: Bool) -> some View {
-    return attribute(key: "reversed", value: value ? "" : nil)
+    return htmlAttribute(key: "reversed", value: value ? "" : nil)
   }
 
   /// Ordinal value of the first item.
   ///
   /// - Parameter value: Ordinal value of the first item.
   public func htmlStart(_ value: Int) -> some View {
-    return attribute(key: "start", value: String(value))
+    return htmlAttribute(key: "start", value: String(value))
   }
 
   /// Kind of list marker.
   ///
   /// - Parameter value: Kind of list marker.
   public func htmlType(_ value: ListType) -> some View {
-    return attribute(key: "type", value: value.rawValue)
+    return htmlAttribute(key: "type", value: value.rawValue)
   }
 }
 
@@ -681,7 +681,7 @@ extension Option {
   ///
   /// - Parameter value: Whether the option is selected by default.
   public func htmlSelected(_ value: Bool) -> some View {
-    return attribute(key: "selected", value: value ? "" : nil)
+    return htmlAttribute(key: "selected", value: value ? "" : nil)
   }
 }
 
@@ -690,14 +690,14 @@ extension Script {
   ///
   /// - Parameter value: Execute script in parallel.
   public func htmlAsync(_ value: Bool) -> some View {
-    return attribute(key: "async", value: value ? "" : nil)
+    return htmlAttribute(key: "async", value: value ? "" : nil)
   }
 
   /// Defer script execution.
   ///
   /// - Parameter value: Defer script execution.
   public func `defer`(_ value: Bool) -> some View {
-    return attribute(key: "defer", value: value ? "" : nil)
+    return htmlAttribute(key: "defer", value: value ? "" : nil)
   }
 
   /// Cryptographic nonce used in Content Security Policy checks.
@@ -705,7 +705,7 @@ extension Script {
   /// - Parameter value: Cryptographic nonce used in Content Security Policy
   ///                    checks.
   public func htmlNonce(_ value: String) -> some View {
-    return attribute(key: "nonce", value: value)
+    return htmlAttribute(key: "nonce", value: value)
   }
 }
 
@@ -724,7 +724,7 @@ extension View where Self: HasMediaQueryList {
   ///
   /// - Parameter value: A media query list.
   public func htmlMedia(_ value: String) -> some View {
-    return attribute(key: "media", value: value)
+    return htmlAttribute(key: "media", value: value)
   }
 }
 
@@ -738,7 +738,7 @@ extension Source where Parent: IsPicture {
   /// - Parameter value: Images to use in different situations (e.g.,
   ///                    high-resolution displays, small monitors, etc).
   public func htmlSrcset(_ value: String) -> some View {
-    return attribute(key: "srcset", value: value)
+    return htmlAttribute(key: "srcset", value: value)
   }
 }
 
@@ -760,14 +760,14 @@ extension Textarea {
   ///
   /// - Parameter value: Maximum number of characters per line.
   public func htmlCols(_ value: Int) -> some View {
-    return attribute(key: "cols", value: String(value))
+    return htmlAttribute(key: "cols", value: String(value))
   }
 
   /// Number of lines to show.
   ///
   /// - Parameter value: Number of lines to show.
   public func htmlRows(_ value: Int) -> some View {
-    return attribute(key: "rows", value: String(value))
+    return htmlAttribute(key: "rows", value: String(value))
   }
 
   /// How the value of the form control is to be wrapped for form submission.
@@ -775,7 +775,7 @@ extension Textarea {
   /// - Parameter value: How the value of the form control is to be wrapped for
   ///                    form submission.
   public func htmlWrap(_ value: TextareaWrap) -> some View {
-    return attribute(key: "wrap", value: value.rawValue)
+    return htmlAttribute(key: "wrap", value: value.rawValue)
   }
 }
 
@@ -812,14 +812,14 @@ extension Th {
   /// - Parameter value: Alternative label to use for the header cell when
   ///                    referencing the cell in other contexts.
   public func htmlAbbr(_ value: String) -> some View {
-    return attribute(key: "abbr", value: value)
+    return htmlAttribute(key: "abbr", value: value)
   }
 
   /// Specifies which cells the header cell applies to.
   ///
   /// - Parameter value: Specifies which cells the header cell applies to.
   public func htmlScope(_ value: ThScope) -> some View {
-    return attribute(key: "scope", value: value.rawValue)
+    return htmlAttribute(key: "scope", value: value.rawValue)
   }
 }
 
@@ -856,34 +856,34 @@ public enum TrackKind: String {
 
 extension Track {
   public func `default`(_ value: Bool) -> some View {
-    return attribute(key: "default", value: value ? "" : nil)
+    return htmlAttribute(key: "default", value: value ? "" : nil)
   }
 
   /// The type of text track.
   ///
   /// - Parameter value: The type of text track.
   public func htmlKind(_ value: TrackKind) -> some View {
-    return attribute(key: "kind", value: value.rawValue)
+    return htmlAttribute(key: "kind", value: value.rawValue)
   }
 
   /// User-visible label for a `<track>` element.
   ///
   /// - Parameter value: User-visible label.
   public func htmlLabel(_ value: String) -> some View {
-    return attribute(key: "label", value: value)
+    return htmlAttribute(key: "label", value: value)
   }
 
   /// Language of the text track.
   ///
   /// - Parameter value: Language of the text track.
   public func htmlSrclang(_ value: Language) -> some View {
-    return attribute(key: "srclang", value: value.rawValue)
+    return htmlAttribute(key: "srclang", value: value.rawValue)
   }
 }
 
 extension Video {
   public func htmlPoster(_ value: String) -> some View {
-    return attribute(key: "poster", value: value)
+    return htmlAttribute(key: "poster", value: value)
   }
 }
 
@@ -901,7 +901,7 @@ extension View where Self: HasAlt {
   ///
   /// - Parameter value: Replacement text for use when images are not available.
   public func htmlAlt(_ value: String) -> some View {
-    return attribute(key: "alt", value: value)
+    return htmlAttribute(key: "alt", value: value)
   }
 }
 
@@ -923,7 +923,7 @@ extension View where Self: HasAutofocus {
   /// - Parameter value: Automatically focus the form control when the page is
   ///                    loaded.
   public func htmlAutofocus(_ value: Bool) -> some View {
-    return attribute(key: "autofocus", value: value ? "" : nil)
+    return htmlAttribute(key: "autofocus", value: value ? "" : nil)
   }
 }
 
@@ -941,7 +941,7 @@ extension View where Self: HasAutoplay {
   /// - Parameter value: Hint that the media resource can be started
   ///                    automatically when the page is loaded.
   public func htmlAutoplay(_ value: Bool) -> some View {
-    return attribute(key: "autoplay", value: value ? "" : nil)
+    return htmlAttribute(key: "autoplay", value: value ? "" : nil)
   }
 }
 
@@ -957,7 +957,7 @@ extension View where Self: HasCharset {
   ///
   /// - Parameter value: A character encoding declaration.
   public func htmlCharset(_ value: MediaType.Charset) -> some View {
-    return attribute(key: "charset", value: value.rawValue)
+    return htmlAttribute(key: "charset", value: value.rawValue)
   }
 }
 
@@ -976,7 +976,7 @@ extension View where Self: HasCite {
   /// - Parameter value: Link to the source of the quotation or more information
   ///                    about the edit.
   public func htmlCite(_ value: String) -> some View {
-    return attribute(key: "cite", value: value)
+    return htmlAttribute(key: "cite", value: value)
   }
 }
 
@@ -992,7 +992,7 @@ extension View where Self: HasColspan {
   ///
   /// - Parameter value: Number of columns that the cell is to span.
   public func htmlColspan(_ value: Int) -> some View {
-    return attribute(key: "colspan", value: String(value))
+    return htmlAttribute(key: "colspan", value: String(value))
   }
 }
 
@@ -1010,7 +1010,7 @@ extension View where Self: HasControls {
   ///
   /// - Parameter value: Show user agent controls.
   public func htmlControls(_ value: Bool) -> some View {
-    return attribute(key: "controls", value: value ? "" : nil)
+    return htmlAttribute(key: "controls", value: value ? "" : nil)
   }
 }
 
@@ -1036,7 +1036,7 @@ extension View where Self: HasCrossorigin {
   ///
   /// - Parameter value: How the element handles crossorigin requests.
   public func htmlCrossorigin(_ value: Crossorigin) -> some View {
-    return attribute(key: "crossorigin", value: value.rawValue)
+    return htmlAttribute(key: "crossorigin", value: value.rawValue)
   }
 }
 
@@ -1071,7 +1071,7 @@ extension Time: HasDatetime {}
 import class JavaScriptKit.JSDate
 extension View where Self: HasDatetime {
   public func htmlDatetime(_ value: JSDate) -> some View {
-    return attribute(key: "datetime", value: value.toISOString())
+    return htmlAttribute(key: "datetime", value: value.toISOString())
   }
 }
 #else
@@ -1090,7 +1090,7 @@ private let iso8601DateFormatter: DateFormatter = {
 
 extension View where Self: HasDatetime {
   public func htmlDatetime(_ value: Date) -> some View {
-    return attribute(key: "datetime", value: iso8601DateFormatter.string(from: value))
+    return htmlAttribute(key: "datetime", value: iso8601DateFormatter.string(from: value))
   }
 }
 #endif
@@ -1113,7 +1113,7 @@ extension View where Self: HasDisabled {
   ///
   /// - Parameter value: Whether the form control is disabled.
   public func htmlDisabled(_ value: Bool) -> some View {
-    return attribute(key: "disabled", value: value ? "" : nil)
+    return htmlAttribute(key: "disabled", value: value ? "" : nil)
   }
 }
 
@@ -1129,7 +1129,7 @@ extension View where Self: HasFor {
   ///
   /// - Parameter value: The `id` of the form control
   public func `for`(_ value: String) -> some View {
-    return attribute(key: "for", value: value)
+    return htmlAttribute(key: "for", value: value)
   }
 }
 
@@ -1153,7 +1153,7 @@ extension View where Self: HasForm {
   ///
   /// - Parameter value: The associated `<form>` element's `id`.
   public func htmlForm(_ value: String) -> some View {
-    return attribute(key: "form", value: value)
+    return htmlAttribute(key: "form", value: value)
   }
 }
 
@@ -1169,7 +1169,7 @@ extension View where Self: HasHeaders {
   ///
   /// - Parameter value: The header cells for this cell.
   public func htmlHeaders(_ value: String) -> some View {
-    return attribute(key: "headers", value: value)
+    return htmlAttribute(key: "headers", value: value)
   }
 }
 
@@ -1192,7 +1192,7 @@ extension View where Self: HasHeight {
   ///
   /// - Parameter value: Vertical dimension.
   public func htmlHeight(_ value: Int) -> some View {
-    return attribute(key: "height", value: String(value))
+    return htmlAttribute(key: "height", value: String(value))
   }
 }
 
@@ -1210,7 +1210,7 @@ extension View where Self: HasHref {
   ///
   /// - Parameter value: Address of a hyperlink.
   public func htmlHref(_ value: String) -> some View {
-    return attribute(key: "href", value: value)
+    return htmlAttribute(key: "href", value: value)
   }
 }
 
@@ -1223,7 +1223,7 @@ extension Video: HasLoop {}
 
 extension View where Self: HasLoop {
   public func htmlLoop(_ value: Bool) -> some View {
-    return attribute(key: "loop", value: value ? "" : nil)
+    return htmlAttribute(key: "loop", value: value ? "" : nil)
   }
 }
 
@@ -1240,7 +1240,7 @@ extension View where Self: HasMax {
   ///
   /// - Parameter value: Maximum value.
   public func htmlMax(_ value: Double) -> some View {
-    return attribute(key: "max", value: String(value))
+    return htmlAttribute(key: "max", value: String(value))
   }
 
   // TODO: Truncate ".0" in single function above.
@@ -1248,7 +1248,7 @@ extension View where Self: HasMax {
   ///
   /// - Parameter value: Maximum value.
   public func htmlMax(_ value: Int) -> some View {
-    return attribute(key: "max", value: String(value))
+    return htmlAttribute(key: "max", value: String(value))
   }
 }
 
@@ -1264,7 +1264,7 @@ extension View where Self: HasMaxlength {
   ///
   /// - Parameter value: Maximum length of value.
   public func htmlMaxlength(_ value: Int) -> some View {
-    return attribute(key: "maxlength", value: String(value))
+    return htmlAttribute(key: "maxlength", value: String(value))
   }
 }
 
@@ -1281,7 +1281,7 @@ extension View where Self: HasMin {
   ///
   /// - Parameter value: Minimum value.
   public func htmlMin(_ value: Double) -> some View {
-    return attribute(key: "min", value: String(value))
+    return htmlAttribute(key: "min", value: String(value))
   }
 
   // TODO: Truncate ".0" in single function above.
@@ -1289,7 +1289,7 @@ extension View where Self: HasMin {
   ///
   /// - Parameter value: Minimum value.
   public func htmlMin(_ value: Int) -> some View {
-    return attribute(key: "min", value: String(value))
+    return htmlAttribute(key: "min", value: String(value))
   }
 }
 
@@ -1305,7 +1305,7 @@ extension View where Self: HasMinlength {
   ///
   /// - Parameter value: Minimum length of value.
   public func htmlMinlength(_ value: Int) -> some View {
-    return attribute(key: "minlength", value: String(value))
+    return htmlAttribute(key: "minlength", value: String(value))
   }
 }
 
@@ -1321,7 +1321,7 @@ extension View where Self: HasMultiple {
   ///
   /// - Parameter value: Whether to allow multiple values.
   public func htmlMultiple(_ value: Bool) -> some View {
-    return attribute(key: "multiple", value: value ? "" : nil)
+    return htmlAttribute(key: "multiple", value: value ? "" : nil)
   }
 }
 
@@ -1337,7 +1337,7 @@ extension View where Self: HasMuted {
   ///
   /// - Parameter value: Whether to mute the media resource by default.
   public func htmlMuted(_ value: Bool) -> some View {
-    return attribute(key: "muted", value: value ? "" : nil)
+    return htmlAttribute(key: "muted", value: value ? "" : nil)
   }
 }
 
@@ -1359,7 +1359,7 @@ extension View where Self: HasName {
   ///
   /// - Parameter value: Name of form control.
   public func htmlName(_ value: String) -> some View {
-    return attribute(key: "name", value: value)
+    return htmlAttribute(key: "name", value: value)
   }
 }
 
@@ -1376,7 +1376,7 @@ extension View where Self: HasPlaceholder {
   /// - Parameter value: User-visible label to be placed within the form
   ///                    control.
   public func htmlPlaceholder(_ value: String) -> some View {
-    return attribute(key: "placeholder", value: value)
+    return htmlAttribute(key: "placeholder", value: value)
   }
 }
 
@@ -1420,7 +1420,7 @@ extension View where Self: HasPreload {
   /// - Parameter value: Hints how much buffering the media resource will likely
   ///                    need.
   public func htmlPreload(_ value: Preload) -> some View {
-    return attribute(key: "preload", value: value.rawValue)
+    return htmlAttribute(key: "preload", value: value.rawValue)
   }
 }
 
@@ -1436,7 +1436,7 @@ extension View where Self: HasReadonly {
   ///
   /// - Parameter value: Whether to allow the value to be edited by the user.
   public func htmlReadonly(_ value: Bool) -> some View {
-    return attribute(key: "readonly", value: value ? "" : nil)
+    return htmlAttribute(key: "readonly", value: value ? "" : nil)
   }
 }
 
@@ -1471,7 +1471,7 @@ public struct Rel: RawRepresentable {
 
 extension View where Self: HasRel {
   public func htmlRel(_ value: Rel) -> some View {
-    return attribute(key: "rel", value: value.rawValue)
+    return htmlAttribute(key: "rel", value: value.rawValue)
   }
 }
 
@@ -1488,7 +1488,7 @@ extension View where Self: HasRequired {
   ///
   /// - Parameter value: Whether the control is required for form submission.
   public func htmlRequired(_ value: Bool) -> some View {
-    return attribute(key: "required", value: value ? "" : nil)
+    return htmlAttribute(key: "required", value: value ? "" : nil)
   }
 }
 
@@ -1504,7 +1504,7 @@ extension View where Self: HasRowspan {
   ///
   /// - Parameter value: Number of rows that the cell is to span.
   public func htmlRowspan(_ value: Int) -> some View {
-    return attribute(key: "rowspan", value: String(value))
+    return htmlAttribute(key: "rowspan", value: String(value))
   }
 }
 
@@ -1517,7 +1517,7 @@ extension Colgroup: HasSpan {}
 
 extension View where Self: HasSpan {
   public func htmlSpan(_ value: Int) -> some View {
-    return attribute(key: "span", value: String(value))
+    return htmlAttribute(key: "span", value: String(value))
   }
 }
 
@@ -1541,7 +1541,7 @@ extension View where Self: HasSrc {
   ///
   /// - Parameter value: Address of the resource.
   public func htmlSrc(_ value: String) -> some View {
-    return attribute(key: "src", value: value)
+    return htmlAttribute(key: "src", value: value)
   }
 }
 
@@ -1573,7 +1573,7 @@ extension View where Self: HasSrcset {
   /// - Parameter value: Images to use in different situations (e.g.,
   ///                    high-resolution displays, small monitors, etc).
   public func htmlSrcset(_ value: [String: Size]) -> some View {
-    return attribute(key: "srcset", value: value.map { url, size in url + " " + size.description }.joined(separator: ", "))
+    return htmlAttribute(key: "srcset", value: value.map { url, size in url + " " + size.description }.joined(separator: ", "))
   }
 }
 
@@ -1606,7 +1606,7 @@ extension View where Self: HasTarget {
   /// - Parameter value: Default browsing context for hyperlink navigation
   ///                    and form submission.
   public func htmlTarget(_ value: Target) -> some View {
-    return attribute(key: "target", value: value == .self ? nil : value.rawValue)
+    return htmlAttribute(key: "target", value: value == .self ? nil : value.rawValue)
   }
 }
 
@@ -1627,7 +1627,7 @@ extension View where Self: HasMediaType {
   ///
   /// - Parameter value: Hint for the type of the referenced resource.
   public func htmlType(_ value: MediaType) -> some View {
-    return attribute(key: "type", value: value.description)
+    return htmlAttribute(key: "type", value: value.description)
   }
 }
 
@@ -1641,7 +1641,7 @@ extension Progress: HasDoubleValue {}
 
 extension View where Self: HasDoubleValue {
   public func htmlValue(_ value: Double) -> some View {
-    return attribute(key: "value", value: String(value))
+    return htmlAttribute(key: "value", value: String(value))
   }
 }
 
@@ -1658,7 +1658,7 @@ extension View where Self: HasIntValue {
   ///
   /// - Parameter value: The form control's value.
   public func htmlValue(_ value: Int) -> some View {
-    return attribute(key: "value", value: String(value))
+    return htmlAttribute(key: "value", value: String(value))
   }
 }
 
@@ -1675,7 +1675,7 @@ extension View where Self: HasStringValue {
   ///
   /// - Parameter value: The form control's value.
   public func htmlValue(_ value: String) -> some View {
-    return attribute(key: "value", value: value)
+    return htmlAttribute(key: "value", value: value)
   }
 }
 
@@ -1698,7 +1698,7 @@ extension View where Self: HasWidth {
   ///
   /// - Parameter value: Vertical dimension.
   public func htmlWidth(_ value: Int) -> some View {
-    return attribute(key: "width", value: String(value))
+    return htmlAttribute(key: "width", value: String(value))
   }
 }
 
@@ -1805,15 +1805,15 @@ public struct Role: RawRepresentable {
 
 extension View {
   public func htmlRole(_ value: Role) -> some View {
-    return attribute(key: "role", value: value.rawValue)
+    return htmlAttribute(key: "role", value: value.rawValue)
   }
 
   public func htmlAriaActivedescendant(_ value: String) -> some View {
-    return attribute(key: "aria-activedescendant", value: value)
+    return htmlAttribute(key: "aria-activedescendant", value: value)
   }
 
   public func htmlAriaAtomic(_ value: Bool) -> some View {
-    return attribute(key: "aria-atomic", value: String(value))
+    return htmlAttribute(key: "aria-atomic", value: String(value))
   }
 }
 
@@ -1826,31 +1826,31 @@ public enum AriaAutocomplete: String {
 
 extension View {
   public func htmlAriaAutocomplete(_ value: AriaAutocomplete) -> some View {
-    return attribute(key: "aria-autocomplete", value: value.rawValue)
+    return htmlAttribute(key: "aria-autocomplete", value: value.rawValue)
   }
 
   public func htmlAriaBusy(_ value: Bool) -> some View {
-    return attribute(key: "aria-busy", value: String(value))
+    return htmlAttribute(key: "aria-busy", value: String(value))
   }
 
   public func htmlAriaChecked(_ value: AriaToggled) -> some View {
-    return attribute(key: "aria-checked", value: value.rawValue)
+    return htmlAttribute(key: "aria-checked", value: value.rawValue)
   }
 
   public func htmlAriaColcount(_ value: Int) -> some View {
-    return attribute(key: "aria-colcount", value: String(value))
+    return htmlAttribute(key: "aria-colcount", value: String(value))
   }
 
   public func htmlAriaColindex(_ value: Int) -> some View {
-    return attribute(key: "aria-colindex", value: String(value))
+    return htmlAttribute(key: "aria-colindex", value: String(value))
   }
 
   public func htmlAriaColspan(_ value: Int) -> some View {
-    return attribute(key: "aria-colspan", value: String(value))
+    return htmlAttribute(key: "aria-colspan", value: String(value))
   }
 
   public func htmlAriaControls(_ value: String) -> some View {
-    return attribute(key: "aria-controls", value: value)
+    return htmlAttribute(key: "aria-controls", value: value)
   }
 }
 
@@ -1870,19 +1870,19 @@ public enum AriaCurrent: String, ExpressibleByBooleanLiteral {
 
 extension View {
   public func htmlAriaCurrent(_ value: AriaCurrent) -> some View {
-    return attribute(key: "aria-current", value: value.rawValue)
+    return htmlAttribute(key: "aria-current", value: value.rawValue)
   }
 
   public func htmlAriaDescribedby(_ value: String) -> some View {
-    return attribute(key: "aria-describedby", value: value)
+    return htmlAttribute(key: "aria-describedby", value: value)
   }
 
   public func htmlAriaDetails(_ value: String) -> some View {
-    return attribute(key: "aria-details", value: value)
+    return htmlAttribute(key: "aria-details", value: value)
   }
 
   public func htmlAriaDisabled(_ value: Bool) -> some View {
-    return attribute(key: "aria-disabled", value: String(value))
+    return htmlAttribute(key: "aria-disabled", value: String(value))
   }
 }
 
@@ -1897,23 +1897,23 @@ public enum AriaDropeffect: String {
 
 extension View {
   public func htmlAriaDropeffect(_ value: AriaDropeffect) -> some View {
-    return attribute(key: "aria-dropeffect", value: value.rawValue)
+    return htmlAttribute(key: "aria-dropeffect", value: value.rawValue)
   }
 
   public func htmlAriaErrormessage(_ value: String) -> some View {
-    return attribute(key: "aria-errormessage", value: value)
+    return htmlAttribute(key: "aria-errormessage", value: value)
   }
 
   public func htmlAriaExpanded(_ value: AriaBoolean) -> some View {
-    return attribute(key: "aria-expanded", value: value.rawValue)
+    return htmlAttribute(key: "aria-expanded", value: value.rawValue)
   }
 
   public func htmlAriaFlowto(_ value: String) -> some View {
-    return attribute(key: "aria-flowto", value: value)
+    return htmlAttribute(key: "aria-flowto", value: value)
   }
 
   public func htmlAriaGrabbed(_ value: AriaBoolean) -> some View {
-    return attribute(key: "aria-grabbed", value: value.rawValue)
+    return htmlAttribute(key: "aria-grabbed", value: value.rawValue)
   }
 }
 
@@ -1932,11 +1932,11 @@ public enum AriaHaspopup: String, ExpressibleByBooleanLiteral {
 
 extension View {
   public func htmlAriaHaspopup(_ value: AriaHaspopup) -> some View {
-    return attribute(key: "aria-haspopup", value: value.rawValue)
+    return htmlAttribute(key: "aria-haspopup", value: value.rawValue)
   }
 
   public func htmlAriaHidden(_ value: AriaBoolean) -> some View {
-    return attribute(key: "aria-hidden", value: value.rawValue)
+    return htmlAttribute(key: "aria-hidden", value: value.rawValue)
   }
 }
 
@@ -1953,23 +1953,23 @@ public enum AriaInvalid: String, ExpressibleByBooleanLiteral {
 
 extension View {
   public func htmlAriaInvalid(_ value: AriaInvalid) -> some View {
-    return attribute(key: "aria-invalid", value: value.rawValue)
+    return htmlAttribute(key: "aria-invalid", value: value.rawValue)
   }
 
   public func htmlAriaKeyshortcuts(_ value: String) -> some View {
-    return attribute(key: "aria-keyshortcuts", value: value)
+    return htmlAttribute(key: "aria-keyshortcuts", value: value)
   }
 
   public func htmlAriaLabel(_ value: String) -> some View {
-    return attribute(key: "aria-label", value: value)
+    return htmlAttribute(key: "aria-label", value: value)
   }
 
   public func htmlAriaLabelledby(_ value: String) -> some View {
-    return attribute(key: "aria-labelledby", value: value)
+    return htmlAttribute(key: "aria-labelledby", value: value)
   }
 
   public func htmlAriaLevel(_ value: Int) -> some View {
-    return attribute(key: "aria-level", value: String(value))
+    return htmlAttribute(key: "aria-level", value: String(value))
   }
 }
 
@@ -1981,19 +1981,19 @@ public enum AriaLive: String {
 
 extension View {
   public func htmlAriaLive(_ value: AriaLive) -> some View {
-    return attribute(key: "aria-live", value: value.rawValue)
+    return htmlAttribute(key: "aria-live", value: value.rawValue)
   }
 
   public func htmlAriaModal(_ value: Bool) -> some View {
-    return attribute(key: "aria-modal", value: String(value))
+    return htmlAttribute(key: "aria-modal", value: String(value))
   }
 
   public func htmlAriaMultiline(_ value: Bool) -> some View {
-    return attribute(key: "aria-multiline", value: String(value))
+    return htmlAttribute(key: "aria-multiline", value: String(value))
   }
 
   public func htmlAriaMultiselectable(_ value: Bool) -> some View {
-    return attribute(key: "aria-multiselectable", value: String(value))
+    return htmlAttribute(key: "aria-multiselectable", value: String(value))
   }
 }
 
@@ -2005,27 +2005,27 @@ public enum AriaOrientation: String {
 
 extension View {
   public func htmlAriaOrientation(_ value: AriaOrientation) -> some View {
-    return attribute(key: "aria-orientation", value: value.rawValue)
+    return htmlAttribute(key: "aria-orientation", value: value.rawValue)
   }
 
   public func htmlAriaOwns(_ value: String) -> some View {
-    return attribute(key: "aria-owns", value: value)
+    return htmlAttribute(key: "aria-owns", value: value)
   }
 
   public func htmlAriaPlaceholder(_ value: String) -> some View {
-    return attribute(key: "aria-placeholder", value: value)
+    return htmlAttribute(key: "aria-placeholder", value: value)
   }
 
   public func htmlAriaPosinset(_ value: Int) -> some View {
-    return attribute(key: "aria-posinset", value: String(value))
+    return htmlAttribute(key: "aria-posinset", value: String(value))
   }
 
   public func htmlAriaPressed(_ value: AriaToggled) -> some View {
-    return attribute(key: "aria-pressed", value: value.rawValue)
+    return htmlAttribute(key: "aria-pressed", value: value.rawValue)
   }
 
   public func htmlAriaReadonly(_ value: Bool) -> some View {
-    return attribute(key: "aria-readonly", value: String(value))
+    return htmlAttribute(key: "aria-readonly", value: String(value))
   }
 }
 
@@ -2038,35 +2038,35 @@ public enum AriaRelevant: String {
 
 extension View {
   public func htmlAriaRelevant(_ value: Array<AriaRelevant>) -> some View {
-    return attribute(key: "aria-relevant", value: value.map { $0.rawValue }.joined(separator: " "))
+    return htmlAttribute(key: "aria-relevant", value: value.map { $0.rawValue }.joined(separator: " "))
   }
 
   public func htmlAriaRequired(_ value: Bool) -> some View {
-    return attribute(key: "aria-required", value: String(value))
+    return htmlAttribute(key: "aria-required", value: String(value))
   }
 
   public func htmlAriaRoledescription(_ value: String) -> some View {
-    return attribute(key: "aria-roledescription", value: value)
+    return htmlAttribute(key: "aria-roledescription", value: value)
   }
 
   public func htmlAriaRowcount(_ value: Int) -> some View {
-    return attribute(key: "aria-rowcount", value: String(value))
+    return htmlAttribute(key: "aria-rowcount", value: String(value))
   }
 
   public func htmlAriaRowindex(_ value: Int) -> some View {
-    return attribute(key: "aria-rowindex", value: String(value))
+    return htmlAttribute(key: "aria-rowindex", value: String(value))
   }
 
   public func htmlAriaRowspan(_ value: Int) -> some View {
-    return attribute(key: "aria-rowspan", value: String(value))
+    return htmlAttribute(key: "aria-rowspan", value: String(value))
   }
 
   public func htmlAriaSelected(_ value: AriaBoolean) -> some View {
-    return attribute(key: "aria-selected", value: value.rawValue)
+    return htmlAttribute(key: "aria-selected", value: value.rawValue)
   }
 
   public func htmlAriaSetsize(_ value: Int) -> some View {
-    return attribute(key: "aria-setsize", value: String(value))
+    return htmlAttribute(key: "aria-setsize", value: String(value))
   }
 }
 
@@ -2079,23 +2079,23 @@ public enum AriaSort: String {
 
 extension View {
   public func htmlAriaSort(_ value: AriaSort) -> some View {
-    return attribute(key: "aria-sort", value: value.rawValue)
+    return htmlAttribute(key: "aria-sort", value: value.rawValue)
   }
 
   public func htmlAriaValuemax(_ value: Double) -> some View {
-    return attribute(key: "aria-valuemax", value: String(value))
+    return htmlAttribute(key: "aria-valuemax", value: String(value))
   }
 
   public func htmlAriaValuemin(_ value: Double) -> some View {
-    return attribute(key: "aria-valuemin", value: String(value))
+    return htmlAttribute(key: "aria-valuemin", value: String(value))
   }
 
   public func htmlAriaValuenow(_ value: Double) -> some View {
-    return attribute(key: "aria-valuenow", value: String(value))
+    return htmlAttribute(key: "aria-valuenow", value: String(value))
   }
 
   public func htmlAriaValuetext(_ value: String) -> some View {
-    return attribute(key: "aria-valuetext", value: value)
+    return htmlAttribute(key: "aria-valuetext", value: value)
   }
 }
 
@@ -2113,7 +2113,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnblur(unsafe javascript: String) -> some View {
-    return attribute(key: "onblur", value: javascript)
+    return htmlAttribute(key: "onblur", value: javascript)
   }
 
   /// Execute JavaScript when an element is clicked.
@@ -2127,7 +2127,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnclick(unsafe javascript: String) -> some View {
-    return attribute(key: "onclick", value: javascript)
+    return htmlAttribute(key: "onclick", value: javascript)
   }
 
   /// Execute JavaScript when the user right-clicks on an element with a context menu.
@@ -2141,7 +2141,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOncontextmenu(unsafe javascript: String) -> some View {
-    return attribute(key: "oncontextmenu", value: javascript)
+    return htmlAttribute(key: "oncontextmenu", value: javascript)
   }
 
   /// Execute JavaScript when copying some text of an element.
@@ -2155,7 +2155,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOncopy(unsafe javascript: String) -> some View {
-    return attribute(key: "oncopy", value: javascript)
+    return htmlAttribute(key: "oncopy", value: javascript)
   }
 
   /// Execute JavaScript when cutting some text in an element.
@@ -2169,7 +2169,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOncut(unsafe javascript: String) -> some View {
-    return attribute(key: "oncut", value: javascript)
+    return htmlAttribute(key: "oncut", value: javascript)
   }
 
   /// Execute JavaScript when an element is double-clicked.
@@ -2183,7 +2183,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOndblclick(unsafe javascript: String) -> some View {
-    return attribute(key: "ondblclick", value: javascript)
+    return htmlAttribute(key: "ondblclick", value: javascript)
   }
 
   /// Execute JavaScript when an element is being dragged.
@@ -2197,7 +2197,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOndrag(unsafe javascript: String) -> some View {
-    return attribute(key: "ondrag", value: javascript)
+    return htmlAttribute(key: "ondrag", value: javascript)
   }
 
   /// Execute JavaScript when the user has finished dragging an element.
@@ -2211,7 +2211,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOndragend(unsafe javascript: String) -> some View {
-    return attribute(key: "ondragend", value: javascript)
+    return htmlAttribute(key: "ondragend", value: javascript)
   }
 
   /// Execute JavaScript when a draggable element enters a drop target.
@@ -2225,7 +2225,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOndragenter(unsafe javascript: String) -> some View {
-    return attribute(key: "ondragenter", value: javascript)
+    return htmlAttribute(key: "ondragenter", value: javascript)
   }
 
   /// Execute JavaScript when an element is being dragged over a drop target.
@@ -2239,7 +2239,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOndragover(unsafe javascript: String) -> some View {
-    return attribute(key: "ondragover", value: javascript)
+    return htmlAttribute(key: "ondragover", value: javascript)
   }
 
   /// Execute JavaScript when the user starts to drag an element.
@@ -2253,7 +2253,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOndragstart(unsafe javascript: String) -> some View {
-    return attribute(key: "ondragstart", value: javascript)
+    return htmlAttribute(key: "ondragstart", value: javascript)
   }
 
   /// Execute JavaScript when a draggable element is dropped in the element.
@@ -2267,7 +2267,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOndrop(unsafe javascript: String) -> some View {
-    return attribute(key: "ondrop", value: javascript)
+    return htmlAttribute(key: "ondrop", value: javascript)
   }
 
   /// Execute JavaScript when an element gets focus.
@@ -2281,7 +2281,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnfocus(unsafe javascript: String) -> some View {
-    return attribute(key: "onfocus", value: javascript)
+    return htmlAttribute(key: "onfocus", value: javascript)
   }
 
   /// Execute JavaScript when a user is pressing a key.
@@ -2295,7 +2295,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnkeydown(unsafe javascript: String) -> some View {
-    return attribute(key: "onkeydown", value: javascript)
+    return htmlAttribute(key: "onkeydown", value: javascript)
   }
 
   /// Execute JavaScript when a user presses a key.
@@ -2309,7 +2309,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnkeypress(unsafe javascript: String) -> some View {
-    return attribute(key: "onkeypress", value: javascript)
+    return htmlAttribute(key: "onkeypress", value: javascript)
   }
 
   /// Execute JavaScript when a user releases a key.
@@ -2323,7 +2323,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnkeyup(unsafe javascript: String) -> some View {
-    return attribute(key: "onkeyup", value: javascript)
+    return htmlAttribute(key: "onkeyup", value: javascript)
   }
 
   /// Execute JavaScript when pressing a mouse button over an element.
@@ -2337,7 +2337,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnmousedown(unsafe javascript: String) -> some View {
-    return attribute(key: "onmousedown", value: javascript)
+    return htmlAttribute(key: "onmousedown", value: javascript)
   }
 
   /// Execute JavaScript when moving the mouse pointer over an element.
@@ -2351,7 +2351,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnmousemove(unsafe javascript: String) -> some View {
-    return attribute(key: "onmousemove", value: javascript)
+    return htmlAttribute(key: "onmousemove", value: javascript)
   }
 
   /// Execute JavaScript when moving the mouse pointer out of an element.
@@ -2365,7 +2365,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnmouseout(unsafe javascript: String) -> some View {
-    return attribute(key: "onmouseout", value: javascript)
+    return htmlAttribute(key: "onmouseout", value: javascript)
   }
 
   /// Execute JavaScript when moving the mouse pointer over an element.
@@ -2379,7 +2379,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnmouseover(unsafe javascript: String) -> some View {
-    return attribute(key: "onmouseover", value: javascript)
+    return htmlAttribute(key: "onmouseover", value: javascript)
   }
 
   /// Execute JavaScript when releasing a mouse button over an element.
@@ -2393,7 +2393,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnmouseup(unsafe javascript: String) -> some View {
-    return attribute(key: "onmouseup", value: javascript)
+    return htmlAttribute(key: "onmouseup", value: javascript)
   }
 
   /// Execute JavaScript when pasting some text in an element.
@@ -2407,7 +2407,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnpaste(unsafe javascript: String) -> some View {
-    return attribute(key: "onpaste", value: javascript)
+    return htmlAttribute(key: "onpaste", value: javascript)
   }
 
   /// Execute JavaScript when an element is being scrolled.
@@ -2421,7 +2421,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnscroll(unsafe javascript: String) -> some View {
-    return attribute(key: "onscroll", value: javascript)
+    return htmlAttribute(key: "onscroll", value: javascript)
   }
 
   /// Execute JavaScript when the user rolls the mouse wheel over an element.
@@ -2435,7 +2435,7 @@ extension View {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnwheel(unsafe javascript: String) -> some View {
-    return attribute(key: "onwheel", value: javascript)
+    return htmlAttribute(key: "onwheel", value: javascript)
   }
 
 }
@@ -2452,7 +2452,7 @@ extension Body {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnafterprint(unsafe javascript: String) -> some View {
-    return attribute(key: "onafterprint", value: javascript)
+    return htmlAttribute(key: "onafterprint", value: javascript)
   }
 
   /// Execute JavaScript when a page is about to be printed.
@@ -2466,7 +2466,7 @@ extension Body {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnbeforeprint(unsafe javascript: String) -> some View {
-    return attribute(key: "onbeforeprint", value: javascript)
+    return htmlAttribute(key: "onbeforeprint", value: javascript)
   }
 
   /// Execute JavaScript when the page is about to be unloaded.
@@ -2480,7 +2480,7 @@ extension Body {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnbeforeunload(unsafe javascript: String) -> some View {
-    return attribute(key: "onbeforeunload", value: javascript)
+    return htmlAttribute(key: "onbeforeunload", value: javascript)
   }
 
   /// Execute JavaScript when the anchor part has been changed.
@@ -2494,7 +2494,7 @@ extension Body {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnhashchange(unsafe javascript: String) -> some View {
-    return attribute(key: "onhashchange", value: javascript)
+    return htmlAttribute(key: "onhashchange", value: javascript)
   }
 
   public func htmlOnmessage(safe javascript: StaticString) -> some View {
@@ -2502,7 +2502,7 @@ extension Body {
   }
 
   public func htmlOnmessage(unsafe javascript: String) -> some View {
-    return attribute(key: "onmessage", value: javascript)
+    return htmlAttribute(key: "onmessage", value: javascript)
   }
 
   /// Execute JavaScript when the browser starts to work offline.
@@ -2516,7 +2516,7 @@ extension Body {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnoffline(unsafe javascript: String) -> some View {
-    return attribute(key: "onoffline", value: javascript)
+    return htmlAttribute(key: "onoffline", value: javascript)
   }
 
   /// Execute JavaScript when the browser starts to work online.
@@ -2530,7 +2530,7 @@ extension Body {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnonline(unsafe javascript: String) -> some View {
-    return attribute(key: "ononline", value: javascript)
+    return htmlAttribute(key: "ononline", value: javascript)
   }
 
   /// Execute JavaScript when the user is navigating away from a webpage.
@@ -2544,7 +2544,7 @@ extension Body {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnpagehide(unsafe javascript: String) -> some View {
-    return attribute(key: "onpagehide", value: javascript)
+    return htmlAttribute(key: "onpagehide", value: javascript)
   }
 
   /// Execute JavaScript when a user navigates to a webpage.
@@ -2558,7 +2558,7 @@ extension Body {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnpageshow(unsafe javascript: String) -> some View {
-    return attribute(key: "onpageshow", value: javascript)
+    return htmlAttribute(key: "onpageshow", value: javascript)
   }
 
   public func htmlOnpopstate(safe javascript: StaticString) -> some View {
@@ -2566,7 +2566,7 @@ extension Body {
   }
 
   public func htmlOnpopstate(unsafe javascript: String) -> some View {
-    return attribute(key: "onpopstate", value: javascript)
+    return htmlAttribute(key: "onpopstate", value: javascript)
   }
 
   /// Execute JavaScript when the browser window is resized.
@@ -2580,7 +2580,7 @@ extension Body {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnresize(unsafe javascript: String) -> some View {
-    return attribute(key: "onresize", value: javascript)
+    return htmlAttribute(key: "onresize", value: javascript)
   }
 
   public func htmlOnstorage(safe javascript: StaticString) -> some View {
@@ -2588,7 +2588,7 @@ extension Body {
   }
 
   public func htmlOnstorage(unsafe javascript: String) -> some View {
-    return attribute(key: "onstorage", value: javascript)
+    return htmlAttribute(key: "onstorage", value: javascript)
   }
 
   /// Execute JavaScript when a user unloads the document.
@@ -2602,7 +2602,7 @@ extension Body {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnunload(unsafe javascript: String) -> some View {
-    return attribute(key: "onunload", value: javascript)
+    return htmlAttribute(key: "onunload", value: javascript)
   }
 }
 
@@ -2618,7 +2618,7 @@ extension Details {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOntoggle(unsafe javascript: String) -> some View {
-    return attribute(key: "ontoggle", value: javascript)
+    return htmlAttribute(key: "ontoggle", value: javascript)
   }
 }
 
@@ -2634,7 +2634,7 @@ extension Form {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnreset(unsafe javascript: String) -> some View {
-    return attribute(key: "onreset", value: javascript)
+    return htmlAttribute(key: "onreset", value: javascript)
   }
 
   /// Execute JavaScript when a form is submitted.
@@ -2648,7 +2648,7 @@ extension Form {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnsubmit(unsafe javascript: String) -> some View {
-    return attribute(key: "onsubmit", value: javascript)
+    return htmlAttribute(key: "onsubmit", value: javascript)
   }
 }
 
@@ -2664,7 +2664,7 @@ extension Input {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOninvalid(unsafe javascript: String) -> some View {
-    return attribute(key: "oninvalid", value: javascript)
+    return htmlAttribute(key: "oninvalid", value: javascript)
   }
 
   /// Execute JavaScript when submitting a search.
@@ -2678,7 +2678,7 @@ extension Input {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnsearch(unsafe javascript: String) -> some View {
-    return attribute(key: "onsearch", value: javascript)
+    return htmlAttribute(key: "onsearch", value: javascript)
   }
 }
 
@@ -2702,7 +2702,7 @@ extension View where Self: HasOnabort {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnabort(unsafe javascript: String) -> some View {
-    return attribute(key: "onabort", value: javascript)
+    return htmlAttribute(key: "onabort", value: javascript)
   }
 }
 
@@ -2718,7 +2718,7 @@ extension Track {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOncuechange(unsafe javascript: String) -> some View {
-    return attribute(key: "oncuechange", value: javascript)
+    return htmlAttribute(key: "oncuechange", value: javascript)
   }
 }
 
@@ -2741,7 +2741,7 @@ extension View where Self: HasOncanplay {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOncanplay(unsafe javascript: String) -> some View {
-    return attribute(key: "oncanplay", value: javascript)
+    return htmlAttribute(key: "oncanplay", value: javascript)
   }
 }
 
@@ -2762,7 +2762,7 @@ extension View where Self: HasOncanplaythrough {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOncanplaythrough(unsafe javascript: String) -> some View {
-    return attribute(key: "oncanplaythrough", value: javascript)
+    return htmlAttribute(key: "oncanplaythrough", value: javascript)
   }
 }
 
@@ -2784,7 +2784,7 @@ extension View where Self: HasOnchange {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnchange(unsafe javascript: String) -> some View {
-    return attribute(key: "onchange", value: javascript)
+    return htmlAttribute(key: "onchange", value: javascript)
   }
 }
 
@@ -2805,7 +2805,7 @@ extension View where Self: HasOndurationchange {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOndurationchange(unsafe javascript: String) -> some View {
-    return attribute(key: "ondurationchange", value: javascript)
+    return htmlAttribute(key: "ondurationchange", value: javascript)
   }
 }
 
@@ -2820,7 +2820,7 @@ extension View where Self: HasOnemptied {
   }
 
   public func htmlOnemptied(unsafe javascript: String) -> some View {
-    return attribute(key: "onemptied", value: javascript)
+    return htmlAttribute(key: "onemptied", value: javascript)
   }
 }
 
@@ -2841,7 +2841,7 @@ extension View where Self: HasOnended {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnended(unsafe javascript: String) -> some View {
-    return attribute(key: "onended", value: javascript)
+    return htmlAttribute(key: "onended", value: javascript)
   }
 }
 
@@ -2861,7 +2861,7 @@ extension View where Self: HasOnerror {
   }
 
   public func htmlOnerror(unsafe javascript: String) -> some View {
-    return attribute(key: "onerror", value: javascript)
+    return htmlAttribute(key: "onerror", value: javascript)
   }
 }
 
@@ -2882,7 +2882,7 @@ extension View where Self: HasOninput {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOninput(unsafe javascript: String) -> some View {
-    return attribute(key: "oninput", value: javascript)
+    return htmlAttribute(key: "oninput", value: javascript)
   }
 }
 
@@ -2908,7 +2908,7 @@ extension View where Self: HasOnload {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnload(unsafe javascript: String) -> some View {
-    return attribute(key: "onload", value: javascript)
+    return htmlAttribute(key: "onload", value: javascript)
   }
 }
 
@@ -2923,7 +2923,7 @@ extension View where Self: HasOnloadeddata {
   }
 
   public func htmlOnloadeddata(unsafe javascript: String) -> some View {
-    return attribute(key: "onloadeddata", value: javascript)
+    return htmlAttribute(key: "onloadeddata", value: javascript)
   }
 }
 
@@ -2938,7 +2938,7 @@ extension View where Self: HasOnloadedmetadata {
   }
 
   public func htmlOnloadedmetadata(unsafe javascript: String) -> some View {
-    return attribute(key: "onloadedmetadata", value: javascript)
+    return htmlAttribute(key: "onloadedmetadata", value: javascript)
   }
 }
 
@@ -2953,7 +2953,7 @@ extension View where Self: HasOnloadstart {
   }
 
   public func htmlOnloadstart(unsafe javascript: String) -> some View {
-    return attribute(key: "onloadstart", value: javascript)
+    return htmlAttribute(key: "onloadstart", value: javascript)
   }
 }
 
@@ -2974,7 +2974,7 @@ extension View where Self: HasOnpause {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnpause(unsafe javascript: String) -> some View {
-    return attribute(key: "onpause", value: javascript)
+    return htmlAttribute(key: "onpause", value: javascript)
   }
 }
 
@@ -2995,7 +2995,7 @@ extension View where Self: HasOnplay {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnplay(unsafe javascript: String) -> some View {
-    return attribute(key: "onplay", value: javascript)
+    return htmlAttribute(key: "onplay", value: javascript)
   }
 }
 
@@ -3016,7 +3016,7 @@ extension View where Self: HasOnplaying {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnplaying(unsafe javascript: String) -> some View {
-    return attribute(key: "onplaying", value: javascript)
+    return htmlAttribute(key: "onplaying", value: javascript)
   }
 }
 
@@ -3037,7 +3037,7 @@ extension View where Self: HasOnprogress {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnprogress(unsafe javascript: String) -> some View {
-    return attribute(key: "onprogress", value: javascript)
+    return htmlAttribute(key: "onprogress", value: javascript)
   }
 }
 
@@ -3058,7 +3058,7 @@ extension View where Self: HasOnratechange {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnratechange(unsafe javascript: String) -> some View {
-    return attribute(key: "onratechange", value: javascript)
+    return htmlAttribute(key: "onratechange", value: javascript)
   }
 }
 
@@ -3079,7 +3079,7 @@ extension View where Self: HasOnseeked {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnseeked(unsafe javascript: String) -> some View {
-    return attribute(key: "onseeked", value: javascript)
+    return htmlAttribute(key: "onseeked", value: javascript)
   }
 }
 
@@ -3100,7 +3100,7 @@ extension View where Self: HasOnseeking {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnseeking(unsafe javascript: String) -> some View {
-    return attribute(key: "onseeking", value: javascript)
+    return htmlAttribute(key: "onseeking", value: javascript)
   }
 }
 
@@ -3121,7 +3121,7 @@ extension View where Self: HasOnselect {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnselect(unsafe javascript: String) -> some View {
-    return attribute(key: "onselect", value: javascript)
+    return htmlAttribute(key: "onselect", value: javascript)
   }
 }
 
@@ -3142,7 +3142,7 @@ extension View where Self: HasOnstalled {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnstalled(unsafe javascript: String) -> some View {
-    return attribute(key: "onstalled", value: javascript)
+    return htmlAttribute(key: "onstalled", value: javascript)
   }
 }
 
@@ -3163,7 +3163,7 @@ extension View where Self: HasOnsuspend {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnsuspend(unsafe javascript: String) -> some View {
-    return attribute(key: "onsuspend", value: javascript)
+    return htmlAttribute(key: "onsuspend", value: javascript)
   }
 }
 
@@ -3184,7 +3184,7 @@ extension View where Self: HasOntimeupdate {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOntimeupdate(unsafe javascript: String) -> some View {
-    return attribute(key: "ontimeupdate", value: javascript)
+    return htmlAttribute(key: "ontimeupdate", value: javascript)
   }
 }
 
@@ -3205,7 +3205,7 @@ extension View where Self: HasOnvolumechange {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnvolumechange(unsafe javascript: String) -> some View {
-    return attribute(key: "onvolumechange", value: javascript)
+    return htmlAttribute(key: "onvolumechange", value: javascript)
   }
 }
 
@@ -3226,7 +3226,7 @@ extension View where Self: HasOnwaiting {
   ///
   /// - Parameter javascript: JavaScript to execute.
   public func htmlOnwaiting(unsafe javascript: String) -> some View {
-    return attribute(key: "onwaiting", value: javascript)
+    return htmlAttribute(key: "onwaiting", value: javascript)
   }
 }
 
@@ -3255,15 +3255,15 @@ public enum Alignment: String {
 
 extension View {
   public func htmlAlign(_ value: Alignment) -> some View {
-    return attribute(key: "align", value: value.rawValue)
+    return htmlAttribute(key: "align", value: value.rawValue)
   }
 
   public func htmlBorder(_ value: Int) -> some View {
-    return attribute(key: "border", value: String(value))
+    return htmlAttribute(key: "border", value: String(value))
   }
 
   public func htmlHeight(_ value: Html4Size) -> some View {
-    return attribute(key: "height", value: value.rawValue)
+    return htmlAttribute(key: "height", value: value.rawValue)
   }
 }
 
@@ -3276,20 +3276,20 @@ public enum VerticalAlignment: String {
 
 extension View {
   public func htmlValign(_ value: VerticalAlignment) -> some View {
-    return attribute(key: "valign", value: value.rawValue)
+    return htmlAttribute(key: "valign", value: value.rawValue)
   }
 
   public func htmlWidth(_ value: Html4Size) -> some View {
-    return attribute(key: "width", value: value.rawValue)
+    return htmlAttribute(key: "width", value: value.rawValue)
   }
 }
 
 extension Table {
   public func htmlCellpadding(_ value: Int) -> some View {
-    return attribute(key: "cellpadding", value: String(value))
+    return htmlAttribute(key: "cellpadding", value: String(value))
   }
 
   public func htmlCellspacing(_ value: Int) -> some View {
-    return attribute(key: "cellspacing", value: String(value))
+    return htmlAttribute(key: "cellspacing", value: String(value))
   }
 }

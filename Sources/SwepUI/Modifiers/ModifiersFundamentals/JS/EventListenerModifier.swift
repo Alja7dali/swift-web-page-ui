@@ -1,4 +1,4 @@
-public struct EventListenerModifier<Content: View>: ViewModifier {
+public struct JSEventListenerModifier<Content: View>: ViewModifier {
   public typealias Body = Never
   
   public let name: String
@@ -20,6 +20,6 @@ public struct EventListenerModifier<Content: View>: ViewModifier {
 
 extension View {
   public func jsEvent(name: String, preform action: @escaping EventListenerAction) -> some View {
-    return modifier(EventListenerModifier(name: name, action: action))
+    return modifier(JSEventListenerModifier(name: name, action: action))
   }
 }
