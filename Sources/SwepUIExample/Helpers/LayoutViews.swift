@@ -9,11 +9,11 @@ struct VStack<Content: View>: View {
     Div {
       AnyView(erasing: makeContent())
     }
-    .display(.flex)
-    .flexDirection(.column)
-    .alignItems(.center)
-    .justifyContent(.center)
-    .height(100%)
+    .cssDisplay(.flex)
+    .cssFlexDirection(.column)
+    .cssAlignItems(.center)
+    .cssJustifyContent(.center)
+    .cssHeight(100%)
   }
 }
 
@@ -28,24 +28,24 @@ struct HStack<Content: View>: View {
     Div {
       AnyView(erasing: makeContent())
     }
-    .display(.flex)
-    .flexDirection(.row)
-    .alignItems(.center)
-    .justifyContent(.center)
-    .width(100%)
+    .cssDisplay(.flex)
+    .cssFlexDirection(.row)
+    .cssAlignItems(.center)
+    .cssJustifyContent(.center)
+    .cssWidth(100%)
   }
 }
 
 struct Spacer: View {
   var body: some View {
     Div("")
-      .flexGrow(1)
+      .cssFlexGrow(1)
   }
 }
 
 struct Divider: View {
   var body: some View {
     Hr()
-      .width(100%)
+      .cssWidth(100%)
   }
 }

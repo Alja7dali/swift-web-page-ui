@@ -2,13 +2,13 @@ struct SwepUIExampleApp: App {
   var body: some Scene {
     WindowGroup {
       RootView()
-        .display(.flex)
-        .alignItems(.center)
-        .justifyContent(.center)
-        .height(.vh(100))
-        .width(.vw(100))    
-        .minWidth(100%)
-        .minHeight(100%)
+        .cssDisplay(.flex)
+        .cssAlignItems(.center)
+        .cssJustifyContent(.center)
+        .cssHeight(.vh(100))
+        .cssWidth(.vw(100))    
+        .cssMinWidth(100%)
+        .cssMinHeight(100%)
     }
   }
 }

@@ -17,6 +17,6 @@ struct HeaderView: View {
       )
       Spacer()
     }
-    .height(.px(100))
+    .cssHeight(.px(100))
   }
 }

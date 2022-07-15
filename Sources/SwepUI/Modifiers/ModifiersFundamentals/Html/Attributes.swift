@@ -12,7 +12,7 @@ extension View {
   /// - Parameter value: Used by the user agent as a guide for creating a
   ///                    keyboard shortcut that activates or focuses the
   ///                    element.
-  public func accesskey(_ value: Character) -> some View {
+  public func htmlAccesskey(_ value: Character) -> some View {
     return attribute(key: "accesskey", value: String(value))
   }
 
@@ -21,7 +21,7 @@ extension View {
   /// that the element belongs to.
   ///
   /// - Parameter value: A set of space-separated tokens.
-  public func `class`(_ value: String) -> some View {
+  public func htmlClass(_ value: String) -> some View {
     return attribute(key: "class", value: value)
   }
 }
@@ -40,7 +40,7 @@ extension View {
   /// Make a document region editable.
   ///
   /// - Parameter value: Should a document region be editable.
-  public func contenteditable(_ value: Contenteditable) -> some View {
+  public func htmlContenteditable(_ value: Contenteditable) -> some View {
     return attribute(key: "contenteditable", value: value == .inherit ? nil : value.rawValue)
   }
 
@@ -49,7 +49,7 @@ extension View {
   /// - Parameters:
   ///   - name: The attribute suffix.
   ///   - value: The value.
-  public func data(_ name: StaticString, _ value: String) -> some View {
+  public func htmlData(_ name: StaticString, _ value: String) -> some View {
     return attribute(key: "data-\(name)", value: value)
   }
 }
@@ -61,7 +61,7 @@ public enum Direction: String {
 }
 
 extension View {
-  public func dir(_ value: Direction) -> some View {
+  public func htmlDir(_ value: Direction) -> some View {
     return attribute(key: "dir", value: value.rawValue)
   }
 }
@@ -85,14 +85,14 @@ extension View {
   /// Whether or not an element is draggable.
   ///
   /// - Parameter value: Whether or not an element is draggable.
-  public func draggable(_ value: Draggable) -> some View {
+  public func htmlDraggable(_ value: Draggable) -> some View {
     return attribute(key: "draggable", value: value == .auto ? nil : value.rawValue)
   }
 
   /// Hide the element.
   ///
   /// - Parameter value: Hide the element.
-  public func hidden(_ value: Bool) -> some View {
+  public func htmlHidden(_ value: Bool) -> some View {
     return attribute(key: "hidden", value: value ? "" : nil)
   }
 
@@ -101,7 +101,7 @@ extension View {
   /// character. The value must not contain any space characters.
   ///
   /// - Parameter value: A unique identifier.
-  public func id(_ value: String) -> some View {
+  public func htmlId(_ value: String) -> some View {
     return attribute(key: "id", value: value)
   }
 }
@@ -304,11 +304,11 @@ extension View {
   /// - Parameter value: A valid BCP 47 language tag, or the empty string.
   ///                    Setting the attribute to the empty string indicates
   ///                    that the primary language is unknown.
-  public func lang(_ value: Language) -> some View {
+  public func htmlLang(_ value: Language) -> some View {
     return attribute(key: "lang", value: value.rawValue)
   }
 
-  public func spellcheck(_ value: Bool) -> some View {
+  public func htmlSpellcheck(_ value: Bool) -> some View {
     return attribute(key: "spellcheck", value: String(value))
   }
 
@@ -316,15 +316,15 @@ extension View {
   /// specification.
   ///
   /// - Parameter value: A CSS style.
-  public func style(safe value: StaticString) -> some View {
-    return style(unsafe: String(describing: value))
+  public func htmlStyle(safe value: StaticString) -> some View {
+    return htmlStyle(unsafe: String(describing: value))
   }
 
   /// This is a style attribute as defined by the _CSS Style Attributes_
   /// specification.
   ///
   /// - Parameter value: A CSS style.
-  public func style(unsafe value: String) -> some View {
+  public func htmlStyle(unsafe value: String) -> some View {
     return attribute(key: "style", value: String(describing: value))
   }
 
@@ -335,7 +335,7 @@ extension View {
   ///
   /// - Parameter value: The sequential focus navigation order the element
   ///                    appears.
-  public func tabindex(_ value: Int) -> some View {
+  public func htmlTabindex(_ value: Int) -> some View {
     return attribute(key: "tabindex", value: String(value))
   }
 
@@ -343,7 +343,7 @@ extension View {
   /// such as would be appropriate for a tooltip.
   ///
   /// - Parameter value: Advisory information.
-  public func title(_ value: String) -> some View {
+  public func htmlTitle(_ value: String) -> some View {
     return attribute(key: "title", value: value)
   }
 }
@@ -364,7 +364,7 @@ extension View {
   /// - Parameter value: Whether or not an element's attribute values and the
   ///                    values of its text node children are to be translated
   ///                    when the page is localized.
-  public func translate(_ value: Translate) -> some View {
+  public func htmlTranslate(_ value: Translate) -> some View {
     return attribute(key: "translate", value: value.rawValue)
   }
 }
@@ -379,14 +379,14 @@ extension A {
   ///   - subject: An optional email subject.
   ///   - body: An optional email body.
   /// - Returns: A "mailto" URL for hyperlinks.
-  public func mailto(
+  public func htmlMailto(
     _ addresses: String...,
     cc: [String] = [],
     bcc: [String] = [],
     subject: String = "",
     body: String = ""
   ) -> some View {
-    return mailto(addresses, cc: cc, bcc: bcc, subject: subject, body: body)
+    return htmlMailto(addresses, cc: cc, bcc: bcc, subject: subject, body: body)
   }
 
   /// Email address of a hyperlink.
@@ -398,7 +398,7 @@ extension A {
   ///   - subject: An optional email subject.
   ///   - body: An optional email body.
   /// - Returns: A "mailto" URL for hyperlinks.
-  public func mailto(
+  public func htmlMailto(
     _ addresses: [String],
     cc: [String] = [],
     bcc: [String] = [],
@@ -416,7 +416,7 @@ extension A {
       ]
       .compactMap { $0 }
     urlComponents.queryItems = queryItems.isEmpty ? nil : queryItems
-    return href(urlComponents.string ?? "")
+    return htmlHref(urlComponents.string ?? "")
   }
 }
 
@@ -432,7 +432,7 @@ extension Area {
   /// The kind of shape to be created in an image map.
   ///
   /// - Parameter value: The kind of shape to be created in an image map.
-  public func shape(_ value: AreaShape) -> some View {
+  public func htmlShape(_ value: AreaShape) -> some View {
     return attribute(key: "shape", value: value == .rect ? nil : value.rawValue)
   }
 }
@@ -453,7 +453,7 @@ extension Button {
   /// Type of button.
   ///
   /// - Parameter value: Type of button.
-  public func type(_ value: ButtonType) -> some View {
+  public func htmlType(_ value: ButtonType) -> some View {
     return attribute(key: "type", value: value.rawValue)
   }
 }
@@ -462,7 +462,7 @@ extension Details {
   /// Whether the details are visible.
   ///
   /// - Parameter value: Whether the details are visible.
-  public func open(_ value: Bool) -> some View {
+  public func htmlOpen(_ value: Bool) -> some View {
     return attribute(key: "open", value: value ? "" : nil)
   }
 }
@@ -496,21 +496,21 @@ extension Form {
   /// URL to use for form submission.
   ///
   /// - Parameter value: URL to use for form submission.
-  public func action(_ value: String) -> some View {
+  public func htmlAction(_ value: String) -> some View {
     return attribute(key: "action", value: value)
   }
 
   /// The type of form encoding.
   ///
   /// - Parameter value: Enctype to use for form encoding.
-  public func enctype(_ value: Enctype) -> some View {
+  public func htmlEnctype(_ value: Enctype) -> some View {
     return attribute(key: "enctype", value: value.rawValue)
   }
 
   /// HTTP method to use for form submission.
   ///
   /// - Parameter value: HTTP method to use for form submission.
-  public func method(_ value: FormMethod) -> some View {
+  public func htmlMethod(_ value: FormMethod) -> some View {
     let rawValue = value.rawValue
     return attribute(key: "method", value: rawValue.isEmpty ? nil : rawValue)
   }
@@ -518,7 +518,7 @@ extension Form {
   /// Bypass form control validation for form submission.
   ///
   /// - Parameter value: Bypass form control validation for form submission.
-  public func novalidate(_ value: Bool) -> some View {
+  public func htmlNovalidate(_ value: Bool) -> some View {
     return attribute(key: "novalidate", value: value ? "" : nil)
   }
 }
@@ -551,14 +551,14 @@ extension Iframe {
   /// Enables a set of extra restrictions on any content hosted by the `<iframe>`.
   ///
   /// - Parameter value: Sandbox options.
-  public func sandbox(_ value: [IframeSandbox]) -> some View {
+  public func htmlSandbox(_ value: [IframeSandbox]) -> some View {
     return attribute(key: "sandbox", value: value.map { $0.rawValue }.joined(separator: " "))
   }
 
   /// Enables a set of extra restrictions on any content hosted by the `<iframe>`.
   ///
   /// - Parameter value: Whether or not to sandbox the `<iframe>`.
-  public func sandbox(_ value: Bool) -> some View {
+  public func htmlSandbox(_ value: Bool) -> some View {
     return attribute(key: "sandbox", value: value ? "" : nil)
   }
 
@@ -566,7 +566,7 @@ extension Iframe {
   /// A document to render in the `iframe`.
   ///
   /// - Parameter value: A document to render in the `iframe`.
-  public func srcdoc<N: HtmlNode>(
+  public func htmlSrcdoc<N: HtmlNode>(
     mode: RenderMode = .default,
     _ value: N
   ) -> some View {
@@ -604,25 +604,25 @@ extension Input {
   /// Whether the command or control is checked.
   ///
   /// - Parameter value: Whether the command or control is checked.
-  public func checked(_ value: Bool) -> some View {
+  public func htmlChecked(_ value: Bool) -> some View {
     return attribute(key: "checked", value: value ? "" : nil)
   }
 
   /// Pattern to be matched by the form control's value.
   ///
   /// - Parameter value: Pattern to be matched by the form control's value.
-  public func pattern(_ value: String) -> some View {
+  public func htmlPattern(_ value: String) -> some View {
     return attribute(key: "pattern", value: value)
   }
 
   /// Granularity to be matched by the form control's value.
   ///
   /// - Parameter value: Granularity to be matched by the form control's value.
-  public func step(_ value: Int) -> some View {
+  public func htmlStep(_ value: Int) -> some View {
     return attribute(key: "step", value: String(value))
   }
 
-  public func type(_ value: InputType) -> some View {
+  public func htmlType(_ value: InputType) -> some View {
     return attribute(key: "type", value: value.rawValue)
   }
 }
@@ -631,7 +631,7 @@ extension Meta {
   /// Value of the `<meta>` element.
   ///
   /// - Parameter value: Value of the element.
-  public func content(_ value: String) -> some View {
+  public func htmlContent(_ value: String) -> some View {
     return attribute(key: "content", value: value)
   }
 }
@@ -657,21 +657,21 @@ extension Ol {
   /// Number the list backwards.
   ///
   /// - Parameter value: Number the list backwards.
-  public func reversed(_ value: Bool) -> some View {
+  public func htmlReversed(_ value: Bool) -> some View {
     return attribute(key: "reversed", value: value ? "" : nil)
   }
 
   /// Ordinal value of the first item.
   ///
   /// - Parameter value: Ordinal value of the first item.
-  public func start(_ value: Int) -> some View {
+  public func htmlStart(_ value: Int) -> some View {
     return attribute(key: "start", value: String(value))
   }
 
   /// Kind of list marker.
   ///
   /// - Parameter value: Kind of list marker.
-  public func type(_ value: ListType) -> some View {
+  public func htmlType(_ value: ListType) -> some View {
     return attribute(key: "type", value: value.rawValue)
   }
 }
@@ -680,7 +680,7 @@ extension Option {
   /// Whether the option is selected by default.
   ///
   /// - Parameter value: Whether the option is selected by default.
-  public func selected(_ value: Bool) -> some View {
+  public func htmlSelected(_ value: Bool) -> some View {
     return attribute(key: "selected", value: value ? "" : nil)
   }
 }
@@ -689,7 +689,7 @@ extension Script {
   /// Execute script in parallel.
   ///
   /// - Parameter value: Execute script in parallel.
-  public func async(_ value: Bool) -> some View {
+  public func htmlAsync(_ value: Bool) -> some View {
     return attribute(key: "async", value: value ? "" : nil)
   }
 
@@ -704,7 +704,7 @@ extension Script {
   ///
   /// - Parameter value: Cryptographic nonce used in Content Security Policy
   ///                    checks.
-  public func nonce(_ value: String) -> some View {
+  public func htmlNonce(_ value: String) -> some View {
     return attribute(key: "nonce", value: value)
   }
 }
@@ -723,7 +723,7 @@ extension View where Self: HasMediaQueryList {
   /// Applicable media.
   ///
   /// - Parameter value: A media query list.
-  public func media(_ value: String) -> some View {
+  public func htmlMedia(_ value: String) -> some View {
     return attribute(key: "media", value: value)
   }
 }
@@ -737,7 +737,7 @@ extension Source where Parent: IsPicture {
   ///
   /// - Parameter value: Images to use in different situations (e.g.,
   ///                    high-resolution displays, small monitors, etc).
-  public func srcset(_ value: String) -> some View {
+  public func htmlSrcset(_ value: String) -> some View {
     return attribute(key: "srcset", value: value)
   }
 }
@@ -759,14 +759,14 @@ extension Textarea {
   /// Maximum number of characters per line.
   ///
   /// - Parameter value: Maximum number of characters per line.
-  public func cols(_ value: Int) -> some View {
+  public func htmlCols(_ value: Int) -> some View {
     return attribute(key: "cols", value: String(value))
   }
 
   /// Number of lines to show.
   ///
   /// - Parameter value: Number of lines to show.
-  public func rows(_ value: Int) -> some View {
+  public func htmlRows(_ value: Int) -> some View {
     return attribute(key: "rows", value: String(value))
   }
 
@@ -774,7 +774,7 @@ extension Textarea {
   ///
   /// - Parameter value: How the value of the form control is to be wrapped for
   ///                    form submission.
-  public func wrap(_ value: TextareaWrap) -> some View {
+  public func htmlWrap(_ value: TextareaWrap) -> some View {
     return attribute(key: "wrap", value: value.rawValue)
   }
 }
@@ -811,14 +811,14 @@ extension Th {
   ///
   /// - Parameter value: Alternative label to use for the header cell when
   ///                    referencing the cell in other contexts.
-  public func abbr(_ value: String) -> some View {
+  public func htmlAbbr(_ value: String) -> some View {
     return attribute(key: "abbr", value: value)
   }
 
   /// Specifies which cells the header cell applies to.
   ///
   /// - Parameter value: Specifies which cells the header cell applies to.
-  public func scope(_ value: ThScope) -> some View {
+  public func htmlScope(_ value: ThScope) -> some View {
     return attribute(key: "scope", value: value.rawValue)
   }
 }
@@ -862,27 +862,27 @@ extension Track {
   /// The type of text track.
   ///
   /// - Parameter value: The type of text track.
-  public func kind(_ value: TrackKind) -> some View {
+  public func htmlKind(_ value: TrackKind) -> some View {
     return attribute(key: "kind", value: value.rawValue)
   }
 
   /// User-visible label for a `<track>` element.
   ///
   /// - Parameter value: User-visible label.
-  public func label(_ value: String) -> some View {
+  public func htmlLabel(_ value: String) -> some View {
     return attribute(key: "label", value: value)
   }
 
   /// Language of the text track.
   ///
   /// - Parameter value: Language of the text track.
-  public func srclang(_ value: Language) -> some View {
+  public func htmlSrclang(_ value: Language) -> some View {
     return attribute(key: "srclang", value: value.rawValue)
   }
 }
 
 extension Video {
-  public func poster(_ value: String) -> some View {
+  public func htmlPoster(_ value: String) -> some View {
     return attribute(key: "poster", value: value)
   }
 }
@@ -900,7 +900,7 @@ extension View where Self: HasAlt {
   /// `<img>`, and `<input>` elements.
   ///
   /// - Parameter value: Replacement text for use when images are not available.
-  public func alt(_ value: String) -> some View {
+  public func htmlAlt(_ value: String) -> some View {
     return attribute(key: "alt", value: value)
   }
 }
@@ -922,7 +922,7 @@ extension View where Self: HasAutofocus {
   ///
   /// - Parameter value: Automatically focus the form control when the page is
   ///                    loaded.
-  public func autofocus(_ value: Bool) -> some View {
+  public func htmlAutofocus(_ value: Bool) -> some View {
     return attribute(key: "autofocus", value: value ? "" : nil)
   }
 }
@@ -940,7 +940,7 @@ extension View where Self: HasAutoplay {
   ///
   /// - Parameter value: Hint that the media resource can be started
   ///                    automatically when the page is loaded.
-  public func autoplay(_ value: Bool) -> some View {
+  public func htmlAutoplay(_ value: Bool) -> some View {
     return attribute(key: "autoplay", value: value ? "" : nil)
   }
 }
@@ -956,7 +956,7 @@ extension View where Self: HasCharset {
   /// Character encoding declaration.
   ///
   /// - Parameter value: A character encoding declaration.
-  public func charset(_ value: MediaType.Charset) -> some View {
+  public func htmlCharset(_ value: MediaType.Charset) -> some View {
     return attribute(key: "charset", value: value.rawValue)
   }
 }
@@ -975,7 +975,7 @@ extension View where Self: HasCite {
   ///
   /// - Parameter value: Link to the source of the quotation or more information
   ///                    about the edit.
-  public func cite(_ value: String) -> some View {
+  public func htmlCite(_ value: String) -> some View {
     return attribute(key: "cite", value: value)
   }
 }
@@ -991,7 +991,7 @@ extension View where Self: HasColspan {
   /// Number of columns that the cell is to span.
   ///
   /// - Parameter value: Number of columns that the cell is to span.
-  public func colspan(_ value: Int) -> some View {
+  public func htmlColspan(_ value: Int) -> some View {
     return attribute(key: "colspan", value: String(value))
   }
 }
@@ -1009,7 +1009,7 @@ extension View where Self: HasControls {
   /// controls.
   ///
   /// - Parameter value: Show user agent controls.
-  public func controls(_ value: Bool) -> some View {
+  public func htmlControls(_ value: Bool) -> some View {
     return attribute(key: "controls", value: value ? "" : nil)
   }
 }
@@ -1035,7 +1035,7 @@ extension View where Self: HasCrossorigin {
   /// How the element handles crossorigin requests.
   ///
   /// - Parameter value: How the element handles crossorigin requests.
-  public func crossorigin(_ value: Crossorigin) -> some View {
+  public func htmlCrossorigin(_ value: Crossorigin) -> some View {
     return attribute(key: "crossorigin", value: value.rawValue)
   }
 }
@@ -1070,7 +1070,7 @@ extension Time: HasDatetime {}
 #if os(WASI)
 import class JavaScriptKit.JSDate
 extension View where Self: HasDatetime {
-  public func datetime(_ value: JSDate) -> some View {
+  public func htmlDatetime(_ value: JSDate) -> some View {
     return attribute(key: "datetime", value: value.toISOString())
   }
 }
@@ -1089,7 +1089,7 @@ private let iso8601DateFormatter: DateFormatter = {
 }()
 
 extension View where Self: HasDatetime {
-  public func datetime(_ value: Date) -> some View {
+  public func htmlDatetime(_ value: Date) -> some View {
     return attribute(key: "datetime", value: iso8601DateFormatter.string(from: value))
   }
 }
@@ -1112,7 +1112,7 @@ extension View where Self: HasDisabled {
   /// Whether the form control is disabled.
   ///
   /// - Parameter value: Whether the form control is disabled.
-  public func disabled(_ value: Bool) -> some View {
+  public func htmlDisabled(_ value: Bool) -> some View {
     return attribute(key: "disabled", value: value ? "" : nil)
   }
 }
@@ -1152,7 +1152,7 @@ extension View where Self: HasForm {
   /// Associates the control with a `<form>` element.
   ///
   /// - Parameter value: The associated `<form>` element's `id`.
-  public func form(_ value: String) -> some View {
+  public func htmlForm(_ value: String) -> some View {
     return attribute(key: "form", value: value)
   }
 }
@@ -1168,7 +1168,7 @@ extension View where Self: HasHeaders {
   /// The header cells for this cell.
   ///
   /// - Parameter value: The header cells for this cell.
-  public func headers(_ value: String) -> some View {
+  public func htmlHeaders(_ value: String) -> some View {
     return attribute(key: "headers", value: value)
   }
 }
@@ -1191,7 +1191,7 @@ extension View where Self: HasHeight {
   /// Vertical dimension.
   ///
   /// - Parameter value: Vertical dimension.
-  public func height(_ value: Int) -> some View {
+  public func htmlHeight(_ value: Int) -> some View {
     return attribute(key: "height", value: String(value))
   }
 }
@@ -1209,7 +1209,7 @@ extension View where Self: HasHref {
   /// Address of a hyperlink.
   ///
   /// - Parameter value: Address of a hyperlink.
-  public func href(_ value: String) -> some View {
+  public func htmlHref(_ value: String) -> some View {
     return attribute(key: "href", value: value)
   }
 }
@@ -1222,7 +1222,7 @@ extension Audio: HasLoop {}
 extension Video: HasLoop {}
 
 extension View where Self: HasLoop {
-  public func loop(_ value: Bool) -> some View {
+  public func htmlLoop(_ value: Bool) -> some View {
     return attribute(key: "loop", value: value ? "" : nil)
   }
 }
@@ -1239,7 +1239,7 @@ extension View where Self: HasMax {
   /// Maximum value.
   ///
   /// - Parameter value: Maximum value.
-  public func max(_ value: Double) -> some View {
+  public func htmlMax(_ value: Double) -> some View {
     return attribute(key: "max", value: String(value))
   }
 
@@ -1247,7 +1247,7 @@ extension View where Self: HasMax {
   /// Maximum value.
   ///
   /// - Parameter value: Maximum value.
-  public func max(_ value: Int) -> some View {
+  public func htmlMax(_ value: Int) -> some View {
     return attribute(key: "max", value: String(value))
   }
 }
@@ -1263,7 +1263,7 @@ extension View where Self: HasMaxlength {
   /// Maximum length of value.
   ///
   /// - Parameter value: Maximum length of value.
-  public func maxlength(_ value: Int) -> some View {
+  public func htmlMaxlength(_ value: Int) -> some View {
     return attribute(key: "maxlength", value: String(value))
   }
 }
@@ -1280,7 +1280,7 @@ extension View where Self: HasMin {
   /// Minimum value.
   ///
   /// - Parameter value: Minimum value.
-  public func min(_ value: Double) -> some View {
+  public func htmlMin(_ value: Double) -> some View {
     return attribute(key: "min", value: String(value))
   }
 
@@ -1288,7 +1288,7 @@ extension View where Self: HasMin {
   /// Minimum value.
   ///
   /// - Parameter value: Minimum value.
-  public func min(_ value: Int) -> some View {
+  public func htmlMin(_ value: Int) -> some View {
     return attribute(key: "min", value: String(value))
   }
 }
@@ -1304,7 +1304,7 @@ extension View where Self: HasMinlength {
   /// Minimum length of value.
   ///
   /// - Parameter value: Minimum length of value.
-  public func minlength(_ value: Int) -> some View {
+  public func htmlMinlength(_ value: Int) -> some View {
     return attribute(key: "minlength", value: String(value))
   }
 }
@@ -1320,7 +1320,7 @@ extension View where Self: HasMultiple {
   /// Whether to allow multiple values.
   ///
   /// - Parameter value: Whether to allow multiple values.
-  public func multiple(_ value: Bool) -> some View {
+  public func htmlMultiple(_ value: Bool) -> some View {
     return attribute(key: "multiple", value: value ? "" : nil)
   }
 }
@@ -1336,7 +1336,7 @@ extension View where Self: HasMuted {
   /// Whether to mute the media resource by default.
   ///
   /// - Parameter value: Whether to mute the media resource by default.
-  public func muted(_ value: Bool) -> some View {
+  public func htmlMuted(_ value: Bool) -> some View {
     return attribute(key: "muted", value: value ? "" : nil)
   }
 }
@@ -1358,7 +1358,7 @@ extension View where Self: HasName {
   /// Name of form control to use for form submission and in the form.elements API.
   ///
   /// - Parameter value: Name of form control.
-  public func name(_ value: String) -> some View {
+  public func htmlName(_ value: String) -> some View {
     return attribute(key: "name", value: value)
   }
 }
@@ -1375,7 +1375,7 @@ extension View where Self: HasPlaceholder {
   ///
   /// - Parameter value: User-visible label to be placed within the form
   ///                    control.
-  public func placeholder(_ value: String) -> some View {
+  public func htmlPlaceholder(_ value: String) -> some View {
     return attribute(key: "placeholder", value: value)
   }
 }
@@ -1419,7 +1419,7 @@ extension View where Self: HasPreload {
   ///
   /// - Parameter value: Hints how much buffering the media resource will likely
   ///                    need.
-  public func preload(_ value: Preload) -> some View {
+  public func htmlPreload(_ value: Preload) -> some View {
     return attribute(key: "preload", value: value.rawValue)
   }
 }
@@ -1435,7 +1435,7 @@ extension View where Self: HasReadonly {
   /// Whether to allow the value to be edited by the user.
   ///
   /// - Parameter value: Whether to allow the value to be edited by the user.
-  public func readonly(_ value: Bool) -> some View {
+  public func htmlReadonly(_ value: Bool) -> some View {
     return attribute(key: "readonly", value: value ? "" : nil)
   }
 }
@@ -1470,7 +1470,7 @@ public struct Rel: RawRepresentable {
 }
 
 extension View where Self: HasRel {
-  public func rel(_ value: Rel) -> some View {
+  public func htmlRel(_ value: Rel) -> some View {
     return attribute(key: "rel", value: value.rawValue)
   }
 }
@@ -1487,7 +1487,7 @@ extension View where Self: HasRequired {
   /// Whether the control is required for form submission.
   ///
   /// - Parameter value: Whether the control is required for form submission.
-  public func required(_ value: Bool) -> some View {
+  public func htmlRequired(_ value: Bool) -> some View {
     return attribute(key: "required", value: value ? "" : nil)
   }
 }
@@ -1503,7 +1503,7 @@ extension View where Self: HasRowspan {
   /// /// Number of rows that the cell is to span.
   ///
   /// - Parameter value: Number of rows that the cell is to span.
-  public func rowspan(_ value: Int) -> some View {
+  public func htmlRowspan(_ value: Int) -> some View {
     return attribute(key: "rowspan", value: String(value))
   }
 }
@@ -1516,7 +1516,7 @@ extension Col: HasSpan {}
 extension Colgroup: HasSpan {}
 
 extension View where Self: HasSpan {
-  public func span(_ value: Int) -> some View {
+  public func htmlSpan(_ value: Int) -> some View {
     return attribute(key: "span", value: String(value))
   }
 }
@@ -1540,7 +1540,7 @@ extension View where Self: HasSrc {
   /// Address of the resource.
   ///
   /// - Parameter value: Address of the resource.
-  public func src(_ value: String) -> some View {
+  public func htmlSrc(_ value: String) -> some View {
     return attribute(key: "src", value: value)
   }
 }
@@ -1572,7 +1572,7 @@ extension View where Self: HasSrcset {
   ///
   /// - Parameter value: Images to use in different situations (e.g.,
   ///                    high-resolution displays, small monitors, etc).
-  public func srcset(_ value: [String: Size]) -> some View {
+  public func htmlSrcset(_ value: [String: Size]) -> some View {
     return attribute(key: "srcset", value: value.map { url, size in url + " " + size.description }.joined(separator: ", "))
   }
 }
@@ -1605,7 +1605,7 @@ extension View where Self: HasTarget {
   ///
   /// - Parameter value: Default browsing context for hyperlink navigation
   ///                    and form submission.
-  public func target(_ value: Target) -> some View {
+  public func htmlTarget(_ value: Target) -> some View {
     return attribute(key: "target", value: value == .self ? nil : value.rawValue)
   }
 }
@@ -1626,7 +1626,7 @@ extension View where Self: HasMediaType {
   /// Hint for the type of the referenced resource.
   ///
   /// - Parameter value: Hint for the type of the referenced resource.
-  public func type(_ value: MediaType) -> some View {
+  public func htmlType(_ value: MediaType) -> some View {
     return attribute(key: "type", value: value.description)
   }
 }
@@ -1640,7 +1640,7 @@ extension Meter: HasDoubleValue {}
 extension Progress: HasDoubleValue {}
 
 extension View where Self: HasDoubleValue {
-  public func value(_ value: Double) -> some View {
+  public func htmlValue(_ value: Double) -> some View {
     return attribute(key: "value", value: String(value))
   }
 }
@@ -1657,7 +1657,7 @@ extension View where Self: HasIntValue {
   /// of the list item.)
   ///
   /// - Parameter value: The form control's value.
-  public func value(_ value: Int) -> some View {
+  public func htmlValue(_ value: Int) -> some View {
     return attribute(key: "value", value: String(value))
   }
 }
@@ -1674,7 +1674,7 @@ extension View where Self: HasStringValue {
   /// The form control's value.
   ///
   /// - Parameter value: The form control's value.
-  public func value(_ value: String) -> some View {
+  public func htmlValue(_ value: String) -> some View {
     return attribute(key: "value", value: value)
   }
 }
@@ -1697,7 +1697,7 @@ extension View where Self: HasWidth {
   /// Horizontal dimension.
   ///
   /// - Parameter value: Vertical dimension.
-  public func width(_ value: Int) -> some View {
+  public func htmlWidth(_ value: Int) -> some View {
     return attribute(key: "width", value: String(value))
   }
 }
@@ -1804,15 +1804,15 @@ public struct Role: RawRepresentable {
 }
 
 extension View {
-  public func role(_ value: Role) -> some View {
+  public func htmlRole(_ value: Role) -> some View {
     return attribute(key: "role", value: value.rawValue)
   }
 
-  public func ariaActivedescendant(_ value: String) -> some View {
+  public func htmlAriaActivedescendant(_ value: String) -> some View {
     return attribute(key: "aria-activedescendant", value: value)
   }
 
-  public func ariaAtomic(_ value: Bool) -> some View {
+  public func htmlAriaAtomic(_ value: Bool) -> some View {
     return attribute(key: "aria-atomic", value: String(value))
   }
 }
@@ -1825,31 +1825,31 @@ public enum AriaAutocomplete: String {
 }
 
 extension View {
-  public func ariaAutocomplete(_ value: AriaAutocomplete) -> some View {
+  public func htmlAriaAutocomplete(_ value: AriaAutocomplete) -> some View {
     return attribute(key: "aria-autocomplete", value: value.rawValue)
   }
 
-  public func ariaBusy(_ value: Bool) -> some View {
+  public func htmlAriaBusy(_ value: Bool) -> some View {
     return attribute(key: "aria-busy", value: String(value))
   }
 
-  public func ariaChecked(_ value: AriaToggled) -> some View {
+  public func htmlAriaChecked(_ value: AriaToggled) -> some View {
     return attribute(key: "aria-checked", value: value.rawValue)
   }
 
-  public func ariaColcount(_ value: Int) -> some View {
+  public func htmlAriaColcount(_ value: Int) -> some View {
     return attribute(key: "aria-colcount", value: String(value))
   }
 
-  public func ariaColindex(_ value: Int) -> some View {
+  public func htmlAriaColindex(_ value: Int) -> some View {
     return attribute(key: "aria-colindex", value: String(value))
   }
 
-  public func ariaColspan(_ value: Int) -> some View {
+  public func htmlAriaColspan(_ value: Int) -> some View {
     return attribute(key: "aria-colspan", value: String(value))
   }
 
-  public func ariaControls(_ value: String) -> some View {
+  public func htmlAriaControls(_ value: String) -> some View {
     return attribute(key: "aria-controls", value: value)
   }
 }
@@ -1869,19 +1869,19 @@ public enum AriaCurrent: String, ExpressibleByBooleanLiteral {
 }
 
 extension View {
-  public func ariaCurrent(_ value: AriaCurrent) -> some View {
+  public func htmlAriaCurrent(_ value: AriaCurrent) -> some View {
     return attribute(key: "aria-current", value: value.rawValue)
   }
 
-  public func ariaDescribedby(_ value: String) -> some View {
+  public func htmlAriaDescribedby(_ value: String) -> some View {
     return attribute(key: "aria-describedby", value: value)
   }
 
-  public func ariaDetails(_ value: String) -> some View {
+  public func htmlAriaDetails(_ value: String) -> some View {
     return attribute(key: "aria-details", value: value)
   }
 
-  public func ariaDisabled(_ value: Bool) -> some View {
+  public func htmlAriaDisabled(_ value: Bool) -> some View {
     return attribute(key: "aria-disabled", value: String(value))
   }
 }
@@ -1896,23 +1896,23 @@ public enum AriaDropeffect: String {
 }
 
 extension View {
-  public func ariaDropeffect(_ value: AriaDropeffect) -> some View {
+  public func htmlAriaDropeffect(_ value: AriaDropeffect) -> some View {
     return attribute(key: "aria-dropeffect", value: value.rawValue)
   }
 
-  public func ariaErrormessage(_ value: String) -> some View {
+  public func htmlAriaErrormessage(_ value: String) -> some View {
     return attribute(key: "aria-errormessage", value: value)
   }
 
-  public func ariaExpanded(_ value: AriaBoolean) -> some View {
+  public func htmlAriaExpanded(_ value: AriaBoolean) -> some View {
     return attribute(key: "aria-expanded", value: value.rawValue)
   }
 
-  public func ariaFlowto(_ value: String) -> some View {
+  public func htmlAriaFlowto(_ value: String) -> some View {
     return attribute(key: "aria-flowto", value: value)
   }
 
-  public func ariaGrabbed(_ value: AriaBoolean) -> some View {
+  public func htmlAriaGrabbed(_ value: AriaBoolean) -> some View {
     return attribute(key: "aria-grabbed", value: value.rawValue)
   }
 }
@@ -1931,11 +1931,11 @@ public enum AriaHaspopup: String, ExpressibleByBooleanLiteral {
 }
 
 extension View {
-  public func ariaHaspopup(_ value: AriaHaspopup) -> some View {
+  public func htmlAriaHaspopup(_ value: AriaHaspopup) -> some View {
     return attribute(key: "aria-haspopup", value: value.rawValue)
   }
 
-  public func ariaHidden(_ value: AriaBoolean) -> some View {
+  public func htmlAriaHidden(_ value: AriaBoolean) -> some View {
     return attribute(key: "aria-hidden", value: value.rawValue)
   }
 }
@@ -1952,23 +1952,23 @@ public enum AriaInvalid: String, ExpressibleByBooleanLiteral {
 }
 
 extension View {
-  public func ariaInvalid(_ value: AriaInvalid) -> some View {
+  public func htmlAriaInvalid(_ value: AriaInvalid) -> some View {
     return attribute(key: "aria-invalid", value: value.rawValue)
   }
 
-  public func ariaKeyshortcuts(_ value: String) -> some View {
+  public func htmlAriaKeyshortcuts(_ value: String) -> some View {
     return attribute(key: "aria-keyshortcuts", value: value)
   }
 
-  public func ariaLabel(_ value: String) -> some View {
+  public func htmlAriaLabel(_ value: String) -> some View {
     return attribute(key: "aria-label", value: value)
   }
 
-  public func ariaLabelledby(_ value: String) -> some View {
+  public func htmlAriaLabelledby(_ value: String) -> some View {
     return attribute(key: "aria-labelledby", value: value)
   }
 
-  public func ariaLevel(_ value: Int) -> some View {
+  public func htmlAriaLevel(_ value: Int) -> some View {
     return attribute(key: "aria-level", value: String(value))
   }
 }
@@ -1980,19 +1980,19 @@ public enum AriaLive: String {
 }
 
 extension View {
-  public func ariaLive(_ value: AriaLive) -> some View {
+  public func htmlAriaLive(_ value: AriaLive) -> some View {
     return attribute(key: "aria-live", value: value.rawValue)
   }
 
-  public func ariaModal(_ value: Bool) -> some View {
+  public func htmlAriaModal(_ value: Bool) -> some View {
     return attribute(key: "aria-modal", value: String(value))
   }
 
-  public func ariaMultiline(_ value: Bool) -> some View {
+  public func htmlAriaMultiline(_ value: Bool) -> some View {
     return attribute(key: "aria-multiline", value: String(value))
   }
 
-  public func ariaMultiselectable(_ value: Bool) -> some View {
+  public func htmlAriaMultiselectable(_ value: Bool) -> some View {
     return attribute(key: "aria-multiselectable", value: String(value))
   }
 }
@@ -2004,27 +2004,27 @@ public enum AriaOrientation: String {
 }
 
 extension View {
-  public func ariaOrientation(_ value: AriaOrientation) -> some View {
+  public func htmlAriaOrientation(_ value: AriaOrientation) -> some View {
     return attribute(key: "aria-orientation", value: value.rawValue)
   }
 
-  public func ariaOwns(_ value: String) -> some View {
+  public func htmlAriaOwns(_ value: String) -> some View {
     return attribute(key: "aria-owns", value: value)
   }
 
-  public func ariaPlaceholder(_ value: String) -> some View {
+  public func htmlAriaPlaceholder(_ value: String) -> some View {
     return attribute(key: "aria-placeholder", value: value)
   }
 
-  public func ariaPosinset(_ value: Int) -> some View {
+  public func htmlAriaPosinset(_ value: Int) -> some View {
     return attribute(key: "aria-posinset", value: String(value))
   }
 
-  public func ariaPressed(_ value: AriaToggled) -> some View {
+  public func htmlAriaPressed(_ value: AriaToggled) -> some View {
     return attribute(key: "aria-pressed", value: value.rawValue)
   }
 
-  public func ariaReadonly(_ value: Bool) -> some View {
+  public func htmlAriaReadonly(_ value: Bool) -> some View {
     return attribute(key: "aria-readonly", value: String(value))
   }
 }
@@ -2037,35 +2037,35 @@ public enum AriaRelevant: String {
 }
 
 extension View {
-  public func ariaRelevant(_ value: Array<AriaRelevant>) -> some View {
+  public func htmlAriaRelevant(_ value: Array<AriaRelevant>) -> some View {
     return attribute(key: "aria-relevant", value: value.map { $0.rawValue }.joined(separator: " "))
   }
 
-  public func ariaRequired(_ value: Bool) -> some View {
+  public func htmlAriaRequired(_ value: Bool) -> some View {
     return attribute(key: "aria-required", value: String(value))
   }
 
-  public func ariaRoledescription(_ value: String) -> some View {
+  public func htmlAriaRoledescription(_ value: String) -> some View {
     return attribute(key: "aria-roledescription", value: value)
   }
 
-  public func ariaRowcount(_ value: Int) -> some View {
+  public func htmlAriaRowcount(_ value: Int) -> some View {
     return attribute(key: "aria-rowcount", value: String(value))
   }
 
-  public func ariaRowindex(_ value: Int) -> some View {
+  public func htmlAriaRowindex(_ value: Int) -> some View {
     return attribute(key: "aria-rowindex", value: String(value))
   }
 
-  public func ariaRowspan(_ value: Int) -> some View {
+  public func htmlAriaRowspan(_ value: Int) -> some View {
     return attribute(key: "aria-rowspan", value: String(value))
   }
 
-  public func ariaSelected(_ value: AriaBoolean) -> some View {
+  public func htmlAriaSelected(_ value: AriaBoolean) -> some View {
     return attribute(key: "aria-selected", value: value.rawValue)
   }
 
-  public func ariaSetsize(_ value: Int) -> some View {
+  public func htmlAriaSetsize(_ value: Int) -> some View {
     return attribute(key: "aria-setsize", value: String(value))
   }
 }
@@ -2078,609 +2078,609 @@ public enum AriaSort: String {
 }
 
 extension View {
-  public func ariaSort(_ value: AriaSort) -> some View {
+  public func htmlAriaSort(_ value: AriaSort) -> some View {
     return attribute(key: "aria-sort", value: value.rawValue)
   }
 
-  public func ariaValuemax(_ value: Double) -> some View {
+  public func htmlAriaValuemax(_ value: Double) -> some View {
     return attribute(key: "aria-valuemax", value: String(value))
   }
 
-  public func ariaValuemin(_ value: Double) -> some View {
+  public func htmlAriaValuemin(_ value: Double) -> some View {
     return attribute(key: "aria-valuemin", value: String(value))
   }
 
-  public func ariaValuenow(_ value: Double) -> some View {
+  public func htmlAriaValuenow(_ value: Double) -> some View {
     return attribute(key: "aria-valuenow", value: String(value))
   }
 
-  public func ariaValuetext(_ value: String) -> some View {
+  public func htmlAriaValuetext(_ value: String) -> some View {
     return attribute(key: "aria-valuetext", value: value)
   }
 }
 
 // MARK: - Event Attributes
 
-// extension View {
-//   /// Execute JavaScript when a user leaves an input field.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onblur(safe javascript: StaticString) -> some View {
-//     return onblur(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when a user leaves an input field.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onblur(unsafe javascript: String) -> some View {
-//     return attribute(key: "onblur", value: javascript)
-//   }
-
-//   /// Execute JavaScript when an element is clicked.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onclick(safe javascript: StaticString) -> some View {
-//     return onclick(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when an element is clicked.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onclick(unsafe javascript: String) -> some View {
-//     return attribute(key: "onclick", value: javascript)
-//   }
-
-//   /// Execute JavaScript when the user right-clicks on an element with a context menu.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func oncontextmenu(safe javascript: StaticString) -> some View {
-//     return oncontextmenu(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when the user right-clicks on an element with a context menu.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func oncontextmenu(unsafe javascript: String) -> some View {
-//     return attribute(key: "oncontextmenu", value: javascript)
-//   }
-
-//   /// Execute JavaScript when copying some text of an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func oncopy(safe javascript: StaticString) -> some View {
-//     return oncopy(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when copying some text of an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func oncopy(unsafe javascript: String) -> some View {
-//     return attribute(key: "oncopy", value: javascript)
-//   }
-
-//   /// Execute JavaScript when cutting some text in an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func oncut(safe javascript: StaticString) -> some View {
-//     return oncut(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when cutting some text in an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func oncut(unsafe javascript: String) -> some View {
-//     return attribute(key: "oncut", value: javascript)
-//   }
-
-//   /// Execute JavaScript when an element is double-clicked.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ondblclick(safe javascript: StaticString) -> some View {
-//     return ondblclick(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when an element is double-clicked.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ondblclick(unsafe javascript: String) -> some View {
-//     return attribute(key: "ondblclick", value: javascript)
-//   }
-
-//   /// Execute JavaScript when an element is being dragged.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ondrag(safe javascript: StaticString) -> some View {
-//     return ondrag(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when an element is being dragged.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ondrag(unsafe javascript: String) -> some View {
-//     return attribute(key: "ondrag", value: javascript)
-//   }
-
-//   /// Execute JavaScript when the user has finished dragging an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ondragend(safe javascript: StaticString) -> some View {
-//     return ondragend(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when the user has finished dragging an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ondragend(unsafe javascript: String) -> some View {
-//     return attribute(key: "ondragend", value: javascript)
-//   }
-
-//   /// Execute JavaScript when a draggable element enters a drop target.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ondragenter(safe javascript: StaticString) -> some View {
-//     return ondragenter(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when a draggable element enters a drop target.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ondragenter(unsafe javascript: String) -> some View {
-//     return attribute(key: "ondragenter", value: javascript)
-//   }
-
-//   /// Execute JavaScript when an element is being dragged over a drop target.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ondragover(safe javascript: StaticString) -> some View {
-//     return ondragover(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when an element is being dragged over a drop target.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ondragover(unsafe javascript: String) -> some View {
-//     return attribute(key: "ondragover", value: javascript)
-//   }
-
-//   /// Execute JavaScript when the user starts to drag an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ondragstart(safe javascript: StaticString) -> some View {
-//     return ondragstart(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when the user starts to drag an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ondragstart(unsafe javascript: String) -> some View {
-//     return attribute(key: "ondragstart", value: javascript)
-//   }
-
-//   /// Execute JavaScript when a draggable element is dropped in the element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ondrop(safe javascript: StaticString) -> some View {
-//     return ondrop(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when a draggable element is dropped in the element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ondrop(unsafe javascript: String) -> some View {
-//     return attribute(key: "ondrop", value: javascript)
-//   }
-
-//   /// Execute JavaScript when an element gets focus.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onfocus(safe javascript: StaticString) -> some View {
-//     return onfocus(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when an element gets focus.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onfocus(unsafe javascript: String) -> some View {
-//     return attribute(key: "onfocus", value: javascript)
-//   }
-
-//   /// Execute JavaScript when a user is pressing a key.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onkeydown(safe javascript: StaticString) -> some View {
-//     return onkeydown(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when a user is pressing a key.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onkeydown(unsafe javascript: String) -> some View {
-//     return attribute(key: "onkeydown", value: javascript)
-//   }
-
-//   /// Execute JavaScript when a user presses a key.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onkeypress(safe javascript: StaticString) -> some View {
-//     return onkeypress(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when a user presses a key.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onkeypress(unsafe javascript: String) -> some View {
-//     return attribute(key: "onkeypress", value: javascript)
-//   }
-
-//   /// Execute JavaScript when a user releases a key.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onkeyup(safe javascript: StaticString) -> some View {
-//     return onkeyup(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when a user releases a key.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onkeyup(unsafe javascript: String) -> some View {
-//     return attribute(key: "onkeyup", value: javascript)
-//   }
-
-//   /// Execute JavaScript when pressing a mouse button over an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onmousedown(safe javascript: StaticString) -> some View {
-//     return onmousedown(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when pressing a mouse button over an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onmousedown(unsafe javascript: String) -> some View {
-//     return attribute(key: "onmousedown", value: javascript)
-//   }
-
-//   /// Execute JavaScript when moving the mouse pointer over an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onmousemove(safe javascript: StaticString) -> some View {
-//     return onmousemove(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when moving the mouse pointer over an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onmousemove(unsafe javascript: String) -> some View {
-//     return attribute(key: "onmousemove", value: javascript)
-//   }
-
-//   /// Execute JavaScript when moving the mouse pointer out of an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onmouseout(safe javascript: StaticString) -> some View {
-//     return onmouseout(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when moving the mouse pointer out of an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onmouseout(unsafe javascript: String) -> some View {
-//     return attribute(key: "onmouseout", value: javascript)
-//   }
-
-//   /// Execute JavaScript when moving the mouse pointer over an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onmouseover(safe javascript: StaticString) -> some View {
-//     return onmouseover(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when moving the mouse pointer over an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onmouseover(unsafe javascript: String) -> some View {
-//     return attribute(key: "onmouseover", value: javascript)
-//   }
-
-//   /// Execute JavaScript when releasing a mouse button over an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onmouseup(safe javascript: StaticString) -> some View {
-//     return onmouseup(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when releasing a mouse button over an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onmouseup(unsafe javascript: String) -> some View {
-//     return attribute(key: "onmouseup", value: javascript)
-//   }
-
-//   /// Execute JavaScript when pasting some text in an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onpaste(safe javascript: StaticString) -> some View {
-//     return onpaste(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when pasting some text in an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onpaste(unsafe javascript: String) -> some View {
-//     return attribute(key: "onpaste", value: javascript)
-//   }
-
-//   /// Execute JavaScript when an element is being scrolled.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onscroll(safe javascript: StaticString) -> some View {
-//     return onscroll(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when an element is being scrolled.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onscroll(unsafe javascript: String) -> some View {
-//     return attribute(key: "onscroll", value: javascript)
-//   }
-
-//   /// Execute JavaScript when the user rolls the mouse wheel over an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onwheel(safe javascript: StaticString) -> some View {
-//     return onwheel(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when the user rolls the mouse wheel over an element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onwheel(unsafe javascript: String) -> some View {
-//     return attribute(key: "onwheel", value: javascript)
-//   }
-
-// }
-
-// extension Body {
-//   /// Execute JavaScript when a page has started printing.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onafterprint(safe javascript: StaticString) -> some View {
-//     return onafterprint(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when a page has started printing.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onafterprint(unsafe javascript: String) -> some View {
-//     return attribute(key: "onafterprint", value: javascript)
-//   }
-
-//   /// Execute JavaScript when a page is about to be printed.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onbeforeprint(safe javascript: StaticString) -> some View {
-//     return onbeforeprint(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when a page is about to be printed.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onbeforeprint(unsafe javascript: String) -> some View {
-//     return attribute(key: "onbeforeprint", value: javascript)
-//   }
-
-//   /// Execute JavaScript when the page is about to be unloaded.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onbeforeunload(safe javascript: StaticString) -> some View {
-//     return onbeforeunload(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when the page is about to be unloaded.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onbeforeunload(unsafe javascript: String) -> some View {
-//     return attribute(key: "onbeforeunload", value: javascript)
-//   }
-
-//   /// Execute JavaScript when the anchor part has been changed.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onhashchange(safe javascript: StaticString) -> some View {
-//     return onhashchange(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when the anchor part has been changed.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onhashchange(unsafe javascript: String) -> some View {
-//     return attribute(key: "onhashchange", value: javascript)
-//   }
-
-//   public func onmessage(safe javascript: StaticString) -> some View {
-//     return onmessage(unsafe: String(describing: javascript))
-//   }
-
-//   public func onmessage(unsafe javascript: String) -> some View {
-//     return attribute(key: "onmessage", value: javascript)
-//   }
-
-//   /// Execute JavaScript when the browser starts to work offline.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onoffline(safe javascript: StaticString) -> some View {
-//     return onoffline(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when the browser starts to work offline.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onoffline(unsafe javascript: String) -> some View {
-//     return attribute(key: "onoffline", value: javascript)
-//   }
-
-//   /// Execute JavaScript when the browser starts to work online.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ononline(safe javascript: StaticString) -> some View {
-//     return ononline(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when the browser starts to work online.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ononline(unsafe javascript: String) -> some View {
-//     return attribute(key: "ononline", value: javascript)
-//   }
-
-//   /// Execute JavaScript when the user is navigating away from a webpage.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onpagehide(safe javascript: StaticString) -> some View {
-//     return onpagehide(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when the user is navigating away from a webpage.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onpagehide(unsafe javascript: String) -> some View {
-//     return attribute(key: "onpagehide", value: javascript)
-//   }
-
-//   /// Execute JavaScript when a user navigates to a webpage.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onpageshow(safe javascript: StaticString) -> some View {
-//     return onpageshow(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when a user navigates to a webpage.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onpageshow(unsafe javascript: String) -> some View {
-//     return attribute(key: "onpageshow", value: javascript)
-//   }
-
-//   public func onpopstate(safe javascript: StaticString) -> some View {
-//     return onpopstate(unsafe: String(describing: javascript))
-//   }
-
-//   public func onpopstate(unsafe javascript: String) -> some View {
-//     return attribute(key: "onpopstate", value: javascript)
-//   }
-
-//   /// Execute JavaScript when the browser window is resized.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onresize(safe javascript: StaticString) -> some View {
-//     return onresize(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when the browser window is resized.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onresize(unsafe javascript: String) -> some View {
-//     return attribute(key: "onresize", value: javascript)
-//   }
-
-//   public func onstorage(safe javascript: StaticString) -> some View {
-//     return onstorage(unsafe: String(describing: javascript))
-//   }
-
-//   public func onstorage(unsafe javascript: String) -> some View {
-//     return attribute(key: "onstorage", value: javascript)
-//   }
-
-//   /// Execute JavaScript when a user unloads the document.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onunload(safe javascript: StaticString) -> some View {
-//     return onunload(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when a user unloads the document.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onunload(unsafe javascript: String) -> some View {
-//     return attribute(key: "onunload", value: javascript)
-//   }
-// }
-
-// extension Details {
-//   /// Execute JavaScript when a `<details>` element is opened or closed.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ontoggle(safe javascript: StaticString) -> some View {
-//     return ontoggle(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when a `<details>` element is opened or closed.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ontoggle(unsafe javascript: String) -> some View {
-//     return attribute(key: "ontoggle", value: javascript)
-//   }
-// }
-
-// extension Form {
-//   /// Execute JavaScript when a form is reset.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onreset(safe javascript: StaticString) -> some View {
-//     return onreset(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when a form is reset.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onreset(unsafe javascript: String) -> some View {
-//     return attribute(key: "onreset", value: javascript)
-//   }
-
-//   /// Execute JavaScript when a form is submitted.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onsubmit(safe javascript: StaticString) -> some View {
-//     return onsubmit(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when a form is submitted.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onsubmit(unsafe javascript: String) -> some View {
-//     return attribute(key: "onsubmit", value: javascript)
-//   }
-// }
-
-// extension Input {
-//   /// Execute JavaScript when an input field is invalid.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func oninvalid(safe javascript: StaticString) -> some View {
-//     return oninvalid(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when an input field is invalid.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func oninvalid(unsafe javascript: String) -> some View {
-//     return attribute(key: "oninvalid", value: javascript)
-//   }
-
-//   /// Execute JavaScript when submitting a search.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onsearch(safe javascript: StaticString) -> some View {
-//     return onsearch(unsafe: String(describing: javascript))
-//   }
-
-//   /// Execute JavaScript when submitting a search.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onsearch(unsafe javascript: String) -> some View {
-//     return attribute(key: "onsearch", value: javascript)
-//   }
-// }
+extension View {
+  /// Execute JavaScript when a user leaves an input field.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnblur(safe javascript: StaticString) -> some View {
+    return htmlOnblur(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when a user leaves an input field.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnblur(unsafe javascript: String) -> some View {
+    return attribute(key: "onblur", value: javascript)
+  }
+
+  /// Execute JavaScript when an element is clicked.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnclick(safe javascript: StaticString) -> some View {
+    return htmlOnclick(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when an element is clicked.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnclick(unsafe javascript: String) -> some View {
+    return attribute(key: "onclick", value: javascript)
+  }
+
+  /// Execute JavaScript when the user right-clicks on an element with a context menu.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOncontextmenu(safe javascript: StaticString) -> some View {
+    return htmlOncontextmenu(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when the user right-clicks on an element with a context menu.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOncontextmenu(unsafe javascript: String) -> some View {
+    return attribute(key: "oncontextmenu", value: javascript)
+  }
+
+  /// Execute JavaScript when copying some text of an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOncopy(safe javascript: StaticString) -> some View {
+    return htmlOncopy(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when copying some text of an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOncopy(unsafe javascript: String) -> some View {
+    return attribute(key: "oncopy", value: javascript)
+  }
+
+  /// Execute JavaScript when cutting some text in an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOncut(safe javascript: StaticString) -> some View {
+    return htmlOncut(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when cutting some text in an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOncut(unsafe javascript: String) -> some View {
+    return attribute(key: "oncut", value: javascript)
+  }
+
+  /// Execute JavaScript when an element is double-clicked.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOndblclick(safe javascript: StaticString) -> some View {
+    return htmlOndblclick(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when an element is double-clicked.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOndblclick(unsafe javascript: String) -> some View {
+    return attribute(key: "ondblclick", value: javascript)
+  }
+
+  /// Execute JavaScript when an element is being dragged.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOndrag(safe javascript: StaticString) -> some View {
+    return htmlOndrag(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when an element is being dragged.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOndrag(unsafe javascript: String) -> some View {
+    return attribute(key: "ondrag", value: javascript)
+  }
+
+  /// Execute JavaScript when the user has finished dragging an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOndragend(safe javascript: StaticString) -> some View {
+    return htmlOndragend(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when the user has finished dragging an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOndragend(unsafe javascript: String) -> some View {
+    return attribute(key: "ondragend", value: javascript)
+  }
+
+  /// Execute JavaScript when a draggable element enters a drop target.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOndragenter(safe javascript: StaticString) -> some View {
+    return htmlOndragenter(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when a draggable element enters a drop target.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOndragenter(unsafe javascript: String) -> some View {
+    return attribute(key: "ondragenter", value: javascript)
+  }
+
+  /// Execute JavaScript when an element is being dragged over a drop target.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOndragover(safe javascript: StaticString) -> some View {
+    return htmlOndragover(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when an element is being dragged over a drop target.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOndragover(unsafe javascript: String) -> some View {
+    return attribute(key: "ondragover", value: javascript)
+  }
+
+  /// Execute JavaScript when the user starts to drag an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOndragstart(safe javascript: StaticString) -> some View {
+    return htmlOndragstart(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when the user starts to drag an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOndragstart(unsafe javascript: String) -> some View {
+    return attribute(key: "ondragstart", value: javascript)
+  }
+
+  /// Execute JavaScript when a draggable element is dropped in the element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOndrop(safe javascript: StaticString) -> some View {
+    return htmlOndrop(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when a draggable element is dropped in the element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOndrop(unsafe javascript: String) -> some View {
+    return attribute(key: "ondrop", value: javascript)
+  }
+
+  /// Execute JavaScript when an element gets focus.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnfocus(safe javascript: StaticString) -> some View {
+    return htmlOnfocus(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when an element gets focus.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnfocus(unsafe javascript: String) -> some View {
+    return attribute(key: "onfocus", value: javascript)
+  }
+
+  /// Execute JavaScript when a user is pressing a key.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnkeydown(safe javascript: StaticString) -> some View {
+    return htmlOnkeydown(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when a user is pressing a key.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnkeydown(unsafe javascript: String) -> some View {
+    return attribute(key: "onkeydown", value: javascript)
+  }
+
+  /// Execute JavaScript when a user presses a key.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnkeypress(safe javascript: StaticString) -> some View {
+    return htmlOnkeypress(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when a user presses a key.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnkeypress(unsafe javascript: String) -> some View {
+    return attribute(key: "onkeypress", value: javascript)
+  }
+
+  /// Execute JavaScript when a user releases a key.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnkeyup(safe javascript: StaticString) -> some View {
+    return htmlOnkeyup(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when a user releases a key.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnkeyup(unsafe javascript: String) -> some View {
+    return attribute(key: "onkeyup", value: javascript)
+  }
+
+  /// Execute JavaScript when pressing a mouse button over an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnmousedown(safe javascript: StaticString) -> some View {
+    return htmlOnmousedown(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when pressing a mouse button over an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnmousedown(unsafe javascript: String) -> some View {
+    return attribute(key: "onmousedown", value: javascript)
+  }
+
+  /// Execute JavaScript when moving the mouse pointer over an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnmousemove(safe javascript: StaticString) -> some View {
+    return htmlOnmousemove(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when moving the mouse pointer over an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnmousemove(unsafe javascript: String) -> some View {
+    return attribute(key: "onmousemove", value: javascript)
+  }
+
+  /// Execute JavaScript when moving the mouse pointer out of an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnmouseout(safe javascript: StaticString) -> some View {
+    return htmlOnmouseout(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when moving the mouse pointer out of an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnmouseout(unsafe javascript: String) -> some View {
+    return attribute(key: "onmouseout", value: javascript)
+  }
+
+  /// Execute JavaScript when moving the mouse pointer over an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnmouseover(safe javascript: StaticString) -> some View {
+    return htmlOnmouseover(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when moving the mouse pointer over an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnmouseover(unsafe javascript: String) -> some View {
+    return attribute(key: "onmouseover", value: javascript)
+  }
+
+  /// Execute JavaScript when releasing a mouse button over an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnmouseup(safe javascript: StaticString) -> some View {
+    return htmlOnmouseup(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when releasing a mouse button over an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnmouseup(unsafe javascript: String) -> some View {
+    return attribute(key: "onmouseup", value: javascript)
+  }
+
+  /// Execute JavaScript when pasting some text in an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnpaste(safe javascript: StaticString) -> some View {
+    return htmlOnpaste(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when pasting some text in an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnpaste(unsafe javascript: String) -> some View {
+    return attribute(key: "onpaste", value: javascript)
+  }
+
+  /// Execute JavaScript when an element is being scrolled.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnscroll(safe javascript: StaticString) -> some View {
+    return htmlOnscroll(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when an element is being scrolled.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnscroll(unsafe javascript: String) -> some View {
+    return attribute(key: "onscroll", value: javascript)
+  }
+
+  /// Execute JavaScript when the user rolls the mouse wheel over an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnwheel(safe javascript: StaticString) -> some View {
+    return htmlOnwheel(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when the user rolls the mouse wheel over an element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnwheel(unsafe javascript: String) -> some View {
+    return attribute(key: "onwheel", value: javascript)
+  }
+
+}
+
+extension Body {
+  /// Execute JavaScript when a page has started printing.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnafterprint(safe javascript: StaticString) -> some View {
+    return htmlOnafterprint(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when a page has started printing.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnafterprint(unsafe javascript: String) -> some View {
+    return attribute(key: "onafterprint", value: javascript)
+  }
+
+  /// Execute JavaScript when a page is about to be printed.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnbeforeprint(safe javascript: StaticString) -> some View {
+    return htmlOnbeforeprint(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when a page is about to be printed.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnbeforeprint(unsafe javascript: String) -> some View {
+    return attribute(key: "onbeforeprint", value: javascript)
+  }
+
+  /// Execute JavaScript when the page is about to be unloaded.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnbeforeunload(safe javascript: StaticString) -> some View {
+    return htmlOnbeforeunload(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when the page is about to be unloaded.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnbeforeunload(unsafe javascript: String) -> some View {
+    return attribute(key: "onbeforeunload", value: javascript)
+  }
+
+  /// Execute JavaScript when the anchor part has been changed.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnhashchange(safe javascript: StaticString) -> some View {
+    return htmlOnhashchange(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when the anchor part has been changed.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnhashchange(unsafe javascript: String) -> some View {
+    return attribute(key: "onhashchange", value: javascript)
+  }
+
+  public func htmlOnmessage(safe javascript: StaticString) -> some View {
+    return htmlOnmessage(unsafe: String(describing: javascript))
+  }
+
+  public func htmlOnmessage(unsafe javascript: String) -> some View {
+    return attribute(key: "onmessage", value: javascript)
+  }
+
+  /// Execute JavaScript when the browser starts to work offline.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnoffline(safe javascript: StaticString) -> some View {
+    return htmlOnoffline(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when the browser starts to work offline.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnoffline(unsafe javascript: String) -> some View {
+    return attribute(key: "onoffline", value: javascript)
+  }
+
+  /// Execute JavaScript when the browser starts to work online.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnonline(safe javascript: StaticString) -> some View {
+    return htmlOnonline(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when the browser starts to work online.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnonline(unsafe javascript: String) -> some View {
+    return attribute(key: "ononline", value: javascript)
+  }
+
+  /// Execute JavaScript when the user is navigating away from a webpage.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnpagehide(safe javascript: StaticString) -> some View {
+    return htmlOnpagehide(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when the user is navigating away from a webpage.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnpagehide(unsafe javascript: String) -> some View {
+    return attribute(key: "onpagehide", value: javascript)
+  }
+
+  /// Execute JavaScript when a user navigates to a webpage.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnpageshow(safe javascript: StaticString) -> some View {
+    return htmlOnpageshow(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when a user navigates to a webpage.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnpageshow(unsafe javascript: String) -> some View {
+    return attribute(key: "onpageshow", value: javascript)
+  }
+
+  public func htmlOnpopstate(safe javascript: StaticString) -> some View {
+    return htmlOnpopstate(unsafe: String(describing: javascript))
+  }
+
+  public func htmlOnpopstate(unsafe javascript: String) -> some View {
+    return attribute(key: "onpopstate", value: javascript)
+  }
+
+  /// Execute JavaScript when the browser window is resized.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnresize(safe javascript: StaticString) -> some View {
+    return htmlOnresize(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when the browser window is resized.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnresize(unsafe javascript: String) -> some View {
+    return attribute(key: "onresize", value: javascript)
+  }
+
+  public func htmlOnstorage(safe javascript: StaticString) -> some View {
+    return htmlOnstorage(unsafe: String(describing: javascript))
+  }
+
+  public func htmlOnstorage(unsafe javascript: String) -> some View {
+    return attribute(key: "onstorage", value: javascript)
+  }
+
+  /// Execute JavaScript when a user unloads the document.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnunload(safe javascript: StaticString) -> some View {
+    return htmlOnunload(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when a user unloads the document.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnunload(unsafe javascript: String) -> some View {
+    return attribute(key: "onunload", value: javascript)
+  }
+}
+
+extension Details {
+  /// Execute JavaScript when a `<details>` element is opened or closed.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOntoggle(safe javascript: StaticString) -> some View {
+    return htmlOntoggle(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when a `<details>` element is opened or closed.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOntoggle(unsafe javascript: String) -> some View {
+    return attribute(key: "ontoggle", value: javascript)
+  }
+}
+
+extension Form {
+  /// Execute JavaScript when a form is reset.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnreset(safe javascript: StaticString) -> some View {
+    return htmlOnreset(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when a form is reset.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnreset(unsafe javascript: String) -> some View {
+    return attribute(key: "onreset", value: javascript)
+  }
+
+  /// Execute JavaScript when a form is submitted.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnsubmit(safe javascript: StaticString) -> some View {
+    return htmlOnsubmit(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when a form is submitted.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnsubmit(unsafe javascript: String) -> some View {
+    return attribute(key: "onsubmit", value: javascript)
+  }
+}
+
+extension Input {
+  /// Execute JavaScript when an input field is invalid.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOninvalid(safe javascript: StaticString) -> some View {
+    return htmlOninvalid(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when an input field is invalid.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOninvalid(unsafe javascript: String) -> some View {
+    return attribute(key: "oninvalid", value: javascript)
+  }
+
+  /// Execute JavaScript when submitting a search.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnsearch(safe javascript: StaticString) -> some View {
+    return htmlOnsearch(unsafe: String(describing: javascript))
+  }
+
+  /// Execute JavaScript when submitting a search.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnsearch(unsafe javascript: String) -> some View {
+    return attribute(key: "onsearch", value: javascript)
+  }
+}
 
 // public protocol HasOnabort {}
 
@@ -2690,37 +2690,37 @@ extension View {
 // extension Object: HasOnabort {}
 // extension Video: HasOnabort {}
 
-// extension View where Self: HasOnabort {
-//   /// Execute JavaScript if loading of a resource is aborted.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onabort(safe javascript: StaticString) -> some View {
-//     return onabort(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnabort {
+  /// Execute JavaScript if loading of a resource is aborted.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnabort(safe javascript: StaticString) -> some View {
+    return htmlOnabort(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript if loading of a resource is aborted.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onabort(unsafe javascript: String) -> some View {
-//     return attribute(key: "onabort", value: javascript)
-//   }
-// }
+  /// Execute JavaScript if loading of a resource is aborted.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnabort(unsafe javascript: String) -> some View {
+    return attribute(key: "onabort", value: javascript)
+  }
+}
 
-// extension Track {
-//   /// Execute JavaScript when the cue changes in a `<track>` element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func oncuechange(safe javascript: StaticString) -> some View {
-//     return oncuechange(unsafe: String(describing: javascript))
-//   }
+extension Track {
+  /// Execute JavaScript when the cue changes in a `<track>` element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOncuechange(safe javascript: StaticString) -> some View {
+    return htmlOncuechange(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when the cue changes in a `<track>` element.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func oncuechange(unsafe javascript: String) -> some View {
-//     return attribute(key: "oncuechange", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when the cue changes in a `<track>` element.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOncuechange(unsafe javascript: String) -> some View {
+    return attribute(key: "oncuechange", value: javascript)
+  }
+}
 
 // public protocol HasOncanplay {}
 
@@ -2729,42 +2729,42 @@ extension View {
 // extension Object: HasOncanplay {}
 // extension Video: HasOncanplay {}
 
-// extension View where Self: HasOncanplay {
-//   /// Execute JavaScript when a resource is ready to start playing.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func oncanplay(safe javascript: StaticString) -> some View {
-//     return oncanplay(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOncanplay {
+  /// Execute JavaScript when a resource is ready to start playing.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOncanplay(safe javascript: StaticString) -> some View {
+    return htmlOncanplay(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when a resource is ready to start playing.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func oncanplay(unsafe javascript: String) -> some View {
-//     return attribute(key: "oncanplay", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when a resource is ready to start playing.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOncanplay(unsafe javascript: String) -> some View {
+    return attribute(key: "oncanplay", value: javascript)
+  }
+}
 
 // public protocol HasOncanplaythrough {}
 
 // extension Audio: HasOncanplaythrough {}
 // extension Video: HasOncanplaythrough {}
 
-// extension View where Self: HasOncanplaythrough {
-//   /// Execute JavaScript when a resource can be played all the way through, without stopping.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func oncanplaythrough(safe javascript: StaticString) -> some View {
-//     return oncanplaythrough(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOncanplaythrough {
+  /// Execute JavaScript when a resource can be played all the way through, without stopping.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOncanplaythrough(safe javascript: StaticString) -> some View {
+    return htmlOncanplaythrough(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when a resource can be played all the way through, without stopping.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func oncanplaythrough(unsafe javascript: String) -> some View {
-//     return attribute(key: "oncanplaythrough", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when a resource can be played all the way through, without stopping.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOncanplaythrough(unsafe javascript: String) -> some View {
+    return attribute(key: "oncanplaythrough", value: javascript)
+  }
+}
 
 // public protocol HasOnchange {}
 
@@ -2772,78 +2772,78 @@ extension View {
 // extension Select: HasOnchange {}
 // extension Textarea: HasOnchange {}
 
-// extension View where Self: HasOnchange {
-//   /// Execute JavaScript when a user changes the value of a form control.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onchange(safe javascript: StaticString) -> some View {
-//     return onchange(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnchange {
+  /// Execute JavaScript when a user changes the value of a form control.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnchange(safe javascript: StaticString) -> some View {
+    return htmlOnchange(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when a user changes the value of a form control.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onchange(unsafe javascript: String) -> some View {
-//     return attribute(key: "onchange", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when a user changes the value of a form control.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnchange(unsafe javascript: String) -> some View {
+    return attribute(key: "onchange", value: javascript)
+  }
+}
 
 // public protocol HasOndurationchange {}
 
 // extension Audio: HasOndurationchange {}
 // extension Video: HasOndurationchange {}
 
-// extension View where Self: HasOndurationchange {
-//   /// Execute JavaScript when the media is ready to start playing.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ondurationchange(safe javascript: StaticString) -> some View {
-//     return ondurationchange(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOndurationchange {
+  /// Execute JavaScript when the media is ready to start playing.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOndurationchange(safe javascript: StaticString) -> some View {
+    return htmlOndurationchange(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when the media is ready to start playing.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ondurationchange(unsafe javascript: String) -> some View {
-//     return attribute(key: "ondurationchange", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when the media is ready to start playing.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOndurationchange(unsafe javascript: String) -> some View {
+    return attribute(key: "ondurationchange", value: javascript)
+  }
+}
 
 // public protocol HasOnemptied {}
 
 // extension Audio: HasOnemptied {}
 // extension Video: HasOnemptied {}
 
-// extension View where Self: HasOnemptied {
-//   public func onemptied(safe javascript: StaticString) -> some View {
-//     return onemptied(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnemptied {
+  public func htmlOnemptied(safe javascript: StaticString) -> some View {
+    return htmlOnemptied(unsafe: String(describing: javascript))
+  }
 
-//   public func onemptied(unsafe javascript: String) -> some View {
-//     return attribute(key: "onemptied", value: javascript)
-//   }
-// }
+  public func htmlOnemptied(unsafe javascript: String) -> some View {
+    return attribute(key: "onemptied", value: javascript)
+  }
+}
 
 // public protocol HasOnended {}
 
 // extension Audio: HasOnended {}
 // extension Video: HasOnended {}
 
-// extension View where Self: HasOnended {
-//   /// Execute JavaScript when the media has stopped playing.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onended(safe javascript: StaticString) -> some View {
-//     return onended(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnended {
+  /// Execute JavaScript when the media has stopped playing.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnended(safe javascript: StaticString) -> some View {
+    return htmlOnended(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when the media has stopped playing.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onended(unsafe javascript: String) -> some View {
-//     return attribute(key: "onended", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when the media has stopped playing.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnended(unsafe javascript: String) -> some View {
+    return attribute(key: "onended", value: javascript)
+  }
+}
 
 // public protocol HasOnerror {}
 
@@ -2855,36 +2855,36 @@ extension View {
 // extension Script: HasOnerror {}
 // extension Video: HasOnerror {}
 
-// extension View where Self: HasOnerror {
-//   public func onerror(safe javascript: StaticString) -> some View {
-//     return onerror(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnerror {
+  public func htmlOnerror(safe javascript: StaticString) -> some View {
+    return htmlOnerror(unsafe: String(describing: javascript))
+  }
 
-//   public func onerror(unsafe javascript: String) -> some View {
-//     return attribute(key: "onerror", value: javascript)
-//   }
-// }
+  public func htmlOnerror(unsafe javascript: String) -> some View {
+    return attribute(key: "onerror", value: javascript)
+  }
+}
 
 // public protocol HasOninput {}
 
 // extension Input: HasOninput {}
 // extension Textarea: HasOninput {}
 
-// extension View where Self: HasOninput {
-//   /// Execute JavaScript when a user writes something in a text field.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func oninput(safe javascript: StaticString) -> some View {
-//     return oninput(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOninput {
+  /// Execute JavaScript when a user writes something in a text field.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOninput(safe javascript: StaticString) -> some View {
+    return htmlOninput(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when a user writes something in a text field.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func oninput(unsafe javascript: String) -> some View {
-//     return attribute(key: "oninput", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when a user writes something in a text field.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOninput(unsafe javascript: String) -> some View {
+    return attribute(key: "oninput", value: javascript)
+  }
+}
 
 // public protocol HasOnload {}
 
@@ -2896,339 +2896,339 @@ extension View {
 // extension Script: HasOnload {}
 // extension Style: HasOnload {}
 
-// extension View where Self: HasOnload {
-//   /// Execute JavaScript immediately after a page has been loaded.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onload(safe javascript: StaticString) -> some View {
-//     return onload(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnload {
+  /// Execute JavaScript immediately after a page has been loaded.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnload(safe javascript: StaticString) -> some View {
+    return htmlOnload(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript immediately after a page has been loaded.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onload(unsafe javascript: String) -> some View {
-//     return attribute(key: "onload", value: javascript)
-//   }
-// }
+  /// Execute JavaScript immediately after a page has been loaded.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnload(unsafe javascript: String) -> some View {
+    return attribute(key: "onload", value: javascript)
+  }
+}
 
 // public protocol HasOnloadeddata {}
 
 // extension Audio: HasOnloadeddata {}
 // extension Video: HasOnloadeddata {}
 
-// extension View where Self: HasOnloadeddata {
-//   public func onloadeddata(safe javascript: StaticString) -> some View {
-//     return onloadeddata(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnloadeddata {
+  public func htmlOnloadeddata(safe javascript: StaticString) -> some View {
+    return htmlOnloadeddata(unsafe: String(describing: javascript))
+  }
 
-//   public func onloadeddata(unsafe javascript: String) -> some View {
-//     return attribute(key: "onloadeddata", value: javascript)
-//   }
-// }
+  public func htmlOnloadeddata(unsafe javascript: String) -> some View {
+    return attribute(key: "onloadeddata", value: javascript)
+  }
+}
 
 // public protocol HasOnloadedmetadata {}
 
 // extension Audio: HasOnloadedmetadata {}
 // extension Video: HasOnloadedmetadata {}
 
-// extension View where Self: HasOnloadedmetadata {
-//   public func onloadedmetadata(safe javascript: StaticString) -> some View {
-//     return onloadedmetadata(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnloadedmetadata {
+  public func htmlOnloadedmetadata(safe javascript: StaticString) -> some View {
+    return htmlOnloadedmetadata(unsafe: String(describing: javascript))
+  }
 
-//   public func onloadedmetadata(unsafe javascript: String) -> some View {
-//     return attribute(key: "onloadedmetadata", value: javascript)
-//   }
-// }
+  public func htmlOnloadedmetadata(unsafe javascript: String) -> some View {
+    return attribute(key: "onloadedmetadata", value: javascript)
+  }
+}
 
 // public protocol HasOnloadstart {}
 
 // extension Audio: HasOnloadstart {}
 // extension Video: HasOnloadstart {}
 
-// extension View where Self: HasOnloadstart {
-//   public func onloadstart(safe javascript: StaticString) -> some View {
-//     return onloadstart(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnloadstart {
+  public func htmlOnloadstart(safe javascript: StaticString) -> some View {
+    return htmlOnloadstart(unsafe: String(describing: javascript))
+  }
 
-//   public func onloadstart(unsafe javascript: String) -> some View {
-//     return attribute(key: "onloadstart", value: javascript)
-//   }
-// }
+  public func htmlOnloadstart(unsafe javascript: String) -> some View {
+    return attribute(key: "onloadstart", value: javascript)
+  }
+}
 
 // public protocol HasOnpause {}
 
 // extension Audio: HasOnpause {}
 // extension Video: HasOnpause {}
 
-// extension View where Self: HasOnpause {
-//   /// Execute JavaScript when media has been paused.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onpause(safe javascript: StaticString) -> some View {
-//     return onpause(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnpause {
+  /// Execute JavaScript when media has been paused.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnpause(safe javascript: StaticString) -> some View {
+    return htmlOnpause(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when media has been paused.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onpause(unsafe javascript: String) -> some View {
-//     return attribute(key: "onpause", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when media has been paused.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnpause(unsafe javascript: String) -> some View {
+    return attribute(key: "onpause", value: javascript)
+  }
+}
 
 // public protocol HasOnplay {}
 
 // extension Audio: HasOnplay {}
 // extension Video: HasOnplay {}
 
-// extension View where Self: HasOnplay {
-//   /// Execute JavaScript when media has been played.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onplay(safe javascript: StaticString) -> some View {
-//     return onplay(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnplay {
+  /// Execute JavaScript when media has been played.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnplay(safe javascript: StaticString) -> some View {
+    return htmlOnplay(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when media has been played.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onplay(unsafe javascript: String) -> some View {
-//     return attribute(key: "onplay", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when media has been played.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnplay(unsafe javascript: String) -> some View {
+    return attribute(key: "onplay", value: javascript)
+  }
+}
 
 // public protocol HasOnplaying {}
 
 // extension Audio: HasOnplaying {}
 // extension Video: HasOnplaying {}
 
-// extension View where Self: HasOnplaying {
-//   /// Execute JavaScript when media is ready to start after having been paused.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onplaying(safe javascript: StaticString) -> some View {
-//     return onplaying(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnplaying {
+  /// Execute JavaScript when media is ready to start after having been paused.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnplaying(safe javascript: StaticString) -> some View {
+    return htmlOnplaying(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when media is ready to start after having been paused.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onplaying(unsafe javascript: String) -> some View {
-//     return attribute(key: "onplaying", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when media is ready to start after having been paused.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnplaying(unsafe javascript: String) -> some View {
+    return attribute(key: "onplaying", value: javascript)
+  }
+}
 
 // public protocol HasOnprogress {}
 
 // extension Audio: HasOnprogress {}
 // extension Video: HasOnprogress {}
 
-// extension View where Self: HasOnprogress {
-//   /// Execute JavaScript when media is downloading.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onprogress(safe javascript: StaticString) -> some View {
-//     return onprogress(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnprogress {
+  /// Execute JavaScript when media is downloading.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnprogress(safe javascript: StaticString) -> some View {
+    return htmlOnprogress(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when media is downloading.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onprogress(unsafe javascript: String) -> some View {
-//     return attribute(key: "onprogress", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when media is downloading.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnprogress(unsafe javascript: String) -> some View {
+    return attribute(key: "onprogress", value: javascript)
+  }
+}
 
 // public protocol HasOnratechange {}
 
 // extension Audio: HasOnratechange {}
 // extension Video: HasOnratechange {}
 
-// extension View where Self: HasOnratechange {
-//   /// Execute JavaScript when the playing speed of media is changed.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onratechange(safe javascript: StaticString) -> some View {
-//     return onratechange(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnratechange {
+  /// Execute JavaScript when the playing speed of media is changed.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnratechange(safe javascript: StaticString) -> some View {
+    return htmlOnratechange(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when the playing speed of media is changed.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onratechange(unsafe javascript: String) -> some View {
-//     return attribute(key: "onratechange", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when the playing speed of media is changed.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnratechange(unsafe javascript: String) -> some View {
+    return attribute(key: "onratechange", value: javascript)
+  }
+}
 
 // public protocol HasOnseeked {}
 
 // extension Audio: HasOnseeked {}
 // extension Video: HasOnseeked {}
 
-// extension View where Self: HasOnseeked {
-//   /// Execute JavaScript when the user is finished moving/skipping to a new position in media.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onseeked(safe javascript: StaticString) -> some View {
-//     return onseeked(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnseeked {
+  /// Execute JavaScript when the user is finished moving/skipping to a new position in media.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnseeked(safe javascript: StaticString) -> some View {
+    return htmlOnseeked(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when the user is finished moving/skipping to a new position in media.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onseeked(unsafe javascript: String) -> some View {
-//     return attribute(key: "onseeked", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when the user is finished moving/skipping to a new position in media.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnseeked(unsafe javascript: String) -> some View {
+    return attribute(key: "onseeked", value: javascript)
+  }
+}
 
 // public protocol HasOnseeking {}
 
 // extension Audio: HasOnseeking {}
 // extension Video: HasOnseeking {}
 
-// extension View where Self: HasOnseeking {
-//   /// Execute JavaScript when the user starts moving/skipping to a new position in the media.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onseeking(safe javascript: StaticString) -> some View {
-//     return onseeking(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnseeking {
+  /// Execute JavaScript when the user starts moving/skipping to a new position in the media.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnseeking(safe javascript: StaticString) -> some View {
+    return htmlOnseeking(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when the user starts moving/skipping to a new position in the media.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onseeking(unsafe javascript: String) -> some View {
-//     return attribute(key: "onseeking", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when the user starts moving/skipping to a new position in the media.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnseeking(unsafe javascript: String) -> some View {
+    return attribute(key: "onseeking", value: javascript)
+  }
+}
 
 // public protocol HasOnselect {}
 
 // extension Input: HasOnselect {}
 // extension Textarea: HasOnselect {}
 
-// extension View where Self: HasOnselect {
-//   /// Execute JavaScript when some text has been selected.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onselect(safe javascript: StaticString) -> some View {
-//     return onselect(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnselect {
+  /// Execute JavaScript when some text has been selected.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnselect(safe javascript: StaticString) -> some View {
+    return htmlOnselect(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when some text has been selected.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onselect(unsafe javascript: String) -> some View {
-//     return attribute(key: "onselect", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when some text has been selected.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnselect(unsafe javascript: String) -> some View {
+    return attribute(key: "onselect", value: javascript)
+  }
+}
 
 // public protocol HasOnstalled {}
 
 // extension Audio: HasOnstalled {}
 // extension Video: HasOnstalled {}
 
-// extension View where Self: HasOnstalled {
-//   /// Execute JavaScript when the browser is trying to get media data, but data is not available.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onstalled(safe javascript: StaticString) -> some View {
-//     return onstalled(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnstalled {
+  /// Execute JavaScript when the browser is trying to get media data, but data is not available.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnstalled(safe javascript: StaticString) -> some View {
+    return htmlOnstalled(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when the browser is trying to get media data, but data is not available.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onstalled(unsafe javascript: String) -> some View {
-//     return attribute(key: "onstalled", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when the browser is trying to get media data, but data is not available.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnstalled(unsafe javascript: String) -> some View {
+    return attribute(key: "onstalled", value: javascript)
+  }
+}
 
 // public protocol HasOnsuspend {}
 
 // extension Audio: HasOnsuspend {}
 // extension Video: HasOnsuspend {}
 
-// extension View where Self: HasOnsuspend {
-//   /// Execute JavaScript when the browser is intentionally not getting media data.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onsuspend(safe javascript: StaticString) -> some View {
-//     return onsuspend(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnsuspend {
+  /// Execute JavaScript when the browser is intentionally not getting media data.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnsuspend(safe javascript: StaticString) -> some View {
+    return htmlOnsuspend(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when the browser is intentionally not getting media data.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onsuspend(unsafe javascript: String) -> some View {
-//     return attribute(key: "onsuspend", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when the browser is intentionally not getting media data.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnsuspend(unsafe javascript: String) -> some View {
+    return attribute(key: "onsuspend", value: javascript)
+  }
+}
 
 // public protocol HasOntimeupdate {}
 
 // extension Audio: HasOntimeupdate {}
 // extension Video: HasOntimeupdate {}
 
-// extension View where Self: HasOntimeupdate {
-//   /// Execute JavaScript when the current playback position has changed.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ontimeupdate(safe javascript: StaticString) -> some View {
-//     return ontimeupdate(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOntimeupdate {
+  /// Execute JavaScript when the current playback position has changed.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOntimeupdate(safe javascript: StaticString) -> some View {
+    return htmlOntimeupdate(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when the current playback position has changed.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func ontimeupdate(unsafe javascript: String) -> some View {
-//     return attribute(key: "ontimeupdate", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when the current playback position has changed.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOntimeupdate(unsafe javascript: String) -> some View {
+    return attribute(key: "ontimeupdate", value: javascript)
+  }
+}
 
 // public protocol HasOnvolumechange {}
 
 // extension Audio: HasOnvolumechange {}
 // extension Video: HasOnvolumechange {}
 
-// extension View where Self: HasOnvolumechange {
-//   /// Execute JavaScript when the volume of a video has been changed.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onvolumechange(safe javascript: StaticString) -> some View {
-//     return onvolumechange(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnvolumechange {
+  /// Execute JavaScript when the volume of a video has been changed.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnvolumechange(safe javascript: StaticString) -> some View {
+    return htmlOnvolumechange(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when the volume of a video has been changed.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onvolumechange(unsafe javascript: String) -> some View {
-//     return attribute(key: "onvolumechange", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when the volume of a video has been changed.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnvolumechange(unsafe javascript: String) -> some View {
+    return attribute(key: "onvolumechange", value: javascript)
+  }
+}
 
 // public protocol HasOnwaiting {}
 
 // extension Audio: HasOnwaiting {}
 // extension Video: HasOnwaiting {}
 
-// extension View where Self: HasOnwaiting {
-//   /// Execute JavaScript when the media stops because it needs to buffer the next frame.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onwaiting(safe javascript: StaticString) -> some View {
-//     return onwaiting(unsafe: String(describing: javascript))
-//   }
+extension View where Self: HasOnwaiting {
+  /// Execute JavaScript when the media stops because it needs to buffer the next frame.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnwaiting(safe javascript: StaticString) -> some View {
+    return htmlOnwaiting(unsafe: String(describing: javascript))
+  }
 
-//   /// Execute JavaScript when the media stops because it needs to buffer the next frame.
-//   ///
-//   /// - Parameter javascript: JavaScript to execute.
-//   public func onwaiting(unsafe javascript: String) -> some View {
-//     return attribute(key: "onwaiting", value: javascript)
-//   }
-// }
+  /// Execute JavaScript when the media stops because it needs to buffer the next frame.
+  ///
+  /// - Parameter javascript: JavaScript to execute.
+  public func htmlOnwaiting(unsafe javascript: String) -> some View {
+    return attribute(key: "onwaiting", value: javascript)
+  }
+}
 
 // MARK: - Html4 Attributes
 
@@ -3254,15 +3254,15 @@ public enum Alignment: String {
 }
 
 extension View {
-  public func align(_ value: Alignment) -> some View {
+  public func htmlAlign(_ value: Alignment) -> some View {
     return attribute(key: "align", value: value.rawValue)
   }
 
-  public func border(_ value: Int) -> some View {
+  public func htmlBorder(_ value: Int) -> some View {
     return attribute(key: "border", value: String(value))
   }
 
-  public func height(_ value: Html4Size) -> some View {
+  public func htmlHeight(_ value: Html4Size) -> some View {
     return attribute(key: "height", value: value.rawValue)
   }
 }
@@ -3275,21 +3275,21 @@ public enum VerticalAlignment: String {
 }
 
 extension View {
-  public func valign(_ value: VerticalAlignment) -> some View {
+  public func htmlValign(_ value: VerticalAlignment) -> some View {
     return attribute(key: "valign", value: value.rawValue)
   }
 
-  public func width(_ value: Html4Size) -> some View {
+  public func htmlWidth(_ value: Html4Size) -> some View {
     return attribute(key: "width", value: value.rawValue)
   }
 }
 
 extension Table {
-  public func cellpadding(_ value: Int) -> some View {
+  public func htmlCellpadding(_ value: Int) -> some View {
     return attribute(key: "cellpadding", value: String(value))
   }
 
-  public func cellspacing(_ value: Int) -> some View {
+  public func htmlCellspacing(_ value: Int) -> some View {
     return attribute(key: "cellspacing", value: String(value))
   }
 }

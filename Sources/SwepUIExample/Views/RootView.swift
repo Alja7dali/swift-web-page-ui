@@ -9,15 +9,15 @@ struct RootView: View {
       Spacer()
       if errorMessage.isEmpty == false {
         Div(errorMessage)
-          .color(.tomato)
-          .fontSize(.px(20))
-          .lineHeight(.px(20))
-          .minHeight(.px(20))
+          .cssColor(.tomato)
+          .cssFontSize(.px(20))
+          .cssLineHeight(.px(20))
+          .cssMinHeight(.px(20))
       } else {
         Div()
-          .fontSize(.px(20))
-          .lineHeight(.px(20))
-          .minHeight(.px(20))
+          .cssFontSize(.px(20))
+          .cssLineHeight(.px(20))
+          .cssMinHeight(.px(20))
       }
       DisplayCounterView(counter: $counter)
       Divider()
@@ -33,7 +33,7 @@ struct RootView: View {
           },
           label: {
             Div { B("+") }
-              .color(darkMode ? .hex(0x19F7D2) : .hex(0x1AAB92))
+              .cssColor(darkMode ? .hex(0x19F7D2) : .hex(0x1AAB92))
           }
         )
         Spacer()
@@ -48,7 +48,7 @@ struct RootView: View {
           },
           label: {
             Div { B("-") }
-              .color(darkMode ? .hex(0xC2331D) : .hex(0xAB2328))
+              .cssColor(darkMode ? .hex(0xC2331D) : .hex(0xAB2328))
           }
         )
         Spacer()
@@ -57,10 +57,10 @@ struct RootView: View {
       Spacer()
       FooterView()
     }
-    .color(darkMode ? .white : .hex(0x343434))
-    .backgroundColor(darkMode ? .hex(0x343434) : .hex(0xD9D9D9))
-    .fontSize(.px(100))
-    .fontFamily("Helvetica")
-    .padding(.px(100))
+    .cssColor(darkMode ? .white : .hex(0x343434))
+    .cssBackgroundColor(darkMode ? .hex(0x343434) : .hex(0xD9D9D9))
+    .cssFontSize(.px(100))
+    .cssFontFamily("Helvetica")
+    .cssPadding(.px(100))
   }
 }

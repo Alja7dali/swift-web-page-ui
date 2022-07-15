@@ -12,16 +12,16 @@ struct CustomButton<Label: View>: View {
 
   var body: some View {
     makeContent()
-      .textShadow(.px(0), .px(0), .px(16), isHovered ? .darkGray : .transparent)
+      // .cssTextShadow(.px(0), .px(0), .px(16), isHovered ? .darkGray : .transparent)
       // // onHoverIn
-      // .onMouseover { _ in
+      // .jsMouseover { _ in
       //   isHovered.toggle()
       // }
       // // onHoverOut
-      // .onMouseout { _ in
+      // .jsMouseout { _ in
       //   isHovered.toggle()
       // }
-      .onClick { _ in
+      .jsClick { _ in
         action()
       }
   }
@@ -30,6 +30,6 @@ struct CustomButton<Label: View>: View {
     return Div {
       AnyView(erasing: label())
     }
-    .cursor(.pointer)
+    .cssCursor(.pointer)
   }
 }

@@ -19,7 +19,7 @@ public struct EventListenerModifier<Content: View>: ViewModifier {
 }
 
 extension View {
-  public func onEvent(name: String, preform action: @escaping EventListenerAction) -> some View {
+  public func jsEvent(name: String, preform action: @escaping EventListenerAction) -> some View {
     return modifier(EventListenerModifier(name: name, action: action))
   }
 }

@@ -4,20 +4,20 @@ struct FooterView: View {
     HStack {
       Plaintext("Built in SwiftWasm using")
       A("SwepUI")
-        .href("https://github.com/Alja7dali/swift-web-page-ui")
-        .color(textColor)
-        .padding(.px(10))
+        .htmlHref("https://github.com/Alja7dali/swift-web-page-ui")
+        .cssColor(textColor)
+        .cssPadding(.px(10))
         // // onHoverIn
-        // .onMouseover { _ in
+        // .jsMouseover { _ in
         //   textColor = .hex(0xC2331D)
         // }
         // // onHoverOut
-        // .onMouseout { _ in
+        // .jsMouseout { _ in
         //   textColor = .tomato
         // }
       Plaintext("v0.0.2")
     }
-    .fontSize(.px(30))
-    .height(.px(50))
+    .cssFontSize(.px(30))
+    .cssHeight(.px(50))
   }
 }

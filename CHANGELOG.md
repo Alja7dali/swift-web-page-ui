@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 - [OpenCombine](https://github.com/OpenCombine/OpenCombine) `library` as project dependency
 - [OpenCombineJS](https://github.com/swiftwasm/OpenCombineJS) `library` as project dependency
 - [SwiftUI](https://developer.apple.com/documentation/swiftui) core components implementation
+- `HTML` [Attributes](https://www.w3schools.com/html/html_attributes.asp) as View modifiers
 - `CSS` [Properties](https://www.w3schools.com/cssref/default.asp) as View modifiers
 - `JavaScript` [EventListeners](https://www.w3schools.com/js/js_htmldom_eventlistener.asp) as View modifiers
 - `SwepUIExample` as an example app and demo of `SwepUI` v0.0.2
