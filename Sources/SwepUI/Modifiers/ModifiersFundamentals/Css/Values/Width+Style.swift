@@ -6,7 +6,7 @@ extension BorderLeftWidth: HasValueOfWidth {}
 extension BorderRightWidth: HasValueOfWidth {}
 extension BorderTopWidth: HasValueOfWidth {}
 
-extension Property where Self: HasValueOfWidth {
+extension Value where Kind: HasValueOfWidth {
   public init(_ value: Value<BorderWidth>) {
     self.init(value.rawValue)
   }
@@ -20,7 +20,7 @@ extension BorderLeftStyle: HasValueOfStyle {}
 extension BorderRightStyle: HasValueOfStyle {}
 extension BorderTopStyle: HasValueOfStyle {}
 
-extension Property where Self: HasValueOfStyle {
+extension Value where Kind: HasValueOfStyle {
   public init(_ value: Value<BorderStyle>) {
     self.init(value.rawValue)
   }
