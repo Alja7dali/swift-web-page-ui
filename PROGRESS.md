@@ -53,7 +53,7 @@ The following list is some of the components that are presented in [SwiftUI]([ht
 | ⭕     | [SubscriptionView](https://developer.apple.com/documentation/swiftui/subscriptionview)       | `struct`   | Supporting view types        | View fundamentals         |
 | 🟢     | [TupleView](https://developer.apple.com/documentation/swiftui/tupleview)                     | `struct`   | Supporting view types        | View fundamentals         |
 ||||||
-| ⭕     | [Text](https://developer.apple.com/documentation/swiftui/text)                               | `struct`   | Text display                 | Text input and output     |
+| 🟠     | [Text](https://developer.apple.com/documentation/swiftui/text)                               | `struct`   | Text display                 | Text input and output     |
 | ⭕     | [Label](https://developer.apple.com/documentation/swiftui/label)                             | `struct`   | Text display                 | Text input and output     |
 | ⭕     | [TextField](https://developer.apple.com/documentation/swiftui/textfield)                     | `struct`   | Text entry                   | Text input and output     |
 | ⭕     | [SecureField](https://developer.apple.com/documentation/swiftui/securefield)                 | `struct`   | Text entry                   | Text input and output     |

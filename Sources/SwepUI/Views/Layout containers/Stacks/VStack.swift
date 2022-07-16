@@ -56,6 +56,7 @@ public struct VStack<Content: View>: View {
       .cssFlexDirection(.column)
       .cssAlignItems(alignment.alignItems())
       .cssJustifyContent(.center)
+      .cssWidth(100%)
       .cssHeight(100%)
       .build(into: &builder)
     

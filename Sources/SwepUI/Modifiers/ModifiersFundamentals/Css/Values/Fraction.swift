@@ -1,17 +1,9 @@
 public protocol HasValueOfFraction: CSSValue {}
 
-extension CssPropOpacity: HasValueOfFraction {}
+extension CssPropOpacity: HasValueOfFloatLiteral {}
 
-extension Property where Self: HasValueOfFraction {
-  public init(_ value: Double) {
-    let val = fraction(abs(value)).description
-    self.init(
-      val,
-      makeDeclarations(
-        forValue: val,
-        withKey: Self.key,
-        onBrowsers: Self.browsers
-      )
-    )
-  }
-}
+// extension Value where Kind: HasValueOfFraction {
+//   public init(_ value: Double) {
+//     rawValue = fraction(abs(value)).description
+//   }
+// }

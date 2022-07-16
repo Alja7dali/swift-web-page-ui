@@ -57,6 +57,7 @@ public struct HStack<Content: View>: View {
       .cssAlignItems(alignment.alignItems())
       .cssJustifyContent(.center)
       .cssWidth(100%)
+      .cssHeight(100%)
       .build(into: &builder)
       
     let margin = CssPropMargin(.px(0), .px(Double(spacing)))
