@@ -69,10 +69,7 @@ MyApp.main()
 
 ## Todo
 
-- [X] Mimic SwiftUI Encapsulation
-- [X] Being able to interact with the CSS style from outside its `body` as following: `MyCustomView().backgroundColor(.red)`
-- [ ] Mimic SwiftUI Modifiers
-- [ ] Mimic SwiftUI Layout
+To see the current progress of this project, check out the [progress](PROGRESS.md) section.
 
 ## Requirements
 
@@ -85,7 +82,7 @@ In order to use `SwepUI`, you need to have the following:
 
 ### Getting Started
 
-As mentioned earlier `SwepUI` require [`carton`](https://github.com/swiftwasm/carton). You'll install `carton` via [Homebrew](https://brew.sh/). Assuming you already have Homebrew installed, you can create a new SwepUI app by following these steps:
+As mentioned earlier `SwepUI` require [carton](https://github.com/swiftwasm/carton). You'll install `carton` via [Homebrew](https://brew.sh/). Assuming you already have Homebrew installed, you can create a new SwepUI app by following these steps:
 
 1. Install `carton`:
 
