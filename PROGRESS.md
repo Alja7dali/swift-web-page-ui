@@ -99,7 +99,7 @@ The following list is some of the components that are presented in [SwiftUI]([ht
 ||||||
 | ⭕     | [Canvas](https://developer.apple.com/documentation/swiftui/canvas)                           | `struct`   | Immediate mode drawing       | Drawing and graphics      |
 | ⭕     | [GraphicsContext](https://developer.apple.com/documentation/swiftui/graphicscontext)         | `struct`   | Immediate mode drawing       | Drawing and graphics      |
-| ⭕     | [Color](https://developer.apple.com/documentation/swiftui/color)                             | `struct`   | Colors                       | Drawing and graphics      |
+| 🟠     | [Color](https://developer.apple.com/documentation/swiftui/color)                             | `struct`   | Colors                       | Drawing and graphics      |
 | ⭕     | [Gradient](https://developer.apple.com/documentation/swiftui/gradient)                       | `struct`   | Colors                       | Drawing and graphics      |
 | ⭕     | [GeometryReader](https://developer.apple.com/documentation/swiftui/geometryreader)           | `struct`   | Measurement                  | Drawing and graphics      |
 | ⭕     | [GeometryProxy](https://developer.apple.com/documentation/swiftui/geometryproxy)             | `struct`   | Measurement                  | Drawing and graphics      |
@@ -109,7 +109,7 @@ The following list is some of the components that are presented in [SwiftUI]([ht
 ||||||
 | 🟠     | [HStack](https://developer.apple.com/documentation/swiftui/hstack)                           | `struct`   | Stacks                       | Layout containers         |
 | 🟠     | [VStack](https://developer.apple.com/documentation/swiftui/vstack)                           | `struct`   | Stacks                       | Layout containers         |
-| ⭕     | [ZStack](https://developer.apple.com/documentation/swiftui/zstack)                           | `struct`   | Stacks                       | Layout containers         |
+| 🟠     | [ZStack](https://developer.apple.com/documentation/swiftui/zstack)                           | `struct`   | Stacks                       | Layout containers         |
 | ⭕     | [LazyHStack](https://developer.apple.com/documentation/swiftui/lazyhstack)                   | `struct`   | Lazy stacks                  | Layout containers         |
 | ⭕     | [LazyVStack](https://developer.apple.com/documentation/swiftui/lazyvstack)                   | `struct`   | Lazy stacks                  | Layout containers         |
 | ⭕     | [LazyHGrid](https://developer.apple.com/documentation/swiftui/lazyhgrid)                     | `struct`   | Lazy grids                   | Layout containers         |
