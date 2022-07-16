@@ -115,8 +115,8 @@ The following list is some of the components that are presented in [SwiftUI]([ht
 | ⭕     | [LazyHGrid](https://developer.apple.com/documentation/swiftui/lazyhgrid)                     | `struct`   | Lazy grids                   | Layout containers         |
 | ⭕     | [LazyVGrid](https://developer.apple.com/documentation/swiftui/lazyvgrid)                     | `struct`   | Lazy grids                   | Layout containers         |
 | ⭕     | [GridItem](https://developer.apple.com/documentation/swiftui/griditem)                       | `struct`   | Lazy grids                   | Layout containers         |
-| ⭕     | [Spacer](https://developer.apple.com/documentation/swiftui/spacer)                           | `struct`   | Separators                   | Layout containers         |
-| ⭕     | [Divider](https://developer.apple.com/documentation/swiftui/divider)                         | `struct`   | Separators                   | Layout containers         |
+| 🟠     | [Spacer](https://developer.apple.com/documentation/swiftui/spacer)                           | `struct`   | Separators                   | Layout containers         |
+| 🟠     | [Divider](https://developer.apple.com/documentation/swiftui/divider)                         | `struct`   | Separators                   | Layout containers         |
 | 🟠     | [Alignment](https://developer.apple.com/documentation/swiftui/alignment)                     | `struct`   | Alignment                    | Layout containers         |
 | 🟠     | [HorizontalAlignment](https://developer.apple.com/documentation/swiftui/horizontalalignment) | `struct`   | Alignment                    | Layout containers         |
 | 🟠     | [VerticalAlignment](https://developer.apple.com/documentation/swiftui/verticalalignment)     | `struct`   | Alignment                    | Layout containers         |
