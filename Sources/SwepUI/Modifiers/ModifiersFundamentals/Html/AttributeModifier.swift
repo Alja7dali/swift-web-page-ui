@@ -1,14 +1,10 @@
-public struct HtmlAttributeModifier<Content: View>: View, ViewModifier {
+public struct HtmlAttributeModifier<Content: View>: ViewModifier {
   public typealias Body = Never
 
   private let attribute: Attribute
 
   public init(key: String, value: Optional<String>) {
     self.attribute = Attribute(key: key, value: value)
-  }
-
-  public func body(content: Content) -> some View {
-    return content.modifier(self)
   }
 
   public func build(into builder: inout Builder) {

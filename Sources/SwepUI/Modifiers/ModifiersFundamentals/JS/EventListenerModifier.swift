@@ -9,10 +9,6 @@ public struct JSEventListenerModifier<Content: View>: ViewModifier {
     self.action = action
   }
   
-  public func body(content: Content) -> some View {
-    return content.modifier(self)
-  }
-
   public func build(into builder: inout Builder) {
     builder.combine(last: EventListener(name: name, actions: [action]))
   }

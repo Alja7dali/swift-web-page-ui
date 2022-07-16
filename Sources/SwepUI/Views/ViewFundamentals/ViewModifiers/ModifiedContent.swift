@@ -30,8 +30,14 @@ public struct ModifiedContent<Content, Modifier>: View, ViewModifier where Modif
   }
 
   public func build(into builder: inout Builder) {
-    content.build(into: &builder)
-    modifier.build(into: &builder)
+    if Modifier.Body.self is Never.Type {
+      content.build(into: &builder)
+      modifier.build(into: &builder)
+    } else {
+      modifier
+        .body(content: content)
+        .build(into: &builder)
+    }
   }
 }
 

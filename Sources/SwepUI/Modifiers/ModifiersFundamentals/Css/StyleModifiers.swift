@@ -1,14 +1,10 @@
-fileprivate struct StyleModifier<Content: View>: View, ViewModifier {
+fileprivate struct StyleModifier<Content: View>: ViewModifier {
   fileprivate typealias Body = Never
 
   fileprivate let properties: Array<AnyProperty>
 
   fileprivate init(_ properties: Array<AnyProperty>) {
     self.properties = properties
-  }
-
-  fileprivate func body(content: Content) -> some View {
-    return content.modifier(self)
   }
 
   fileprivate func build(into builder: inout Builder) {
