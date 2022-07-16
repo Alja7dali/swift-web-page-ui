@@ -2,11 +2,11 @@
 
 ## Status indicators
 
-| Status | Description      |
-|--------|------------------|
-| ⭕     | not started      |
-| 🟠     | in progress      |
-| 🟢     | completed        |
+| Status | Description        |
+|--------|--------------------|
+| ⭕     | not started        |
+| 🟠     | some features work |
+| 🟢     | all features work  |
 
 ## SwiftUI Components
 
@@ -107,8 +107,8 @@ The following list is some of the components that are presented in [SwiftUI]([ht
 | ⭕     | [Angle](https://developer.apple.com/documentation/swiftui/angle)                             | `struct`   | Geometric constructs         | Drawing and graphics      |
 | ⭕     | [UnitPoint](https://developer.apple.com/documentation/swiftui/unitpoint)                     | `struct`   | Geometric constructs         | Drawing and graphics      |
 ||||||
-| 🟠     | [HStack](https://developer.apple.com/documentation/swiftui/hstack)                           | `struct`   | Stacks                       | Layout containers         |
-| 🟠     | [VStack](https://developer.apple.com/documentation/swiftui/vstack)                           | `struct`   | Stacks                       | Layout containers         |
+| 🟢      | [HStack](https://developer.apple.com/documentation/swiftui/hstack)                           | `struct`   | Stacks                       | Layout containers         |
+| 🟢      | [VStack](https://developer.apple.com/documentation/swiftui/vstack)                           | `struct`   | Stacks                       | Layout containers         |
 | 🟠     | [ZStack](https://developer.apple.com/documentation/swiftui/zstack)                           | `struct`   | Stacks                       | Layout containers         |
 | ⭕     | [LazyHStack](https://developer.apple.com/documentation/swiftui/lazyhstack)                   | `struct`   | Lazy stacks                  | Layout containers         |
 | ⭕     | [LazyVStack](https://developer.apple.com/documentation/swiftui/lazyvstack)                   | `struct`   | Lazy stacks                  | Layout containers         |
