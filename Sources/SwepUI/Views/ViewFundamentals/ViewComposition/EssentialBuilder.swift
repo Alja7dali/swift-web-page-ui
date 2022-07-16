@@ -22,6 +22,18 @@ public struct Builder {
     content.build(into: &self)
   }
 
+  public mutating func mapLastChildren(_ transform: (inout Builder) -> Void) {
+    guard let last = nodes.last else {
+      return
+    }
+
+    if case let .tag(name, attributes, eventListeners, children) = last {
+      var builder = children
+      transform(&builder)
+      nodes[nodes.count - 1] = .tag(name: name, attributes: attributes, eventListeners: eventListeners, children: builder)
+    }
+  }
+
   public mutating func combine<Content: View>(
     name: String,
     attributes: Array<Attribute> = .init(),

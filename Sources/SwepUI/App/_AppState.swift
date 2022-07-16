@@ -68,7 +68,7 @@ internal func _AppStateLauncher<A: App>(_ app: A) {
     ///print("SwepUI: Rendering app count(\(renderingAttemptCount))")
     _AppStateIdentifier.reset()
     fakeBody.innerText = ""
-    fakeBody.setAttribute("style", "flex-grow: 1;")
+    _ = fakeBody.setAttribute("style", "flex-grow: 1;")
     var builder = Builder()
     app.body.build(into: &builder)
     builder.render(fakeBody)

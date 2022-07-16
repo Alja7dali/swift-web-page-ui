@@ -22,8 +22,9 @@
 ///         }
 ///     }
 ///
-// FIXME: iterate over all content and horizontally padding them using `spacing`
 public struct HStack<Content: View>: View {
+  public typealias Body = Never
+
   private let alignment: VerticalAlignment
   private let spacing: Float
   private let makeContent: () -> Content
@@ -47,7 +48,7 @@ public struct HStack<Content: View>: View {
     self.makeContent = content
   }
 
-  public var body: some View {
+  public func build(into builder: inout Builder) {
     HtmlDiv {
       AnyView(erasing: makeContent())
     }
@@ -56,5 +57,14 @@ public struct HStack<Content: View>: View {
       .cssAlignItems(alignment.alignItems())
       .cssJustifyContent(.center)
       .cssWidth(100%)
+      .build(into: &builder)
+      
+    let margin = CssPropMargin(.px(0), .px(Double(spacing)))
+      .toArrayOfAnyProperty()
+      .map { "\($0.key):\($0.value);" }.joined(separator: "")
+      
+    builder.mapLastChildren {
+      $0.combine(all: Attribute(key: "style", value: margin))
+    }
   }
 }
