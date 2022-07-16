@@ -117,10 +117,9 @@ The following list is some of the components that are presented in [SwiftUI]([ht
 | ⭕     | [GridItem](https://developer.apple.com/documentation/swiftui/griditem)                       | `struct`   | Lazy grids                   | Layout containers         |
 | ⭕     | [Spacer](https://developer.apple.com/documentation/swiftui/spacer)                           | `struct`   | Separators                   | Layout containers         |
 | ⭕     | [Divider](https://developer.apple.com/documentation/swiftui/divider)                         | `struct`   | Separators                   | Layout containers         |
-| ⭕     | [Alignment](https://developer.apple.com/documentation/swiftui/alignment)                     | `struct`   | Alignment                    | Layout containers         |
-| ⭕     | [HorizontalAlignment](https://developer.apple.com/documentation/swiftui/horizontalalignment) | `struct`   | Alignment                    | Layout containers         |
-| ⭕     | [VerticalAlignment](https://developer.apple.com/documentation/swiftui/verticalalignment)     | `struct`   | Alignment                    | Layout containers         |
-| ⭕     | [AlignmentID](https://developer.apple.com/documentation/swiftui/alignmentid)                 | `protocol` | Alignment                    | Layout containers         |
+| 🟠     | [Alignment](https://developer.apple.com/documentation/swiftui/alignment)                     | `struct`   | Alignment                    | Layout containers         |
+| 🟠     | [HorizontalAlignment](https://developer.apple.com/documentation/swiftui/horizontalalignment) | `struct`   | Alignment                    | Layout containers         |
+| 🟠     | [VerticalAlignment](https://developer.apple.com/documentation/swiftui/verticalalignment)     | `struct`   | Alignment                    | Layout containers         |
 | ⭕     | [Edge](https://developer.apple.com/documentation/swiftui/edge)                               | `enum`     | Edges                        | Layout containers         |
 | ⭕     | [HorizontalEdge](https://developer.apple.com/documentation/swiftui/horizontaledge)           | `enum`     | Edges                        | Layout containers         |
 | ⭕     | [VerticalEdge](https://developer.apple.com/documentation/swiftui/verticaledge)               | `enum`     | Edges                        | Layout containers         |
