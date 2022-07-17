@@ -120,10 +120,10 @@ The following list is some of the components that are presented in [SwiftUI]([ht
 | 🟠     | [Alignment](https://developer.apple.com/documentation/swiftui/alignment)                     | `struct`   | Alignment                    | Layout containers         |
 | 🟠     | [HorizontalAlignment](https://developer.apple.com/documentation/swiftui/horizontalalignment) | `struct`   | Alignment                    | Layout containers         |
 | 🟠     | [VerticalAlignment](https://developer.apple.com/documentation/swiftui/verticalalignment)     | `struct`   | Alignment                    | Layout containers         |
-| ⭕     | [Edge](https://developer.apple.com/documentation/swiftui/edge)                               | `enum`     | Edges                        | Layout containers         |
-| ⭕     | [HorizontalEdge](https://developer.apple.com/documentation/swiftui/horizontaledge)           | `enum`     | Edges                        | Layout containers         |
-| ⭕     | [VerticalEdge](https://developer.apple.com/documentation/swiftui/verticaledge)               | `enum`     | Edges                        | Layout containers         |
-| ⭕     | [EdgeInsets](https://developer.apple.com/documentation/swiftui/edgeinsets)                   | `struct`   | Insets                       | Layout containers         |
+| 🟢     | [Edge](https://developer.apple.com/documentation/swiftui/edge)                               | `enum`     | Edges                        | Layout containers         |
+| 🟢     | [HorizontalEdge](https://developer.apple.com/documentation/swiftui/horizontaledge)           | `enum`     | Edges                        | Layout containers         |
+| 🟢     | [VerticalEdge](https://developer.apple.com/documentation/swiftui/verticaledge)               | `enum`     | Edges                        | Layout containers         |
+| 🟢     | [EdgeInsets](https://developer.apple.com/documentation/swiftui/edgeinsets)                   | `struct`   | Insets                       | Layout containers         |
 ||||||
 | ⭕     | [List](https://developer.apple.com/documentation/swiftui/list)                               | `struct`   | Lists                        | Collection containers     |
 | ⭕     | [Section](https://developer.apple.com/documentation/swiftui/section)                         | `struct`   | Lists                        | Collection containers     |
