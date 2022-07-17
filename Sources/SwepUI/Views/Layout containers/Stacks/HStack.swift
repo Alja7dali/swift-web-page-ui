@@ -26,7 +26,7 @@ public struct HStack<Content: View>: View {
   public typealias Body = Never
 
   private let alignment: VerticalAlignment
-  private let spacing: Float
+  private let spacing: Double
   private let makeContent: () -> Content
 
   /// Creates a horizontal stack with the given spacing and vertical alignment.
@@ -40,7 +40,7 @@ public struct HStack<Content: View>: View {
   ///   - content: A view builder that creates the content of this stack.
   public init(
     alignment: VerticalAlignment = .center,
-    spacing: Float = 16,
+    spacing: Double = 16,
     @ViewBuilder content: @escaping () -> Content
   ) {
     self.alignment = alignment
@@ -60,7 +60,7 @@ public struct HStack<Content: View>: View {
       .cssHeight(100%)
       .build(into: &builder)
       
-    let margin = CssPropMargin(.px(0), .px(Double(spacing)))
+    let margin = CssPropMargin(.px(0), .px(spacing))
       .toArrayOfAnyProperty()
       .map { "\($0.key):\($0.value);" }.joined(separator: "")
       

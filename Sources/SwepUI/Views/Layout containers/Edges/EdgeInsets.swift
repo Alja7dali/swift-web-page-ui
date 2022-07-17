@@ -1,15 +1,15 @@
 /// The inset distances for the sides of a rectangle.
 public struct EdgeInsets: Equatable {
 
-  public var top: Float
+  public var top: Double
 
-  public var leading: Float
+  public var leading: Double
 
-  public var bottom: Float
+  public var bottom: Double
 
-  public var trailing: Float
+  public var trailing: Double
 
-  public init(top: Float, leading: Float, bottom: Float, trailing: Float) {
+  public init(top: Double, leading: Double, bottom: Double, trailing: Double) {
     self.top = top
     self.leading = leading
     self.bottom = bottom

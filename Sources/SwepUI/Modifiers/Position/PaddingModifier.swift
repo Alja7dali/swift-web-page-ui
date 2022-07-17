@@ -11,7 +11,7 @@ public struct PaddingModifier<Content: View>: ViewModifier {
     let bottom = edgeInsets.bottom
     let right = edgeInsets.trailing
     return content
-      .cssPadding(.px(Double(top)), .px(Double(right)), .px(Double(bottom)), .px(Double(left)))
+      .cssPadding(.px(top), .px(right), .px(bottom), .px(left))
   }
 }
 
@@ -22,13 +22,13 @@ extension View {
   }
 
   // Adds an equal padding amount to specific edges of this view.
-  public func padding(_ edges: Edge.Set = .all, _ amount: Float = 16) -> some View {
+  public func padding(_ edges: Edge.Set = .all, _ amount: Double = 16) -> some View {
     return modifier(PaddingModifier(edgeInsets: edges.toEdgeInsets(amount)))
   }
 }
 
 extension Edge.Set {
-  fileprivate func toEdgeInsets(_ amount: Float) -> EdgeInsets {
+  fileprivate func toEdgeInsets(_ amount: Double) -> EdgeInsets {
     var insets = EdgeInsets()
     if contains(.top) {
       insets.top = amount
