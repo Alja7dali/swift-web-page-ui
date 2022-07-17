@@ -16,46 +16,34 @@
 struct SwepUIExampleApp: App {
   var body: some Scene {
     WindowGroup {
-      HStack {
-        VStack {
+      VStack(spacing: 0) {
+        VStack(spacing: 0) {
           ZStack {
-            Text("SwepUIExampleApp1")
-              .foregroundColor(.orange)
-              .cssFontFamily("Helvetica")
-              .cssOpacity(0.5)
-            Text("SwepUIExampleApp2")
-              .foregroundColor(.indigo)
-          }
-          ZStack {
-            Text("SwepUIExampleApp1")
-              .foregroundColor(.red)
-              .cssOpacity(0.5)
-            Text("SwepUIExampleApp2")
-              .foregroundColor(.blue)
-              .cssFontFamily("Helvetica")
+            Color.red.cssOpacity(0.5)
+            Text("Hello, World!")
+              .padding(.leading, 20)
+              .foregroundColor(.white)
+            Text("Hello, World!")
+              .padding(.trailing, 20)
+              .foregroundColor(.gray)
           }
         }
-        VStack {
+        .background(Color.black)
+        Divider()
+        VStack(spacing: 0) {
           ZStack {
-            Text("SwepUIExampleApp1")
-              .foregroundColor(.red)
-              .cssOpacity(0.5)
-            Text("SwepUIExampleApp2")
-              .foregroundColor(.blue)
-              .cssFontFamily("Helvetica")
-          }
-          ZStack {
-            Text("SwepUIExampleApp1")
-              .foregroundColor(.orange)
-              .cssFontFamily("Helvetica")
-              .cssOpacity(0.5)
-            Text("SwepUIExampleApp2")
-              .foregroundColor(.indigo)
+            Color.red
+            Text("Hello, World!")
+              .padding([.leading, .top], 20)
+              .foregroundColor(.white)
+            Text("Hello, World!")
+              .padding([.trailing, .bottom], 20)
+              .foregroundColor(.gray)
           }
         }
+        .overlay(Color.black.cssOpacity(0.5))
       }
-      // .cssPadding(.px(200))
-      .background(Color.black)
+      .cssFontFamily("Helvetica")
       .cssFontSize(.px(50))
     }
   }
