@@ -12,7 +12,7 @@ extension View {
   /// - Parameter value: Used by the user agent as a guide for creating a
   ///                    keyboard shortcut that activates or focuses the
   ///                    element.
-  public func htmlAccesskey(_ value: Character) -> some View {
+  public func htmlAccesskey(_ value: Character) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "accesskey", value: String(value))
   }
 
@@ -21,7 +21,7 @@ extension View {
   /// that the element belongs to.
   ///
   /// - Parameter value: A set of space-separated tokens.
-  public func htmlClass(_ value: String) -> some View {
+  public func htmlClass(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "class", value: value)
   }
 }
@@ -40,7 +40,7 @@ extension View {
   /// Make a document region editable.
   ///
   /// - Parameter value: Should a document region be editable.
-  public func htmlContenteditable(_ value: HtmlAttrContenteditable) -> some View {
+  public func htmlContenteditable(_ value: HtmlAttrContenteditable) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "contenteditable", value: value == .inherit ? nil : value.rawValue)
   }
 
@@ -49,7 +49,7 @@ extension View {
   /// - Parameters:
   ///   - name: The attribute suffix.
   ///   - value: The value.
-  public func htmlData(_ name: StaticString, _ value: String) -> some View {
+  public func htmlData(_ name: StaticString, _ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "data-\(name)", value: value)
   }
 }
@@ -61,7 +61,7 @@ public enum HtmlAttrDirection: String {
 }
 
 extension View {
-  public func htmlDir(_ value: HtmlAttrDirection) -> some View {
+  public func htmlDir(_ value: HtmlAttrDirection) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "dir", value: value.rawValue)
   }
 }
@@ -85,14 +85,14 @@ extension View {
   /// Whether or not an element is draggable.
   ///
   /// - Parameter value: Whether or not an element is draggable.
-  public func htmlDraggable(_ value: HtmlAttrDraggable) -> some View {
+  public func htmlDraggable(_ value: HtmlAttrDraggable) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "draggable", value: value == .auto ? nil : value.rawValue)
   }
 
   /// Hide the element.
   ///
   /// - Parameter value: Hide the element.
-  public func htmlHidden(_ value: Bool) -> some View {
+  public func htmlHidden(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "hidden", value: value ? "" : nil)
   }
 
@@ -101,7 +101,7 @@ extension View {
   /// character. The value must not contain any space characters.
   ///
   /// - Parameter value: A unique identifier.
-  public func htmlId(_ value: String) -> some View {
+  public func htmlId(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "id", value: value)
   }
 }
@@ -304,11 +304,11 @@ extension View {
   /// - Parameter value: A valid BCP 47 language tag, or the empty string.
   ///                    Setting the attribute to the empty string indicates
   ///                    that the primary language is unknown.
-  public func htmlLang(_ value: HtmlAttrLanguage) -> some View {
+  public func htmlLang(_ value: HtmlAttrLanguage) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "lang", value: value.rawValue)
   }
 
-  public func htmlSpellcheck(_ value: Bool) -> some View {
+  public func htmlSpellcheck(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "spellcheck", value: String(value))
   }
 
@@ -316,7 +316,7 @@ extension View {
   /// specification.
   ///
   /// - Parameter value: A CSS style.
-  public func htmlStyle(safe value: StaticString) -> some View {
+  public func htmlStyle(safe value: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlStyle(unsafe: String(describing: value))
   }
 
@@ -324,7 +324,7 @@ extension View {
   /// specification.
   ///
   /// - Parameter value: A CSS style.
-  public func htmlStyle(unsafe value: String) -> some View {
+  public func htmlStyle(unsafe value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "style", value: String(describing: value))
   }
 
@@ -335,7 +335,7 @@ extension View {
   ///
   /// - Parameter value: The sequential focus navigation order the element
   ///                    appears.
-  public func htmlTabindex(_ value: Int) -> some View {
+  public func htmlTabindex(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "tabindex", value: String(value))
   }
 
@@ -343,7 +343,7 @@ extension View {
   /// such as would be appropriate for a tooltip.
   ///
   /// - Parameter value: Advisory information.
-  public func htmlTitle(_ value: String) -> some View {
+  public func htmlTitle(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "title", value: value)
   }
 }
@@ -364,7 +364,7 @@ extension View {
   /// - Parameter value: Whether or not an element's attribute values and the
   ///                    values of its text node children are to be translated
   ///                    when the page is localized.
-  public func htmlTranslate(_ value: HtmlAttrTranslate) -> some View {
+  public func htmlTranslate(_ value: HtmlAttrTranslate) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "translate", value: value.rawValue)
   }
 }
@@ -385,7 +385,7 @@ extension HtmlA {
     bcc: [String] = [],
     subject: String = "",
     body: String = ""
-  ) -> some View {
+  ) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlMailto(addresses, cc: cc, bcc: bcc, subject: subject, body: body)
   }
 
@@ -404,7 +404,7 @@ extension HtmlA {
     bcc: [String] = [],
     subject: String = "",
     body: String = ""
-  ) -> some View {
+  ) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     var urlComponents = URLComponents()
     urlComponents.scheme = "mailto"
     urlComponents.path = addresses.joined(separator: ",")
@@ -432,7 +432,7 @@ extension HtmlArea {
   /// The kind of shape to be created in an image map.
   ///
   /// - Parameter value: The kind of shape to be created in an image map.
-  public func htmlShape(_ value: HtmlAttrAreaShape) -> some View {
+  public func htmlShape(_ value: HtmlAttrAreaShape) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "shape", value: value == .rect ? nil : value.rawValue)
   }
 }
@@ -453,7 +453,7 @@ extension HtmlButton {
   /// Type of button.
   ///
   /// - Parameter value: Type of button.
-  public func htmlType(_ value: HtmlAttrButtonType) -> some View {
+  public func htmlType(_ value: HtmlAttrButtonType) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "type", value: value.rawValue)
   }
 }
@@ -462,7 +462,7 @@ extension HtmlDetails {
   /// Whether the details are visible.
   ///
   /// - Parameter value: Whether the details are visible.
-  public func htmlOpen(_ value: Bool) -> some View {
+  public func htmlOpen(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "open", value: value ? "" : nil)
   }
 }
@@ -496,21 +496,21 @@ extension HtmlForm {
   /// URL to use for form submission.
   ///
   /// - Parameter value: URL to use for form submission.
-  public func htmlAction(_ value: String) -> some View {
+  public func htmlAction(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "action", value: value)
   }
 
   /// The type of form encoding.
   ///
   /// - Parameter value: Enctype to use for form encoding.
-  public func htmlEnctype(_ value: HtmlAttrEnctype) -> some View {
+  public func htmlEnctype(_ value: HtmlAttrEnctype) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "enctype", value: value.rawValue)
   }
 
   /// HTTP method to use for form submission.
   ///
   /// - Parameter value: HTTP method to use for form submission.
-  public func htmlMethod(_ value: HtmlAttrFormMethod) -> some View {
+  public func htmlMethod(_ value: HtmlAttrFormMethod) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     let rawValue = value.rawValue
     return htmlAttribute(key: "method", value: rawValue.isEmpty ? nil : rawValue)
   }
@@ -518,7 +518,7 @@ extension HtmlForm {
   /// Bypass form control validation for form submission.
   ///
   /// - Parameter value: Bypass form control validation for form submission.
-  public func htmlNovalidate(_ value: Bool) -> some View {
+  public func htmlNovalidate(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "novalidate", value: value ? "" : nil)
   }
 }
@@ -551,14 +551,14 @@ extension HtmlIframe {
   /// Enables a set of extra restrictions on any content hosted by the `<iframe>`.
   ///
   /// - Parameter value: Sandbox options.
-  public func htmlSandbox(_ value: [HtmlAttrIframeSandbox]) -> some View {
+  public func htmlSandbox(_ value: [HtmlAttrIframeSandbox]) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "sandbox", value: value.map { $0.rawValue }.joined(separator: " "))
   }
 
   /// Enables a set of extra restrictions on any content hosted by the `<iframe>`.
   ///
   /// - Parameter value: Whether or not to sandbox the `<iframe>`.
-  public func htmlSandbox(_ value: Bool) -> some View {
+  public func htmlSandbox(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "sandbox", value: value ? "" : nil)
   }
 
@@ -569,7 +569,7 @@ extension HtmlIframe {
   public func htmlSrcdoc<N: HtmlNode>(
     mode: RenderMode = .default,
     _ value: N
-  ) -> some View {
+  ) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "srcdoc", value: value.render(mode))
   }
 #endif
@@ -604,25 +604,25 @@ extension HtmlInput {
   /// Whether the command or control is checked.
   ///
   /// - Parameter value: Whether the command or control is checked.
-  public func htmlChecked(_ value: Bool) -> some View {
+  public func htmlChecked(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "checked", value: value ? "" : nil)
   }
 
   /// Pattern to be matched by the form control's value.
   ///
   /// - Parameter value: Pattern to be matched by the form control's value.
-  public func htmlPattern(_ value: String) -> some View {
+  public func htmlPattern(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "pattern", value: value)
   }
 
   /// Granularity to be matched by the form control's value.
   ///
   /// - Parameter value: Granularity to be matched by the form control's value.
-  public func htmlStep(_ value: Int) -> some View {
+  public func htmlStep(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "step", value: String(value))
   }
 
-  public func htmlType(_ value: HtmlAttrInputType) -> some View {
+  public func htmlType(_ value: HtmlAttrInputType) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "type", value: value.rawValue)
   }
 }
@@ -631,7 +631,7 @@ extension HtmlMeta {
   /// Value of the `<meta>` element.
   ///
   /// - Parameter value: Value of the element.
-  public func htmlContent(_ value: String) -> some View {
+  public func htmlContent(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "content", value: value)
   }
 }
@@ -657,21 +657,21 @@ extension HtmlOl {
   /// Number the list backwards.
   ///
   /// - Parameter value: Number the list backwards.
-  public func htmlReversed(_ value: Bool) -> some View {
+  public func htmlReversed(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "reversed", value: value ? "" : nil)
   }
 
   /// Ordinal value of the first item.
   ///
   /// - Parameter value: Ordinal value of the first item.
-  public func htmlStart(_ value: Int) -> some View {
+  public func htmlStart(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "start", value: String(value))
   }
 
   /// Kind of list marker.
   ///
   /// - Parameter value: Kind of list marker.
-  public func htmlType(_ value: HtmlAttrListType) -> some View {
+  public func htmlType(_ value: HtmlAttrListType) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "type", value: value.rawValue)
   }
 }
@@ -680,7 +680,7 @@ extension HtmlOption {
   /// Whether the option is selected by default.
   ///
   /// - Parameter value: Whether the option is selected by default.
-  public func htmlSelected(_ value: Bool) -> some View {
+  public func htmlSelected(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "selected", value: value ? "" : nil)
   }
 }
@@ -689,14 +689,14 @@ extension HtmlScript {
   /// Execute script in parallel.
   ///
   /// - Parameter value: Execute script in parallel.
-  public func htmlAsync(_ value: Bool) -> some View {
+  public func htmlAsync(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "async", value: value ? "" : nil)
   }
 
   /// Defer script execution.
   ///
   /// - Parameter value: Defer script execution.
-  public func `defer`(_ value: Bool) -> some View {
+  public func `defer`(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "defer", value: value ? "" : nil)
   }
 
@@ -704,26 +704,28 @@ extension HtmlScript {
   ///
   /// - Parameter value: Cryptographic nonce used in Content Security Policy
   ///                    checks.
-  public func htmlNonce(_ value: String) -> some View {
+  public func htmlNonce(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "nonce", value: value)
   }
 }
 
 public protocol CanHaveMediaQueryList {}
 
+extension ModifiedContent: CanHaveMediaQueryList where Content: CanHaveMediaQueryList {}
 extension HtmlAudio: CanHaveMediaQueryList {}
 extension HtmlVideo: CanHaveMediaQueryList {}
 extension HtmlPicture: CanHaveMediaQueryList {}
 
 public protocol HasMediaQueryList {}
 
+extension ModifiedContent: HasMediaQueryList where Content: HasMediaQueryList {}
 extension HtmlSource: HasMediaQueryList where Parent: CanHaveMediaQueryList {}
 
 extension View where Self: HasMediaQueryList {
   /// Applicable media.
   ///
   /// - Parameter value: A media query list.
-  public func htmlMedia(_ value: String) -> some View {
+  public func htmlMedia(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "media", value: value)
   }
 }
@@ -737,7 +739,7 @@ extension HtmlSource where Parent: IsPicture {
   ///
   /// - Parameter value: Images to use in different situations (e.g.,
   ///                    high-resolution displays, small monitors, etc).
-  public func htmlSrcset(_ value: String) -> some View {
+  public func htmlSrcset(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "srcset", value: value)
   }
 }
@@ -759,14 +761,14 @@ extension HtmlTextarea {
   /// Maximum number of characters per line.
   ///
   /// - Parameter value: Maximum number of characters per line.
-  public func htmlCols(_ value: Int) -> some View {
+  public func htmlCols(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "cols", value: String(value))
   }
 
   /// Number of lines to show.
   ///
   /// - Parameter value: Number of lines to show.
-  public func htmlRows(_ value: Int) -> some View {
+  public func htmlRows(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "rows", value: String(value))
   }
 
@@ -774,7 +776,7 @@ extension HtmlTextarea {
   ///
   /// - Parameter value: How the value of the form control is to be wrapped for
   ///                    form submission.
-  public func htmlWrap(_ value: HtmlAttrTextareaWrap) -> some View {
+  public func htmlWrap(_ value: HtmlAttrTextareaWrap) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "wrap", value: value.rawValue)
   }
 }
@@ -811,14 +813,14 @@ extension HtmlTh {
   ///
   /// - Parameter value: Alternative label to use for the header cell when
   ///                    referencing the cell in other contexts.
-  public func htmlAbbr(_ value: String) -> some View {
+  public func htmlAbbr(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "abbr", value: value)
   }
 
   /// Specifies which cells the header cell applies to.
   ///
   /// - Parameter value: Specifies which cells the header cell applies to.
-  public func htmlScope(_ value: HtmlAttrThScope) -> some View {
+  public func htmlScope(_ value: HtmlAttrThScope) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "scope", value: value.rawValue)
   }
 }
@@ -855,34 +857,34 @@ public enum HtmlAttrTrackKind: String {
 }
 
 extension HtmlTrack {
-  public func `default`(_ value: Bool) -> some View {
+  public func `default`(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "default", value: value ? "" : nil)
   }
 
   /// The type of text track.
   ///
   /// - Parameter value: The type of text track.
-  public func htmlKind(_ value: HtmlAttrTrackKind) -> some View {
+  public func htmlKind(_ value: HtmlAttrTrackKind) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "kind", value: value.rawValue)
   }
 
   /// User-visible label for a `<track>` element.
   ///
   /// - Parameter value: User-visible label.
-  public func htmlLabel(_ value: String) -> some View {
+  public func htmlLabel(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "label", value: value)
   }
 
   /// Language of the text track.
   ///
   /// - Parameter value: Language of the text track.
-  public func htmlSrclang(_ value: HtmlAttrLanguage) -> some View {
+  public func htmlSrclang(_ value: HtmlAttrLanguage) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "srclang", value: value.rawValue)
   }
 }
 
 extension HtmlVideo {
-  public func htmlPoster(_ value: String) -> some View {
+  public func htmlPoster(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "poster", value: value)
   }
 }
@@ -891,6 +893,7 @@ extension HtmlVideo {
 /// and `<input>` elements.
 public protocol HasAlt {}
 
+extension ModifiedContent: HasAlt where Content: HasAlt {}
 extension HtmlArea: HasAlt {}
 extension HtmlImg: HasAlt {}
 extension HtmlInput: HasAlt {}
@@ -900,7 +903,7 @@ extension View where Self: HasAlt {
   /// `<img>`, and `<input>` elements.
   ///
   /// - Parameter value: Replacement text for use when images are not available.
-  public func htmlAlt(_ value: String) -> some View {
+  public func htmlAlt(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "alt", value: value)
   }
 }
@@ -909,6 +912,7 @@ extension View where Self: HasAlt {
 /// `<input>`, `<select>`, and `<textarea>` elements.
 public protocol HasAutofocus {}
 
+extension ModifiedContent: HasAutofocus where Content: HasAutofocus {}
 extension HtmlButton: HasAutofocus {}
 extension HtmlInput: HasAutofocus {}
 extension HtmlSelect: HasAutofocus {}
@@ -922,7 +926,7 @@ extension View where Self: HasAutofocus {
   ///
   /// - Parameter value: Automatically focus the form control when the page is
   ///                    loaded.
-  public func htmlAutofocus(_ value: Bool) -> some View {
+  public func htmlAutofocus(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "autofocus", value: value ? "" : nil)
   }
 }
@@ -931,6 +935,7 @@ extension View where Self: HasAutofocus {
 /// and `<video>` elements.
 public protocol HasAutoplay {}
 
+extension ModifiedContent: HasAutoplay where Content: HasAutoplay {}
 extension HtmlAudio: HasAutoplay {}
 extension HtmlVideo: HasAutoplay {}
 
@@ -940,7 +945,7 @@ extension View where Self: HasAutoplay {
   ///
   /// - Parameter value: Hint that the media resource can be started
   ///                    automatically when the page is loaded.
-  public func htmlAutoplay(_ value: Bool) -> some View {
+  public func htmlAutoplay(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "autoplay", value: value ? "" : nil)
   }
 }
@@ -949,6 +954,7 @@ extension View where Self: HasAutoplay {
 /// and `<script>` elements.
 public protocol HasCharset {}
 
+extension ModifiedContent: HasCharset where Content: HasCharset {}
 extension HtmlMeta: HasCharset {}
 extension HtmlScript: HasCharset {}
 
@@ -956,7 +962,7 @@ extension View where Self: HasCharset {
   /// Character encoding declaration.
   ///
   /// - Parameter value: A character encoding declaration.
-  public func htmlCharset(_ value: MediaType.Charset) -> some View {
+  public func htmlCharset(_ value: MediaType.Charset) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "charset", value: value.rawValue)
   }
 }
@@ -965,6 +971,7 @@ extension View where Self: HasCharset {
 /// `<del>`, `<ins>`, and `<q>` elements.
 public protocol HasCite {}
 
+extension ModifiedContent: HasCite where Content: HasCite {}
 extension HtmlBlockquote: HasCite {}
 extension HtmlDel: HasCite {}
 extension HtmlIns: HasCite {}
@@ -975,7 +982,7 @@ extension View where Self: HasCite {
   ///
   /// - Parameter value: Link to the source of the quotation or more information
   ///                    about the edit.
-  public func htmlCite(_ value: String) -> some View {
+  public func htmlCite(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "cite", value: value)
   }
 }
@@ -984,6 +991,7 @@ extension View where Self: HasCite {
 /// `<th>` elements.
 public protocol HasColspan {}
 
+extension ModifiedContent: HasColspan where Content: HasColspan {}
 extension HtmlTd: HasColspan {}
 extension HtmlTh: HasColspan {}
 
@@ -991,7 +999,7 @@ extension View where Self: HasColspan {
   /// Number of columns that the cell is to span.
   ///
   /// - Parameter value: Number of columns that the cell is to span.
-  public func htmlColspan(_ value: Int) -> some View {
+  public func htmlColspan(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "colspan", value: String(value))
   }
 }
@@ -1000,6 +1008,7 @@ extension View where Self: HasColspan {
 /// and `<video>` elements.
 public protocol HasControls {}
 
+extension ModifiedContent: HasControls where Content: HasControls {}
 extension HtmlAudio: HasControls {}
 extension HtmlVideo: HasControls {}
 
@@ -1009,7 +1018,7 @@ extension View where Self: HasControls {
   /// controls.
   ///
   /// - Parameter value: Show user agent controls.
-  public func htmlControls(_ value: Bool) -> some View {
+  public func htmlControls(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "controls", value: value ? "" : nil)
   }
 }
@@ -1018,6 +1027,7 @@ extension View where Self: HasControls {
 /// and `<script>` elements.
 public protocol HasCrossorigin {}
 
+extension ModifiedContent: HasCrossorigin where Content: HasCrossorigin {}
 extension HtmlImg: HasCrossorigin {}
 extension HtmlScript: HasCrossorigin {}
 
@@ -1035,7 +1045,7 @@ extension View where Self: HasCrossorigin {
   /// How the element handles crossorigin requests.
   ///
   /// - Parameter value: How the element handles crossorigin requests.
-  public func htmlCrossorigin(_ value: HtmlAttrCrossorigin) -> some View {
+  public func htmlCrossorigin(_ value: HtmlAttrCrossorigin) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "crossorigin", value: value.rawValue)
   }
 }
@@ -1063,6 +1073,7 @@ extension View where Self: HasCrossorigin {
 /// `<ins>`, and `<time>` elements.
 public protocol HasDatetime {}
 
+extension ModifiedContent: HasDatetime where Content: HasDatetime {}
 extension HtmlDel: HasDatetime {}
 extension HtmlIns: HasDatetime {}
 extension HtmlTime: HasDatetime {}
@@ -1070,7 +1081,7 @@ extension HtmlTime: HasDatetime {}
 #if os(WASI)
 import class JavaScriptKit.JSDate
 extension View where Self: HasDatetime {
-  public func htmlDatetime(_ value: JSDate) -> some View {
+  public func htmlDatetime(_ value: JSDate) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "datetime", value: value.toISOString())
   }
 }
@@ -1089,7 +1100,7 @@ private let iso8601DateFormatter: DateFormatter = {
 }()
 
 extension View where Self: HasDatetime {
-  public func htmlDatetime(_ value: Date) -> some View {
+  public func htmlDatetime(_ value: Date) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "datetime", value: iso8601DateFormatter.string(from: value))
   }
 }
@@ -1100,6 +1111,7 @@ extension View where Self: HasDatetime {
 /// `<textarea>` elements.
 public protocol HasDisabled {}
 
+extension ModifiedContent: HasDisabled where Content: HasDisabled {}
 extension HtmlButton: HasDisabled {}
 extension HtmlFieldset: HasDisabled {}
 extension HtmlInput: HasDisabled {}
@@ -1112,7 +1124,7 @@ extension View where Self: HasDisabled {
   /// Whether the form control is disabled.
   ///
   /// - Parameter value: Whether the form control is disabled.
-  public func htmlDisabled(_ value: Bool) -> some View {
+  public func htmlDisabled(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "disabled", value: value ? "" : nil)
   }
 }
@@ -1121,6 +1133,7 @@ extension View where Self: HasDisabled {
 /// `<output>` elements.
 public protocol HasFor {}
 
+extension ModifiedContent: HasFor where Content: HasFor {}
 extension HtmlLabel: HasFor {}
 extension HtmlOutput: HasFor {}
 
@@ -1128,7 +1141,7 @@ extension View where Self: HasFor {
   /// Associate the label or output with form control.
   ///
   /// - Parameter value: The `id` of the form control
-  public func `for`(_ value: String) -> some View {
+  public func `for`(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "for", value: value)
   }
 }
@@ -1138,6 +1151,7 @@ extension View where Self: HasFor {
 /// `<select>`, and `<textarea>` elements.
 public protocol HasForm {}
 
+extension ModifiedContent: HasForm where Content: HasForm {}
 extension HtmlButton: HasForm {}
 extension HtmlFieldset: HasForm {}
 extension HtmlInput: HasForm {}
@@ -1152,7 +1166,7 @@ extension View where Self: HasForm {
   /// Associates the control with a `<form>` element.
   ///
   /// - Parameter value: The associated `<form>` element's `id`.
-  public func htmlForm(_ value: String) -> some View {
+  public func htmlForm(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "form", value: value)
   }
 }
@@ -1161,6 +1175,7 @@ extension View where Self: HasForm {
 /// `<th>` elements.
 public protocol HasHeaders {}
 
+extension ModifiedContent: HasHeaders where Content: HasHeaders {}
 extension HtmlTd: HasHeaders {}
 extension HtmlTh: HasHeaders {}
 
@@ -1168,7 +1183,7 @@ extension View where Self: HasHeaders {
   /// The header cells for this cell.
   ///
   /// - Parameter value: The header cells for this cell.
-  public func htmlHeaders(_ value: String) -> some View {
+  public func htmlHeaders(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "headers", value: value)
   }
 }
@@ -1178,6 +1193,7 @@ extension View where Self: HasHeaders {
 /// `<video>` elements.
 public protocol HasHeight {}
 
+extension ModifiedContent: HasHeight where Content: HasHeight {}
 extension HtmlCanvas: HasHeight {}
 extension HtmlEmbed: HasHeight {}
 extension HtmlIframe: HasHeight {}
@@ -1191,7 +1207,7 @@ extension View where Self: HasHeight {
   /// Vertical dimension.
   ///
   /// - Parameter value: Vertical dimension.
-  public func htmlHeight(_ value: Int) -> some View {
+  public func htmlHeight(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "height", value: String(value))
   }
 }
@@ -1200,6 +1216,7 @@ extension View where Self: HasHeight {
 /// `<base>`, and `<link>` elements.
 public protocol HasHref {}
 
+extension ModifiedContent: HasHref where Content: HasHref {}
 extension HtmlA: HasHref {}
 extension HtmlArea: HasHref {}
 extension HtmlBase: HasHref {}
@@ -1209,7 +1226,7 @@ extension View where Self: HasHref {
   /// Address of a hyperlink.
   ///
   /// - Parameter value: Address of a hyperlink.
-  public func htmlHref(_ value: String) -> some View {
+  public func htmlHref(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "href", value: value)
   }
 }
@@ -1218,11 +1235,12 @@ extension View where Self: HasHref {
 /// `<video>` elements.
 public protocol HasLoop {}
 
+extension ModifiedContent: HasLoop where Content: HasLoop {}
 extension HtmlAudio: HasLoop {}
 extension HtmlVideo: HasLoop {}
 
 extension View where Self: HasLoop {
-  public func htmlLoop(_ value: Bool) -> some View {
+  public func htmlLoop(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "loop", value: value ? "" : nil)
   }
 }
@@ -1231,6 +1249,7 @@ extension View where Self: HasLoop {
 /// `<meter>`, and `<progress>` elements.
 public protocol HasMax {}
 
+extension ModifiedContent: HasMax where Content: HasMax {}
 extension HtmlInput: HasMax {}
 extension HtmlMeter: HasMax {}
 extension HtmlProgress: HasMax {}
@@ -1239,7 +1258,7 @@ extension View where Self: HasMax {
   /// Maximum value.
   ///
   /// - Parameter value: Maximum value.
-  public func htmlMax(_ value: Double) -> some View {
+  public func htmlMax(_ value: Double) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "max", value: String(value))
   }
 
@@ -1247,7 +1266,7 @@ extension View where Self: HasMax {
   /// Maximum value.
   ///
   /// - Parameter value: Maximum value.
-  public func htmlMax(_ value: Int) -> some View {
+  public func htmlMax(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "max", value: String(value))
   }
 }
@@ -1256,6 +1275,7 @@ extension View where Self: HasMax {
 /// and `<textarea>` elements.
 public protocol HasMaxlength {}
 
+extension ModifiedContent: HasMaxlength where Content: HasMaxlength {}
 extension HtmlInput: HasMaxlength {}
 extension HtmlTextarea: HasMaxlength {}
 
@@ -1263,7 +1283,7 @@ extension View where Self: HasMaxlength {
   /// Maximum length of value.
   ///
   /// - Parameter value: Maximum length of value.
-  public func htmlMaxlength(_ value: Int) -> some View {
+  public func htmlMaxlength(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "maxlength", value: String(value))
   }
 }
@@ -1272,6 +1292,7 @@ extension View where Self: HasMaxlength {
 /// `<meter>`, and `<progress>` elements.
 public protocol HasMin {}
 
+extension ModifiedContent: HasMin where Content: HasMin {}
 extension HtmlInput: HasMin {}
 extension HtmlMeter: HasMin {}
 extension HtmlProgress: HasMin {}
@@ -1280,7 +1301,7 @@ extension View where Self: HasMin {
   /// Minimum value.
   ///
   /// - Parameter value: Minimum value.
-  public func htmlMin(_ value: Double) -> some View {
+  public func htmlMin(_ value: Double) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "min", value: String(value))
   }
 
@@ -1288,7 +1309,7 @@ extension View where Self: HasMin {
   /// Minimum value.
   ///
   /// - Parameter value: Minimum value.
-  public func htmlMin(_ value: Int) -> some View {
+  public func htmlMin(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "min", value: String(value))
   }
 }
@@ -1297,6 +1318,7 @@ extension View where Self: HasMin {
 /// and `<textarea>` elements.
 public protocol HasMinlength {}
 
+extension ModifiedContent: HasMinlength where Content: HasMinlength {}
 extension HtmlInput: HasMinlength {}
 extension HtmlTextarea: HasMinlength {}
 
@@ -1304,7 +1326,7 @@ extension View where Self: HasMinlength {
   /// Minimum length of value.
   ///
   /// - Parameter value: Minimum length of value.
-  public func htmlMinlength(_ value: Int) -> some View {
+  public func htmlMinlength(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "minlength", value: String(value))
   }
 }
@@ -1313,6 +1335,7 @@ extension View where Self: HasMinlength {
 /// and `<select>` elements.
 public protocol HasMultiple {}
 
+extension ModifiedContent: HasMultiple where Content: HasMultiple {}
 extension HtmlInput: HasMultiple {}
 extension HtmlSelect: HasMultiple {}
 
@@ -1320,7 +1343,7 @@ extension View where Self: HasMultiple {
   /// Whether to allow multiple values.
   ///
   /// - Parameter value: Whether to allow multiple values.
-  public func htmlMultiple(_ value: Bool) -> some View {
+  public func htmlMultiple(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "multiple", value: value ? "" : nil)
   }
 }
@@ -1329,6 +1352,7 @@ extension View where Self: HasMultiple {
 /// and `<video>` elements.
 public protocol HasMuted {}
 
+extension ModifiedContent: HasMuted where Content: HasMuted {}
 extension HtmlAudio: HasMuted {}
 extension HtmlVideo: HasMuted {}
 
@@ -1336,13 +1360,14 @@ extension View where Self: HasMuted {
   /// Whether to mute the media resource by default.
   ///
   /// - Parameter value: Whether to mute the media resource by default.
-  public func htmlMuted(_ value: Bool) -> some View {
+  public func htmlMuted(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "muted", value: value ? "" : nil)
   }
 }
 
 public protocol HasName {}
 
+extension ModifiedContent: HasName where Content: HasName {}
 extension HtmlButton: HasName {}
 extension HtmlFieldset: HasName {}
 extension HtmlForm: HasName {}
@@ -1358,7 +1383,7 @@ extension View where Self: HasName {
   /// Name of form control to use for form submission and in the form.elements API.
   ///
   /// - Parameter value: Name of form control.
-  public func htmlName(_ value: String) -> some View {
+  public func htmlName(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "name", value: value)
   }
 }
@@ -1367,6 +1392,7 @@ extension View where Self: HasName {
 /// and `<textarea>` elements.
 public protocol HasPlaceholder {}
 
+extension ModifiedContent: HasPlaceholder where Content: HasPlaceholder {}
 extension HtmlInput: HasPlaceholder {}
 extension HtmlTextarea: HasPlaceholder {}
 
@@ -1375,7 +1401,7 @@ extension View where Self: HasPlaceholder {
   ///
   /// - Parameter value: User-visible label to be placed within the form
   ///                    control.
-  public func htmlPlaceholder(_ value: String) -> some View {
+  public func htmlPlaceholder(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "placeholder", value: value)
   }
 }
@@ -1384,6 +1410,7 @@ extension View where Self: HasPlaceholder {
 /// `<video>` elements.
 public protocol HasPreload {}
 
+extension ModifiedContent: HasPreload where Content: HasPreload {}
 extension HtmlAudio: HasPreload {}
 extension HtmlVideo: HasPreload {}
 
@@ -1419,7 +1446,7 @@ extension View where Self: HasPreload {
   ///
   /// - Parameter value: Hints how much buffering the media resource will likely
   ///                    need.
-  public func htmlPreload(_ value: HtmlAttrPreload) -> some View {
+  public func htmlPreload(_ value: HtmlAttrPreload) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "preload", value: value.rawValue)
   }
 }
@@ -1428,6 +1455,7 @@ extension View where Self: HasPreload {
 /// and `<textarea>` elements.
 public protocol HasReadonly {}
 
+extension ModifiedContent: HasReadonly where Content: HasReadonly {}
 extension HtmlInput: HasReadonly {}
 extension HtmlTextarea: HasReadonly {}
 
@@ -1435,7 +1463,7 @@ extension View where Self: HasReadonly {
   /// Whether to allow the value to be edited by the user.
   ///
   /// - Parameter value: Whether to allow the value to be edited by the user.
-  public func htmlReadonly(_ value: Bool) -> some View {
+  public func htmlReadonly(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "readonly", value: value ? "" : nil)
   }
 }
@@ -1444,6 +1472,7 @@ extension View where Self: HasReadonly {
 /// and `<link>` elements.
 public protocol HasRel {}
 
+extension ModifiedContent: HasRel where Content: HasRel {}
 extension HtmlA: HasRel {}
 extension HtmlArea: HasRel {}
 extension HtmlLink: HasRel {}
@@ -1470,7 +1499,7 @@ public struct HtmlAttrRel: RawRepresentable {
 }
 
 extension View where Self: HasRel {
-  public func htmlRel(_ value: HtmlAttrRel) -> some View {
+  public func htmlRel(_ value: HtmlAttrRel) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "rel", value: value.rawValue)
   }
 }
@@ -1479,6 +1508,7 @@ extension View where Self: HasRel {
 /// `<select>` and `<textarea>` elements.
 public protocol HasRequired {}
 
+extension ModifiedContent: HasRequired where Content: HasRequired {}
 extension HtmlInput: HasRequired {}
 extension HtmlSelect: HasRequired {}
 extension HtmlTextarea: HasRequired {}
@@ -1487,7 +1517,7 @@ extension View where Self: HasRequired {
   /// Whether the control is required for form submission.
   ///
   /// - Parameter value: Whether the control is required for form submission.
-  public func htmlRequired(_ value: Bool) -> some View {
+  public func htmlRequired(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "required", value: value ? "" : nil)
   }
 }
@@ -1496,6 +1526,7 @@ extension View where Self: HasRequired {
 /// `<th>` elements.
 public protocol HasRowspan {}
 
+extension ModifiedContent: HasRowspan where Content: HasRowspan {}
 extension HtmlTd: HasRowspan {}
 extension HtmlTh: HasRowspan {}
 
@@ -1503,7 +1534,7 @@ extension View where Self: HasRowspan {
   /// /// Number of rows that the cell is to span.
   ///
   /// - Parameter value: Number of rows that the cell is to span.
-  public func htmlRowspan(_ value: Int) -> some View {
+  public func htmlRowspan(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "rowspan", value: String(value))
   }
 }
@@ -1512,11 +1543,12 @@ extension View where Self: HasRowspan {
 /// `<colgroup>` elements.
 public protocol HasSpan {}
 
+extension ModifiedContent: HasSpan where Content: HasSpan {}
 extension HtmlCol: HasSpan {}
 extension HtmlColgroup: HasSpan {}
 
 extension View where Self: HasSpan {
-  public func htmlSpan(_ value: Int) -> some View {
+  public func htmlSpan(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "span", value: String(value))
   }
 }
@@ -1526,6 +1558,7 @@ extension View where Self: HasSpan {
 /// `<track>`, and `<video>` elements.
 public protocol HasSrc {}
 
+extension ModifiedContent: HasSrc where Content: HasSrc {}
 extension HtmlAudio: HasSrc {}
 extension HtmlEmbed: HasSrc {}
 extension HtmlIframe: HasSrc {}
@@ -1540,7 +1573,7 @@ extension View where Self: HasSrc {
   /// Address of the resource.
   ///
   /// - Parameter value: Address of the resource.
-  public func htmlSrc(_ value: String) -> some View {
+  public func htmlSrc(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "src", value: value)
   }
 }
@@ -1549,6 +1582,7 @@ extension View where Self: HasSrc {
 /// `<source>` elements.
 public protocol HasSrcset {}
 
+extension ModifiedContent: HasSrcset where Content: HasSrcset {}
 extension HtmlImg: HasSrcset {}
 extension HtmlSource: HasSrcset {}
 
@@ -1572,7 +1606,7 @@ extension View where Self: HasSrcset {
   ///
   /// - Parameter value: Images to use in different situations (e.g.,
   ///                    high-resolution displays, small monitors, etc).
-  public func htmlSrcset(_ value: [String: HtmlAttrSize]) -> some View {
+  public func htmlSrcset(_ value: [String: HtmlAttrSize]) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "srcset", value: value.map { url, size in url + " " + size.description }.joined(separator: ", "))
   }
 }
@@ -1581,6 +1615,7 @@ extension View where Self: HasSrcset {
 /// <area>`, `<base>`, and `<form>` elements.
 public protocol HasTarget {}
 
+extension ModifiedContent: HasTarget where Content: HasTarget {}
 extension HtmlA: HasTarget {}
 extension HtmlArea: HasTarget {}
 extension HtmlBase: HasTarget {}
@@ -1605,7 +1640,7 @@ extension View where Self: HasTarget {
   ///
   /// - Parameter value: Default browsing context for hyperlink navigation
   ///                    and form submission.
-  public func htmlTarget(_ value: HtmlAttrTarget) -> some View {
+  public func htmlTarget(_ value: HtmlAttrTarget) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "target", value: value == .self ? nil : value.rawValue)
   }
 }
@@ -1614,6 +1649,7 @@ extension View where Self: HasTarget {
 /// `<link>`, `<object>`, `<script>`, `<source>`, and `<style>` elements.
 public protocol HasMediaType {}
 
+extension ModifiedContent: HasMediaType where Content: HasMediaType {}
 extension HtmlA: HasMediaType {}
 extension HtmlEmbed: HasMediaType {}
 extension HtmlLink: HasMediaType {}
@@ -1626,7 +1662,7 @@ extension View where Self: HasMediaType {
   /// Hint for the type of the referenced resource.
   ///
   /// - Parameter value: Hint for the type of the referenced resource.
-  public func htmlType(_ value: MediaType) -> some View {
+  public func htmlType(_ value: MediaType) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "type", value: value.description)
   }
 }
@@ -1635,12 +1671,13 @@ extension View where Self: HasMediaType {
 /// `<input>`, `<meter>`, and `<progress>` elements.
 public protocol HasDoubleValue {}
 
+extension ModifiedContent: HasDoubleValue where Content: HasDoubleValue {}
 extension HtmlInput: HasDoubleValue {}
 extension HtmlMeter: HasDoubleValue {}
 extension HtmlProgress: HasDoubleValue {}
 
 extension View where Self: HasDoubleValue {
-  public func htmlValue(_ value: Double) -> some View {
+  public func htmlValue(_ value: Double) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "value", value: String(value))
   }
 }
@@ -1649,6 +1686,7 @@ extension View where Self: HasDoubleValue {
 /// `<input>` and `<li>` elements.
 public protocol HasIntValue {}
 
+extension ModifiedContent: HasIntValue where Content: HasIntValue {}
 extension HtmlInput: HasIntValue {}
 extension HtmlLi: HasIntValue {}
 
@@ -1657,7 +1695,7 @@ extension View where Self: HasIntValue {
   /// of the list item.)
   ///
   /// - Parameter value: The form control's value.
-  public func htmlValue(_ value: Int) -> some View {
+  public func htmlValue(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "value", value: String(value))
   }
 }
@@ -1666,6 +1704,7 @@ extension View where Self: HasIntValue {
 /// `<button>`, `<input>`, and `<option>` elements.
 public protocol HasStringValue {}
 
+extension ModifiedContent: HasStringValue where Content: HasStringValue {}
 extension HtmlButton: HasStringValue {}
 extension HtmlInput: HasStringValue {}
 extension HtmlOption: HasStringValue {}
@@ -1674,7 +1713,7 @@ extension View where Self: HasStringValue {
   /// The form control's value.
   ///
   /// - Parameter value: The form control's value.
-  public func htmlValue(_ value: String) -> some View {
+  public func htmlValue(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "value", value: value)
   }
 }
@@ -1684,6 +1723,7 @@ extension View where Self: HasStringValue {
 /// elements.
 public protocol HasWidth {}
 
+extension ModifiedContent: HasWidth where Content: HasWidth {}
 extension HtmlCanvas: HasWidth {}
 extension HtmlEmbed: HasWidth {}
 extension HtmlIframe: HasWidth {}
@@ -1697,7 +1737,7 @@ extension View where Self: HasWidth {
   /// Horizontal dimension.
   ///
   /// - Parameter value: Vertical dimension.
-  public func htmlWidth(_ value: Int) -> some View {
+  public func htmlWidth(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "width", value: String(value))
   }
 }
@@ -1804,15 +1844,15 @@ public struct HtmlAttrRole: RawRepresentable {
 }
 
 extension View {
-  public func htmlRole(_ value: HtmlAttrRole) -> some View {
+  public func htmlRole(_ value: HtmlAttrRole) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "role", value: value.rawValue)
   }
 
-  public func htmlAriaActivedescendant(_ value: String) -> some View {
+  public func htmlAriaActivedescendant(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-activedescendant", value: value)
   }
 
-  public func htmlAriaAtomic(_ value: Bool) -> some View {
+  public func htmlAriaAtomic(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-atomic", value: String(value))
   }
 }
@@ -1825,31 +1865,31 @@ public enum HtmlAttrAriaAutocomplete: String {
 }
 
 extension View {
-  public func htmlAriaAutocomplete(_ value: HtmlAttrAriaAutocomplete) -> some View {
+  public func htmlAriaAutocomplete(_ value: HtmlAttrAriaAutocomplete) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-autocomplete", value: value.rawValue)
   }
 
-  public func htmlAriaBusy(_ value: Bool) -> some View {
+  public func htmlAriaBusy(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-busy", value: String(value))
   }
 
-  public func htmlAriaChecked(_ value: HtmlAttrAriaToggled) -> some View {
+  public func htmlAriaChecked(_ value: HtmlAttrAriaToggled) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-checked", value: value.rawValue)
   }
 
-  public func htmlAriaColcount(_ value: Int) -> some View {
+  public func htmlAriaColcount(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-colcount", value: String(value))
   }
 
-  public func htmlAriaColindex(_ value: Int) -> some View {
+  public func htmlAriaColindex(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-colindex", value: String(value))
   }
 
-  public func htmlAriaColspan(_ value: Int) -> some View {
+  public func htmlAriaColspan(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-colspan", value: String(value))
   }
 
-  public func htmlAriaControls(_ value: String) -> some View {
+  public func htmlAriaControls(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-controls", value: value)
   }
 }
@@ -1869,19 +1909,19 @@ public enum HtmlAttrAriaCurrent: String, ExpressibleByBooleanLiteral {
 }
 
 extension View {
-  public func htmlAriaCurrent(_ value: HtmlAttrAriaCurrent) -> some View {
+  public func htmlAriaCurrent(_ value: HtmlAttrAriaCurrent) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-current", value: value.rawValue)
   }
 
-  public func htmlAriaDescribedby(_ value: String) -> some View {
+  public func htmlAriaDescribedby(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-describedby", value: value)
   }
 
-  public func htmlAriaDetails(_ value: String) -> some View {
+  public func htmlAriaDetails(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-details", value: value)
   }
 
-  public func htmlAriaDisabled(_ value: Bool) -> some View {
+  public func htmlAriaDisabled(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-disabled", value: String(value))
   }
 }
@@ -1896,23 +1936,23 @@ public enum HtmlAttrAriaDropeffect: String {
 }
 
 extension View {
-  public func htmlAriaDropeffect(_ value: HtmlAttrAriaDropeffect) -> some View {
+  public func htmlAriaDropeffect(_ value: HtmlAttrAriaDropeffect) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-dropeffect", value: value.rawValue)
   }
 
-  public func htmlAriaErrormessage(_ value: String) -> some View {
+  public func htmlAriaErrormessage(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-errormessage", value: value)
   }
 
-  public func htmlAriaExpanded(_ value: HtmlAttrAriaBoolean) -> some View {
+  public func htmlAriaExpanded(_ value: HtmlAttrAriaBoolean) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-expanded", value: value.rawValue)
   }
 
-  public func htmlAriaFlowto(_ value: String) -> some View {
+  public func htmlAriaFlowto(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-flowto", value: value)
   }
 
-  public func htmlAriaGrabbed(_ value: HtmlAttrAriaBoolean) -> some View {
+  public func htmlAriaGrabbed(_ value: HtmlAttrAriaBoolean) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-grabbed", value: value.rawValue)
   }
 }
@@ -1931,11 +1971,11 @@ public enum HtmlAttrAriaHaspopup: String, ExpressibleByBooleanLiteral {
 }
 
 extension View {
-  public func htmlAriaHaspopup(_ value: HtmlAttrAriaHaspopup) -> some View {
+  public func htmlAriaHaspopup(_ value: HtmlAttrAriaHaspopup) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-haspopup", value: value.rawValue)
   }
 
-  public func htmlAriaHidden(_ value: HtmlAttrAriaBoolean) -> some View {
+  public func htmlAriaHidden(_ value: HtmlAttrAriaBoolean) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-hidden", value: value.rawValue)
   }
 }
@@ -1952,23 +1992,23 @@ public enum HtmlAttrAriaInvalid: String, ExpressibleByBooleanLiteral {
 }
 
 extension View {
-  public func htmlAriaInvalid(_ value: HtmlAttrAriaInvalid) -> some View {
+  public func htmlAriaInvalid(_ value: HtmlAttrAriaInvalid) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-invalid", value: value.rawValue)
   }
 
-  public func htmlAriaKeyshortcuts(_ value: String) -> some View {
+  public func htmlAriaKeyshortcuts(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-keyshortcuts", value: value)
   }
 
-  public func htmlAriaLabel(_ value: String) -> some View {
+  public func htmlAriaLabel(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-label", value: value)
   }
 
-  public func htmlAriaLabelledby(_ value: String) -> some View {
+  public func htmlAriaLabelledby(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-labelledby", value: value)
   }
 
-  public func htmlAriaLevel(_ value: Int) -> some View {
+  public func htmlAriaLevel(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-level", value: String(value))
   }
 }
@@ -1980,19 +2020,19 @@ public enum HtmlAttrAriaLive: String {
 }
 
 extension View {
-  public func htmlAriaLive(_ value: HtmlAttrAriaLive) -> some View {
+  public func htmlAriaLive(_ value: HtmlAttrAriaLive) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-live", value: value.rawValue)
   }
 
-  public func htmlAriaModal(_ value: Bool) -> some View {
+  public func htmlAriaModal(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-modal", value: String(value))
   }
 
-  public func htmlAriaMultiline(_ value: Bool) -> some View {
+  public func htmlAriaMultiline(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-multiline", value: String(value))
   }
 
-  public func htmlAriaMultiselectable(_ value: Bool) -> some View {
+  public func htmlAriaMultiselectable(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-multiselectable", value: String(value))
   }
 }
@@ -2004,27 +2044,27 @@ public enum HtmlAttrAriaOrientation: String {
 }
 
 extension View {
-  public func htmlAriaOrientation(_ value: HtmlAttrAriaOrientation) -> some View {
+  public func htmlAriaOrientation(_ value: HtmlAttrAriaOrientation) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-orientation", value: value.rawValue)
   }
 
-  public func htmlAriaOwns(_ value: String) -> some View {
+  public func htmlAriaOwns(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-owns", value: value)
   }
 
-  public func htmlAriaPlaceholder(_ value: String) -> some View {
+  public func htmlAriaPlaceholder(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-placeholder", value: value)
   }
 
-  public func htmlAriaPosinset(_ value: Int) -> some View {
+  public func htmlAriaPosinset(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-posinset", value: String(value))
   }
 
-  public func htmlAriaPressed(_ value: HtmlAttrAriaToggled) -> some View {
+  public func htmlAriaPressed(_ value: HtmlAttrAriaToggled) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-pressed", value: value.rawValue)
   }
 
-  public func htmlAriaReadonly(_ value: Bool) -> some View {
+  public func htmlAriaReadonly(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-readonly", value: String(value))
   }
 }
@@ -2037,35 +2077,35 @@ public enum HtmlAttrAriaRelevant: String {
 }
 
 extension View {
-  public func htmlAriaRelevant(_ value: Array<HtmlAttrAriaRelevant>) -> some View {
+  public func htmlAriaRelevant(_ value: Array<HtmlAttrAriaRelevant>) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-relevant", value: value.map { $0.rawValue }.joined(separator: " "))
   }
 
-  public func htmlAriaRequired(_ value: Bool) -> some View {
+  public func htmlAriaRequired(_ value: Bool) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-required", value: String(value))
   }
 
-  public func htmlAriaRoledescription(_ value: String) -> some View {
+  public func htmlAriaRoledescription(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-roledescription", value: value)
   }
 
-  public func htmlAriaRowcount(_ value: Int) -> some View {
+  public func htmlAriaRowcount(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-rowcount", value: String(value))
   }
 
-  public func htmlAriaRowindex(_ value: Int) -> some View {
+  public func htmlAriaRowindex(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-rowindex", value: String(value))
   }
 
-  public func htmlAriaRowspan(_ value: Int) -> some View {
+  public func htmlAriaRowspan(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-rowspan", value: String(value))
   }
 
-  public func htmlAriaSelected(_ value: HtmlAttrAriaBoolean) -> some View {
+  public func htmlAriaSelected(_ value: HtmlAttrAriaBoolean) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-selected", value: value.rawValue)
   }
 
-  public func htmlAriaSetsize(_ value: Int) -> some View {
+  public func htmlAriaSetsize(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-setsize", value: String(value))
   }
 }
@@ -2078,23 +2118,23 @@ public enum HtmlAttrAriaSort: String {
 }
 
 extension View {
-  public func htmlAriaSort(_ value: HtmlAttrAriaSort) -> some View {
+  public func htmlAriaSort(_ value: HtmlAttrAriaSort) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-sort", value: value.rawValue)
   }
 
-  public func htmlAriaValuemax(_ value: Double) -> some View {
+  public func htmlAriaValuemax(_ value: Double) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-valuemax", value: String(value))
   }
 
-  public func htmlAriaValuemin(_ value: Double) -> some View {
+  public func htmlAriaValuemin(_ value: Double) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-valuemin", value: String(value))
   }
 
-  public func htmlAriaValuenow(_ value: Double) -> some View {
+  public func htmlAriaValuenow(_ value: Double) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-valuenow", value: String(value))
   }
 
-  public func htmlAriaValuetext(_ value: String) -> some View {
+  public func htmlAriaValuetext(_ value: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "aria-valuetext", value: value)
   }
 }
@@ -2105,336 +2145,336 @@ extension View {
   /// Execute JavaScript when a user leaves an input field.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnblur(safe javascript: StaticString) -> some View {
+  public func htmlOnblur(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnblur(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when a user leaves an input field.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnblur(unsafe javascript: String) -> some View {
+  public func htmlOnblur(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onblur", value: javascript)
   }
 
   /// Execute JavaScript when an element is clicked.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnclick(safe javascript: StaticString) -> some View {
+  public func htmlOnclick(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnclick(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when an element is clicked.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnclick(unsafe javascript: String) -> some View {
+  public func htmlOnclick(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onclick", value: javascript)
   }
 
   /// Execute JavaScript when the user right-clicks on an element with a context menu.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOncontextmenu(safe javascript: StaticString) -> some View {
+  public func htmlOncontextmenu(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOncontextmenu(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the user right-clicks on an element with a context menu.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOncontextmenu(unsafe javascript: String) -> some View {
+  public func htmlOncontextmenu(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "oncontextmenu", value: javascript)
   }
 
   /// Execute JavaScript when copying some text of an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOncopy(safe javascript: StaticString) -> some View {
+  public func htmlOncopy(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOncopy(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when copying some text of an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOncopy(unsafe javascript: String) -> some View {
+  public func htmlOncopy(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "oncopy", value: javascript)
   }
 
   /// Execute JavaScript when cutting some text in an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOncut(safe javascript: StaticString) -> some View {
+  public func htmlOncut(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOncut(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when cutting some text in an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOncut(unsafe javascript: String) -> some View {
+  public func htmlOncut(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "oncut", value: javascript)
   }
 
   /// Execute JavaScript when an element is double-clicked.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOndblclick(safe javascript: StaticString) -> some View {
+  public func htmlOndblclick(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOndblclick(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when an element is double-clicked.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOndblclick(unsafe javascript: String) -> some View {
+  public func htmlOndblclick(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "ondblclick", value: javascript)
   }
 
   /// Execute JavaScript when an element is being dragged.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOndrag(safe javascript: StaticString) -> some View {
+  public func htmlOndrag(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOndrag(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when an element is being dragged.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOndrag(unsafe javascript: String) -> some View {
+  public func htmlOndrag(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "ondrag", value: javascript)
   }
 
   /// Execute JavaScript when the user has finished dragging an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOndragend(safe javascript: StaticString) -> some View {
+  public func htmlOndragend(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOndragend(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the user has finished dragging an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOndragend(unsafe javascript: String) -> some View {
+  public func htmlOndragend(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "ondragend", value: javascript)
   }
 
   /// Execute JavaScript when a draggable element enters a drop target.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOndragenter(safe javascript: StaticString) -> some View {
+  public func htmlOndragenter(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOndragenter(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when a draggable element enters a drop target.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOndragenter(unsafe javascript: String) -> some View {
+  public func htmlOndragenter(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "ondragenter", value: javascript)
   }
 
   /// Execute JavaScript when an element is being dragged over a drop target.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOndragover(safe javascript: StaticString) -> some View {
+  public func htmlOndragover(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOndragover(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when an element is being dragged over a drop target.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOndragover(unsafe javascript: String) -> some View {
+  public func htmlOndragover(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "ondragover", value: javascript)
   }
 
   /// Execute JavaScript when the user starts to drag an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOndragstart(safe javascript: StaticString) -> some View {
+  public func htmlOndragstart(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOndragstart(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the user starts to drag an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOndragstart(unsafe javascript: String) -> some View {
+  public func htmlOndragstart(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "ondragstart", value: javascript)
   }
 
   /// Execute JavaScript when a draggable element is dropped in the element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOndrop(safe javascript: StaticString) -> some View {
+  public func htmlOndrop(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOndrop(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when a draggable element is dropped in the element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOndrop(unsafe javascript: String) -> some View {
+  public func htmlOndrop(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "ondrop", value: javascript)
   }
 
   /// Execute JavaScript when an element gets focus.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnfocus(safe javascript: StaticString) -> some View {
+  public func htmlOnfocus(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnfocus(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when an element gets focus.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnfocus(unsafe javascript: String) -> some View {
+  public func htmlOnfocus(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onfocus", value: javascript)
   }
 
   /// Execute JavaScript when a user is pressing a key.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnkeydown(safe javascript: StaticString) -> some View {
+  public func htmlOnkeydown(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnkeydown(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when a user is pressing a key.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnkeydown(unsafe javascript: String) -> some View {
+  public func htmlOnkeydown(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onkeydown", value: javascript)
   }
 
   /// Execute JavaScript when a user presses a key.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnkeypress(safe javascript: StaticString) -> some View {
+  public func htmlOnkeypress(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnkeypress(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when a user presses a key.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnkeypress(unsafe javascript: String) -> some View {
+  public func htmlOnkeypress(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onkeypress", value: javascript)
   }
 
   /// Execute JavaScript when a user releases a key.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnkeyup(safe javascript: StaticString) -> some View {
+  public func htmlOnkeyup(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnkeyup(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when a user releases a key.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnkeyup(unsafe javascript: String) -> some View {
+  public func htmlOnkeyup(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onkeyup", value: javascript)
   }
 
   /// Execute JavaScript when pressing a mouse button over an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnmousedown(safe javascript: StaticString) -> some View {
+  public func htmlOnmousedown(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnmousedown(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when pressing a mouse button over an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnmousedown(unsafe javascript: String) -> some View {
+  public func htmlOnmousedown(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onmousedown", value: javascript)
   }
 
   /// Execute JavaScript when moving the mouse pointer over an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnmousemove(safe javascript: StaticString) -> some View {
+  public func htmlOnmousemove(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnmousemove(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when moving the mouse pointer over an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnmousemove(unsafe javascript: String) -> some View {
+  public func htmlOnmousemove(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onmousemove", value: javascript)
   }
 
   /// Execute JavaScript when moving the mouse pointer out of an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnmouseout(safe javascript: StaticString) -> some View {
+  public func htmlOnmouseout(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnmouseout(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when moving the mouse pointer out of an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnmouseout(unsafe javascript: String) -> some View {
+  public func htmlOnmouseout(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onmouseout", value: javascript)
   }
 
   /// Execute JavaScript when moving the mouse pointer over an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnmouseover(safe javascript: StaticString) -> some View {
+  public func htmlOnmouseover(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnmouseover(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when moving the mouse pointer over an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnmouseover(unsafe javascript: String) -> some View {
+  public func htmlOnmouseover(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onmouseover", value: javascript)
   }
 
   /// Execute JavaScript when releasing a mouse button over an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnmouseup(safe javascript: StaticString) -> some View {
+  public func htmlOnmouseup(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnmouseup(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when releasing a mouse button over an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnmouseup(unsafe javascript: String) -> some View {
+  public func htmlOnmouseup(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onmouseup", value: javascript)
   }
 
   /// Execute JavaScript when pasting some text in an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnpaste(safe javascript: StaticString) -> some View {
+  public func htmlOnpaste(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnpaste(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when pasting some text in an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnpaste(unsafe javascript: String) -> some View {
+  public func htmlOnpaste(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onpaste", value: javascript)
   }
 
   /// Execute JavaScript when an element is being scrolled.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnscroll(safe javascript: StaticString) -> some View {
+  public func htmlOnscroll(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnscroll(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when an element is being scrolled.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnscroll(unsafe javascript: String) -> some View {
+  public func htmlOnscroll(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onscroll", value: javascript)
   }
 
   /// Execute JavaScript when the user rolls the mouse wheel over an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnwheel(safe javascript: StaticString) -> some View {
+  public func htmlOnwheel(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnwheel(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the user rolls the mouse wheel over an element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnwheel(unsafe javascript: String) -> some View {
+  public func htmlOnwheel(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onwheel", value: javascript)
   }
 
@@ -2444,164 +2484,164 @@ extension HtmlBody {
   /// Execute JavaScript when a page has started printing.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnafterprint(safe javascript: StaticString) -> some View {
+  public func htmlOnafterprint(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnafterprint(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when a page has started printing.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnafterprint(unsafe javascript: String) -> some View {
+  public func htmlOnafterprint(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onafterprint", value: javascript)
   }
 
   /// Execute JavaScript when a page is about to be printed.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnbeforeprint(safe javascript: StaticString) -> some View {
+  public func htmlOnbeforeprint(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnbeforeprint(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when a page is about to be printed.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnbeforeprint(unsafe javascript: String) -> some View {
+  public func htmlOnbeforeprint(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onbeforeprint", value: javascript)
   }
 
   /// Execute JavaScript when the page is about to be unloaded.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnbeforeunload(safe javascript: StaticString) -> some View {
+  public func htmlOnbeforeunload(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnbeforeunload(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the page is about to be unloaded.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnbeforeunload(unsafe javascript: String) -> some View {
+  public func htmlOnbeforeunload(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onbeforeunload", value: javascript)
   }
 
   /// Execute JavaScript when the anchor part has been changed.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnhashchange(safe javascript: StaticString) -> some View {
+  public func htmlOnhashchange(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnhashchange(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the anchor part has been changed.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnhashchange(unsafe javascript: String) -> some View {
+  public func htmlOnhashchange(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onhashchange", value: javascript)
   }
 
-  public func htmlOnmessage(safe javascript: StaticString) -> some View {
+  public func htmlOnmessage(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnmessage(unsafe: String(describing: javascript))
   }
 
-  public func htmlOnmessage(unsafe javascript: String) -> some View {
+  public func htmlOnmessage(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onmessage", value: javascript)
   }
 
   /// Execute JavaScript when the browser starts to work offline.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnoffline(safe javascript: StaticString) -> some View {
+  public func htmlOnoffline(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnoffline(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the browser starts to work offline.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnoffline(unsafe javascript: String) -> some View {
+  public func htmlOnoffline(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onoffline", value: javascript)
   }
 
   /// Execute JavaScript when the browser starts to work online.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnonline(safe javascript: StaticString) -> some View {
+  public func htmlOnonline(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnonline(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the browser starts to work online.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnonline(unsafe javascript: String) -> some View {
+  public func htmlOnonline(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "ononline", value: javascript)
   }
 
   /// Execute JavaScript when the user is navigating away from a webpage.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnpagehide(safe javascript: StaticString) -> some View {
+  public func htmlOnpagehide(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnpagehide(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the user is navigating away from a webpage.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnpagehide(unsafe javascript: String) -> some View {
+  public func htmlOnpagehide(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onpagehide", value: javascript)
   }
 
   /// Execute JavaScript when a user navigates to a webpage.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnpageshow(safe javascript: StaticString) -> some View {
+  public func htmlOnpageshow(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnpageshow(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when a user navigates to a webpage.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnpageshow(unsafe javascript: String) -> some View {
+  public func htmlOnpageshow(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onpageshow", value: javascript)
   }
 
-  public func htmlOnpopstate(safe javascript: StaticString) -> some View {
+  public func htmlOnpopstate(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnpopstate(unsafe: String(describing: javascript))
   }
 
-  public func htmlOnpopstate(unsafe javascript: String) -> some View {
+  public func htmlOnpopstate(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onpopstate", value: javascript)
   }
 
   /// Execute JavaScript when the browser window is resized.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnresize(safe javascript: StaticString) -> some View {
+  public func htmlOnresize(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnresize(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the browser window is resized.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnresize(unsafe javascript: String) -> some View {
+  public func htmlOnresize(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onresize", value: javascript)
   }
 
-  public func htmlOnstorage(safe javascript: StaticString) -> some View {
+  public func htmlOnstorage(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnstorage(unsafe: String(describing: javascript))
   }
 
-  public func htmlOnstorage(unsafe javascript: String) -> some View {
+  public func htmlOnstorage(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onstorage", value: javascript)
   }
 
   /// Execute JavaScript when a user unloads the document.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnunload(safe javascript: StaticString) -> some View {
+  public func htmlOnunload(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnunload(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when a user unloads the document.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnunload(unsafe javascript: String) -> some View {
+  public func htmlOnunload(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onunload", value: javascript)
   }
 }
@@ -2610,14 +2650,14 @@ extension HtmlDetails {
   /// Execute JavaScript when a `<details>` element is opened or closed.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOntoggle(safe javascript: StaticString) -> some View {
+  public func htmlOntoggle(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOntoggle(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when a `<details>` element is opened or closed.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOntoggle(unsafe javascript: String) -> some View {
+  public func htmlOntoggle(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "ontoggle", value: javascript)
   }
 }
@@ -2626,28 +2666,28 @@ extension HtmlForm {
   /// Execute JavaScript when a form is reset.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnreset(safe javascript: StaticString) -> some View {
+  public func htmlOnreset(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnreset(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when a form is reset.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnreset(unsafe javascript: String) -> some View {
+  public func htmlOnreset(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onreset", value: javascript)
   }
 
   /// Execute JavaScript when a form is submitted.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnsubmit(safe javascript: StaticString) -> some View {
+  public func htmlOnsubmit(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnsubmit(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when a form is submitted.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnsubmit(unsafe javascript: String) -> some View {
+  public func htmlOnsubmit(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onsubmit", value: javascript)
   }
 }
@@ -2656,34 +2696,35 @@ extension HtmlInput {
   /// Execute JavaScript when an input field is invalid.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOninvalid(safe javascript: StaticString) -> some View {
+  public func htmlOninvalid(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOninvalid(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when an input field is invalid.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOninvalid(unsafe javascript: String) -> some View {
+  public func htmlOninvalid(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "oninvalid", value: javascript)
   }
 
   /// Execute JavaScript when submitting a search.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnsearch(safe javascript: StaticString) -> some View {
+  public func htmlOnsearch(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnsearch(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when submitting a search.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnsearch(unsafe javascript: String) -> some View {
+  public func htmlOnsearch(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onsearch", value: javascript)
   }
 }
 
 // public protocol HasOnabort {}
 
+extension ModifiedContent: HasOnabort where Content: HasOnabort {}
 // extension HtmlAudio: HasOnabort {}
 // extension HtmlEmbed: HasOnabort {}
 // extension HtmlImg: HasOnabort {}
@@ -2694,14 +2735,14 @@ extension View where Self: HasOnabort {
   /// Execute JavaScript if loading of a resource is aborted.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnabort(safe javascript: StaticString) -> some View {
+  public func htmlOnabort(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnabort(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript if loading of a resource is aborted.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnabort(unsafe javascript: String) -> some View {
+  public func htmlOnabort(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onabort", value: javascript)
   }
 }
@@ -2710,20 +2751,21 @@ extension HtmlTrack {
   /// Execute JavaScript when the cue changes in a `<track>` element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOncuechange(safe javascript: StaticString) -> some View {
+  public func htmlOncuechange(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOncuechange(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the cue changes in a `<track>` element.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOncuechange(unsafe javascript: String) -> some View {
+  public func htmlOncuechange(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "oncuechange", value: javascript)
   }
 }
 
 // public protocol HasOncanplay {}
 
+extension ModifiedContent: HasOncanplay where Content: HasOncanplay {}
 // extension HtmlAudio: HasOncanplay {}
 // extension HtmlEmbed: HasOncanplay {}
 // extension HtmlObject: HasOncanplay {}
@@ -2733,20 +2775,21 @@ extension View where Self: HasOncanplay {
   /// Execute JavaScript when a resource is ready to start playing.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOncanplay(safe javascript: StaticString) -> some View {
+  public func htmlOncanplay(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOncanplay(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when a resource is ready to start playing.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOncanplay(unsafe javascript: String) -> some View {
+  public func htmlOncanplay(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "oncanplay", value: javascript)
   }
 }
 
 // public protocol HasOncanplaythrough {}
 
+extension ModifiedContent: HasOncanplaythrough where Content: HasOncanplaythrough {}
 // extension HtmlAudio: HasOncanplaythrough {}
 // extension HtmlVideo: HasOncanplaythrough {}
 
@@ -2754,20 +2797,21 @@ extension View where Self: HasOncanplaythrough {
   /// Execute JavaScript when a resource can be played all the way through, without stopping.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOncanplaythrough(safe javascript: StaticString) -> some View {
+  public func htmlOncanplaythrough(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOncanplaythrough(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when a resource can be played all the way through, without stopping.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOncanplaythrough(unsafe javascript: String) -> some View {
+  public func htmlOncanplaythrough(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "oncanplaythrough", value: javascript)
   }
 }
 
 // public protocol HasOnchange {}
 
+extension ModifiedContent: HasOnchange where Content: HasOnchange {}
 // extension HtmlInput: HasOnchange {}
 // extension HtmlSelect: HasOnchange {}
 // extension HtmlTextarea: HasOnchange {}
@@ -2776,20 +2820,21 @@ extension View where Self: HasOnchange {
   /// Execute JavaScript when a user changes the value of a form control.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnchange(safe javascript: StaticString) -> some View {
+  public func htmlOnchange(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnchange(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when a user changes the value of a form control.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnchange(unsafe javascript: String) -> some View {
+  public func htmlOnchange(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onchange", value: javascript)
   }
 }
 
 // public protocol HasOndurationchange {}
 
+extension ModifiedContent: HasOndurationchange where Content: HasOndurationchange {}
 // extension HtmlAudio: HasOndurationchange {}
 // extension HtmlVideo: HasOndurationchange {}
 
@@ -2797,35 +2842,37 @@ extension View where Self: HasOndurationchange {
   /// Execute JavaScript when the media is ready to start playing.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOndurationchange(safe javascript: StaticString) -> some View {
+  public func htmlOndurationchange(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOndurationchange(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the media is ready to start playing.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOndurationchange(unsafe javascript: String) -> some View {
+  public func htmlOndurationchange(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "ondurationchange", value: javascript)
   }
 }
 
 // public protocol HasOnemptied {}
 
+extension ModifiedContent: HasOnemptied where Content: HasOnemptied {}
 // extension HtmlAudio: HasOnemptied {}
 // extension HtmlVideo: HasOnemptied {}
 
 extension View where Self: HasOnemptied {
-  public func htmlOnemptied(safe javascript: StaticString) -> some View {
+  public func htmlOnemptied(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnemptied(unsafe: String(describing: javascript))
   }
 
-  public func htmlOnemptied(unsafe javascript: String) -> some View {
+  public func htmlOnemptied(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onemptied", value: javascript)
   }
 }
 
 // public protocol HasOnended {}
 
+extension ModifiedContent: HasOnended where Content: HasOnended {}
 // extension HtmlAudio: HasOnended {}
 // extension HtmlVideo: HasOnended {}
 
@@ -2833,20 +2880,21 @@ extension View where Self: HasOnended {
   /// Execute JavaScript when the media has stopped playing.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnended(safe javascript: StaticString) -> some View {
+  public func htmlOnended(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnended(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the media has stopped playing.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnended(unsafe javascript: String) -> some View {
+  public func htmlOnended(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onended", value: javascript)
   }
 }
 
 // public protocol HasOnerror {}
 
+extension ModifiedContent: HasOnerror where Content: HasOnerror {}
 // extension HtmlAudio: HasOnerror {}
 // extension HtmlImg: HasOnerror {}
 // extension HtmlInput: HasOnerror {} // TODO: type="image"
@@ -2856,17 +2904,18 @@ extension View where Self: HasOnended {
 // extension HtmlVideo: HasOnerror {}
 
 extension View where Self: HasOnerror {
-  public func htmlOnerror(safe javascript: StaticString) -> some View {
+  public func htmlOnerror(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnerror(unsafe: String(describing: javascript))
   }
 
-  public func htmlOnerror(unsafe javascript: String) -> some View {
+  public func htmlOnerror(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onerror", value: javascript)
   }
 }
 
 // public protocol HasOninput {}
 
+extension ModifiedContent: HasOninput where Content: HasOninput {}
 // extension HtmlInput: HasOninput {}
 // extension HtmlTextarea: HasOninput {}
 
@@ -2874,20 +2923,21 @@ extension View where Self: HasOninput {
   /// Execute JavaScript when a user writes something in a text field.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOninput(safe javascript: StaticString) -> some View {
+  public func htmlOninput(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOninput(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when a user writes something in a text field.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOninput(unsafe javascript: String) -> some View {
+  public func htmlOninput(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "oninput", value: javascript)
   }
 }
 
 // public protocol HasOnload {}
 
+extension ModifiedContent: HasOnload where Content: HasOnload {}
 // extension HtmlBody: HasOnload {}
 // extension HtmlIframe: HasOnload {}
 // extension HtmlImg: HasOnload {}
@@ -2900,65 +2950,69 @@ extension View where Self: HasOnload {
   /// Execute JavaScript immediately after a page has been loaded.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnload(safe javascript: StaticString) -> some View {
+  public func htmlOnload(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnload(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript immediately after a page has been loaded.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnload(unsafe javascript: String) -> some View {
+  public func htmlOnload(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onload", value: javascript)
   }
 }
 
 // public protocol HasOnloadeddata {}
 
+extension ModifiedContent: HasOnloadeddata where Content: HasOnloadeddata {}
 // extension HtmlAudio: HasOnloadeddata {}
 // extension HtmlVideo: HasOnloadeddata {}
 
 extension View where Self: HasOnloadeddata {
-  public func htmlOnloadeddata(safe javascript: StaticString) -> some View {
+  public func htmlOnloadeddata(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnloadeddata(unsafe: String(describing: javascript))
   }
 
-  public func htmlOnloadeddata(unsafe javascript: String) -> some View {
+  public func htmlOnloadeddata(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onloadeddata", value: javascript)
   }
 }
 
 // public protocol HasOnloadedmetadata {}
 
+extension ModifiedContent: HasOnloadedmetadata where Content: HasOnloadedmetadata {}
 // extension HtmlAudio: HasOnloadedmetadata {}
 // extension HtmlVideo: HasOnloadedmetadata {}
 
 extension View where Self: HasOnloadedmetadata {
-  public func htmlOnloadedmetadata(safe javascript: StaticString) -> some View {
+  public func htmlOnloadedmetadata(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnloadedmetadata(unsafe: String(describing: javascript))
   }
 
-  public func htmlOnloadedmetadata(unsafe javascript: String) -> some View {
+  public func htmlOnloadedmetadata(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onloadedmetadata", value: javascript)
   }
 }
 
 // public protocol HasOnloadstart {}
 
+extension ModifiedContent: HasOnloadstart where Content: HasOnloadstart {}
 // extension HtmlAudio: HasOnloadstart {}
 // extension HtmlVideo: HasOnloadstart {}
 
 extension View where Self: HasOnloadstart {
-  public func htmlOnloadstart(safe javascript: StaticString) -> some View {
+  public func htmlOnloadstart(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnloadstart(unsafe: String(describing: javascript))
   }
 
-  public func htmlOnloadstart(unsafe javascript: String) -> some View {
+  public func htmlOnloadstart(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onloadstart", value: javascript)
   }
 }
 
 // public protocol HasOnpause {}
 
+extension ModifiedContent: HasOnpause where Content: HasOnpause {}
 // extension HtmlAudio: HasOnpause {}
 // extension HtmlVideo: HasOnpause {}
 
@@ -2966,20 +3020,21 @@ extension View where Self: HasOnpause {
   /// Execute JavaScript when media has been paused.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnpause(safe javascript: StaticString) -> some View {
+  public func htmlOnpause(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnpause(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when media has been paused.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnpause(unsafe javascript: String) -> some View {
+  public func htmlOnpause(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onpause", value: javascript)
   }
 }
 
 // public protocol HasOnplay {}
 
+extension ModifiedContent: HasOnplay where Content: HasOnplay {}
 // extension HtmlAudio: HasOnplay {}
 // extension HtmlVideo: HasOnplay {}
 
@@ -2987,20 +3042,21 @@ extension View where Self: HasOnplay {
   /// Execute JavaScript when media has been played.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnplay(safe javascript: StaticString) -> some View {
+  public func htmlOnplay(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnplay(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when media has been played.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnplay(unsafe javascript: String) -> some View {
+  public func htmlOnplay(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onplay", value: javascript)
   }
 }
 
 // public protocol HasOnplaying {}
 
+extension ModifiedContent: HasOnplaying where Content: HasOnplaying {}
 // extension HtmlAudio: HasOnplaying {}
 // extension HtmlVideo: HasOnplaying {}
 
@@ -3008,20 +3064,21 @@ extension View where Self: HasOnplaying {
   /// Execute JavaScript when media is ready to start after having been paused.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnplaying(safe javascript: StaticString) -> some View {
+  public func htmlOnplaying(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnplaying(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when media is ready to start after having been paused.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnplaying(unsafe javascript: String) -> some View {
+  public func htmlOnplaying(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onplaying", value: javascript)
   }
 }
 
 // public protocol HasOnprogress {}
 
+extension ModifiedContent: HasOnprogress where Content: HasOnprogress {}
 // extension HtmlAudio: HasOnprogress {}
 // extension HtmlVideo: HasOnprogress {}
 
@@ -3029,20 +3086,21 @@ extension View where Self: HasOnprogress {
   /// Execute JavaScript when media is downloading.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnprogress(safe javascript: StaticString) -> some View {
+  public func htmlOnprogress(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnprogress(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when media is downloading.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnprogress(unsafe javascript: String) -> some View {
+  public func htmlOnprogress(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onprogress", value: javascript)
   }
 }
 
 // public protocol HasOnratechange {}
 
+extension ModifiedContent: HasOnratechange where Content: HasOnratechange {}
 // extension HtmlAudio: HasOnratechange {}
 // extension HtmlVideo: HasOnratechange {}
 
@@ -3050,20 +3108,21 @@ extension View where Self: HasOnratechange {
   /// Execute JavaScript when the playing speed of media is changed.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnratechange(safe javascript: StaticString) -> some View {
+  public func htmlOnratechange(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnratechange(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the playing speed of media is changed.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnratechange(unsafe javascript: String) -> some View {
+  public func htmlOnratechange(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onratechange", value: javascript)
   }
 }
 
 // public protocol HasOnseeked {}
 
+extension ModifiedContent: HasOnseeked where Content: HasOnseeked {}
 // extension HtmlAudio: HasOnseeked {}
 // extension HtmlVideo: HasOnseeked {}
 
@@ -3071,20 +3130,21 @@ extension View where Self: HasOnseeked {
   /// Execute JavaScript when the user is finished moving/skipping to a new position in media.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnseeked(safe javascript: StaticString) -> some View {
+  public func htmlOnseeked(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnseeked(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the user is finished moving/skipping to a new position in media.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnseeked(unsafe javascript: String) -> some View {
+  public func htmlOnseeked(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onseeked", value: javascript)
   }
 }
 
 // public protocol HasOnseeking {}
 
+extension ModifiedContent: HasOnseeking where Content: HasOnseeking {}
 // extension HtmlAudio: HasOnseeking {}
 // extension HtmlVideo: HasOnseeking {}
 
@@ -3092,20 +3152,21 @@ extension View where Self: HasOnseeking {
   /// Execute JavaScript when the user starts moving/skipping to a new position in the media.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnseeking(safe javascript: StaticString) -> some View {
+  public func htmlOnseeking(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnseeking(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the user starts moving/skipping to a new position in the media.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnseeking(unsafe javascript: String) -> some View {
+  public func htmlOnseeking(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onseeking", value: javascript)
   }
 }
 
 // public protocol HasOnselect {}
 
+extension ModifiedContent: HasOnselect where Content: HasOnselect {}
 // extension HtmlInput: HasOnselect {}
 // extension HtmlTextarea: HasOnselect {}
 
@@ -3113,20 +3174,21 @@ extension View where Self: HasOnselect {
   /// Execute JavaScript when some text has been selected.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnselect(safe javascript: StaticString) -> some View {
+  public func htmlOnselect(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnselect(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when some text has been selected.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnselect(unsafe javascript: String) -> some View {
+  public func htmlOnselect(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onselect", value: javascript)
   }
 }
 
 // public protocol HasOnstalled {}
 
+extension ModifiedContent: HasOnstalled where Content: HasOnstalled {}
 // extension HtmlAudio: HasOnstalled {}
 // extension HtmlVideo: HasOnstalled {}
 
@@ -3134,20 +3196,21 @@ extension View where Self: HasOnstalled {
   /// Execute JavaScript when the browser is trying to get media data, but data is not available.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnstalled(safe javascript: StaticString) -> some View {
+  public func htmlOnstalled(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnstalled(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the browser is trying to get media data, but data is not available.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnstalled(unsafe javascript: String) -> some View {
+  public func htmlOnstalled(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onstalled", value: javascript)
   }
 }
 
 // public protocol HasOnsuspend {}
 
+extension ModifiedContent: HasOnsuspend where Content: HasOnsuspend {}
 // extension HtmlAudio: HasOnsuspend {}
 // extension HtmlVideo: HasOnsuspend {}
 
@@ -3155,20 +3218,21 @@ extension View where Self: HasOnsuspend {
   /// Execute JavaScript when the browser is intentionally not getting media data.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnsuspend(safe javascript: StaticString) -> some View {
+  public func htmlOnsuspend(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnsuspend(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the browser is intentionally not getting media data.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnsuspend(unsafe javascript: String) -> some View {
+  public func htmlOnsuspend(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onsuspend", value: javascript)
   }
 }
 
 // public protocol HasOntimeupdate {}
 
+extension ModifiedContent: HasOntimeupdate where Content: HasOntimeupdate {}
 // extension HtmlAudio: HasOntimeupdate {}
 // extension HtmlVideo: HasOntimeupdate {}
 
@@ -3176,20 +3240,21 @@ extension View where Self: HasOntimeupdate {
   /// Execute JavaScript when the current playback position has changed.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOntimeupdate(safe javascript: StaticString) -> some View {
+  public func htmlOntimeupdate(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOntimeupdate(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the current playback position has changed.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOntimeupdate(unsafe javascript: String) -> some View {
+  public func htmlOntimeupdate(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "ontimeupdate", value: javascript)
   }
 }
 
 // public protocol HasOnvolumechange {}
 
+extension ModifiedContent: HasOnvolumechange where Content: HasOnvolumechange {}
 // extension HtmlAudio: HasOnvolumechange {}
 // extension HtmlVideo: HasOnvolumechange {}
 
@@ -3197,20 +3262,21 @@ extension View where Self: HasOnvolumechange {
   /// Execute JavaScript when the volume of a video has been changed.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnvolumechange(safe javascript: StaticString) -> some View {
+  public func htmlOnvolumechange(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnvolumechange(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the volume of a video has been changed.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnvolumechange(unsafe javascript: String) -> some View {
+  public func htmlOnvolumechange(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onvolumechange", value: javascript)
   }
 }
 
 // public protocol HasOnwaiting {}
 
+extension ModifiedContent: HasOnwaiting where Content: HasOnwaiting {}
 // extension HtmlAudio: HasOnwaiting {}
 // extension HtmlVideo: HasOnwaiting {}
 
@@ -3218,14 +3284,14 @@ extension View where Self: HasOnwaiting {
   /// Execute JavaScript when the media stops because it needs to buffer the next frame.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnwaiting(safe javascript: StaticString) -> some View {
+  public func htmlOnwaiting(safe javascript: StaticString) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlOnwaiting(unsafe: String(describing: javascript))
   }
 
   /// Execute JavaScript when the media stops because it needs to buffer the next frame.
   ///
   /// - Parameter javascript: JavaScript to execute.
-  public func htmlOnwaiting(unsafe javascript: String) -> some View {
+  public func htmlOnwaiting(unsafe javascript: String) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "onwaiting", value: javascript)
   }
 }
@@ -3254,15 +3320,15 @@ public enum HtmlAttrAlignment: String {
 }
 
 extension View {
-  public func htmlAlign(_ value: HtmlAttrAlignment) -> some View {
+  public func htmlAlign(_ value: HtmlAttrAlignment) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "align", value: value.rawValue)
   }
 
-  public func htmlBorder(_ value: Int) -> some View {
+  public func htmlBorder(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "border", value: String(value))
   }
 
-  public func htmlHeight(_ value: HtmlAttrHtml4Size) -> some View {
+  public func htmlHeight(_ value: HtmlAttrHtml4Size) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "height", value: value.rawValue)
   }
 }
@@ -3275,21 +3341,21 @@ public enum HtmlAttrVerticalAlignment: String {
 }
 
 extension View {
-  public func htmlValign(_ value: HtmlAttrVerticalAlignment) -> some View {
+  public func htmlValign(_ value: HtmlAttrVerticalAlignment) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "valign", value: value.rawValue)
   }
 
-  public func htmlWidth(_ value: HtmlAttrHtml4Size) -> some View {
+  public func htmlWidth(_ value: HtmlAttrHtml4Size) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "width", value: value.rawValue)
   }
 }
 
 extension HtmlTable {
-  public func htmlCellpadding(_ value: Int) -> some View {
+  public func htmlCellpadding(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "cellpadding", value: String(value))
   }
 
-  public func htmlCellspacing(_ value: Int) -> some View {
+  public func htmlCellspacing(_ value: Int) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return htmlAttribute(key: "cellspacing", value: String(value))
   }
 }

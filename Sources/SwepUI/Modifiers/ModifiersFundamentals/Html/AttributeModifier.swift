@@ -13,7 +13,7 @@ public struct HtmlAttributeModifier<Content: View>: ViewModifier {
 }
 
 extension View {
-  public func htmlAttribute(key: String, value: Optional<String>) -> some View {
+  public func htmlAttribute(key: String, value: Optional<String>) -> ModifiedContent<Self, HtmlAttributeModifier<Self>> {
     return self.modifier(HtmlAttributeModifier<Self>(key: key, value: value))
   }
 }
