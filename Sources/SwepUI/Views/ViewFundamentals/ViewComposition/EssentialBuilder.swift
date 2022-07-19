@@ -80,8 +80,7 @@ public struct Builder {
 
 extension Builder.Node {
   fileprivate func appending(attribute: Attribute) -> Builder.Node {
-    switch self {
-    case let .tag(name, attributes, eventListeners, children):
+    if case let .tag(name, attributes, eventListeners, children) = self {
       var updatedAttributes = Array<Attribute>()
       updatedAttributes.reserveCapacity(attributes.count + 1)
       var values = Array<String>()
@@ -95,18 +94,13 @@ extension Builder.Node {
       values.append(attribute.value ?? "")
       updatedAttributes.append(Attribute(key: attribute.key, value: values.joined(separator: "")))
       return .tag(name: name, attributes: updatedAttributes, eventListeners: eventListeners, children: children)
-    case let .plaintext(value):
-      return .plaintext(value)
-    case let .rawtext(value):
-      return .rawtext(value)
-    case let .comment(value):
-      return .comment(value)
+    } else {
+      return self
     }
   }
 
   fileprivate func appending(eventListener: EventListener) -> Builder.Node {
-    switch self {
-    case let .tag(name, attributes, eventListeners, children):
+    if case let .tag(name, attributes, eventListeners, children) = self {
       var updatedEventListeners = Array<EventListener>()
       updatedEventListeners.reserveCapacity(attributes.count + 1)
       var actions = Array<EventListenerAction>()
@@ -120,12 +114,8 @@ extension Builder.Node {
       actions.append(contentsOf: eventListener.actions)
       updatedEventListeners.append(EventListener(name: eventListener.name, actions: actions))
       return .tag(name: name, attributes: attributes, eventListeners: updatedEventListeners, children: children)
-    case let .plaintext(value):
-      return .plaintext(value)
-    case let .rawtext(value):
-      return .rawtext(value)
-    case let .comment(value):
-      return .comment(value)
+    } else {
+      return self
     }
   }
 
