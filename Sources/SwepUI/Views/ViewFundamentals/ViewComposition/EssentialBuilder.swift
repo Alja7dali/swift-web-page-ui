@@ -150,9 +150,9 @@ extension Builder.Node {
     case let .plaintext(value):
       _ = parent.appendChild(document.createTextNode(value))
     case let .rawtext(value):
-    _ = parent.appendChild(document.createTextNode(value))
+    _ = parent.appendChild(document.createCDATASection(value))
     case let .comment(value):
-    _ = parent.appendChild(document.createTextNode("<!-- \(value) -->"))
+    _ = parent.appendChild(document.createComment(value))
     }
   }
 }
