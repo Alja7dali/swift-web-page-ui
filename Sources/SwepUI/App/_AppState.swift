@@ -56,22 +56,31 @@ internal func _AppStateLauncher<A: App>(_ app: A) {
   _ = icon.setAttribute("href", "https://www.swift.org/apple-touch-icon.png")
   _ = JSObject.global.document.head.appendChild(icon)
 
-  var fakeBody = JSObject.global.document.createElement("div")
-  _ = JSObject.global.document.body.appendChild(fakeBody)
+  let makeDom = { (children: Array<Builder>) -> Builder in
+    return Builder.tag(
+      name: "div",
+      attributes: [
+        ("style", "flex-grow: 1;")
+      ],
+      eventListeners: [],
+      children: children
+    )
+  }
 
-  ///FIXME: Debounce this closure. When every @State property gets updated, this closure
-  ///is called, which causing the whole app to re-render N times where N is the number of
-  ///@State properties that got updated.
+  var vdom = makeDom([])
+  var dom = render(vdom)
+  _ = JSObject.global.document.body.appendChild(dom)
+
   ///var renderingAttemptCount: UInt = 0
   _AppStateRenderer = {
     ///renderingAttemptCount += 1
     ///print("SwepUI: Rendering app count(\(renderingAttemptCount))")
     _AppStateIdentifier.reset()
-    fakeBody.innerText = ""
-    _ = fakeBody.setAttribute("style", "flex-grow: 1;")
-    var builder = Builder()
-    app.body.build(into: &builder)
-    builder.render(fakeBody)
+
+    let newVDom = makeDom(makeChildren(app.body))
+    let patch = diff(vdom, newVDom)
+    dom = patch(dom)
+    vdom = newVDom
   }
   // render for first time
   _AppStateRenderer?()
