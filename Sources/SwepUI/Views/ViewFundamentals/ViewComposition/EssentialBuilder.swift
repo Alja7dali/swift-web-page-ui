@@ -38,6 +38,8 @@ public indirect enum Builder {
         i += 1
       }
       append(.tag(name: name, attributes: attributes, eventListeners: eventListeners, children: children))
+    } else {
+      append(last)
     }
   }
 
@@ -126,9 +128,9 @@ extension Builder {
     return .none
   }
 
-  fileprivate func map(_ transform: (Builder) -> Builder) -> Builder {
+  fileprivate mutating func map(_ transform: (Builder) -> Builder) -> Builder {
     if case let .tag(name, attributes, eventListeners, children) = self {
-      return .tag(name: name, attributes: attributes, eventListeners: eventListeners, children: children.map(transform))
+      return transform(self)
     } else {
       return self
     }

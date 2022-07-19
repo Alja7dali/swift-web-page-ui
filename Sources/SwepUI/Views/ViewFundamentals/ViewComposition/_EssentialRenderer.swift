@@ -22,7 +22,7 @@ func render(_ node: Builder) -> JSValue {
   case let .plaintext(string):
     return JSObject.global.document.createTextNode(string)
   case let .rawtext(string):
-    return JSObject.global.document.createCDATASection(string)
+    return JSObject.global.document.createTextNode(string)
   case let .comment(string):
     return JSObject.global.document.createComment(string)
   }

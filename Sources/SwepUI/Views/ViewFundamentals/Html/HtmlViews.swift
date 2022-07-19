@@ -2537,6 +2537,10 @@ public struct HtmlTextarea: View {
 
   private let makeContent: () -> Body
 
+  public init(_ text: String = "") {
+    makeContent = { HtmlRawtext(text) }
+  }
+
   public init(@ViewBuilder content: @escaping () -> Body) {
     makeContent = content
   }
