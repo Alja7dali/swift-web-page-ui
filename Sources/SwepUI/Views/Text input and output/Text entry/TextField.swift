@@ -37,6 +37,7 @@ public struct TextField: View {
   ///
   public var body: some View {
     return HtmlInput(type: .text)
+      .htmlValue(text.wrappedValue)
       .htmlPlaceholder(label)
       .cssMinWidth(100%)
       .jsChange { _ in

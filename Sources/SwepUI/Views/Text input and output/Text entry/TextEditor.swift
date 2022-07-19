@@ -57,7 +57,7 @@ public struct TextEditor: View {
   ///     }
   ///
   public var body: some View {
-    return HtmlTextarea()
+    return HtmlTextarea(text.wrappedValue)
       .cssMinWidth(100%)
       .cssMaxWidth(100%)
       .cssMinHeight(.px(50))

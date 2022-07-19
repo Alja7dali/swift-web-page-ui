@@ -37,6 +37,7 @@ public struct SecureField: View {
   ///
   public var body: some View {
     return HtmlInput(type: .password)
+      .htmlValue(text.wrappedValue)
       .htmlPlaceholder(label)
       .cssMinWidth(100%)
       .jsChange { _ in
