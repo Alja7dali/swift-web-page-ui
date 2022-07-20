@@ -2,6 +2,16 @@
 
 SwepUIExampleApp.main()
 
+let title = JSObject.global.document.createElement("title")
+_ = JSObject.global.document.head.appendChild(title)
+_ = title.appendChild(JSObject.global.document.createTextNode("SwepUI App"))
+
+let icon = JSObject.global.document.createElement("link")
+_ = icon.setAttribute("rel", "icon")
+_ = icon.setAttribute("type", "image/x-icon")
+_ = icon.setAttribute("href", "https://www.swift.org/apple-touch-icon.png")
+_ = JSObject.global.document.head.appendChild(icon)
+
 // // As of now there is no SwepUI does not provide a way to customize the head of the web page.
 // // However, we can add whatever tags to head by bridging to the DOM via JavaScriptKit.
 // func appendNewChildToHead(name: String, attributes: [String: String]) {

@@ -46,16 +46,6 @@ internal func _AppStateLauncher<A: App>(_ app: A) {
     """
   ))
 
-  let title = JSObject.global.document.createElement("title")
-  _ = JSObject.global.document.head.appendChild(title)
-  _ = title.appendChild(JSObject.global.document.createTextNode("SwepUI App"))
-
-  let icon = JSObject.global.document.createElement("link")
-  _ = icon.setAttribute("rel", "icon")
-  _ = icon.setAttribute("type", "image/x-icon")
-  _ = icon.setAttribute("href", "https://www.swift.org/apple-touch-icon.png")
-  _ = JSObject.global.document.head.appendChild(icon)
-
   let makeDom = { (children: Array<Builder>) -> Builder in
     return Builder.tag(
       name: "div",
