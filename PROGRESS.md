@@ -55,9 +55,9 @@ The following list is some of the components that are presented in [SwiftUI]([ht
 ||||||
 | 🟠     | [Text](https://developer.apple.com/documentation/swiftui/text)                               | `struct`   | Text display                 | Text input and output     |
 | ⭕     | [Label](https://developer.apple.com/documentation/swiftui/label)                             | `struct`   | Text display                 | Text input and output     |
-| ⭕     | [TextField](https://developer.apple.com/documentation/swiftui/textfield)                     | `struct`   | Text entry                   | Text input and output     |
-| ⭕     | [SecureField](https://developer.apple.com/documentation/swiftui/securefield)                 | `struct`   | Text entry                   | Text input and output     |
-| ⭕     | [TextEditor](https://developer.apple.com/documentation/swiftui/texteditor)                   | `struct`   | Text entry                   | Text input and output     |
+| 🟠     | [TextField](https://developer.apple.com/documentation/swiftui/textfield)                     | `struct`   | Text entry                   | Text input and output     |
+| 🟠     | [SecureField](https://developer.apple.com/documentation/swiftui/securefield)                 | `struct`   | Text entry                   | Text input and output     |
+| 🟠     | [TextEditor](https://developer.apple.com/documentation/swiftui/texteditor)                   | `struct`   | Text entry                   | Text input and output     |
 | ⭕     | [Font](https://developer.apple.com/documentation/swiftui/font)                               | `struct`   | Text style                   | Text input and output     |
 | ⭕     | [TextAlignment](https://developer.apple.com/documentation/swiftui/textalignment)             | `enum`     | Text layout                  | Text input and output     |
 ||||||
