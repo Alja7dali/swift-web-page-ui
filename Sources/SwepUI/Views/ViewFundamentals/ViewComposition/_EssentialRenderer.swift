@@ -56,12 +56,17 @@ func diff(
   ) -> (JSValue) -> (JSValue) {
     return { element in
       newAttributes
-        .filter { attribute in
-          !oldAttributes.contains { $0.key == attribute.key }
-        }
         .forEach { attribute in
           _ = element.setAttribute(attribute.key, attribute.value)
         }
+
+      oldAttributes
+        .forEach { attribute in
+          if !newAttributes.contains(where: { $0.key == attribute.key }) {
+            _ = element.removeAttribute(attribute.key)
+          }
+        }
+
       return element
     }
   }
