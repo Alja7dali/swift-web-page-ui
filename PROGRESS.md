@@ -2,11 +2,11 @@
 
 ## Status indicators
 
-| Status | Description        |
-|--------|--------------------|
-| ⭕     | not started        |
-| 🟠     | some features work |
-| 🟢     | all features work  |
+| Status | Description        | Count |
+|--------|--------------------|-------|
+| ⭕     | not started        | 81    |
+| 🟠     | some features work | 16    |
+| 🟢     | all features work  | 15    |
 
 ## SwiftUI Components
 
