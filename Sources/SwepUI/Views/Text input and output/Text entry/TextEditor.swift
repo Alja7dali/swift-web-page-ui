@@ -64,6 +64,7 @@ public struct TextEditor: View {
       .cssMaxWidth(100%)
       .cssMinHeight(.px(50))
       .cssMaxHeight(100%)
+      .cssBorder(style: .none)
       .cssBorderRadius(.px(4))
       .jsInput { events in
         self.text.wrappedValue = events.first?.target.value.string ?? ""
