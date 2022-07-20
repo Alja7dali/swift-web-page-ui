@@ -4,8 +4,8 @@
 
 | Status | Description        | Count |
 |--------|--------------------|-------|
-| ⭕     | not started        | 81    |
-| 🟠     | some features work | 16    |
+| ⭕     | not started        | 79    |
+| 🟠     | some features work | 18    |
 | 🟢     | all features work  | 15    |
 
 ## SwiftUI Components
@@ -68,8 +68,8 @@ The following list is some of the components that are presented in [SwiftUI]([ht
 | ⭕     | [AsyncImage](https://developer.apple.com/documentation/swiftui/asyncimage)                   | `struct`   | Asynchronously loaded images | Images                    |
 | ⭕     | [AsyncImagePhase](https://developer.apple.com/documentation/swiftui/asyncimagephase)         | `enum`     | Asynchronously loaded images | Images                    |
 ||||||
-| ⭕     | [Button](https://developer.apple.com/documentation/swiftui/button)                           | `struct`   | Buttons                      | Controls and indicators   |
-| ⭕     | [Link](https://developer.apple.com/documentation/swiftui/link)                               | `struct`   | Links                        | Controls and indicators   |
+| 🟠     | [Button](https://developer.apple.com/documentation/swiftui/button)                           | `struct`   | Buttons                      | Controls and indicators   |
+| 🟠     | [Link](https://developer.apple.com/documentation/swiftui/link)                               | `struct`   | Links                        | Controls and indicators   |
 | ⭕     | [Menu](https://developer.apple.com/documentation/swiftui/menu)                               | `struct`   | Menus                        | Controls and indicators   |
 | ⭕     | [Slider](https://developer.apple.com/documentation/swiftui/slider)                           | `struct`   | Value inputs                 | Controls and indicators   |
 | ⭕     | [Stepper](https://developer.apple.com/documentation/swiftui/stepper)                         | `struct`   | Value inputs                 | Controls and indicators   |

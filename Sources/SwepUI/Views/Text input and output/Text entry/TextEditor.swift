@@ -56,12 +56,15 @@ public struct TextEditor: View {
   ///         }
   ///     }
   ///
+  /// TODO: custom scroll-bar
+  /// https://webkit.org/blog/363/styling-scrollbars/
   public var body: some View {
     return HtmlTextarea(text.wrappedValue)
       .cssMinWidth(100%)
       .cssMaxWidth(100%)
       .cssMinHeight(.px(50))
       .cssMaxHeight(100%)
+      .cssBorderRadius(.px(4))
       .jsInput { events in
         self.text.wrappedValue = events.first?.target.value.string ?? ""
       }

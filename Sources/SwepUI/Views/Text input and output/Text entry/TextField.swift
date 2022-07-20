@@ -39,7 +39,9 @@ public struct TextField: View {
     return HtmlInput(type: .text)
       .htmlValue(text.wrappedValue)
       .htmlPlaceholder(label)
-      .cssMinWidth(100%)
+      .cssWidth(100%)
+      .cssBorder(style: .none)
+      .cssBorderRadius(.px(4))
       .jsChange { _ in
         self.onCommit?()
       }

@@ -17,6 +17,7 @@ public struct PaddingModifier<Content: View>: ViewModifier {
 
 extension View {
   // Adds a different padding amount to each edge of this view.
+  @_disfavoredOverload
   public func padding(_ edgeInsets: EdgeInsets) -> some View {
     return modifier(PaddingModifier(edgeInsets: edgeInsets))
   }
@@ -24,6 +25,11 @@ extension View {
   // Adds an equal padding amount to specific edges of this view.
   public func padding(_ edges: Edge.Set = .all, _ amount: Double = 16) -> some View {
     return modifier(PaddingModifier(edgeInsets: edges.toEdgeInsets(amount)))
+  }
+
+  // Adds an equal padding amount to all edges of this view.
+  public func padding(_ amount: Double) -> some View {
+    return modifier(PaddingModifier(edgeInsets: Edge.Set.all.toEdgeInsets(amount)))
   }
 }
 

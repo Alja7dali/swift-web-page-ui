@@ -129,7 +129,7 @@ extension Builder {
   }
 
   fileprivate mutating func map(_ transform: (Builder) -> Builder) -> Builder {
-    if case let .tag(name, attributes, eventListeners, children) = self {
+    if case .tag = self {
       return transform(self)
     } else {
       return self
